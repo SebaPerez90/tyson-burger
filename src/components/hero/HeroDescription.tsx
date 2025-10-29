@@ -7,7 +7,7 @@ const afterLayerStyles =
 
 const HeroDescription = () => {
   return (
-    <section className="flex relative justify-center items-center  min-h-[70vh]">
+    <section className="flex relative justify-center items-center min-h-[70vh]">
       {/* text container */}
       <div className="text-background z-30 flex flex-col gap-8">
         <h1 className="text-7xl font-extrabold text-background max-w-3xl">

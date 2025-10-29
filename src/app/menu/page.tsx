@@ -63,14 +63,16 @@ export default function MenuPage() {
             className="bg-white rounded-2xl shadow-md hover:shadow-xl transition transform hover:-translate-y-1 overflow-hidden flex flex-col"
           >
             {/* Imagen */}
+            {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
+              width={400}
+              height={208}
               src={item.image}
               alt={item.name}
               className="w-full h-52 object-cover"
             />
 
-            {/* Contenido */}
-            <div className="p-6 flex flex-col justify-between flex-grow">
+            <div className="p-6 flex flex-col justify-between grow">
               <div>
                 <h2 className="text-2xl font-semibold mb-3 text-gray-800">
                   {item.name}

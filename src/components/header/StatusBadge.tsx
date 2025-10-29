@@ -1,56 +1,55 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useEffect, useMemo, useState } from "react";
 
-export const StoreStatus = () => {
-  const [isOpen, setIsOpen] = useState(false);
+export const OpenStatusBadge = () => {
+  const [time, setTime] = useState(new Date());
 
   useEffect(() => {
-    const checkIfOpen = () => {
-      // Obtener fecha y hora actual de Argentina
-      const now = new Date();
-      const options = { timeZone: "America/Argentina/Buenos_Aires" };
-      const localTime = new Date(now.toLocaleString("en-US", options));
-
-      const day = localTime.getDay(); // 0=Domingo, 1=Lunes, ..., 6=Sábado
-      const hour = localTime.getHours();
-      const minute = localTime.getMinutes();
-
-      // Días de trabajo: Jueves (4), Viernes (5), Sábado (6), Domingo (0)
-      const workingDays = [4, 5, 6, 0];
-
-      // Horario comercial: 20:00 a 23:30
-      const isWorkingDay = workingDays.includes(day);
-      const isWorkingHour =
-        hour === 20 ||
-        hour === 21 ||
-        hour === 22 ||
-        (hour === 23 && minute <= 30);
-
-      setIsOpen(isWorkingDay && isWorkingHour);
-    };
-
-    // Chequeo inicial
-    checkIfOpen();
-
-    // Actualiza cada minuto (por si el usuario deja la pestaña abierta)
-    const interval = setInterval(checkIfOpen, 60 * 1000);
-
+    const interval = setInterval(() => setTime(new Date()), 60000);
     return () => clearInterval(interval);
   }, []);
 
+  // Calcula todo el estado derivado desde `time`
+  const { isOpen, isWorkDay } = useMemo(() => {
+    const argentinaOffset = -3 * 60; // UTC-3
+    const localTime = new Date(time.getTime() + argentinaOffset * 60 * 1000);
+
+    const day = localTime.getUTCDay();
+    const hour = localTime.getUTCHours();
+    const minute = localTime.getUTCMinutes();
+
+    const workDays = [4, 5, 6, 0]; //en caso de agregar dias de servicio, el array debe actualizarse a [1,2,3,4,5,6,0] por ejemplo
+    const openHour = 20;
+    const closeHour = 23;
+    const closeMinute = 30;
+
+    const workingToday = workDays.includes(day);
+    const isOpenNow =
+      workingToday &&
+      ((hour > openHour && hour < closeHour) ||
+        (hour === openHour && minute >= 0) ||
+        (hour === closeHour && minute <= closeMinute));
+
+    return { isOpen: isOpenNow, isWorkDay: workingToday };
+  }, [time]);
+
+  // UI derivada del estado
+  const color = isOpen ? "bg-green-500" : "bg-red-500";
+  const text = isOpen
+    ? "Estamos trabajando"
+    : isWorkDay
+    ? "Abre a las 20:00 hs"
+    : "Cerrado";
+
   return (
-    <div
-      className={`flex items-center gap-2 px-3 py-1 rounded-full text-sm font-medium shadow-md transition-all
-        ${isOpen ? "bg-green-100 text-green-800" : "bg-red-100 text-red-800"}`}
-    >
+    <div className="flex items-center space-x-2 bg-background/20 backdrop-blur-md px-4 py-1.5 rounded-full border border-background/10 shadow-sm">
       <span
-        className={`w-3 h-3 rounded-full animate-pulse 
-          ${isOpen ? "bg-green-500" : "bg-red-500"}`}
+        className={`size-3 ${color} rounded-full animate-pulse shadow-[0_0_6px_rgba(0,0,0,0.3)]`}
       ></span>
-      <span>{isOpen ? "Estamos trabajando 🍔" : "Cerrado"}</span>
+      <p className="text-background font-medium text-sm">{text}</p>
     </div>
   );
 };
 
-export default StoreStatus;
+export default OpenStatusBadge;

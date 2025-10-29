@@ -5,7 +5,7 @@ import heroImage from "../../../public/test.jpg";
 const afterLayerStyles =
   " relative after:absolute after:bg-linear-to-r after:from-black/30 after:via-transparent after:to-black/30 after:z-20 z-10 after:top-0 after:left-0 after:w-full after:h-full after:border-50  after:border-black after:scale-x-105 after:blur-xl after:rounded-[100px]";
 
-const HeroDescription = () => {
+const Hero = () => {
   return (
     <section className="flex relative justify-center items-center min-h-[70vh]">
       {/* text container */}
@@ -50,4 +50,4 @@ const HeroDescription = () => {
   );
 };
 
-export default HeroDescription;
+export default Hero;

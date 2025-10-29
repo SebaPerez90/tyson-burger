@@ -1,42 +1,49 @@
 "use client";
 
 import Link from "next/link";
-// import { IoCartOutline } from "react-icons/io5";
-import { GrCircleInformation } from "react-icons/gr";
+import Image from "next/image";
+
+import { PiShoppingCartSimpleBold } from "react-icons/pi";
+
+const links = [
+  { href: "/menu", label: "Menú" },
+  { href: "/promos", label: "Promos" },
+  { href: "/delivery", label: "Delivery" },
+];
 
 export const Navbar = () => {
   return (
-    <nav className="bg-white shadow-md">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between h-16 items-center">
-          {/* Logo */}
-          <Link href="/" className="flex items-center">
-            <span className="shrink-0 text-2xl font-bold">LOGO</span>
-          </Link>
+    <header className="bg-inherit shadow-md fixed top-0 left-0 w-full mx-auto px-4 sm:px-10 lg:px-12 border-b-background/40 border-b">
+      <div className="flex justify-between h-16 items-center">
+        {/* Logo */}
+        <Link href="/" className="size-14 rounded-full overflow-hidden">
+          <Image
+            priority
+            className="size-full object-cover"
+            src="/logo.webp"
+            alt="Logo"
+            width={50}
+            height={50}
+          />
+        </Link>
 
-          {/* Navegación */}
-          <div className="hidden md:flex space-x-8">
-            <Link href="/menu" className="text-gray-700 hover:text-gray-900">
-              Menú
-            </Link>
-            <Link href="/promos" className="text-gray-700 hover:text-gray-900">
-              Promos
-            </Link>
+        {/* Navegación */}
+        <nav className="hidden md:flex space-x-8">
+          {links.map(({ href, label }) => (
             <Link
-              href="/delivery"
-              className="text-gray-700 hover:text-gray-900"
+              key={href}
+              href={href}
+              className="text-background hover:text-background/70 font-medium"
             >
-              Delivery
+              {label}
             </Link>
-          </div>
+          ))}
+        </nav>
 
-          {/* Carrito */}
-          <button className="relative cursor-pointer">
-            {/* <IoCartOutline size={30} /> */}
-            <GrCircleInformation size={25} />
-          </button>
-        </div>
+        <button type="button">
+          <PiShoppingCartSimpleBold size={26} className="text-background" />
+        </button>
       </div>
-    </nav>
+    </header>
   );
 };

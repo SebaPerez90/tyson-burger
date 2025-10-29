@@ -1,11 +1,9 @@
-"use client";
-
-import { Button } from "@/src/components/ui/button";
+import HeroDescription from "@/src/components/hero/HeroDescription";
 
 export default function Home() {
   return (
-    <div>
-      <main></main>
-    </div>
+    <main>
+      <HeroDescription />
+    </main>
   );
 }

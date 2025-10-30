@@ -32,7 +32,7 @@ export const Navbar = () => {
             <Link href="/" className="size-14 rounded-full overflow-hidden">
               <Image
                 priority
-                className="size-full object-cover"
+                className="size-full object-cover saturate-150"
                 src="/logo2.jpg"
                 alt="Logo"
                 width={50}

@@ -52,21 +52,5 @@
     ],
     "price": "$12.000",
     "image": "/menu/american-burger.webp"
-  },
-  {
-    "id": 5,
-    "name": "PROMO DOBLE ROYAL",
-    "description": "PROMO DOBLE ROYAL (No se puede modificar la promo)\nPan brioche. 120gr de carne por medallón. x2 cheddar por medallón. x1 cheddar en la base del pan. Ketchup, mostaza y cebolla brunoise.",
-    "ingredients": [
-      "Carne 120gr por medallón",
-      "x2 cheddar por medallón",
-      "Cheddar en base del pan",
-      "Ketchup",
-      "Mostaza",
-      "Cebolla brunoise",
-      "Pan brioche"
-    ],
-    "price": "$10.050",
-    "image": "/menu/promo-doble-royal.webp"
   }
 ]

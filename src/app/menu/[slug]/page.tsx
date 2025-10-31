@@ -7,6 +7,7 @@ import menuData from "@/src/mockup/menu.json";
 
 import { MdKeyboardBackspace } from "react-icons/md";
 import SubMenuAcordeon from "@/src/components/ui/acordeons/SubMenuAcordeon";
+import AddOrderBtns from "@/src/components/menu/AddOrderBtns";
 
 // // Genera los parámetros estáticos
 // export async function generateStaticParams() {
@@ -60,17 +61,16 @@ export default async function ProductPage({
   }
 
   return (
-    <div className="min-h-screen relative mb-6">
+    <div className="min-h-screen relative mb-32">
       {/* Botón volver */}
-      <Link href="/menu" className="absolute left-0 top-5 z-20">
-        <MdKeyboardBackspace
-          size={35}
-          color="#fff"
-          className="cursor-pointer"
-        />
+      <Link
+        href="/menu"
+        className="absolute left-0 top-5 z-20 p-2 rounded-full bg-white hover:bg-white/95 transition"
+      >
+        <MdKeyboardBackspace size={35} className="cursor-pointer" />
       </Link>
 
-      <div className=" flex flex-col justify-center items-center grow max-w-[500px] mx-auto">
+      <div className="flex flex-col justify-center items-center grow max-w-[500px] mx-auto">
         {/* Imagen */}
         <div className="w-full ">
           <Image
@@ -121,11 +121,14 @@ export default async function ProductPage({
           <textarea
             id="note"
             placeholder="Aclar&aacute; lo que necesites "
-            className="w-full rounded-lg bg-transparent border border-white/20 text-white placeholder:text-white/50 p-3 outline-none resize-none focus:border-red-600 transition"
+            className="w-full rounded-lg bg-transparent border border-white/20 text-white placeholder:text-white/50 p-3 outline-none resize-none focus:border-red-300 transition"
             rows={7}
           />
         </div>
       </div>
+
+      {/* CTA´s */}
+      <AddOrderBtns total={0} />
     </div>
   );
 }

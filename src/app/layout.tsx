@@ -91,7 +91,7 @@ export default function RootLayout({
         />
       </head>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased bg-foreground pt-28 max-w-[1400px] mx-auto`}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased bg-foreground pt-28 max-w-[1400px] mx-auto px-10`}
       >
         <Navbar />
         {children}

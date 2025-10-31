@@ -1,0 +1,72 @@
+[
+  {
+    "id": 1,
+    "name": "Cheese Burger",
+    "description": "Pan de papa. 100gr de carne vacuna. Doble queso cheddar. Salsa mac especial de la casa.",
+    "ingredients": [
+      "Carne 100% vacuna",
+      "Doble queso cheddar",
+      "Salsa mac",
+      "Pan de papa"
+    ],
+    "price": "$9.000",
+    "image": "/menu/cheese-burger.webp"
+  },
+  {
+    "id": 2,
+    "name": "Oklahoma Burger",
+    "description": "Pan de papa. 150gr de carne vacuna. Cebolla caramelizada. Doble queso cheddar. Salsa BBQ casera.",
+    "ingredients": [
+      "Carne 100% vacuna",
+      "Cebolla caramelizada",
+      "Doble queso cheddar",
+      "Salsa BBQ casera",
+      "Pan de papa"
+    ],
+    "price": "$12.000",
+    "image": "/menu/oklahoma-burger.webp"
+  },
+  {
+    "id": 3,
+    "name": "Cheese & Bacon Burger",
+    "description": "Pan de papa. 150gr de carne vacuna. Doble queso cheddar. Tocino crocante. Salsa especial.",
+    "ingredients": [
+      "Carne 100% vacuna",
+      "Doble queso cheddar",
+      "Tocino crocante",
+      "Pan de papa"
+    ],
+    "price": "$12.000",
+    "image": "/menu/cheese-bacon-burger.webp"
+  },
+  {
+    "id": 4,
+    "name": "American Burger",
+    "description": "Pan de papa. 150gr de carne vacuna. Doble queso cheddar. Lechuga fresca. Tomate. Salsa americana.",
+    "ingredients": [
+      "Carne 100% vacuna",
+      "Doble queso cheddar",
+      "Lechuga fresca",
+      "Tomate",
+      "Pan de papa"
+    ],
+    "price": "$12.000",
+    "image": "/menu/american-burger.webp"
+  },
+  {
+    "id": 5,
+    "name": "PROMO DOBLE ROYAL",
+    "description": "PROMO DOBLE ROYAL (No se puede modificar la promo)\nPan brioche. 120gr de carne por medallón. x2 cheddar por medallón. x1 cheddar en la base del pan. Ketchup, mostaza y cebolla brunoise.",
+    "ingredients": [
+      "Carne 120gr por medallón",
+      "x2 cheddar por medallón",
+      "Cheddar en base del pan",
+      "Ketchup",
+      "Mostaza",
+      "Cebolla brunoise",
+      "Pan brioche"
+    ],
+    "price": "$10.050",
+    "image": "/menu/promo-doble-royal.webp"
+  }
+]

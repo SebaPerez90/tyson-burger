@@ -1,5 +1,9 @@
-// import Hero from "@/src/components/hero/Hero";
+import Hero from "@/src/components/hero/Hero";
 
 export default function Home() {
-  return <main>{/* <Hero /> */}</main>;
+  return (
+    <main>
+      <Hero />
+    </main>
+  );
 }

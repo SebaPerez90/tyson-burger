@@ -1,7 +1,11 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
+
 import "../styles/globals.css";
+
 import { Navbar } from "../components/header/NavBar";
+
+import { Toaster } from "@/src/components/ui/sonner";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -95,6 +99,7 @@ export default function RootLayout({
       >
         <Navbar />
         {children}
+        <Toaster richColors />
       </body>
     </html>
   );

@@ -6,16 +6,15 @@ import {
   DialogTitle,
   DialogTrigger,
 } from "@/src/components/ui/dialog";
-import { GrCircleInformation } from "react-icons/gr";
+import { Button } from "../button";
 
-const InformationModal = () => {
+const ConfirmOrderModal = () => {
   return (
     <Dialog>
       <DialogTrigger>
-        <GrCircleInformation
-          size={24}
-          className="cursor-pointer text-background"
-        />
+        <Button variant={"secondary"} type="submit">
+          Confirmar pedido
+        </Button>
       </DialogTrigger>
       <DialogContent>
         <DialogHeader>
@@ -30,4 +29,4 @@ const InformationModal = () => {
   );
 };
 
-export default InformationModal;
+export default ConfirmOrderModal;

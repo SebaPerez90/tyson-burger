@@ -1,3 +1,5 @@
+import { useState } from "react";
+
 import {
   Sheet,
   SheetClose,
@@ -6,13 +8,13 @@ import {
   SheetTitle,
   SheetTrigger,
 } from "@/src/components/ui/sheet";
+import { Button } from "./ui/button";
 
 import { PiShoppingCartSimpleBold } from "react-icons/pi";
+
 import StatusBadge from "@/src/components/header/StatusBadge";
-import { Button } from "./ui/button";
 import ConfirmOrderModal from "./ui/modals/ConfirmOrderModal";
 import DeliveryToggle from "./DeliveryToggle";
-import { useState } from "react";
 
 const OrderCart = () => {
   const [isDelivery, setIsDelivery] = useState(true);
@@ -73,7 +75,7 @@ const OrderCart = () => {
         <div className="grid flex-1 auto-rows-min gap-6 px-4"></div>
 
         {/* footer */}
-        <div className="flex items-center gap-7 justify-center">
+        {/* <div className="flex items-center gap-7 justify-center">
           <SheetClose asChild>
             <Button
               variant={"outline"}
@@ -83,7 +85,7 @@ const OrderCart = () => {
             </Button>
           </SheetClose>
           <ConfirmOrderModal />
-        </div>
+        </div> */}
       </SheetContent>
     </Sheet>
   );

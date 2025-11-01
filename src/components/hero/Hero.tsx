@@ -20,14 +20,14 @@ const Hero = () => {
         </p>
         <div className="flex gap-4">
           <Button
-            size={"lg"}
+            size={"xl"}
             variant={"destructive"}
             className="cursor-pointer"
           >
             Ordenar ahora
           </Button>
           <Button
-            size={"lg"}
+            size={"xl"}
             variant={"outline"}
             className="text-foreground cursor-pointer"
           >
@@ -37,12 +37,14 @@ const Hero = () => {
       </div>
 
       {/* Image container */}
-      <div className={`${afterLayerStyles} w-[800px] h-[500px] rounded-[50px]`}>
+      <div
+        className={`${afterLayerStyles} w-[1000px] h-[600px] rounded-[50px] flex flex-col items-center justify-center`}
+      >
         <Image
           src={heroImage}
           alt="Juicy cheeseburger"
-          width={800}
-          height={500}
+          width={900}
+          height={700}
           className="object-cover mask-[radial-gradient(circle,black_75%,transparent_90%)] brightness-125 saturate-150"
         />
       </div>

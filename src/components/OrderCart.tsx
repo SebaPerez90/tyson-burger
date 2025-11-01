@@ -2,18 +2,18 @@ import { useState } from "react";
 
 import {
   Sheet,
-  SheetClose,
+  // SheetClose,
   SheetContent,
   SheetHeader,
   SheetTitle,
   SheetTrigger,
 } from "@/src/components/ui/sheet";
-import { Button } from "./ui/button";
+// import { Button } from "./ui/button";
 
 import { PiShoppingCartSimpleBold } from "react-icons/pi";
 
 import StatusBadge from "@/src/components/header/StatusBadge";
-import ConfirmOrderModal from "./ui/modals/ConfirmOrderModal";
+// import ConfirmOrderModal from "./ui/modals/ConfirmOrderModal";
 import DeliveryToggle from "./DeliveryToggle";
 
 const OrderCart = () => {
@@ -64,7 +64,10 @@ const OrderCart = () => {
           className="text-background hover:text-red-500 transition-colors cursor-pointer"
         />
       </SheetTrigger>
-      <SheetContent className="w-[800px] bg-zinc-900 border-0 py-10 px-16">
+      <SheetContent
+        aria-describedby={undefined}
+        className="w-[800px] bg-zinc-900 border-0 py-10 px-16"
+      >
         <SheetHeader>
           <SheetTitle className="text-white flex justify-between items-center w-full">
             <span>Pedido para {isDelivery ? "Delivery" : "Retirar"}</span>

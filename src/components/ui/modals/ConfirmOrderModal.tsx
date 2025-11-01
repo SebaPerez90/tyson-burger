@@ -11,8 +11,8 @@ import { Button } from "../button";
 const ConfirmOrderModal = () => {
   return (
     <Dialog>
-      <DialogTrigger>
-        <Button variant={"secondary"} type="submit">
+      <DialogTrigger asChild>
+        <Button variant={"secondary"} type="submit" className="grow">
           Confirmar pedido
         </Button>
       </DialogTrigger>

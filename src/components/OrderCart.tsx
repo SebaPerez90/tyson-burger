@@ -2,18 +2,18 @@ import { useState } from "react";
 
 import {
   Sheet,
-  // SheetClose,
+  SheetClose,
   SheetContent,
   SheetHeader,
   SheetTitle,
   SheetTrigger,
 } from "@/src/components/ui/sheet";
-// import { Button } from "./ui/button";
+import { Button } from "./ui/button";
 
 import { PiShoppingCartSimpleBold } from "react-icons/pi";
 
 import StatusBadge from "@/src/components/header/StatusBadge";
-// import ConfirmOrderModal from "./ui/modals/ConfirmOrderModal";
+import ConfirmOrderModal from "./ui/modals/ConfirmOrderModal";
 import DeliveryToggle from "./DeliveryToggle";
 
 const OrderCart = () => {
@@ -60,7 +60,7 @@ const OrderCart = () => {
     <Sheet>
       <SheetTrigger asChild>
         <PiShoppingCartSimpleBold
-          size={26}
+          size={23}
           className="text-background hover:text-red-500 transition-colors cursor-pointer"
         />
       </SheetTrigger>
@@ -78,8 +78,8 @@ const OrderCart = () => {
         <div className="grid flex-1 auto-rows-min gap-6 px-4"></div>
 
         {/* footer */}
-        {/* <div className="flex items-center gap-7 justify-center">
-          <SheetClose asChild>
+        <div className="flex items-center gap-4 justify-center ">
+          <SheetClose asChild className="text-white grow">
             <Button
               variant={"outline"}
               className="px-14 text-white bg-inherit hover:bg-zinc-800 hover:text-white"
@@ -88,7 +88,7 @@ const OrderCart = () => {
             </Button>
           </SheetClose>
           <ConfirmOrderModal />
-        </div> */}
+        </div>
       </SheetContent>
     </Sheet>
   );

@@ -3,16 +3,6 @@ import { toast } from "sonner";
 
 import { useRouter } from "next/navigation";
 
-interface AddOrderBtnsProps {
-  total: number;
-  count: number;
-  setCount: React.Dispatch<React.SetStateAction<number>>;
-  note?: string;
-  productName?: string;
-  productSize?: string;
-  selectedExtras?: { id: string; label: string; price: string }[];
-}
-
 const AddOrderBtns = ({
   total,
   count,
@@ -21,7 +11,8 @@ const AddOrderBtns = ({
   productName,
   productSize,
   selectedExtras,
-}: AddOrderBtnsProps) => {
+  productImage,
+}: Order) => {
   const router = useRouter();
 
   const handleIncrement = () => setCount((prev) => prev + 1);
@@ -38,6 +29,7 @@ const AddOrderBtns = ({
         productName,
         productSize,
         extras: formattedExtras,
+        image: productImage,
       };
 
       const storedCart = localStorage.getItem("clientOrder");

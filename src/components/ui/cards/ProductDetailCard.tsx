@@ -112,6 +112,7 @@ const ProductDetailCard = ({ product }: { product: HamburgerItem }) => {
         productName={product.name}
         productSize={"simple"}
         note={note}
+        productImage={product.image}
         setCount={setCount}
       />
     </>

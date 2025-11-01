@@ -18,7 +18,7 @@ const DeliveryToggle = ({ isDelivery, setIsDelivery }: DeliveryToggleProps) => {
         <button
           className={`${
             isDelivery ? "" : "text-white/80"
-          } relative z-10 flex-1 text-center font-semibold text-black cursor-pointer duration-200 transition-all`}
+          } relative z-10 flex-1 text-sm text-center font-semibold text-black cursor-pointer duration-200 transition-all`}
           onClick={() => setIsDelivery(true)}
         >
           Delivery
@@ -26,7 +26,7 @@ const DeliveryToggle = ({ isDelivery, setIsDelivery }: DeliveryToggleProps) => {
         <button
           className={`${
             isDelivery ? "text-white/80" : ""
-          } relative z-10 flex-1 text-center font-semibold text-black cursor-pointer duration-200 transition-all`}
+          } relative z-10 flex-1 text-sm text-center font-semibold text-black cursor-pointer duration-200 transition-all`}
           onClick={() => setIsDelivery(false)}
         >
           Retirar

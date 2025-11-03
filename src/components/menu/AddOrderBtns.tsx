@@ -5,7 +5,7 @@ import { useRouter } from "next/navigation";
 
 const AddOrderBtns = ({
   total,
-  count,
+  quantity,
   setCount,
   note,
   productName,
@@ -19,11 +19,11 @@ const AddOrderBtns = ({
   const handleDecrement = () => setCount((prev) => (prev > 0 ? prev - 1 : 0));
 
   const handleAddToCart = () => {
-    if (count > 0) {
+    if (quantity > 0) {
       const formattedExtras = selectedExtras?.map((extra) => extra.label);
 
       const cartData = {
-        quantity: count,
+        quantity: quantity,
         total,
         note,
         productName,
@@ -41,7 +41,7 @@ const AddOrderBtns = ({
       // guarda array actualizado
       localStorage.setItem("clientOrder", JSON.stringify(updatedCart));
 
-      toast.success(`Tu orden se agrego al carrito`, {
+      toast.success(`Producto agregado al carrito`, {
         style: {
           borderRadius: "8px",
           color: "#008a2e",
@@ -51,9 +51,7 @@ const AddOrderBtns = ({
         duration: 5000,
       });
 
-      setTimeout(() => {
-        router.push("/menu");
-      }, 2000);
+      router.push("/menu");
     }
   };
 
@@ -68,7 +66,7 @@ const AddOrderBtns = ({
         >
           –
         </Button>
-        <span className="font-medium mx-4 text-sm">{count}u</span>
+        <span className="font-medium mx-4 text-sm">{quantity}u</span>
         <Button
           onClick={handleIncrement}
           variant={"secondary"}

@@ -107,7 +107,7 @@ const ProductDetailCard = ({ product }: { product: HamburgerItem }) => {
       {/* CTA´s */}
       <AddOrderBtns
         total={totalPrice * count}
-        count={count}
+        quantity={count}
         selectedExtras={selectedExtras}
         productName={product.name}
         productSize={"simple"}

@@ -3,7 +3,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 
 import "../styles/globals.css";
 
-import { Navbar } from "../components/header/NavBar";
+import { Navbar } from "@/src/components/header/NavBar";
 
 import { Toaster } from "@/src/components/ui/sonner";
 
@@ -95,7 +95,7 @@ export default function RootLayout({
         />
       </head>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased bg-foreground pt-28 max-w-[1400px] mx-auto px-10`}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased bg-foreground `}
       >
         <Navbar />
         {children}

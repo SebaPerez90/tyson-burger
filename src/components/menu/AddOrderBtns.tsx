@@ -3,41 +3,33 @@ import { toast } from "sonner";
 
 import { useRouter } from "next/navigation";
 
-interface AddOrderBtnsProps {
-  total: number;
-  count: number;
-  setCount: React.Dispatch<React.SetStateAction<number>>;
-  note?: string;
-  productName?: string;
-  productSize?: string;
-  selectedExtras?: { id: string; label: string; price: string }[];
-}
-
 const AddOrderBtns = ({
   total,
-  count,
+  quantity,
   setCount,
   note,
   productName,
   productSize,
   selectedExtras,
-}: AddOrderBtnsProps) => {
+  productImage,
+}: Order) => {
   const router = useRouter();
 
   const handleIncrement = () => setCount((prev) => prev + 1);
   const handleDecrement = () => setCount((prev) => (prev > 0 ? prev - 1 : 0));
 
   const handleAddToCart = () => {
-    if (count > 0) {
+    if (quantity > 0) {
       const formattedExtras = selectedExtras?.map((extra) => extra.label);
 
       const cartData = {
-        quantity: count,
+        quantity: quantity,
         total,
         note,
         productName,
         productSize,
         extras: formattedExtras,
+        image: productImage,
       };
 
       const storedCart = localStorage.getItem("clientOrder");
@@ -49,7 +41,7 @@ const AddOrderBtns = ({
       // guarda array actualizado
       localStorage.setItem("clientOrder", JSON.stringify(updatedCart));
 
-      toast.success(`Tu orden se agrego al carrito`, {
+      toast.success(`Producto agregado al carrito`, {
         style: {
           borderRadius: "8px",
           color: "#008a2e",
@@ -59,9 +51,7 @@ const AddOrderBtns = ({
         duration: 5000,
       });
 
-      setTimeout(() => {
-        router.push("/menu");
-      }, 2000);
+      router.push("/menu");
     }
   };
 
@@ -76,7 +66,7 @@ const AddOrderBtns = ({
         >
           –
         </Button>
-        <span className="font-medium mx-4 text-sm">{count}u</span>
+        <span className="font-medium mx-4 text-sm">{quantity}u</span>
         <Button
           onClick={handleIncrement}
           variant={"secondary"}

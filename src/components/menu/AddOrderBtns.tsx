@@ -2,6 +2,7 @@ import { Button } from "../ui/button";
 import { toast } from "sonner";
 
 import { useRouter } from "next/navigation";
+import { generateShortId } from "@/src/utils/uuidGenerator";
 
 const AddOrderBtns = ({
   total,
@@ -23,6 +24,7 @@ const AddOrderBtns = ({
       const formattedExtras = selectedExtras?.map((extra) => extra.label);
 
       const cartData = {
+        id: generateShortId(4),
         quantity: quantity,
         total,
         note,
@@ -40,6 +42,9 @@ const AddOrderBtns = ({
 
       // guarda array actualizado
       localStorage.setItem("clientOrder", JSON.stringify(updatedCart));
+
+      // notifica a listeners (OrderCart)
+      window.dispatchEvent(new Event("client-order-updated"));
 
       toast.success(`Producto agregado al carrito`, {
         style: {

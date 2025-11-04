@@ -10,6 +10,7 @@ type HamburgerItem = {
 };
 
 type Order = {
+  id: number;
   total: number;
   setCount: React.Dispatch<React.SetStateAction<number>>;
   note?: string;

@@ -11,7 +11,7 @@ import {
   TooltipContent,
   TooltipTrigger,
 } from "@/src/components/ui/tooltip";
-import OrderCart from "../OrderCart";
+import OrderCart from "../cart/OrderCart";
 
 const links = [
   { href: "/menu", label: "Menú" },

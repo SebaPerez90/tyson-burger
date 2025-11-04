@@ -5,16 +5,14 @@ interface DeliveryToggleProps {
 
 const DeliveryToggle = ({ isDelivery, setIsDelivery }: DeliveryToggleProps) => {
   return (
-    <div className="flex items-center justify-center w-[500px] border border-gray-600 rounded-lg p-1">
+    <div className="flex items-center justify-center w-[500px] border border-gray-600 rounded-lg p-1 relative -top-3">
       <div className="relative flex w-full  px-2 py-1 bg-gray-900">
-        {/* Indicador animado */}
         <div
           className={`absolute top-px left-0 h-full w-[50%] bg-white rounded-md transition-all duration-300 ease-in-out  ${
             !isDelivery ? "translate-x-full" : "translate-x-0"
           }`}
         />
 
-        {/* Botones */}
         <button
           className={`${
             isDelivery ? "" : "text-white/80"

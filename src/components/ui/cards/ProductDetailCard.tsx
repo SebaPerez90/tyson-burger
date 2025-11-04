@@ -22,7 +22,6 @@ const ProductDetailCard = ({ product }: { product: HamburgerItem }) => {
       (sum, ex) => sum + parsePriceStringToNumber(ex.price),
       0
     );
-    // eslint-disable-next-line react-hooks/set-state-in-effect
     setTotalPrice(basePrice + extrasSum);
   }, [selectedExtras, basePrice]);
 

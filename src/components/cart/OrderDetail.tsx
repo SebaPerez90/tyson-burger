@@ -2,9 +2,11 @@ import Image from "next/image";
 
 import { PiHamburgerBold } from "react-icons/pi";
 
+import DeleteProductModal from "../ui/modals/DeleteProductModal";
+
 const CartDetail = ({ clientOrder }: { clientOrder: Order[] }) => {
   return (
-    <div className="border border-white/30 p-5 rounded-xl text-stone-50">
+    <div className="border border-white/30 p-5 rounded-xl mt-10 text-stone-50">
       <h2 className="font-bold mb-5 flex items-center px-4 gap-0.5">
         <PiHamburgerBold />
         {clientOrder.reduce((total, item) => total + item.quantity, 0)}{" "}
@@ -13,9 +15,12 @@ const CartDetail = ({ clientOrder }: { clientOrder: Order[] }) => {
 
       <div className="flex justify-between items-center p-4 font-semibold">
         <span>Item</span>
-        <div className="flex items-center justify-between gap-5 w-[170px]">
-          <span>Cantidad</span>
-          <span>Precio</span>
+        <div className="flex gap-5 justify-between w-[45%]">
+          <div className="flex items-center justify-between gap-5 w-[130px]">
+            <span>Cantidad</span>
+            <span>Precio</span>
+          </div>
+          <span className="font-semibold">Eliminar</span>
         </div>
       </div>
       {/* List of products */}
@@ -43,9 +48,14 @@ const CartDetail = ({ clientOrder }: { clientOrder: Order[] }) => {
             </div>
 
             {/* quantity and price */}
-            <div className="flex items-center w-[170px] justify-between gap-5 font-baloo ">
-              <span>{item.quantity}u</span>
-              <span className="">$ {item.total}</span>
+            <div className="flex gap-5 justify-between w-[45%]">
+              <div className="flex items-center w-[130px] justify-between gap-5 font-baloo">
+                <span>{item.quantity}u</span>
+                <span className="">$ {item.total}</span>
+              </div>
+
+              {/* delete product from cart modal */}
+              <DeleteProductModal cartId={item.id} />
             </div>
           </li>
         ))}

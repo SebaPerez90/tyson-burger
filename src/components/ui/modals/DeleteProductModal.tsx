@@ -2,6 +2,7 @@
 
 import {
   Dialog,
+  DialogClose,
   DialogContent,
   DialogDescription,
   DialogHeader,
@@ -14,28 +15,36 @@ import { FaRegTrashAlt } from "react-icons/fa";
 import { toast } from "sonner";
 import { useState } from "react";
 
-const DeleteProductModal = ({ cartId }: { cartId: number }) => {
+const DeleteProductModal = ({ cartId }: { cartId: number | undefined }) => {
   const [loading, setLoading] = useState(false);
 
-  const handleDelete = () => {
+  const handleDelete = async () => {
     setLoading(true);
+    await new Promise((resolve) => setTimeout(resolve, 1000));
+
     try {
       const raw = localStorage.getItem("clientOrder");
       const arr = raw ? JSON.parse(raw) : [];
 
-      // filtramos por cartId — eliminamos exactamente ese elemento
+      // filtramos por id de item del carrito
+      // eliminamos exactamente ese elemento
       const updated = Array.isArray(arr)
-        ? arr.filter((it) => it.cartId !== cartId)
+        ? arr.filter((item) => item.id !== cartId)
         : [];
 
-      localStorage.setItem("clientOrder", JSON.stringify(updated));
+      if (arr.length > updated.length) {
+        localStorage.setItem("clientOrder", JSON.stringify(updated));
 
-      // notificamos al resto de la app (OrderCart escucha esto)
-      window.dispatchEvent(
-        new CustomEvent("client-order-updated", { detail: updated })
-      );
+        // notificamos al resto de la app (OrderCart escucha esto)
+        window.dispatchEvent(
+          new CustomEvent("client-order-updated", { detail: updated })
+        );
 
-      toast.success("Producto eliminado del carrito", { duration: 3000 });
+        toast.success("Producto eliminado del carrito", {
+          duration: 3000,
+          style: { width: "max-content" },
+        });
+      }
     } catch (err) {
       console.error("Error eliminando item del carrito:", err);
       toast.error("No se pudo eliminar el producto");
@@ -65,25 +74,20 @@ const DeleteProductModal = ({ cartId }: { cartId: number }) => {
             ¿Querés quitar este producto del carrito? Esta acción se puede
             deshacer agregándolo otra vez.
           </DialogDescription>
-
-          <div className="mt-6 flex gap-3 justify-end">
-            <Button
-              variant="outline"
-              onClick={() => {
-                /* el Dialog se cierra automáticamente */
-              }}
-            >
-              Cancelar
-            </Button>
-            <Button
-              variant="destructive"
-              onClick={handleDelete}
-              disabled={loading}
-            >
-              {loading ? "Eliminando..." : "Eliminar"}
-            </Button>
-          </div>
         </DialogHeader>
+
+        <div className="mt-6 flex gap-3 justify-end">
+          <DialogClose asChild>
+            <Button variant="outline">Cancelar</Button>
+          </DialogClose>
+          <Button
+            variant="destructive"
+            onClick={handleDelete}
+            disabled={loading}
+          >
+            {loading ? "Eliminando..." : "Eliminar"}
+          </Button>
+        </div>
       </DialogContent>
     </Dialog>
   );

@@ -30,7 +30,6 @@ const OrderCart = () => {
     if (raw) {
       try {
         const data = JSON.parse(raw);
-        console.log(data);
         setClientOrder(data);
       } catch (err) {
         console.error("clientOrder malformed", err);

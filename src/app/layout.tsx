@@ -99,7 +99,7 @@ export default function RootLayout({
       >
         <Navbar />
         {children}
-        <Toaster richColors />
+        <Toaster />
       </body>
     </html>
   );

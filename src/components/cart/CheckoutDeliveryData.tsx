@@ -20,25 +20,25 @@ const CheckoutDeliveryData = () => {
   );
   const [cashAmount, setCashAmount] = useState("");
 
-  useEffect(() => {
-    // need console.log for each state change to avoid hydration error
+  // useEffect(() => {
+  //   // need console.log for each state change to avoid hydration error
 
-    console.log(address);
-    console.log(betweenStreets);
-    console.log(details);
-    console.log(tip);
-    console.log(customTip);
-    console.log(paymentMethod);
-    console.log(cashAmount);
-  }, [
-    address,
-    betweenStreets,
-    details,
-    tip,
-    customTip,
-    paymentMethod,
-    cashAmount,
-  ]);
+  //   console.log(address);
+  //   console.log(betweenStreets);
+  //   console.log(details);
+  //   console.log(tip);
+  //   console.log(customTip);
+  //   console.log(paymentMethod);
+  //   console.log(cashAmount);
+  // }, [
+  //   address,
+  //   betweenStreets,
+  //   details,
+  //   tip,
+  //   customTip,
+  //   paymentMethod,
+  //   cashAmount,
+  // ]);
 
   return (
     <div className="flex flex-col gap-8">

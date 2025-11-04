@@ -48,12 +48,9 @@ const AddOrderBtns = ({
 
       toast.success(`Producto agregado al carrito`, {
         style: {
-          borderRadius: "8px",
-          color: "#008a2e",
-          backgroundColor: "#ecfdf3",
           width: "max-content",
         },
-        duration: 5000,
+        duration: 3000,
       });
 
       router.push("/menu");

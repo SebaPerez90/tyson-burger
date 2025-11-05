@@ -11,30 +11,23 @@ import FloatingInput from "../forms/FloatingInput";
 import SummaryCard from "./SummaryCard";
 import CheckoutUserData from "./CheckoutUserData";
 
+import {
+  formatNumberWithDot,
+  parsePriceStringToNumber,
+} from "@/src/utils/priceConverter";
+
 const Checkout = ({ clientOrder }: { clientOrder: Order[] }) => {
   const [address, setAddress] = useState("");
   const [betweenStreets, setBetweenStreets] = useState("");
   const [details, setDetails] = useState("");
   const [tip, setTip] = useState<number | "otro">(0);
-  const [customTip, setCustomTip] = useState("");
+  const [customTip, setCustomTip] = useState<string | number>("");
+  const [cashAmount, setCashAmount] = useState<string | number>("");
+  const [userName, setUserName] = useState("");
+  const [userPhone, setUserPhone] = useState("");
   const [paymentMethod, setPaymentMethod] = useState<
     "efectivo" | "mercado pago"
   >("mercado pago");
-  const [cashAmount, setCashAmount] = useState<number | "">("");
-  const [userName, setUserName] = useState("");
-  const [userPhone, setUserPhone] = useState("");
-
-  const handleCashChange = (v: string) => {
-    const raw = v.replace(/\./g, "");
-    const num = Number(raw);
-
-    if (isNaN(num)) {
-      setCashAmount("");
-      return;
-    }
-
-    setCashAmount(num);
-  };
 
   return (
     <div className="flex flex-col gap-8">
@@ -74,7 +67,7 @@ const Checkout = ({ clientOrder }: { clientOrder: Order[] }) => {
         </div>
       </div>
 
-      {/* PAGO */}
+      {/* payment method */}
       <div className="border border-white/20 rounded-xl p-5 text-stone-50">
         <h3 className="font-bold flex items-center gap-2 text-lg mb-3">
           <BsBank /> Método de pago
@@ -110,11 +103,15 @@ const Checkout = ({ clientOrder }: { clientOrder: Order[] }) => {
               <FloatingInput
                 label="¿Con cuánto abonás?"
                 icon={<BsCurrencyDollar />}
-                type="text" // ← importante: text, NO number
+                type="text"
                 value={
-                  cashAmount === "" ? "" : cashAmount.toLocaleString("es-AR")
+                  cashAmount === ""
+                    ? ""
+                    : formatNumberWithDot(Number(cashAmount))
                 }
-                onChange={handleCashChange}
+                onChange={(v) => {
+                  setCashAmount(parsePriceStringToNumber(v));
+                }}
               />
             </div>
           )}
@@ -152,9 +149,13 @@ const Checkout = ({ clientOrder }: { clientOrder: Order[] }) => {
           <FloatingInput
             label="Propina"
             icon={<BsCurrencyDollar />}
-            type="number"
-            value={customTip.toLocaleString()}
-            onChange={setCustomTip}
+            type="text"
+            value={
+              customTip === "" ? "" : formatNumberWithDot(Number(customTip))
+            }
+            onChange={(v) => {
+              setCustomTip(parsePriceStringToNumber(v));
+            }}
           />
         )}
       </div>

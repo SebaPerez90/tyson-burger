@@ -21,18 +21,6 @@ export default function FloatingInput({
 }: Props) {
   const id = useId();
 
-  // const handleCashChange = (v: string) => {
-  //   const raw = v.replace(/\./g, "");
-  //   const num = Number(raw);
-
-  //   if (isNaN(num)) {
-  //     onChange("");
-  //     return;
-  //   }
-
-  //   onChange(num);
-  // };
-
   return (
     <div className="relative w-full">
       {/* input */}

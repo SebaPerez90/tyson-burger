@@ -14,6 +14,7 @@ const HamburgerCard = ({ item }: { item: HamburgerItem }) => {
           height={208}
           src={item.image}
           alt={item.name}
+          loading="eager"
           className="object-cover rounded-2xl saturate-[1.2]"
         />
       </div>

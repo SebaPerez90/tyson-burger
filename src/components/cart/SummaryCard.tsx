@@ -5,7 +5,7 @@ import { Button } from "../ui/button";
 type Props = {
   clientOrder: Order[];
   tip: number | "otro";
-  customTip: string;
+  customTip: string | number;
   address: string;
   betweenStreets: string;
   details: string;

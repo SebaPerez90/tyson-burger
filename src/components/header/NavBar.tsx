@@ -11,7 +11,7 @@ import {
   TooltipContent,
   TooltipTrigger,
 } from "@/src/components/ui/tooltip";
-import OrderCart from "../cart/OrderCart";
+import Cart from "../cart/Cart";
 
 const links = [
   { href: "/menu", label: "Menú" },
@@ -69,7 +69,7 @@ export const Navbar = () => {
             <StatusBadge />
 
             {/* Carrito */}
-            <OrderCart />
+            <Cart />
           </div>
         </div>
       </div>

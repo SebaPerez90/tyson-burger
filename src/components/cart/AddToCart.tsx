@@ -4,7 +4,7 @@ import { toast } from "sonner";
 import { useRouter } from "next/navigation";
 import { generateShortId } from "@/src/utils/uuidGenerator";
 
-const AddOrderBtns = ({
+const AddToCart = ({
   total,
   quantity,
   setCount,
@@ -43,7 +43,7 @@ const AddOrderBtns = ({
       // guarda array actualizado
       localStorage.setItem("clientOrder", JSON.stringify(updatedCart));
 
-      // notifica a listeners (OrderCart)
+      // notifica a listeners (Cart)
       window.dispatchEvent(new Event("client-order-updated"));
 
       toast.success(`Producto agregado al carrito`, {
@@ -91,4 +91,4 @@ const AddOrderBtns = ({
   );
 };
 
-export default AddOrderBtns;
+export default AddToCart;

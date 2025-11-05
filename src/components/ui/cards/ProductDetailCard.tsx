@@ -3,7 +3,7 @@
 import Image from "next/image";
 
 import SubMenuAcordeon from "@/src/components/ui/acordeons/SubMenuAcordeon";
-import AddOrderBtns from "@/src/components/menu/AddOrderBtns";
+import AddToCart from "@/src/components/cart/AddToCart";
 import { useEffect, useState } from "react";
 import { parsePriceStringToNumber } from "@/src/utils/priceConverter";
 
@@ -103,8 +103,8 @@ const ProductDetailCard = ({ product }: { product: HamburgerItem }) => {
         </div>
       </div>
 
-      {/* CTA´s */}
-      <AddOrderBtns
+      {/* Botones de compra y cantidad de productos */}
+      <AddToCart
         total={totalPrice * count}
         quantity={count}
         selectedExtras={selectedExtras}

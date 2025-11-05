@@ -1,51 +1,55 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useState } from "react";
 
-import { PiMapPinLineDuotone } from "react-icons/pi";
+import { GrLocation } from "react-icons/gr";
 import { FaMoneyBills, FaHandHoldingHeart } from "react-icons/fa6";
 import { BsCurrencyDollar, BsBank } from "react-icons/bs";
 import { IoWalletOutline } from "react-icons/io5";
 
 import FloatingInput from "../forms/FloatingInput";
+import SummaryCard from "./SummaryCard";
+import CheckoutUserData from "./CheckoutUserData";
 
-const CheckoutDeliveryData = () => {
+const Checkout = ({ clientOrder }: { clientOrder: Order[] }) => {
   const [address, setAddress] = useState("");
   const [betweenStreets, setBetweenStreets] = useState("");
   const [details, setDetails] = useState("");
   const [tip, setTip] = useState<number | "otro">(0);
   const [customTip, setCustomTip] = useState("");
-  const [paymentMethod, setPaymentMethod] = useState<"efectivo" | "mp" | null>(
-    null
-  );
-  const [cashAmount, setCashAmount] = useState("");
+  const [paymentMethod, setPaymentMethod] = useState<
+    "efectivo" | "mercado pago"
+  >("mercado pago");
+  const [cashAmount, setCashAmount] = useState<number | "">("");
+  const [userName, setUserName] = useState("");
+  const [userPhone, setUserPhone] = useState("");
 
-  // useEffect(() => {
-  //   // need console.log for each state change to avoid hydration error
+  const handleCashChange = (v: string) => {
+    const raw = v.replace(/\./g, "");
+    const num = Number(raw);
 
-  //   console.log(address);
-  //   console.log(betweenStreets);
-  //   console.log(details);
-  //   console.log(tip);
-  //   console.log(customTip);
-  //   console.log(paymentMethod);
-  //   console.log(cashAmount);
-  // }, [
-  //   address,
-  //   betweenStreets,
-  //   details,
-  //   tip,
-  //   customTip,
-  //   paymentMethod,
-  //   cashAmount,
-  // ]);
+    if (isNaN(num)) {
+      setCashAmount("");
+      return;
+    }
+
+    setCashAmount(num);
+  };
 
   return (
     <div className="flex flex-col gap-8">
+      {/* DATOS DEL USUARIO */}
+      <CheckoutUserData
+        userName={userName}
+        setUserName={setUserName}
+        userPhone={userPhone}
+        setUserPhone={setUserPhone}
+      />
+
       {/* DIRECCION */}
       <div className="border border-white/20 rounded-xl p-5 text-stone-50">
         <h3 className="font-bold flex items-center gap-2 text-lg mb-3">
-          <PiMapPinLineDuotone /> Dirección de entrega
+          <GrLocation /> Dirección de entrega
         </h3>
 
         <div className="flex flex-col gap-3">
@@ -90,9 +94,9 @@ const CheckoutDeliveryData = () => {
           </button>
 
           <button
-            onClick={() => setPaymentMethod("mp")}
+            onClick={() => setPaymentMethod("mercado pago")}
             className={`p-3 rounded-lg border flex items-center gap-3 cursor-pointer ${
-              paymentMethod === "mp"
+              paymentMethod === "mercado pago"
                 ? "bg-white/10 border-white test"
                 : "border-white/20"
             }`}
@@ -106,9 +110,11 @@ const CheckoutDeliveryData = () => {
               <FloatingInput
                 label="¿Con cuánto abonás?"
                 icon={<BsCurrencyDollar />}
-                type="number"
-                value={cashAmount}
-                onChange={setCashAmount}
+                type="text" // ← importante: text, NO number
+                value={
+                  cashAmount === "" ? "" : cashAmount.toLocaleString("es-AR")
+                }
+                onChange={handleCashChange}
               />
             </div>
           )}
@@ -121,7 +127,7 @@ const CheckoutDeliveryData = () => {
           <FaHandHoldingHeart size={24} /> Propina
         </h3>
         <div className="flex flex-wrap gap-3">
-          {[500, 1000, 2000].map((v) => (
+          {[0, 500, 1000, 2000].map((v) => (
             <button
               key={v}
               onClick={() => setTip(v)}
@@ -147,13 +153,27 @@ const CheckoutDeliveryData = () => {
             label="Propina"
             icon={<BsCurrencyDollar />}
             type="number"
-            value={customTip}
+            value={customTip.toLocaleString()}
             onChange={setCustomTip}
           />
         )}
       </div>
+
+      {/* SUMMARY CARD */}
+      <SummaryCard
+        clientOrder={clientOrder}
+        tip={tip}
+        customTip={customTip}
+        paymentMethod={paymentMethod}
+        cashAmount={cashAmount}
+        address={address}
+        betweenStreets={betweenStreets}
+        details={details}
+        userPhone={userPhone}
+        userName={userName}
+      />
     </div>
   );
 };
 
-export default CheckoutDeliveryData;
+export default Checkout;

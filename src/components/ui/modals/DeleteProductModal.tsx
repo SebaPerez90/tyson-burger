@@ -35,7 +35,7 @@ const DeleteProductModal = ({ cartId }: { cartId: number | undefined }) => {
       if (arr.length > updated.length) {
         localStorage.setItem("clientOrder", JSON.stringify(updated));
 
-        // notificamos al resto de la app (OrderCart escucha esto)
+        // notificamos al resto de la app (Cart escucha esto)
         window.dispatchEvent(
           new CustomEvent("client-order-updated", { detail: updated })
         );

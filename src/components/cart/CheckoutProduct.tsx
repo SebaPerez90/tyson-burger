@@ -51,7 +51,7 @@ const CartDetail = ({ clientOrder }: { clientOrder: Order[] }) => {
             <div className="flex gap-5 justify-between w-[45%]">
               <div className="flex items-center w-[130px] justify-between gap-5 font-baloo">
                 <span>{item.quantity}u</span>
-                <span className="">$ {item.total}</span>
+                <span className="">$ {item.total.toLocaleString("es-AR")}</span>
               </div>
 
               {/* delete product from cart modal */}
@@ -60,6 +60,15 @@ const CartDetail = ({ clientOrder }: { clientOrder: Order[] }) => {
           </li>
         ))}
       </ul>
+      <div className="flex justify-between items-center px-4 py-6 w-full">
+        <span className="font-bold">Subtotal</span>
+        <span className="font-bold">
+          ${" "}
+          {clientOrder
+            .reduce((total, item) => total + item.total, 0)
+            .toLocaleString("es-AR")}
+        </span>
+      </div>
     </div>
   );
 };

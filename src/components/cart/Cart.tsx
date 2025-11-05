@@ -12,13 +12,12 @@ import { usePathname } from "next/navigation";
 import { PiShoppingCartSimpleBold } from "react-icons/pi";
 
 import StatusBadge from "@/src/components/header/StatusBadge";
-import ConfirmOrderModal from "../ui/modals/ConfirmOrderModal";
 import DeliveryToggle from "./DeliveryToggle";
-import OrderDetail from "./OrderDetail";
+import CheckoutProduct from "./CheckoutProduct";
 import EmptyCart from "./EmptyCart";
-import CheckoutDeliveryData from "./CheckoutDeliveryData";
+import Checkout from "./Checkout";
 
-const OrderCart = () => {
+const Cart = () => {
   const [open, setOpen] = useState(false);
   const [isDelivery, setIsDelivery] = useState(true);
   const [clientOrder, setClientOrder] = useState<Order[]>([]);
@@ -55,38 +54,6 @@ const OrderCart = () => {
     if (pathname === "/promos") setOpen(false);
   }, [pathname]);
 
-  // const deleteThisFn = () => {
-  //   const orderId = generateShortId(5);
-
-  //   // Fecha y hora en formato 24 horas
-  //   const now = new Date();
-  //   const day = now.toLocaleDateString("es-AR", {
-  //     day: "2-digit",
-  //     month: "2-digit",
-  //     year: "2-digit",
-  //   });
-  //   const time = now.toLocaleTimeString("es-AR", {
-  //     hour: "2-digit",
-  //     minute: "2-digit",
-  //     hour12: false,
-  //   });
-
-  //   const cartData = {
-  //     orderId,
-  //     date: day,
-  //     time,
-  //   };
-
-  //   const storedCart = localStorage.getItem("clientOrder");
-  //   const currentCart = storedCart ? JSON.parse(storedCart) : [];
-
-  //   // push nueva orden
-  //   const updatedCart = [...currentCart, cartData];
-
-  //   // guarda array actualizado
-  //   localStorage.setItem("clientOrder", JSON.stringify(updatedCart));
-  // };
-
   return (
     <Sheet open={open} onOpenChange={setOpen}>
       <SheetTrigger asChild>
@@ -120,13 +87,10 @@ const OrderCart = () => {
               setIsDelivery={setIsDelivery}
             />
             {/* orders detail */}
-            <OrderDetail clientOrder={clientOrder} />
+            <CheckoutProduct clientOrder={clientOrder} />
 
             {/* checkout delivery data */}
-            <CheckoutDeliveryData />
-
-            {/* confirm order modal */}
-            <ConfirmOrderModal />
+            <Checkout clientOrder={clientOrder} />
           </div>
         )}
       </SheetContent>
@@ -134,4 +98,4 @@ const OrderCart = () => {
   );
 };
 
-export default OrderCart;
+export default Cart;

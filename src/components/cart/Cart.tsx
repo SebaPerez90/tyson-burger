@@ -13,9 +13,9 @@ import { PiShoppingCartSimpleBold } from "react-icons/pi";
 
 import StatusBadge from "@/src/components/header/StatusBadge";
 import DeliveryToggle from "./DeliveryToggle";
-import CheckoutProduct from "./CheckoutProduct";
 import EmptyCart from "./EmptyCart";
 import Checkout from "./Checkout";
+import ProductCheckout from "./ProductCheckout";
 
 const Cart = () => {
   const [open, setOpen] = useState(false);
@@ -87,10 +87,10 @@ const Cart = () => {
               setIsDelivery={setIsDelivery}
             />
             {/* orders detail */}
-            <CheckoutProduct clientOrder={clientOrder} />
+            <ProductCheckout clientOrder={clientOrder} />
 
             {/* checkout delivery data */}
-            <Checkout clientOrder={clientOrder} />
+            <Checkout clientOrder={clientOrder} isDelivery={isDelivery} />
           </div>
         )}
       </SheetContent>

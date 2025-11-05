@@ -13,6 +13,7 @@ type Props = {
   cashAmount: string | number;
   userPhone: string;
   userName: string;
+  isDelivery: boolean;
 };
 
 const SummaryCard = ({
@@ -26,15 +27,16 @@ const SummaryCard = ({
   cashAmount,
   userPhone,
   userName,
+  isDelivery,
 }: Props) => {
   const subtotal = clientOrder.reduce((acc, i) => acc + i.total, 0);
   const realTip = tip === "otro" ? Number(customTip) || 0 : tip;
-  const envio = 1000;
+  const envio = isDelivery ? 1000 : 0;
   const total = subtotal + envio + realTip;
 
   function buildWhatsAppMessage() {
     const subtotal = clientOrder.reduce((t, i) => t + i.total, 0);
-    const envio = 1000;
+    const envio = isDelivery ? 1000 : 0;
     const realTip = tip === "otro" ? Number(customTip) : tip;
     const total = subtotal + envio + realTip;
 
@@ -58,27 +60,44 @@ const SummaryCard = ({
       .join("\n");
 
     return `
-ORDEN: ${generateShortId(4)}
+Número de pedido: *${generateShortId(4)}*
 
-Hola, soy ${capitalizeWords(userName)} y realicé el siguiente pedido:
-
+Pedido para: *${capitalizeWords(userName)}* ${
+      isDelivery === false ? `| *RETIRA EN LOCAL*` : ""
+    }
+  
+ -----------------------------------------------
+  
 *PRODUCTOS*
 ${productsText}
 
-*DATOS DE ENTREGA*
+${
+  isDelivery
+    ? `*DATOS DE ENTREGA*
 • Télefono: *${userPhone}*
 • Domicilio: ${address}.
 ${betweenStreets && `• Entre calles: ${betweenStreets}.`}
-${details && `• Detalles: ${details}.`}
+${details && `• Detalles: ${details}.`}`
+    : ""
+}
 
 *RESUMEN* ${
       paymentMethod === "efectivo"
         ? `(Pago con efectivo)`
         : `(Pago con mercado pago)`
     } 
-${paymentMethod === "efectivo" && `• Pago con: $${cashAmount.toLocaleString()}`}
-${realTip !== 0 && `• Propina: $ ${realTip.toLocaleString()}`}
-• Envio: $${envio.toLocaleString()}
+${
+  paymentMethod === "efectivo"
+    ? `• Pago con: $${cashAmount.toLocaleString()}`
+    : ""
+}
+${
+  paymentMethod === "efectivo"
+    ? `• Vuelto: $${(Number(cashAmount) - Number(total)).toLocaleString()}`
+    : ""
+}
+${realTip !== 0 ? `• Propina: $ ${realTip.toLocaleString()}` : ""}
+${isDelivery ? `• Envio: $${envio.toLocaleString()}` : ""}
 
 • *TOTAL: $${total.toLocaleString()}* 
 
@@ -91,6 +110,12 @@ ${realTip !== 0 && `• Propina: $ ${realTip.toLocaleString()}`}
     const phone = `541132830604`;
 
     window.open(`https://wa.me/${phone}?text=${encoded}`, "_blank");
+
+    // localStorage.removeItem("clientOrder");
+
+    // setTimeout(() => {
+    //   window.location.href = "/";
+    // }, 300);
   };
 
   return (
@@ -109,13 +134,17 @@ ${realTip !== 0 && `• Propina: $ ${realTip.toLocaleString()}`}
         </div>
 
         <div className="flex justify-between items-center">
-          <span>Envío</span>
-          <span className="font-bold">$ {envio.toLocaleString("es-AR")}</span>
+          <span>Propina</span>
+          <span className="font-bold">
+            $ {isDelivery ? realTip.toLocaleString("es-AR") : 0}
+          </span>
         </div>
 
         <div className="flex justify-between items-center">
-          <span>Propina</span>
-          <span className="font-bold">$ {realTip.toLocaleString("es-AR")}</span>
+          <span>Envío</span>
+          <span className="font-bold">
+            $ {isDelivery ? envio.toLocaleString("es-AR") : 0}
+          </span>
         </div>
       </div>
 

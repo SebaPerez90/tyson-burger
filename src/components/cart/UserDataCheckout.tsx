@@ -10,7 +10,7 @@ interface Props {
   setUserPhone: (userPhone: string) => void;
 }
 
-const CheckoutUserData = ({
+const UserDataCheckout = ({
   userName,
   setUserName,
   userPhone,
@@ -43,4 +43,4 @@ const CheckoutUserData = ({
   );
 };
 
-export default CheckoutUserData;
+export default UserDataCheckout;

@@ -1,6 +1,6 @@
 "use client";
 
-import { useId } from "react";
+import { useEffect, useId } from "react";
 
 type Props = {
   label: string;
@@ -21,6 +21,23 @@ export default function FloatingInput({
 }: Props) {
   const id = useId();
 
+  useEffect(() => {
+    const handler = (e: WheelEvent) => {
+      const target = e.target as HTMLElement;
+      if (target instanceof HTMLInputElement && target.type === "number") {
+        e.preventDefault();
+      }
+    };
+
+    document.addEventListener("wheel", handler, {
+      passive: false,
+      capture: true,
+    });
+    return () => {
+      document.removeEventListener("wheel", handler);
+    };
+  }, []);
+
   return (
     <div className="relative w-full">
       {/* input */}
@@ -29,6 +46,7 @@ export default function FloatingInput({
         type={type}
         placeholder=" "
         value={value}
+        min={type === "number" ? 0 : undefined}
         onChange={(e) => onChange(e.target.value)}
         className={`
           ${icon ? "px-10 " : "px-5"}

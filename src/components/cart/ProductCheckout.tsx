@@ -4,7 +4,7 @@ import { PiHamburgerBold } from "react-icons/pi";
 
 import DeleteProductModal from "../ui/modals/DeleteProductModal";
 
-const CartDetail = ({ clientOrder }: { clientOrder: Order[] }) => {
+const ProductCheckout = ({ clientOrder }: { clientOrder: Order[] }) => {
   return (
     <div className="border border-white/30 p-5 rounded-xl mt-10 text-stone-50">
       <h2 className="font-bold mb-5 flex items-center px-4 gap-0.5">
@@ -73,4 +73,4 @@ const CartDetail = ({ clientOrder }: { clientOrder: Order[] }) => {
   );
 };
 
-export default CartDetail;
+export default ProductCheckout;

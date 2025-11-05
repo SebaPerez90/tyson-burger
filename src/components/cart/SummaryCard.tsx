@@ -111,11 +111,11 @@ ${isDelivery ? `• Envio: $${envio.toLocaleString()}` : ""}
 
     window.open(`https://wa.me/${phone}?text=${encoded}`, "_blank");
 
-    // localStorage.removeItem("clientOrder");
+    localStorage.removeItem("clientOrder");
 
-    // setTimeout(() => {
-    //   window.location.href = "/";
-    // }, 300);
+    setTimeout(() => {
+      window.location.href = "/";
+    }, 300);
   };
 
   return (

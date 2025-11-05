@@ -9,7 +9,12 @@
       "Salsa mac",
       "Pan de papa"
     ],
-    "price": "$9.000",
+    "price": {
+      "simple": 9000,
+      "doble": 11000,
+      "triple": 13000
+    },
+
     "image": "/menu/cheese-burger.webp"
   },
   {
@@ -23,7 +28,12 @@
       "Salsa BBQ casera",
       "Pan de papa"
     ],
-    "price": "$12.000",
+    "price": {
+      "simple": 9000,
+      "doble": 11000,
+      "triple": 13000
+    },
+
     "image": "/menu/oklahoma-burger.webp"
   },
   {
@@ -36,7 +46,12 @@
       "Tocino crocante",
       "Pan de papa"
     ],
-    "price": "$12.000",
+    "price": {
+      "simple": 9000,
+      "doble": 11000,
+      "triple": 13000
+    },
+
     "image": "/menu/cheese-bacon-burger.webp"
   },
   {
@@ -50,7 +65,12 @@
       "Tomate",
       "Pan de papa"
     ],
-    "price": "$12.000",
+    "price": {
+      "simple": 9000,
+      "doble": 11000,
+      "triple": 13000
+    },
+
     "image": "/menu/american-burger.webp"
   }
 ]

@@ -5,7 +5,11 @@ type HamburgerItem = {
   name: string;
   ingredients: string[];
   description: string;
-  price: string;
+  price: {
+    simple: number;
+    doble: number;
+    triple: number;
+  };
   image: string;
 };
 

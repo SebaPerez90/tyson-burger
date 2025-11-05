@@ -60,7 +60,7 @@ const ProductCheckout = ({ clientOrder }: { clientOrder: Order[] }) => {
           </li>
         ))}
       </ul>
-      <div className="flex justify-between items-center px-4 py-6 w-full">
+      <div className="flex justify-between items-center px-4 py-2 w-full">
         <span className="font-bold">Subtotal</span>
         <span className="font-bold">
           ${" "}

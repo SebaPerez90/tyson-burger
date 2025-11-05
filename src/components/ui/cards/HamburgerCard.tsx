@@ -34,7 +34,7 @@ const HamburgerCard = ({ item }: { item: HamburgerItem }) => {
         {/* Precio + Botones */}
         <div className="mt-auto flex items-center justify-between pt-4 border-t border-zinc-200">
           <span className="text-2xl font-bold font-almarai text-white">
-            {item.price}
+            {item.price.simple}
           </span>
           <Link href={`/menu/${item.name.toLowerCase().replace(/\s+/g, "-")}`}>
             <Button

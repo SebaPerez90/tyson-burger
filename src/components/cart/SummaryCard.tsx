@@ -65,7 +65,8 @@ Hola, soy ${capitalizeWords(userName)} y realicé el siguiente pedido:
 *PRODUCTOS*
 ${productsText}
 
-*DIRECCIÓN*
+*DATOS DE ENTREGA*
+• Télefono: *${userPhone}*
 • Domicilio: ${address}.
 ${betweenStreets && `• Entre calles: ${betweenStreets}.`}
 ${details && `• Detalles: ${details}.`}
@@ -87,7 +88,7 @@ ${realTip !== 0 && `• Propina: $ ${realTip.toLocaleString()}`}
   const handleSendOrder = () => {
     const msg = buildWhatsAppMessage();
     const encoded = encodeURIComponent(msg);
-    const phone = `54${userPhone}`; // número tuyo sin espacios ni guiones
+    const phone = `541132830604`;
 
     window.open(`https://wa.me/${phone}?text=${encoded}`, "_blank");
   };

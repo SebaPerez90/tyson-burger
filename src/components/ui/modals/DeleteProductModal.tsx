@@ -60,7 +60,7 @@ const DeleteProductModal = ({ cartId }: { cartId: number | undefined }) => {
           size={"icon-sm"}
           variant={"destructive"}
           type="button"
-          className="mr-3"
+          className="mr-3 mb-3"
           aria-label="Eliminar producto"
         >
           <FaRegTrashAlt />

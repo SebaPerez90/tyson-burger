@@ -16,6 +16,7 @@ type HamburgerItem = {
 type Order = {
   id?: number;
   total: number;
+  extras?: string[];
   setCount: React.Dispatch<React.SetStateAction<number>>;
   note?: string;
   productName?: string;

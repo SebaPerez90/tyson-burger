@@ -5,7 +5,7 @@ import { useEffect, useState } from "react";
 import { parsePriceStringToNumber } from "@/src/utils/priceConverter";
 
 import SubMenuAcordeon from "@/src/components/ui/acordeons/SubMenuAcordeon";
-import AddToCart from "@/src/components/cart/AddToCart";
+import AddToCart from "@/src/components/menu/AddToCart";
 import BurgerSizeSelector from "../../menu/BurgerSizeSelector";
 
 type Extra = { id: string; label: string; price: string };
@@ -15,11 +15,10 @@ const ProductDetailCard = ({ product }: { product: HamburgerItem }) => {
   const [note, setNote] = useState("");
   const [count, setCount] = useState(1);
   const [totalPrice, setTotalPrice] = useState(0);
+  const [basePrice, setBasePrice] = useState(0);
   const [burgerSize, setBurgerSize] = useState<"simple" | "doble" | "triple">(
     "simple"
   );
-
-  const basePrice = parsePriceStringToNumber(String(product.price.simple));
 
   useEffect(() => {
     const extrasSum = selectedExtras.reduce(
@@ -27,7 +26,11 @@ const ProductDetailCard = ({ product }: { product: HamburgerItem }) => {
       0
     );
     setTotalPrice(basePrice + extrasSum);
-  }, [selectedExtras, basePrice]);
+  }, [selectedExtras, basePrice, burgerSize]);
+
+  useEffect(() => {
+    setBasePrice(parsePriceStringToNumber(String(product.price[burgerSize])));
+  }, [burgerSize, product.price]);
 
   const handleExtraChange = (extra: Extra) => {
     setSelectedExtras((prev) => {
@@ -84,12 +87,7 @@ const ProductDetailCard = ({ product }: { product: HamburgerItem }) => {
 
           {/* precio   */}
           <span className="text-3xl font-bold text-white mt-8">
-            $
-            {burgerSize === "simple"
-              ? product.price.simple.toLocaleString()
-              : burgerSize === "doble"
-              ? product.price.doble.toLocaleString()
-              : product.price.triple.toLocaleString()}
+            ${basePrice.toLocaleString()}
           </span>
         </div>
 
@@ -124,7 +122,7 @@ const ProductDetailCard = ({ product }: { product: HamburgerItem }) => {
         quantity={count}
         selectedExtras={selectedExtras}
         productName={product.name}
-        productSize={"simple"}
+        productSize={burgerSize}
         note={note}
         productImage={product.image}
         setCount={setCount}

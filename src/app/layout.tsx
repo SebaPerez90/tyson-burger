@@ -99,8 +99,8 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} antialiased bg-foreground `}
       >
         <Navbar />
-        {children}
         <CartContainer />
+        {children}
         <Toaster />
       </body>
     </html>

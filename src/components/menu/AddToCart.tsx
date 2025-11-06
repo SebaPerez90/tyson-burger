@@ -41,6 +41,7 @@ const AddToCart = ({
 
       // guarda array actualizado
       localStorage.setItem("clientOrder", JSON.stringify(updatedCart));
+      localStorage.setItem("clientOrder_ts", Date.now().toString());
 
       // notifica a listeners (Cart)
       window.dispatchEvent(new Event("client-order-updated"));

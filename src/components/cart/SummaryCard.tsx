@@ -152,7 +152,8 @@ ${details ? `• Detalles: ${details}.` : ""}`
 
     window.open(`https://wa.me/${phone}?text=${encoded}`, "_blank");
 
-    // localStorage.removeItem("clientOrder");
+    localStorage.removeItem("clientOrder");
+    localStorage.removeItem("clientOrder_ts");
 
     setTimeout(() => {
       window.location.href = "/";

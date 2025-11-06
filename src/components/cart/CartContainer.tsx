@@ -6,40 +6,60 @@ import Cart from "./Cart";
 const CartContainer = () => {
   const [clientOrder, setClientOrder] = useState<Order[]>([]);
 
-  useEffect(() => {
+  const EXP_MIN = 120; // 2horas
+
+  const isExpired = () => {
+    const timeStamp = localStorage.getItem("clientOrder_ts");
+    if (!timeStamp) return false;
+    const diff = Date.now() - Number(timeStamp);
+    return diff > EXP_MIN * 60_000;
+  };
+
+  const hardClear = () => {
+    localStorage.removeItem("clientOrder");
+    localStorage.removeItem("clientOrder_ts");
+    setClientOrder([]);
+  };
+
+  const loadOrder = () => {
+    if (isExpired()) return hardClear();
+
     const raw = localStorage.getItem("clientOrder");
-    if (raw) {
-      try {
-        const data = JSON.parse(raw);
-        setClientOrder(data);
-      } catch (err) {
-        console.error("clientOrder malformed", err);
-      }
+    if (!raw) return setClientOrder([]);
+
+    try {
+      const parsed = JSON.parse(raw);
+      setClientOrder(parsed ?? []);
+    } catch {
+      hardClear();
     }
+  };
+
+  // mount
+  useEffect(() => {
+    loadOrder();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
+  // listen events
   useEffect(() => {
     const updateClientOrder = () => {
-      const raw = localStorage.getItem("clientOrder");
-      const parsed = raw ? JSON.parse(raw) : [];
-      setClientOrder(parsed ?? []);
+      loadOrder();
     };
 
     window.addEventListener("client-order-updated", updateClientOrder);
-    return () => {
+
+    return () =>
       window.removeEventListener("client-order-updated", updateClientOrder);
-    };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  console.log(clientOrder.length);
-
   return (
-    //
     <div
       className={`${
         clientOrder.length === 0 || !clientOrder
           ? "hidden"
-          : "fixed block cursor-pointer top-188 right-4 z-50"
+          : "fixed block cursor-pointer top-188 right-4 z-50 max-w-[1400px]"
       } `}
     >
       {/* wrapper para el ícono y badge */}

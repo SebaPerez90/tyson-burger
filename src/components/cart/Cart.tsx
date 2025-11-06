@@ -16,6 +16,7 @@ import DeliveryToggle from "./DeliveryToggle";
 import EmptyCart from "./EmptyCart";
 import Checkout from "./Checkout";
 import ProductCheckout from "./ProductCheckout";
+import CloseSheetModal from "../ui/modals/CloseSheetModal ";
 
 const Cart = () => {
   const [open, setOpen] = useState(false);
@@ -62,36 +63,45 @@ const Cart = () => {
           className="text-background hover:text-red-500 transition-colors cursor-pointer"
         />
       </SheetTrigger>
+
       <SheetContent
         aria-describedby={undefined}
-        className="w-[800px] bg-zinc-900 border-0 py-10 px-16"
+        className="w-[800px] z-50 bg-zinc-900 border-0 py-10 px-16"
       >
         {clientOrder.length === 0 || !clientOrder ? (
           <EmptyCart setOpen={setOpen} />
         ) : (
-          <div className="flex flex-col gap-5 overflow-y-scroll px-10 pb-10">
-            <SheetHeader>
-              <SheetTitle className="text-white flex justify-between items-center w-full">
-                <span>
-                  Pedido {isDelivery ? "de Delivery" : "para Retirar"}
-                </span>
+          <>
+            {open && (
+              <div className="fixed w-full h-dvh left-0 top-0 bg-transparent cursor-default z-30" />
+            )}
+            <div className="flex flex-col gap-5 overflow-y-scroll px-10 pb-10 z-50">
+              <SheetHeader>
+                {/* close sheet modal */}
+                <CloseSheetModal setOpen={setOpen} />
 
-                {/* work status badge */}
-                <StatusBadge />
-              </SheetTitle>
-            </SheetHeader>
+                <SheetTitle className="text-white flex justify-between items-center w-full">
+                  <span>
+                    Pedido {isDelivery ? "de Delivery" : "para Retirar"}
+                  </span>
 
-            {/* delivery toggle button */}
-            <DeliveryToggle
-              isDelivery={isDelivery}
-              setIsDelivery={setIsDelivery}
-            />
-            {/* orders detail */}
-            <ProductCheckout clientOrder={clientOrder} />
+                  {/* work status badge */}
+                  <StatusBadge />
+                </SheetTitle>
+              </SheetHeader>
 
-            {/* checkout delivery data */}
-            <Checkout clientOrder={clientOrder} isDelivery={isDelivery} />
-          </div>
+              {/* delivery toggle button */}
+              <DeliveryToggle
+                isDelivery={isDelivery}
+                setIsDelivery={setIsDelivery}
+              />
+              {/* orders detail */}
+              <ProductCheckout clientOrder={clientOrder} />
+
+              {/* checkout delivery data */}
+              <Checkout clientOrder={clientOrder} isDelivery={isDelivery} />
+            </div>
+          </>
         )}
       </SheetContent>
     </Sheet>

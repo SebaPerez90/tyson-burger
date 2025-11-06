@@ -52,23 +52,39 @@ const SummaryCard = ({
     };
 
     const productsText = clientOrder
-      .map(
-        (i) =>
-          `• *${i.productName?.toUpperCase()}* x${
-            i.quantity
-          }  $${i.total.toLocaleString()}`
-      )
+      .map((i) => {
+        const size = i.productSize ? ` (${i.productSize.toUpperCase()})` : "";
+
+        const extras =
+          Array.isArray(i.extras) && i.extras.length > 0
+            ? i.extras.map((e) => `    - ${e}`).join("\n")
+            : "";
+
+        const note = i.note ? `    *NOTA:* _${i.note}_` : "";
+
+        const details =
+          extras || note
+            ? `\n${[extras, note].filter(Boolean).join("\n")}`
+            : "";
+
+        return `• *${i.productName?.toUpperCase()}*${size} x${
+          i.quantity
+        }  $${i.total.toLocaleString()}${details}`;
+      })
       .join("\n");
 
     return `
-Número de pedido: *${generateShortId(4)}*
+Número de pedido: *${generateShortId(
+      4
+    )}*  |  Hora ingreso: *${new Date().toLocaleTimeString([], {
+      hour: "2-digit",
+      minute: "2-digit",
+    })}*
 
 Pedido para: *${capitalizeWords(userName)}* ${
       isDelivery === false ? `| *RETIRA EN LOCAL*` : ""
     }
-  
- -----------------------------------------------
-  
+-----------------------------------------------
 *PRODUCTOS*
 ${productsText}
 
@@ -77,8 +93,8 @@ ${
     ? `*DATOS DE ENTREGA*
 • Télefono: *${userPhone}*
 • Domicilio: ${address}.
-${betweenStreets && `• Entre calles: ${betweenStreets}.`}
-${details && `• Detalles: ${details}.`}`
+${betweenStreets ? `• Entre calles: ${betweenStreets}.` : ""}
+${details ? `• Detalles: ${details}.` : ""}`
     : ""
 }
 
@@ -87,18 +103,19 @@ ${details && `• Detalles: ${details}.`}`
         ? `(Pago con efectivo)`
         : `(Pago con mercado pago)`
     } 
-${
-  paymentMethod === "efectivo"
-    ? `• Pago con: $${cashAmount.toLocaleString()}`
-    : ""
-}
-${
-  paymentMethod === "efectivo"
-    ? `• Vuelto: $${(Number(cashAmount) - Number(total)).toLocaleString()}`
-    : ""
-}
-${realTip !== 0 ? `• Propina: $ ${realTip.toLocaleString()}` : ""}
-${isDelivery ? `• Envio: $${envio.toLocaleString()}` : ""}
+    • Subtotal productos: $${subtotal.toLocaleString()}
+    ${realTip !== 0 ? `• Propina: $${realTip.toLocaleString()}` : ""}
+    ${isDelivery ? `• Envio: $${envio.toLocaleString()}` : ""}
+    ${
+      paymentMethod === "efectivo"
+        ? `• Pago con: $${cashAmount.toLocaleString()}`
+        : ""
+    }
+    ${
+      paymentMethod === "efectivo"
+        ? `• Vuelto: $${(Number(cashAmount) - Number(total)).toLocaleString()}`
+        : ""
+    }
 
 • *TOTAL: $${total.toLocaleString()}* 
 
@@ -135,7 +152,7 @@ ${isDelivery ? `• Envio: $${envio.toLocaleString()}` : ""}
 
     window.open(`https://wa.me/${phone}?text=${encoded}`, "_blank");
 
-    localStorage.removeItem("clientOrder");
+    // localStorage.removeItem("clientOrder");
 
     setTimeout(() => {
       window.location.href = "/";

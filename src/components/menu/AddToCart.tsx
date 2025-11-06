@@ -1,5 +1,4 @@
 import { Button } from "../ui/button";
-import { toast } from "sonner";
 
 import { useRouter } from "next/navigation";
 import { generateShortId } from "@/src/utils/uuidGenerator";
@@ -45,13 +44,6 @@ const AddToCart = ({
 
       // notifica a listeners (Cart)
       window.dispatchEvent(new Event("client-order-updated"));
-
-      toast.success(`Producto agregado al carrito`, {
-        style: {
-          width: "max-content",
-        },
-        duration: 1000,
-      });
 
       router.push("/menu");
     }

@@ -21,10 +21,10 @@ const HamburgerCard = ({ item }: { item: HamburgerItem }) => {
 
       <div className="p-6 pt-0 flex flex-col justify-between grow">
         <div>
-          <span className="text-2xl text-orange-100 font-bold mb-3">
+          <span className="text-3xl text-orange-100 font-bold mb-3">
             {item.name}
           </span>
-          <ul className="list-disc list-inside mt-3 mb-4 marker:text-green-500 text-sm text-white/70">
+          <ul className="list-disc list-inside mt-8 mb-4 marker:text-green-500 text-sm text-white/70">
             {item.ingredients.map((item, index) => (
               <li key={index}>{item}</li>
             ))}
@@ -32,20 +32,29 @@ const HamburgerCard = ({ item }: { item: HamburgerItem }) => {
         </div>
 
         {/* Precio + Botones */}
-        <div className="mt-auto flex items-center justify-between pt-4 border-t border-zinc-200">
-          <span className="text-2xl font-bold font-baloo text-white">
-            ${item.price.simple.toLocaleString()}
-          </span>
+        <div className="flex flex-col gap-0.5 mt-auto pt-4 border-t border-white/10 min-h-[82px]">
+          <div className="flex flex-col gap-0.5">
+            <span className="text-xl font-bold font-baloo text-white">
+              ${item.price.simple.toLocaleString()}
+            </span>
+
+            <span className="text-xs opacity-40 ml-1 text-white line-through">
+              $11.000
+            </span>
+
+            <span className="text-[10px] px-2 py-2px bg-green-600/40 text-green-400 rounded-full w-fit">
+              18% OFF
+            </span>
+          </div>
+
           <Link href={`/menu/${item.name.toLowerCase().replace(/\s+/g, "-")}`}>
+            {/* <Link href={`/menu/${item.slug}`}> */}
             <Button
               variant="destructive"
               size="lg"
-              className="rounded-full cursor-pointer shadow-lg hover:scale-105 transition-transform"
+              className="w-full rounded-full cursor-pointer shadow-lg hover:scale-[1.02] transition-transform mt-3"
             >
-              Ver más
-              <span role="img" aria-label="hamburguesa">
-                🍔
-              </span>
+              Armar pedido 🍔
             </Button>
           </Link>
         </div>

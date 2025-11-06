@@ -4,13 +4,12 @@ import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
 
-import OpenStatusBadge from "@/src/components/header/OpenStatusBadge";
-
 import {
   Tooltip,
   TooltipContent,
   TooltipTrigger,
 } from "@/src/components/ui/tooltip";
+import OpenStatusBadge from "./OpenStatusBadge";
 
 const links = [
   { href: "/menu", label: "Menú" },
@@ -23,7 +22,7 @@ export const Navbar = () => {
 
   return (
     <header className="sticky bg-foreground/60 top-0 w-full z-50 px-10 sm:px-16 lg:px-24 py-4 backdrop-blur-xl shadow-md">
-      <div className="max-w-[1400px] mx-auto">
+      <div className="max-w-[1200px] mx-auto">
         <div className="flex justify-between items-center">
           {/* Logo */}
           <Tooltip>
@@ -32,8 +31,8 @@ export const Navbar = () => {
                 <Image
                   priority
                   className="size-full object-cover saturate-150"
-                  src="/logo2.jpg"
-                  alt="Logo"
+                  src="/logo.webp"
+                  alt="Tyson Burger Logo"
                   width={50}
                   height={50}
                 />

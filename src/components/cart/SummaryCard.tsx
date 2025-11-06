@@ -1,5 +1,6 @@
 import { generateShortId } from "@/src/utils/uuidGenerator";
 import { Button } from "../ui/button";
+import { toast } from "sonner";
 // import ConfirmOrderModal from "../ui/modals/ConfirmOrderModal";
 
 type Props = {
@@ -105,6 +106,29 @@ ${isDelivery ? `• Envio: $${envio.toLocaleString()}` : ""}
   }
 
   const handleSendOrder = () => {
+    if (isDelivery) {
+      if (!address || !betweenStreets) {
+        toast.error("Necesitamos la dirección exacta para enviar el pedido.", {
+          style: { width: "max-content" },
+        });
+
+        const el = document.getElementById("delivery-checkout");
+        if (el) {
+          el.scrollIntoView({ behavior: "smooth", block: "start" });
+        }
+
+        setTimeout(() => {
+          const firstInput = document.querySelector(
+            !address ? 'input[name="address"]' : 'input[name="betweenStreets"]'
+          ) as HTMLInputElement | null;
+
+          firstInput?.focus();
+        }, 500);
+
+        return;
+      }
+    }
+
     const msg = buildWhatsAppMessage();
     const encoded = encodeURIComponent(msg);
     const phone = `541132830604`;
@@ -119,7 +143,7 @@ ${isDelivery ? `• Envio: $${envio.toLocaleString()}` : ""}
   };
 
   return (
-    <div className="border border-white/20 text-white rounded-xl mt-8 p-5 bg-inherit">
+    <div className="border border-white/20 text-white rounded-xl mt-5a1 p-5 bg-inherit">
       <div className="flex items-center gap-2 mb-6">
         <span className="text-xl">🧾</span>
         <h2 className="font-bold text-lg">Resumen</h2>
@@ -158,7 +182,9 @@ ${isDelivery ? `• Envio: $${envio.toLocaleString()}` : ""}
       </div>
 
       <Button
-        className="w-full mt-10 rounded-full text-lg py-6"
+        className={`w-full mt-10 rounded-full text-lg py-6 ${
+          isDelivery && (!address || !betweenStreets) ? "opacity-50" : ""
+        }`}
         variant="destructive"
         onClick={handleSendOrder}
       >

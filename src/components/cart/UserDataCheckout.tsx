@@ -17,7 +17,7 @@ const UserDataCheckout = ({
   setUserPhone,
 }: Props) => {
   return (
-    <div className="border border-white/30 p-5 rounded-xl text-stone-50 w-full flex flex-col gap-6">
+    <div className="border border-white/30 p-5 rounded-xl text-stone-50 w-full flex flex-col gap-6 mt-5">
       <h2 className="font-bold flex items-center gap-2 text-lg">
         <FaUser />
         Tus datos

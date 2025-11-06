@@ -59,13 +59,13 @@ export default async function ProductPage({
   }
 
   return (
-    <div className="min-h-screen relative mb-32">
+    <div className="min-h-screen relative mb-24">
       {/* Botón volver */}
       <Link
         href="/menu"
-        className="absolute left-0 top-5 z-20 p-2 rounded-full bg-white hover:bg-white/95 transition"
+        className="fixed left-10 top-30 z-50 p-1.5 rounded-full bg-white hover:bg-white/95 transition"
       >
-        <MdKeyboardBackspace size={35} className="cursor-pointer" />
+        <MdKeyboardBackspace size={30} className="cursor-pointer" />
       </Link>
 
       {/* Detalles del producto */}

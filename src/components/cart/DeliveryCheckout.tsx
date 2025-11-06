@@ -22,7 +22,7 @@ const DeliveryCheckout = ({
   setDetails,
 }: DeliveryCheckoutProps) => {
   return (
-    <>
+    <div id="delivery-checkout">
       {isDelivery ? (
         <div className="border border-white/20 rounded-xl p-5 text-stone-50">
           <h3 className="font-bold flex items-center gap-2 text-lg mb-3">
@@ -32,12 +32,14 @@ const DeliveryCheckout = ({
           {/* location */}
           <div className="space-y-5 mt-8">
             <FloatingInput
+              name="address"
               label="Calle y número"
               type="text"
               value={address}
               onChange={setAddress}
             />
             <FloatingInput
+              name="betweenStreets"
               label="Entre calles"
               type="text"
               value={betweenStreets}
@@ -74,7 +76,7 @@ const DeliveryCheckout = ({
           </div>
         </div>
       )}
-    </>
+    </div>
   );
 };
 

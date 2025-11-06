@@ -58,7 +58,7 @@ const AddToCart = ({
   };
 
   return (
-    <div className="flex items-center justify-center gap-5 fixed bottom-10 mx-auto left-0 right-0">
+    <div className="flex items-center justify-center gap-5 fixed bottom-7 mx-auto left-0 right-0">
       {/* CONTADOR */}
       <div className="flex items-center bg-secondary border border-white/30 rounded-full p-[0.2rem_0rem!important]  text-black overflow-hidden">
         <Button

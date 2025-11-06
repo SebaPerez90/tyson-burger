@@ -3,6 +3,7 @@
 import { useEffect, useId } from "react";
 
 type Props = {
+  name?: string;
   label: string;
   value: string | number;
   onChange: (value: string) => void;
@@ -12,6 +13,7 @@ type Props = {
 };
 
 export default function FloatingInput({
+  name,
   label,
   value,
   onChange,
@@ -43,6 +45,7 @@ export default function FloatingInput({
       {/* input */}
       <input
         id={id}
+        name={name}
         type={type}
         placeholder=" "
         value={value}

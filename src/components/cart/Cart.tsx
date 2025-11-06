@@ -11,12 +11,12 @@ import { usePathname } from "next/navigation";
 
 import { IoCartOutline } from "react-icons/io5";
 
-import StatusBadge from "@/src/components/header/StatusBadge";
 import DeliveryToggle from "./DeliveryToggle";
 import EmptyCart from "./EmptyCart";
 import Checkout from "./Checkout";
 import ProductCheckout from "./ProductCheckout";
 import CloseSheetModal from "../ui/modals/CloseSheetModal ";
+import OpenStatusBadge from "../header/OpenStatusBadge";
 
 const Cart = ({ clientOrder }: { clientOrder: Order[] }) => {
   const [open, setOpen] = useState(false);
@@ -60,7 +60,7 @@ const Cart = ({ clientOrder }: { clientOrder: Order[] }) => {
                   </span>
 
                   {/* work status badge */}
-                  <StatusBadge />
+                  <OpenStatusBadge />
                 </SheetTitle>
               </SheetHeader>
 

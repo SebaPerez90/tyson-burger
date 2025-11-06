@@ -4,7 +4,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
 
-import StatusBadge from "@/src/components/header/StatusBadge";
+import OpenStatusBadge from "@/src/components/header/OpenStatusBadge";
 
 import {
   Tooltip,
@@ -64,7 +64,7 @@ export const Navbar = () => {
             })}
           </nav>
 
-          <StatusBadge />
+          <OpenStatusBadge />
         </div>
       </div>
     </header>

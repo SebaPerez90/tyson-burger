@@ -9,7 +9,7 @@ import {
 import { useEffect, useState } from "react";
 import { usePathname } from "next/navigation";
 
-import { PiShoppingCartSimpleBold } from "react-icons/pi";
+import { IoCartOutline } from "react-icons/io5";
 
 import StatusBadge from "@/src/components/header/StatusBadge";
 import DeliveryToggle from "./DeliveryToggle";
@@ -18,37 +18,11 @@ import Checkout from "./Checkout";
 import ProductCheckout from "./ProductCheckout";
 import CloseSheetModal from "../ui/modals/CloseSheetModal ";
 
-const Cart = () => {
+const Cart = ({ clientOrder }: { clientOrder: Order[] }) => {
   const [open, setOpen] = useState(false);
   const [isDelivery, setIsDelivery] = useState(true);
-  const [clientOrder, setClientOrder] = useState<Order[]>([]);
 
   const pathname = usePathname();
-
-  useEffect(() => {
-    const raw = localStorage.getItem("clientOrder");
-    if (raw) {
-      try {
-        const data = JSON.parse(raw);
-        setClientOrder(data);
-      } catch (err) {
-        console.error("clientOrder malformed", err);
-      }
-    }
-  }, []);
-
-  useEffect(() => {
-    const updateClientOrder = () => {
-      const raw = localStorage.getItem("clientOrder");
-      const parsed = raw ? JSON.parse(raw) : [];
-      setClientOrder(parsed ?? []);
-    };
-
-    window.addEventListener("client-order-updated", updateClientOrder);
-    return () => {
-      window.removeEventListener("client-order-updated", updateClientOrder);
-    };
-  }, []);
 
   useEffect(() => {
     if (pathname === "/menu") setOpen(false);
@@ -58,10 +32,10 @@ const Cart = () => {
   return (
     <Sheet open={open} onOpenChange={setOpen}>
       <SheetTrigger asChild>
-        <PiShoppingCartSimpleBold
-          size={23}
-          className="text-background hover:text-red-500 transition-colors cursor-pointer"
-        />
+        <div className="bg-background flex items-center gap-2 rounded-xl px-6 py-3.5">
+          <IoCartOutline size={24} className="relative -top-0.5" />
+          <span className="font-medium font-baloo">Ver carrito</span>
+        </div>
       </SheetTrigger>
 
       <SheetContent

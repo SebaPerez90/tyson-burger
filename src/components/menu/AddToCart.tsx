@@ -50,7 +50,7 @@ const AddToCart = ({
         style: {
           width: "max-content",
         },
-        duration: 3000,
+        duration: 1000,
       });
 
       router.push("/menu");

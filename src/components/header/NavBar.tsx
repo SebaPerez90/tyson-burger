@@ -11,7 +11,6 @@ import {
   TooltipContent,
   TooltipTrigger,
 } from "@/src/components/ui/tooltip";
-import Cart from "../cart/Cart";
 
 const links = [
   { href: "/menu", label: "Menú" },
@@ -65,12 +64,7 @@ export const Navbar = () => {
             })}
           </nav>
 
-          <div className="flex items-center gap-6">
-            <StatusBadge />
-
-            {/* Carrito */}
-            <Cart />
-          </div>
+          <StatusBadge />
         </div>
       </div>
     </header>

@@ -50,8 +50,8 @@ const SubMenuAcordeon = ({
       className="w-full mt-8 border border-white/20 rounded-xl overflow-hidden"
     >
       <AccordionItem value="item-1" className="bg-[#1a1a1a] ">
-        <AccordionTrigger className="text-xl text-white px-4 py-6 hover:no-underline cursor-pointer">
-          Agrega ingredientes para más placer!😋
+        <AccordionTrigger className="text-base sm:text-xl text-white px-4 py-6 hover:no-underline cursor-pointer">
+          Agrega ingredientes para más placer 😋
         </AccordionTrigger>
 
         <AccordionContent className="px-4 py-3">
@@ -67,19 +67,22 @@ const SubMenuAcordeon = ({
                       : ""
                   }`}
                 >
-                  <div className="flex items-center gap-3">
+                  <div className="flex items-center gap-1 sm:gap-3">
                     <Checkbox
                       id={extra.id}
                       checked={isSelected}
                       onCheckedChange={() => onExtraChange(extra)}
-                      className="w-6 h-6 rounded-sm bg-zinc-800 border-white/30 cursor-pointer data-[state=checked]:bg-red-500 data-[state=checked]:border-red-400 data-[state=checked]:text-white"
+                      className="h-4 w-4 sm:w-6 sm:h-6 rounded-none sm:rounded-sm bg-zinc-800 border-white/30 cursor-pointer data-[state=checked]:bg-red-500 data-[state=checked]:border-red-400 data-[state=checked]:text-white"
                     />
 
-                    <label htmlFor={extra.id} className="text-white">
+                    <label
+                      htmlFor={extra.id}
+                      className="text-white text-xs sm:text-base"
+                    >
                       {extra.label}
                     </label>
                   </div>
-                  <span className="text-white font-medium text-lg">
+                  <span className="text-white font-medium text-xs w-max sm:text-lg">
                     {extra.price}
                   </span>
                 </li>

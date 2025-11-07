@@ -20,6 +20,9 @@ const links = [
 export const Navbar = () => {
   const pathname = usePathname();
 
+  const isDetail = pathname.startsWith("/menu/") && pathname !== "/menu";
+  if (isDetail) return null;
+
   return (
     <header className="sticky bg-foreground/60 top-0 w-full z-50 px-10 sm:px-16 lg:px-24 py-4 backdrop-blur-xl shadow-md">
       <div className="max-w-[1200px] mx-auto">

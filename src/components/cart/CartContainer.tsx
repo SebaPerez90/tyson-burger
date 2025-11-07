@@ -65,7 +65,7 @@ const CartContainer = () => {
       className={`${
         clientOrder.length === 0 || !clientOrder
           ? "hidden"
-          : "fixed block cursor-pointer top-[90%] right-4 z-50 max-w-[1400px]"
+          : "fixed sm:scale-100 scale-75 block cursor-pointer top-[93%] sm:top-[90%] sm:right-4 right-0 z-50 max-w-[1400px]"
       } `}
     >
       {/* wrapper para el ícono y badge */}

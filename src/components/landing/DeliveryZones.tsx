@@ -45,7 +45,7 @@ export default function DeliveryAndPickup() {
       <div className="max-w-lg mx-auto text-center space-y-2">
         <p className="text-stone-200 font-semibold text-base">
           Hacemos envíos{" "}
-          <span className="text-red-400 font-bold">hasta 3km</span> a la redonda
+          <span className="text-red-500 font-bold">hasta 3km</span> a la redonda
         </p>
         <p className="text-[13px] text-stone-400">
           Si estás fuera de ese rango, consultanos por WhatsApp 😉
@@ -65,11 +65,11 @@ export default function DeliveryAndPickup() {
       </div>
 
       {/* Tarjeta de Retiro en local */}
-      <div className="max-w-sm mx-auto border border-white/20 rounded-xl p-6 text-stone-50 space-y-4">
-        <h3 className="font-bold flex items-center gap-2 text-xl">
+      <div className="max-w-sm mx-auto border border-white/20 rounded-xl p-6 text-stone-50 space-y-4 flex flex-col md:items-start items-center ">
+        <h3 className="font-bold flex items-center gap-2 text-xl w-60 md:w-auto">
           <GrLocation /> Retiro en el local
         </h3>
-        <div className="space-y-1 text-sm text-stone-300">
+        <div className="space-y-1 text-sm text-stone-300 w-60 md:w-auto ">
           <p className="text-base font-medium text-stone-50">
             Calle 1 626 — Berazategui Oeste
           </p>

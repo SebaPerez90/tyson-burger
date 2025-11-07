@@ -23,7 +23,7 @@ const CloseSheetModal = ({ setOpen }: { setOpen: (open: boolean) => void }) => {
           size="icon-sm"
           variant="outline"
           type="button"
-          className="text-black hover:text-red-500 absolute top-10 right-4 z-50"
+          className="text-black hover:text-red-500 absolute sm:top-10 top-3 sm:right-4 right-2 z-50 sm:scale-100 scale-75"
           aria-label="Cerrar carrito"
         >
           X

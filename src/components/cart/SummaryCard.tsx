@@ -126,7 +126,7 @@ ${details ? `• Detalles: ${details}.` : ""}`
     if (isDelivery) {
       if (!address || !betweenStreets) {
         toast.error("Necesitamos la dirección exacta para enviar el pedido.", {
-          style: { width: "max-content" },
+          style: { width: "fit-content" },
         });
 
         const el = document.getElementById("delivery-checkout");

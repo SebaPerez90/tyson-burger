@@ -40,7 +40,7 @@ const HowToOrder = () => {
             <Bike size={36} className="text-destructive" />
           </div>
           <h3 className="text-xl font-semibold text-background">
-            Cocinamos y te lo llevamos
+            Cocinamos y te lo llevamos.
           </h3>
           <p className="text-sm text-white/70">
             Preparado al momento. Te llega calentita.

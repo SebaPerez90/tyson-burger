@@ -23,7 +23,7 @@ export const Navbar = () => {
   if (isDetail) return null;
 
   return (
-    <header className="sticky bg-foreground/60 top-0 w-full z-50 px-10 sm:px-16 lg:px-24 py-4 backdrop-blur-xl shadow-md">
+    <header className="sticky bg-foreground/60 top-0 w-full z-50 px-0 sm:px-16 lg:px-24 sm:py-4 py-2 backdrop-blur-xl shadow-md">
       <div className="max-w-[1200px] mx-auto">
         <div className="flex justify-between items-center">
           {/* Logo */}
@@ -40,7 +40,7 @@ export const Navbar = () => {
                     height={50}
                   />
                 </div>
-                <span className="font-baloo font-bold text-white">
+                <span className="font-baloo sm:text-base text-xs font-bold text-white">
                   Tyson Burger
                 </span>
               </Link>

@@ -7,7 +7,7 @@ const truncate = (str: string, max = 28) =>
 
 const ProductCheckout = ({ clientOrder }: { clientOrder: Order[] }) => {
   return (
-    <div className="min-[500px]:border min-[500px]:border-white/30 min-[500px]:p-5 rounded-xl text-stone-50">
+    <div className="min-[500px]:border min-[500px]:border-white/30 min-[500px]:p-5 rounded-xl text-stone-50 max-[500px]:py-5">
       <h2 className="font-bold mb-5 flex items-center px-4 gap-0.5">
         <PiHamburgerBold />
         {clientOrder.reduce((total, item) => total + item.quantity, 0)}{" "}

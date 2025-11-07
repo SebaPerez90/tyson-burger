@@ -20,10 +20,10 @@ const socialLinks = [
 
 const Footer = () => {
   return (
-    <footer className="text-white py-8">
-      <div className="max-w-7xl mx-auto px-4 grid md:grid-cols-3 gap-8">
+    <footer className="text-white py-8  w-full">
+      <div className="max-w-7xl mx-auto px-4 grid md:grid-cols-2 md:gap-8 gap-12">
         {/* social links */}
-        <div className="flex flex-col items-start gap-4 justify-center">
+        <div className="flex flex-col items-start gap-4 justify-center md:order-1 order-2">
           <p className="text-white font-semibold text-lg">
             Seguinos en las redes
           </p>
@@ -57,34 +57,38 @@ const Footer = () => {
         </div>
 
         {/* Contacto y direcciones */}
-        <div className="flex flex-col space-y-2">
-          <h3 className="font-semibold text-lg">Contacto</h3>
-          <p className="text-sm text-gray-400">📍 Calle 1 626, Berazategui</p>
-          <p className="text-sm text-gray-400">📞 (011) 3283-0604</p>
-          <p className="text-sm text-gray-400">✉️ tysonburguer.co@gmail.com</p>
-        </div>
+        <div className="flex flex-col md:flex-row items-start justify-start md:justify-center md:gap-20 gap-5 md:order-2 order-1">
+          <div className="flex flex-col space-y-2">
+            <h3 className="font-semibold text-lg">Contacto</h3>
+            <p className="text-sm text-gray-400">📍 Calle 1 626, Berazategui</p>
+            <p className="text-sm text-gray-400">📞 (011) 3283-0604</p>
+            <p className="text-sm text-gray-400">
+              ✉️ tysonburguer.co@gmail.com
+            </p>
+          </div>
 
-        {/* Enlaces rápidos */}
-        <div className="flex flex-col space-y-2">
-          <h3 className="font-semibold text-lg">Explorar</h3>
-          <Link
-            href="/menu"
-            className="text-sm text-gray-400 hover:text-red-500 transition"
-          >
-            Ver Menú
-          </Link>
-          <Link
-            href="/promociones"
-            className="text-sm text-gray-400 hover:text-red-500 transition"
-          >
-            Promociones
-          </Link>
-          <Link
-            href="/#faq"
-            className="text-sm text-gray-400 hover:text-red-500 transition"
-          >
-            Preguntas Frecuentes
-          </Link>
+          {/* Enlaces rápidos */}
+          <div className="flex flex-col space-y-2">
+            <h3 className="font-semibold text-lg">Explorar</h3>
+            <Link
+              href="/menu"
+              className="text-sm text-gray-400 hover:text-red-500 transition"
+            >
+              Ver Menú
+            </Link>
+            <Link
+              href="/promociones"
+              className="text-sm text-gray-400 hover:text-red-500 transition"
+            >
+              Promociones
+            </Link>
+            <Link
+              href="/#faq"
+              className="text-sm text-gray-400 hover:text-red-500 transition"
+            >
+              Preguntas Frecuentes
+            </Link>
+          </div>
         </div>
       </div>
 

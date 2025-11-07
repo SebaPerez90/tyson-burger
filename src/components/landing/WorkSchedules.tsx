@@ -10,7 +10,7 @@ const Horarios = () => {
         Horarios de Atención 🕒
       </h2>
 
-      <div className="flex flex-col md:flex-row justify-center items-start gap-24">
+      <div className="flex flex-col md:flex-row justify-center items-center md:items-start md:gap-24 gap-16">
         {/* Horarios */}
         <div className="flex flex-col items-center md:items-start text-center md:text-left gap-4">
           {horariosTrabajo.map((horario, index) => (

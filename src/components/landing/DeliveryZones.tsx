@@ -41,6 +41,29 @@ export default function DeliveryAndPickup() {
         ))}
       </div>
 
+      {/* Rango de cobertura */}
+      <div className="max-w-lg mx-auto text-center space-y-2">
+        <p className="text-stone-200 font-semibold text-base">
+          Hacemos envíos{" "}
+          <span className="text-red-400 font-bold">hasta 3km</span> a la redonda
+        </p>
+        <p className="text-[13px] text-stone-400">
+          Si estás fuera de ese rango, consultanos por WhatsApp 😉
+        </p>
+
+        {/* Botón WhatsApp */}
+        <div className="flex justify-center mt-5">
+          <a
+            href={whatsappLink}
+            target="_blank"
+            className="inline-flex items-center gap-2 bg-green-500/90 hover:bg-green-500 text-white font-semibold px-5 py-2.5 rounded-lg text-base transition"
+          >
+            <FaWhatsapp className="text-xl" />
+            Consultar por mi zona
+          </a>
+        </div>
+      </div>
+
       {/* Tarjeta de Retiro en local */}
       <div className="max-w-sm mx-auto border border-white/20 rounded-xl p-6 text-stone-50 space-y-4">
         <h3 className="font-bold flex items-center gap-2 text-xl">
@@ -60,18 +83,6 @@ export default function DeliveryAndPickup() {
             Abrir en Google Maps
           </a>
         </div>
-      </div>
-
-      {/* Botón WhatsApp */}
-      <div className="flex justify-center">
-        <a
-          href={whatsappLink}
-          target="_blank"
-          className="inline-flex items-center gap-3 bg-green-500 hover:bg-green-600 text-white font-bold px-6 py-3 rounded-xl text-lg transition"
-        >
-          <FaWhatsapp size={24} />
-          Consultar por mi zona
-        </a>
       </div>
     </section>
   );

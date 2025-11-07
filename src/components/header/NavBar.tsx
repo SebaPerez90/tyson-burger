@@ -14,7 +14,6 @@ import OpenStatusBadge from "./OpenStatusBadge";
 const links = [
   { href: "/menu", label: "Menú" },
   { href: "/promos", label: "Promos" },
-  { href: "/delivery", label: "Delivery" },
 ];
 
 export const Navbar = () => {
@@ -30,15 +29,20 @@ export const Navbar = () => {
           {/* Logo */}
           <Tooltip>
             <TooltipTrigger asChild>
-              <Link href="/" className="size-14 rounded-full overflow-hidden">
-                <Image
-                  priority
-                  className="size-full object-cover saturate-150"
-                  src="/logo.webp"
-                  alt="Tyson Burger Logo"
-                  width={50}
-                  height={50}
-                />
+              <Link href="/" className="flex items-center cursor-pointer">
+                <div className=" size-10 rounded-full">
+                  <Image
+                    priority
+                    className="size-full object-cover saturate-150"
+                    src="/logo-transparent.webp"
+                    alt="Tyson Burger Logo"
+                    width={50}
+                    height={50}
+                  />
+                </div>
+                <span className="font-baloo font-bold text-white">
+                  Tyson Burger
+                </span>
               </Link>
             </TooltipTrigger>
             <TooltipContent>

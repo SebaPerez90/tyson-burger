@@ -1,6 +1,5 @@
 "use client";
 
-// import Image from "next/image";
 import Link from "next/link";
 
 import { FaTiktok, FaInstagram } from "react-icons/fa";
@@ -26,7 +25,7 @@ const Footer = () => {
         {/* social links */}
         <div className="flex flex-col items-start gap-4 justify-center">
           <p className="text-white font-semibold text-lg">
-            Siguenos en las redes
+            Seguinos en las redes
           </p>
           <ul className="flex items-center gap-4">
             {socialLinks.map((link, index) => (
@@ -55,20 +54,6 @@ const Footer = () => {
               </li>
             ))}
           </ul>
-
-          {/* Logo / Branding */}
-          {/* <div className="rounded-full border border-white/10 overflow-hidden h-14 w-14">
-            <Image
-              src="/logo.webp"
-              alt="Tyson Burger Logo"
-              width={50}
-              height={50}
-              className="object-cover size-full"
-            />
-          </div>
-          <p className="text-sm text-white  w-full text-center">
-            Tyson Burger <br />
-          </p> */}
         </div>
 
         {/* Contacto y direcciones */}

@@ -14,11 +14,9 @@ const Horarios = () => {
         {/* Horarios */}
         <div className="flex flex-col items-center md:items-start text-center md:text-left gap-4">
           {horariosTrabajo.map((horario, index) => (
-            <p key={index} className="text-xl md:text-2xl font-semibold">
+            <p key={index} className="text-xl md:text-2xl font-bold">
               <span className="text-red-500">{horario.dia}:</span> <br />
-              <span className="text-white font-normal relative top-2">
-                {horario.hora}
-              </span>
+              <span className="text-white relative top-2">{horario.hora}</span>
             </p>
           ))}
         </div>

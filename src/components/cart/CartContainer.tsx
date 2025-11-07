@@ -2,9 +2,13 @@
 
 import { useEffect, useState } from "react";
 import Cart from "./Cart";
+import { usePathname } from "next/navigation";
 
 const CartContainer = () => {
+  const pathname = usePathname();
   const [clientOrder, setClientOrder] = useState<Order[]>([]);
+
+  const isDetail = pathname.startsWith("/menu/") && pathname !== "/menu";
 
   const EXP_MIN = 120; // 2horas
 
@@ -54,12 +58,14 @@ const CartContainer = () => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
+  if (isDetail) return null;
+
   return (
     <div
       className={`${
         clientOrder.length === 0 || !clientOrder
           ? "hidden"
-          : "fixed block cursor-pointer top-188 right-4 z-50 max-w-[1400px]"
+          : "fixed block cursor-pointer top-[90%] right-4 z-50 max-w-[1400px]"
       } `}
     >
       {/* wrapper para el ícono y badge */}
@@ -69,7 +75,7 @@ const CartContainer = () => {
               bg-red-600 text-white text-[13px] font-semibold 
               h-8 w-8 rounded-full 
               flex items-center justify-center
-              shadow-sm border border-white/70
+              shadow-sm border border-white/40
             "
       >
         {clientOrder.length}

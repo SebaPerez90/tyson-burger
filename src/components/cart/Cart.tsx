@@ -40,7 +40,7 @@ const Cart = ({ clientOrder }: { clientOrder: Order[] }) => {
 
       <SheetContent
         aria-describedby={undefined}
-        className="w-[800px] z-50 bg-zinc-900 border-0 py-10 px-16"
+        className="w-full lg:w-[800px] z-50 bg-zinc-900 border-0 py-10 md:px-16 px-5"
       >
         {clientOrder.length === 0 || !clientOrder ? (
           <EmptyCart setOpen={setOpen} />
@@ -49,7 +49,7 @@ const Cart = ({ clientOrder }: { clientOrder: Order[] }) => {
             {open && (
               <div className="fixed w-full h-dvh left-0 top-0 bg-transparent cursor-default z-30" />
             )}
-            <div className="flex flex-col gap-5 overflow-y-scroll px-10 pb-10 z-50">
+            <div className="flex flex-col gap-5 overflow-y-scroll  md:px-10 sm:px-4 px-2 pb-10 z-50">
               <SheetHeader>
                 {/* close sheet modal */}
                 <CloseSheetModal setOpen={setOpen} />

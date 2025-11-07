@@ -4,7 +4,7 @@ import heroImage from "../../../public/test.jpg";
 import Link from "next/link";
 
 const afterLayerStyles =
-  "relative after:absolute after:bg-linear-to-r after:from-black/30 after:via-transparent after:to-black/30 after:z-20 z-10 after:top-0 after:left-0 after:w-full after:h-full after:border-50 after:border-black after:scale-x-105 after:blur-xl after:rounded-[100px]";
+  "relative after:absolute after:bg-linear-to-r after:from-black/30 after:via-transparent after:to-black/30 after:z-20 z-10 after:top-0 after:left-0 after:w-full after:h-full after:border-50 after:border-black after:scale-x-105 after:blur-xl after:rounded-[100px] before:from-transparent before:via-transparent before:to-black/30 before:z-30 before:absolute before:top-0 before:left-0 before:w-full before:h-full before:bg-linear-to-l before:rounded-[100px] before:blur before:scale-x-105";
 
 const Hero = () => {
   return (
@@ -45,13 +45,13 @@ const Hero = () => {
       </div>
 
       {/* Image container */}
-      <div className="relative w-full max-w-[900px] h-[400px] sm:h-[500px] lg:absolute lg:top-0 lg:right-[-12%] lg:w-[60%] lg:h-full z-10 lg:opacity-70 xl:opacity-100">
+      <div className="relative w-full max-w-[900px] h-[400px] sm:h-[500px] lg:absolute lg:top-0 lg:right-[-12%] lg:w-[60%] lg:h-full z-10 lg:opacity-60 xl:opacity-100">
         <div className={`${afterLayerStyles} w-full h-full`}>
           <Image
             src={heroImage}
             alt="Juicy cheeseburger"
             fill
-            className="object-cover mask-[radial-gradient(circle,black_75%,transparent_90%)] brightness-125 saturate-129 rounded-[50px]"
+            className="object-cover mask-[radial-gradient(circle,black_70%,transparent_90%)] brightness-125 saturate-129 rounded-[50px]"
           />
         </div>
       </div>

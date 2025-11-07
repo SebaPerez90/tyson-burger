@@ -6,17 +6,19 @@ const HamburgerCard = ({ item }: { item: HamburgerItem }) => {
   return (
     <div
       key={item.id}
-      className="bg-linear-to-b from-[#1a0000] to-[#2b0000] rounded-2xl  overflow-hidden  border border-white/10 shadow-[0_0_12px_rgba(255,255,255,0.15)] flex flex-col justify-between"
+      className="bg-linear-to-b from-[#1a0000] to-[#2b0000] rounded-2xl overflow-hidden border border-white/10 shadow-[0_0_12px_rgba(255,255,255,0.15)] flex flex-col justify-between"
     >
       <div className="p-4">
-        <Image
-          width={400}
-          height={208}
-          src={item.image}
-          alt={item.name}
-          loading="eager"
-          className="object-cover rounded-2xl saturate-[1.2]"
-        />
+        <div className="overflow-hidden rounded-2xl">
+          <Image
+            width={400}
+            height={208}
+            src={item.image}
+            alt={item.name}
+            loading="eager"
+            className="object-cover saturate-[1.2] transition-all duration-300 ease-in-out hover:scale-110"
+          />
+        </div>
       </div>
 
       <div className="p-6 pt-0 flex flex-col justify-between grow">

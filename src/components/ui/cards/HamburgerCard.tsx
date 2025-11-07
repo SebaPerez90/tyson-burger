@@ -1,18 +1,24 @@
+"use client";
+
 import Image from "next/image";
 import { Button } from "../button";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 
 const HamburgerCard = ({ item }: { item: HamburgerItem }) => {
+  const router = useRouter();
+
   return (
     <div
       key={item.id}
-      className="bg-linear-to-b from-[#1a0000] to-[#2b0000] rounded-2xl overflow-hidden border border-white/5 flex flex-row lg:flex-col justify-between"
-      //   "sm:bg-transparent sm:shadow-none sm:border-none sm:rounded-none sm:w-full sm:px-4 sm:py-2"
-      // }
+      className="bg-linear-to-b from-[#1a0000] to-[#2b0000] rounded-2xl overflow-hidden border border-white/5 flex flex-row lg:flex-col justify-between cursor-pointer h-[200px] md:h-auto active:scale-[0.98] active:brightness-90 transition-all select-none active:from-[#310000] active:to-[#430000]"
+      onClick={() =>
+        router.push(`/menu/${item.name.toLowerCase().replace(/\s+/g, "-")}`)
+      }
     >
       {/* IMAGE */}
-      <div className="p-4a lg:p-4 w-[70%] lg:w-full">
-        <div className="overflow-hidden lg:rounded-2xl w-full h-full">
+      <div className="p-2 md:p-0 lg:p-4 w-1/2 md:w-[70%] lg:w-full">
+        <div className="overflow-hidden rounded-2xl md:rounded-none lg:rounded-2xl w-full h-full">
           <Image
             width={400}
             height={208}
@@ -25,7 +31,7 @@ const HamburgerCard = ({ item }: { item: HamburgerItem }) => {
       </div>
 
       {/* BODY */}
-      <div className="p-3  lg:p-6 lg:pt-0 flex flex-col justify-between grow">
+      <div className="p-3 lg:p-6 lg:pt-0 flex flex-col justify-between grow">
         <div>
           <span className="text-lg md:text-xl lg:text-3xl text-orange-100 font-bold mb-3 block">
             {item.name}
@@ -40,7 +46,7 @@ const HamburgerCard = ({ item }: { item: HamburgerItem }) => {
         </div>
 
         {/* Precio + Botones */}
-        <div className="flex flex-col gap-0.5 mt-auto pt-4 border-t border-white/10 min-h-[82px]">
+        <div className="flex flex-col gap-0.5 mt-auto pt-4 border-t border-white/10 lg:h-auto lg:min-h-[82px]">
           <div className="flex flex-row items-center lg:items-start lg:flex-col gap-0.5">
             <span className="text-xl font-bold font-baloo text-white">
               ${item.price.simple.toLocaleString()}
@@ -55,7 +61,10 @@ const HamburgerCard = ({ item }: { item: HamburgerItem }) => {
             </span>
           </div>
 
-          <Link href={`/menu/${item.name.toLowerCase().replace(/\s+/g, "-")}`}>
+          <Link
+            className="hidden lg:block"
+            href={`/menu/${item.name.toLowerCase().replace(/\s+/g, "-")}`}
+          >
             {/* <Link href={`/menu/${item.slug}`}> */}
             <Button
               variant="destructive"

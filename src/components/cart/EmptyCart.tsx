@@ -5,10 +5,19 @@ import { Button } from "../ui/button";
 
 import { SheetHeader, SheetTitle } from "@/src/components/ui/sheet";
 
-const EmptyCart = ({ setOpen }: { setOpen?: (open: boolean) => void }) => {
+const EmptyCart = ({ setOpen }: { setOpen: (open: boolean) => void }) => {
   return (
     <div className="flex flex-col items-center justify-center h-full gap-6 text-center">
       <SheetHeader>
+        {/* close sheet modal */}
+        <button
+          type="button"
+          className="absolute right-10 top-10 text-white font-semibold text-lg cursor-pointer p-5"
+          onClick={() => setOpen?.(false)}
+        >
+          X
+        </button>
+
         <SheetTitle className="text-3xl font-semibold text-white tracking-tight">
           Tu carrito está vacío… por ahora 😏
         </SheetTitle>

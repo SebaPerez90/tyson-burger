@@ -4,40 +4,45 @@ import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
 
-import StatusBadge from "@/src/components/header/StatusBadge";
-
 import {
   Tooltip,
   TooltipContent,
   TooltipTrigger,
 } from "@/src/components/ui/tooltip";
-import OrderCart from "../OrderCart";
+import OpenStatusBadge from "./OpenStatusBadge";
 
 const links = [
   { href: "/menu", label: "Menú" },
   { href: "/promos", label: "Promos" },
-  { href: "/delivery", label: "Delivery" },
 ];
 
 export const Navbar = () => {
   const pathname = usePathname();
 
+  const isDetail = pathname.startsWith("/menu/") && pathname !== "/menu";
+  if (isDetail) return null;
+
   return (
-    <header className="sticky bg-foreground/60 top-0 w-full z-50 px-10 sm:px-16 lg:px-24 py-4 backdrop-blur-xl shadow-md">
-      <div className="max-w-[1400px] mx-auto">
+    <header className="sticky bg-foreground/60 top-0 w-full z-50 px-0 sm:px-16 lg:px-24 sm:py-4 py-2 backdrop-blur-xl shadow-md">
+      <div className="max-w-[1200px] mx-auto">
         <div className="flex justify-between items-center">
           {/* Logo */}
           <Tooltip>
             <TooltipTrigger asChild>
-              <Link href="/" className="size-14 rounded-full overflow-hidden">
-                <Image
-                  priority
-                  className="size-full object-cover saturate-150"
-                  src="/logo2.jpg"
-                  alt="Logo"
-                  width={50}
-                  height={50}
-                />
+              <Link href="/" className="flex items-center cursor-pointer">
+                <div className=" size-10 rounded-full">
+                  <Image
+                    priority
+                    className="size-full object-cover saturate-150"
+                    src="/logo-transparent.webp"
+                    alt="Tyson Burger Logo"
+                    width={50}
+                    height={50}
+                  />
+                </div>
+                <span className="font-baloo sm:text-base text-xs font-bold text-white">
+                  Tyson Burger
+                </span>
               </Link>
             </TooltipTrigger>
             <TooltipContent>
@@ -65,12 +70,7 @@ export const Navbar = () => {
             })}
           </nav>
 
-          <div className="flex items-center gap-6">
-            <StatusBadge />
-
-            {/* Carrito */}
-            <OrderCart />
-          </div>
+          <OpenStatusBadge />
         </div>
       </div>
     </header>

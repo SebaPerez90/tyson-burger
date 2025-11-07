@@ -1,9 +1,9 @@
 import { Button } from "../ui/button";
-import { toast } from "sonner";
 
 import { useRouter } from "next/navigation";
+import { generateShortId } from "@/src/utils/uuidGenerator";
 
-const AddOrderBtns = ({
+const AddToCart = ({
   total,
   quantity,
   setCount,
@@ -23,6 +23,7 @@ const AddOrderBtns = ({
       const formattedExtras = selectedExtras?.map((extra) => extra.label);
 
       const cartData = {
+        id: generateShortId(4),
         quantity: quantity,
         total,
         note,
@@ -40,23 +41,17 @@ const AddOrderBtns = ({
 
       // guarda array actualizado
       localStorage.setItem("clientOrder", JSON.stringify(updatedCart));
+      localStorage.setItem("clientOrder_ts", Date.now().toString());
 
-      toast.success(`Producto agregado al carrito`, {
-        style: {
-          borderRadius: "8px",
-          color: "#008a2e",
-          backgroundColor: "#ecfdf3",
-          width: "max-content",
-        },
-        duration: 5000,
-      });
+      // notifica a listeners (Cart)
+      window.dispatchEvent(new Event("client-order-updated"));
 
       router.push("/menu");
     }
   };
 
   return (
-    <div className="flex items-center justify-center gap-5 fixed bottom-10 mx-auto left-0 right-0">
+    <div className="flex items-center justify-center gap-3 fixed bottom-4 mx-auto left-0 right-0">
       {/* CONTADOR */}
       <div className="flex items-center bg-secondary border border-white/30 rounded-full p-[0.2rem_0rem!important]  text-black overflow-hidden">
         <Button
@@ -89,4 +84,4 @@ const AddOrderBtns = ({
   );
 };
 
-export default AddOrderBtns;
+export default AddToCart;

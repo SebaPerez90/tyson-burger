@@ -5,12 +5,18 @@ type HamburgerItem = {
   name: string;
   ingredients: string[];
   description: string;
-  price: string;
+  price: {
+    simple: number;
+    doble: number;
+    triple: number;
+  };
   image: string;
 };
 
 type Order = {
+  id?: number;
   total: number;
+  extras?: string[];
   setCount: React.Dispatch<React.SetStateAction<number>>;
   note?: string;
   productName?: string;

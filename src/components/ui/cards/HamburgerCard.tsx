@@ -6,27 +6,33 @@ const HamburgerCard = ({ item }: { item: HamburgerItem }) => {
   return (
     <div
       key={item.id}
-      className="bg-linear-to-b from-[#1a0000] to-[#2b0000] rounded-2xl overflow-hidden border border-white/10 shadow-[0_0_12px_rgba(255,255,255,0.15)] flex flex-col justify-between"
+      className="bg-linear-to-b from-[#1a0000] to-[#2b0000] rounded-2xl overflow-hidden border border-white/5 flex flex-row lg:flex-col justify-between"
+      //   "sm:bg-transparent sm:shadow-none sm:border-none sm:rounded-none sm:w-full sm:px-4 sm:py-2"
+      // }
     >
-      <div className="p-4">
-        <div className="overflow-hidden rounded-2xl">
+      {/* IMAGE */}
+      <div className="p-4a lg:p-4 w-[70%] lg:w-full">
+        <div className="overflow-hidden lg:rounded-2xl w-full h-full">
           <Image
             width={400}
             height={208}
             src={item.image}
             alt={item.name}
             loading="eager"
-            className="object-cover saturate-[1.2] transition-all duration-300 ease-in-out hover:scale-110"
+            className="object-cover w-full h-full saturate-[1.2] transition-all duration-300 ease-in-out hover:scale-110"
           />
         </div>
       </div>
 
-      <div className="p-6 pt-0 flex flex-col justify-between grow">
+      {/* BODY */}
+      <div className="p-3  lg:p-6 lg:pt-0 flex flex-col justify-between grow">
         <div>
-          <span className="text-3xl text-orange-100 font-bold mb-3">
+          <span className="text-lg md:text-xl lg:text-3xl text-orange-100 font-bold mb-3 block">
             {item.name}
           </span>
-          <ul className="list-disc list-inside mt-8 mb-4 marker:text-green-500 text-sm text-white/70">
+
+          {/* INGREDIENTES */}
+          <ul className="flex flex-col marker:text-green-500 text-[10px] text-white/60 lg:block list-disc list-inside lg:text-sm">
             {item.ingredients.map((item, index) => (
               <li key={index}>{item}</li>
             ))}
@@ -35,7 +41,7 @@ const HamburgerCard = ({ item }: { item: HamburgerItem }) => {
 
         {/* Precio + Botones */}
         <div className="flex flex-col gap-0.5 mt-auto pt-4 border-t border-white/10 min-h-[82px]">
-          <div className="flex flex-col gap-0.5">
+          <div className="flex flex-row items-center lg:items-start lg:flex-col gap-0.5">
             <span className="text-xl font-bold font-baloo text-white">
               ${item.price.simple.toLocaleString()}
             </span>
@@ -44,7 +50,7 @@ const HamburgerCard = ({ item }: { item: HamburgerItem }) => {
               $11.000
             </span>
 
-            <span className="text-[10px] px-2 py-2px bg-green-600/40 text-green-400 rounded-full w-fit">
+            <span className="text-[10px] ml-1 lg:ml-0 px-0.5 py-0.5 lg:px-2 lg:py-2 bg-green-600/40 text-green-400 rounded-full w-max">
               18% OFF
             </span>
           </div>

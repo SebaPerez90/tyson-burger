@@ -4,13 +4,13 @@ import heroImage from "../../../public/test.jpg";
 import Link from "next/link";
 
 const afterLayerStyles =
-  " relative after:absolute after:bg-linear-to-r after:from-black/30 after:via-transparent after:to-black/30 after:z-20 z-10 after:top-0 after:left-0 after:w-full after:h-full after:border-50  after:border-black after:scale-x-105 after:blur-xl after:rounded-[100px]";
+  "relative after:absolute after:bg-linear-to-r after:from-black/30 after:via-transparent after:to-black/30 after:z-20 z-10 after:top-0 after:left-0 after:w-full after:h-full after:border-50 after:border-black after:scale-x-105 after:blur-xl after:rounded-[100px]";
 
 const Hero = () => {
   return (
-    <section className="relative flex flex-col lg:flex-row items-center justify-center gap-8 lg:gap-16 min-h-[70vh]">
+    <section className="relative flex flex-col lg:flex-row items-center justify-center h-full lg:min-h-[70vh] px-4 lg:px-0  mt-16">
       {/* Text container */}
-      <div className="z-30 flex flex-col gap-6 lg:gap-8 text-center lg:text-left max-w-full lg:max-w-3xl">
+      <div className="relative lg:right-[5%] xl:right-[16%] flex flex-col gap-6 lg:gap-12 text-center lg:text-left max-w-full lg:max-w-3xl z-30">
         <h1 className="text-3xl sm:text-4xl lg:text-7xl font-extrabold">
           <span className="text-red-500">Hamburguesas caseras</span>{" "}
           <span className="text-white/90">
@@ -45,16 +45,15 @@ const Hero = () => {
       </div>
 
       {/* Image container */}
-      <div
-        className={`${afterLayerStyles} w-full max-w-[900px] sm:max-w-[1000px] lg:max-w-[1200px] h-[400px] sm:h-[500px] lg:h-[600px] rounded-[50px] flex items-center justify-center`}
-      >
-        <Image
-          src={heroImage}
-          alt="Juicy cheeseburger"
-          width={1200}
-          height={600}
-          className="object-cover mask-[radial-gradient(circle,black_75%,transparent_90%)] brightness-125 saturate-150 rounded-[50px]"
-        />
+      <div className="relative w-full max-w-[900px] h-[400px] sm:h-[500px] lg:absolute lg:top-0 lg:right-[-12%] lg:w-[60%] lg:h-full z-10 lg:opacity-70 xl:opacity-100">
+        <div className={`${afterLayerStyles} w-full h-full`}>
+          <Image
+            src={heroImage}
+            alt="Juicy cheeseburger"
+            fill
+            className="object-cover mask-[radial-gradient(circle,black_75%,transparent_90%)] brightness-125 saturate-129 rounded-[50px]"
+          />
+        </div>
       </div>
     </section>
   );

@@ -2,7 +2,7 @@ import { UtensilsCrossed, MessageSquareText, Bike } from "lucide-react";
 
 const HowToOrder = () => {
   return (
-    <section className="max-w-[1200px] mx-auto py-24 px-4">
+    <section className="max-w-[1200px] mx-auto pb-24 pt-0 sm:pt-24 px-4">
       <h2 className="text-4xl font-extrabold text-center mb-12 text-background">
         ¿Cómo hago mi pedido?
       </h2>

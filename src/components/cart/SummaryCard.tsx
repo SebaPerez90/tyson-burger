@@ -25,7 +25,6 @@ const SummaryCard = ({
   betweenStreets,
   details,
   paymentMethod,
-  cashAmount,
   userPhone,
   userName,
   isDelivery,
@@ -84,6 +83,8 @@ Número de pedido: *${generateShortId(
 Pedido para: *${capitalizeWords(userName)}* ${
       isDelivery === false ? `| *RETIRA EN LOCAL*` : ""
     }
+    
+${userPhone}
 -----------------------------------------------
 *PRODUCTOS*
 ${productsText}
@@ -91,7 +92,6 @@ ${productsText}
 ${
   isDelivery
     ? `*DATOS DE ENTREGA*
-• Télefono: *${userPhone}*
 • Domicilio: ${address}.
 ${betweenStreets ? `• Entre calles: ${betweenStreets}.` : ""}
 ${details ? `• Detalles: ${details}.` : ""}`
@@ -104,18 +104,8 @@ ${details ? `• Detalles: ${details}.` : ""}`
         : `(Pago con mercado pago)`
     } 
     • Subtotal productos: $${subtotal.toLocaleString()}
-    ${realTip !== 0 ? `• Propina: $${realTip.toLocaleString()}` : ""}
     ${isDelivery ? `• Envio: $${envio.toLocaleString()}` : ""}
-    ${
-      paymentMethod === "efectivo"
-        ? `• Pago con: $${cashAmount.toLocaleString()}`
-        : ""
-    }
-    ${
-      paymentMethod === "efectivo"
-        ? `• Vuelto: $${(Number(cashAmount) - Number(total)).toLocaleString()}`
-        : ""
-    }
+    ${realTip !== 0 ? `• Propina: $${realTip.toLocaleString()}` : ""}
 
 • *TOTAL: $${total.toLocaleString()}* 
 

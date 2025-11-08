@@ -8,16 +8,16 @@ const afterLayerStyles =
 
 const Hero = () => {
   return (
-    <section className="relative flex flex-col lg:flex-row items-center justify-center h-full lg:min-h-[70vh] px-4 lg:px-0  mt-16">
+    <section className="relative flex flex-col lg:flex-row items-center justify-center h-screen lg:min-h-[70vh] mt-16 ">
       {/* Text container */}
-      <div className="relative lg:right-[5%] xl:right-[16%] flex flex-col gap-6 lg:gap-12 text-center lg:text-left max-w-full lg:max-w-3xl z-30">
-        <h1 className="text-3xl sm:text-4xl lg:text-7xl font-extrabold">
+      <div className="relative lg:right-[5%] xl:right-[16%] flex flex-col gap-6 lg:gap-12 text-center lg:text-left max-w-full lg:max-w-3xl z-30 md:max-w-2xl px-4 lg:px-0">
+        <h1 className="text-3xl sm:text-5xl lg:text-7xl font-extrabold">
           <span className="text-red-500">Hamburguesas caseras</span>{" "}
           <span className="text-white/90">
             con el sabor que te van hacer volver.
           </span>
         </h1>
-        <p className="text-base sm:text-lg text-white/70">
+        <p className="text-base  sm:text-lg text-white/70">
           Carne fresca, pan de papa artesanal y cheddar real. Hechas al momento…{" "}
           <br />
           ¿Una hamburguesita o qué? 🍔
@@ -45,13 +45,13 @@ const Hero = () => {
       </div>
 
       {/* Image container */}
-      <div className="relative w-full max-w-[900px] h-[400px] sm:h-[500px] lg:absolute lg:top-0 lg:right-[-12%] lg:w-[60%] lg:h-full z-10 lg:opacity-60 xl:opacity-100">
+      <div className="relative w-full max-w-[900px] h-[400px] sm:h-[500px] lg:absolute lg:top-0 lg:right-[-12%] lg:w-[60%] lg:h-full z-10 lg:opacity-60 xl:opacity-100  -translate-y-16  lg:translate-y-0 px-0">
         <div className={`${afterLayerStyles} w-full h-full`}>
           <Image
             src={heroImage}
             alt="Juicy cheeseburger"
             fill
-            className="object-cover mask-[radial-gradient(circle,black_70%,transparent_90%)] brightness-125 saturate-129 rounded-[50px]"
+            className="object-contain sm:object-cover mask-[radial-gradient(circle,black_70%,transparent_90%)] brightness-125 saturate-110 rounded-[50px]"
           />
         </div>
       </div>

@@ -27,8 +27,8 @@ const PaymentCheckout = ({
   setTip,
   customTip,
   setCustomTip,
-  cashAmount,
-  setCashAmount,
+  // cashAmount,
+  // setCashAmount,
   paymentMethod,
   setPaymentMethod,
 }: CheckoutPaymentProps) => {
@@ -64,7 +64,7 @@ const PaymentCheckout = ({
             Mercado Pago
           </button>
 
-          {paymentMethod === "efectivo" && (
+          {/* {paymentMethod === "efectivo" && (
             <div className="mt-5">
               <FloatingInput
                 label="¿Con cuánto abonás?"
@@ -80,7 +80,7 @@ const PaymentCheckout = ({
                 }}
               />
             </div>
-          )}
+          )} */}
         </div>
       </div>
 

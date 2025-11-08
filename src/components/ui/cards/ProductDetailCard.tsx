@@ -114,7 +114,7 @@ const ProductDetailCard = ({ product }: { product: HamburgerItem }) => {
               onChange={(e) => setNote(e.target.value)}
               placeholder="Aclar&aacute; lo que necesites para tu hamburguesa"
               className="w-full rounded-lg bg-transparent mt-5 border border-white/20 text-white placeholder:text-white/50 p-3 outline-none resize-none focus:border-white transition placeholder:text-xs sm:placeholder:text-base"
-              rows={5}
+              rows={3}
             />
           </div>
         </div>

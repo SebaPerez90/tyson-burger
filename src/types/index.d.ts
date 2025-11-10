@@ -37,3 +37,9 @@ type StarterItem = {
   price: number;
   image: string;
 };
+
+type Extra = {
+  id: string;
+  label: string;
+  price: string;
+};

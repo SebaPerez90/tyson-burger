@@ -7,41 +7,16 @@ import {
 } from "@/src/components/ui/accordion";
 import { Checkbox } from "@/src/components/ui/checkbox";
 
-const extras = [
-  { id: "extra-meat", label: "Extra medallon de carne", price: "$ 4.000" },
-  { id: "extra-cheese", label: "Extra cheddar al medallon", price: "$ 500" },
-  { id: "extra-bacon", label: "Doble bacon extra", price: "$ 2.500" },
-  {
-    id: "extra-cheese-fries",
-    label: "Extra cheddar a tus papas",
-    price: "$ 2.000",
-  },
-  {
-    id: "extra-bacon-fries",
-    label: "Extra bacon a tus papas",
-    price: "$ 2.000",
-  },
-  {
-    id: "extra-cheese-bacon-fries",
-    label: "Extra cheddar y bacon a tus papas",
-    price: "$ 2.500",
-  },
-];
-
-interface Extra {
-  id: string;
-  label: string;
-  price: string;
-}
-
 interface SubMenuAcordeonProps {
   selectedExtras: Extra[]; // ahora es array de objetos
   onExtraChange: (extra: Extra) => void; // recibe extra completo
+  extras: Extra[];
 }
 
 const SubMenuAcordeon = ({
   selectedExtras,
   onExtraChange,
+  extras,
 }: SubMenuAcordeonProps) => {
   return (
     <Accordion
@@ -56,11 +31,11 @@ const SubMenuAcordeon = ({
 
         <AccordionContent className="px-4 py-3">
           <ul className="flex flex-col gap-4 space-y-3">
-            {extras.map((extra, index) => {
-              const isSelected = selectedExtras.some((e) => e.id === extra.id);
+            {extras.map((item, index) => {
+              const isSelected = selectedExtras.some((e) => e.id === item.id);
               return (
                 <li
-                  key={extra.id}
+                  key={item.id}
                   className={`flex justify-between items-center pb-2 ${
                     index !== extras.length - 1
                       ? "border-b border-white/10"
@@ -69,21 +44,21 @@ const SubMenuAcordeon = ({
                 >
                   <div className="flex items-center gap-1 sm:gap-3">
                     <Checkbox
-                      id={extra.id}
+                      id={item.id}
                       checked={isSelected}
-                      onCheckedChange={() => onExtraChange(extra)}
+                      onCheckedChange={() => onExtraChange(item)}
                       className="h-4 w-4 sm:w-6 sm:h-6 rounded-none sm:rounded-sm bg-zinc-800 border-white/30 cursor-pointer data-[state=checked]:bg-red-500 data-[state=checked]:border-red-400 data-[state=checked]:text-white"
                     />
 
                     <label
-                      htmlFor={extra.id}
+                      htmlFor={item.id}
                       className="text-white text-xs sm:text-base"
                     >
-                      {extra.label}
+                      {item.label}
                     </label>
                   </div>
                   <span className="text-white font-medium text-xs w-max sm:text-lg">
-                    {extra.price}
+                    {item.price}
                   </span>
                 </li>
               );

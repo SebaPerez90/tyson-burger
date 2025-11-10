@@ -1,13 +1,64 @@
 "use client";
 
 import Image from "next/image";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 import AddToCart from "@/src/components/menu/AddToCart";
+import SubMenuAcordeon from "../acordeons/SubMenuAcordeon";
+import { parsePriceStringToNumber } from "@/src/utils/priceConverter";
+
+const dip = [
+  { id: "extra-mayonnaise-fries", label: "Dip de mayonesa", price: "$ 4.000" },
+  { id: "extra-cheese-fries", label: "Dip de cheddar", price: "$ 500" },
+  { id: "extra-chimi-fries", label: "Dip de chimichurri", price: "$ 2.500" },
+  {
+    id: "extra-bbq-fries",
+    label: "Dip barbacoa",
+    price: "$ 2.000",
+  },
+  {
+    id: "extra-moztaza-fries",
+    label: "Dip moztaza",
+    price: "$ 2.000",
+  },
+  {
+    id: "extra-mayonnaise-bacon-frie",
+    label: "Extra mayonesa de bacon",
+    price: "$ 2.500",
+  },
+];
 
 const StarterDetailCard = ({ product }: { product: StarterItem }) => {
+  const [selectedExtras, setSelectedExtras] = useState<Extra[]>([]);
+  const [totalPrice, setTotalPrice] = useState(0);
+  const [basePrice, setBasePrice] = useState(0);
   const [note, setNote] = useState("");
   const [count, setCount] = useState(1);
+
+  useEffect(() => {
+    const extrasSum = selectedExtras.reduce(
+      (sum, ex) => sum + parsePriceStringToNumber(ex.price),
+      0
+    );
+    setTotalPrice(basePrice + extrasSum);
+  }, [selectedExtras, basePrice]);
+
+  useEffect(() => {
+    setBasePrice(parsePriceStringToNumber(String(product.price)));
+  }, [product.price]);
+
+  const handleExtraChange = (extra: Extra) => {
+    setSelectedExtras((prev) => {
+      const exists = prev.find((e) => e.id === extra.id);
+      if (exists) {
+        // lo saca
+        return prev.filter((e) => e.id !== extra.id);
+      } else {
+        // lo agrega
+        return [...prev, extra];
+      }
+    });
+  };
 
   return (
     <div className="">
@@ -23,7 +74,7 @@ const StarterDetailCard = ({ product }: { product: StarterItem }) => {
           />
         </div>
 
-        <div className="sm:px-0 px-8">
+        <div className="sm:px-0 px-8 w-full">
           {/* Información del producto */}
           <div className="flex flex-col justify-center w-full mt-10 sm:mt-6">
             <h1 className="text-2xl sm:text-4xl font-bold text-orange-100 mb-4">
@@ -52,6 +103,13 @@ const StarterDetailCard = ({ product }: { product: StarterItem }) => {
             </span>
           </div>
 
+          {/* Acordeón de extras */}
+          <SubMenuAcordeon
+            extras={dip}
+            selectedExtras={selectedExtras}
+            onExtraChange={handleExtraChange}
+          />
+
           {/* Nota al producto */}
           <div className="mt-10 w-full border border-white/10 rounded-2xl p-4 bg-[#1a1a1a]">
             <label
@@ -74,7 +132,7 @@ const StarterDetailCard = ({ product }: { product: StarterItem }) => {
 
       {/* Botones de compra y cantidad de productos */}
       <AddToCart
-        total={product.price * count}
+        total={totalPrice * count}
         quantity={count}
         productName={product.name}
         note={note}

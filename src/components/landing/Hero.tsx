@@ -49,8 +49,6 @@ const Hero = () => {
         <div className={`${afterLayerStyles} w-full h-full`}>
           <Image
             priority
-            width={500}
-            height={500}
             src={heroImage}
             alt="Juicy cheeseburger"
             fill

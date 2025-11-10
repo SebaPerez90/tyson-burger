@@ -48,6 +48,9 @@ const Hero = () => {
       <div className="relative w-full max-w-[900px] h-[400px] sm:h-[500px] lg:absolute lg:top-0 lg:right-[-12%] lg:w-[60%] lg:h-full z-10 lg:opacity-60 xl:opacity-100  -translate-y-16  lg:translate-y-0 px-0">
         <div className={`${afterLayerStyles} w-full h-full`}>
           <Image
+            priority
+            width={500}
+            height={500}
             src={heroImage}
             alt="Juicy cheeseburger"
             fill

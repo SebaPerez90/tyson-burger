@@ -2,6 +2,7 @@
 
 type HamburgerItem = {
   id: number;
+  type?: string;
   name: string;
   ingredients: string[];
   description: string;
@@ -25,4 +26,14 @@ type Order = {
   selectedExtras?: { id: string; label: string; price: string }[];
   image?: string;
   quantity: number;
+};
+
+type StarterItem = {
+  id: number;
+  type?: string;
+  name: string;
+  description: string;
+  ingredients: string[];
+  price: number;
+  image: string;
 };

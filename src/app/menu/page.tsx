@@ -1,7 +1,9 @@
 import SectionTitle from "@/src/components/menu/SectionTitle";
 import HamburgerCard from "@/src/components/ui/cards/HamburgerCard";
+import StarterCard from "@/src/components/ui/cards/StarterCard";
 
 import mockMenuItems from "@/src/mockup/menu.json";
+import mockStartersItems from "@/src/mockup/starters.json";
 
 export default function MenuPage() {
   return (
@@ -12,7 +14,6 @@ export default function MenuPage() {
           title="Nuestras Hamburguesas"
           subtitle="(incluyen papas)"
         />
-        {/* cards hamburgers container */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 lg:gap-8">
           {mockMenuItems.map((item) => (
             <HamburgerCard key={item.id} item={item} />
@@ -20,7 +21,15 @@ export default function MenuPage() {
         </div>
       </section>
 
-      <SectionTitle title="Entradas calientes" subtitle="(incluyen salsa)" />
+      {/* starters container section */}
+      <section>
+        <SectionTitle title="Entradas calientes" subtitle="(incluyen salsa)" />
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 lg:gap-8">
+          {mockStartersItems.map((item) => (
+            <StarterCard key={item.id} item={item} />
+          ))}
+        </div>
+      </section>
     </main>
   );
 }

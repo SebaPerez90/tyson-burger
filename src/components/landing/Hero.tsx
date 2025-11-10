@@ -8,7 +8,7 @@ const afterLayerStyles =
 
 const Hero = () => {
   return (
-    <section className="relative flex flex-col lg:flex-row items-center justify-center h-screen lg:min-h-[70vh] mt-16 ">
+    <section className="relative flex flex-col lg:flex-row items-center justify-center lg:min-h-[70vh] mt-16 ">
       {/* Text container */}
       <div className="relative lg:right-[5%] xl:right-[16%] flex flex-col gap-6 lg:gap-12 text-center lg:text-left max-w-full lg:max-w-3xl z-30 md:max-w-2xl px-4 lg:px-0">
         <h1 className="text-3xl sm:text-5xl lg:text-7xl font-extrabold">

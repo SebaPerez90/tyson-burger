@@ -1,6 +1,7 @@
 [
   {
     "id": 1,
+    "type": "burger",
     "name": "Cheese Burger",
     "description": "Pan de papa. 100gr de carne vacuna. Doble queso cheddar. Salsa mac especial de la casa.",
     "ingredients": [
@@ -19,6 +20,7 @@
   },
   {
     "id": 2,
+    "type": "burger",
     "name": "Oklahoma Burger",
     "description": "Pan de papa. 150gr de carne vacuna. Cebolla caramelizada. Doble queso cheddar. Salsa BBQ casera.",
     "ingredients": [
@@ -38,6 +40,7 @@
   },
   {
     "id": 3,
+    "type": "burger",
     "name": "Cheese & Bacon Burger",
     "description": "Pan de papa. 150gr de carne vacuna. Doble queso cheddar. Tocino crocante. Salsa especial.",
     "ingredients": [
@@ -56,6 +59,7 @@
   },
   {
     "id": 4,
+    "type": "burger",
     "name": "American Burger",
     "description": "Pan de papa. 150gr de carne vacuna. Doble queso cheddar. Lechuga fresca. Tomate. Salsa americana.",
     "ingredients": [

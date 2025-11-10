@@ -1,0 +1,48 @@
+[
+  {
+    "id": 1,
+    "type": "starter",
+    "name": "Papas fritas",
+    "description": "Papas fritas artesanales con piel. Adobadas con sal especiada de la casa y salsas a elección.",
+    "ingredients": ["Papas caseras de la casa", "Salsa a elección"],
+    "price": 9000,
+    "image": "/menu/starters/fries.webp"
+  },
+  {
+    "id": 2,
+    "type": "starter",
+    "name": "Papas fritas con huevo",
+    "description": "Papas fritas artesanales con piel (600gr) y huevos(3 unidades). Adobadas con sal especiada de la casa y salsas a elección.",
+    "ingredients": [
+      "Papas caseras de la casa",
+      "Huevo",
+      "Huevos a la plancha",
+      "Salsa a elección"
+    ],
+    "price": 9000,
+    "image": "/menu/starters/fries-egg.webp"
+  },
+  {
+    "id": 3,
+    "type": "starter",
+    "name": "Papas fritas con bacon",
+    "description": "Papas fritas artesanales con piel (600gr), bacon crujiente (150gr), cheddar fundido (200gr) y cebolla de verdeo. Adobadas con sal especiada de la casa y salsas a elección.",
+    "ingredients": [
+      "Papas caseras de la casa",
+      "Bacon crujiente",
+      "Queso cheddar premium",
+      "Cebolla de verdeo"
+    ],
+    "price": 9000,
+    "image": "/menu/starters/fries-bacon.webp"
+  },
+  {
+    "id": 4,
+    "type": "starter",
+    "name": "Nuggets de pollo",
+    "description": "Patitas doradas de pollo con salsas a elección.",
+    "ingredients": ["Patitas de pollo", "Salsa a elección"],
+    "price": 9000,
+    "image": "/menu/starters/nuggets.webp"
+  }
+]

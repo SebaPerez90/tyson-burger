@@ -2,42 +2,38 @@
 
 import Image from "next/image";
 import { useEffect, useState } from "react";
+
+import AddToCart from "@/src/components/menu/AddToCart";
+import SubMenuAcordeon from "../acordeons/SubMenuAcordeon";
 import { parsePriceStringToNumber } from "@/src/utils/priceConverter";
 
-import SubMenuAcordeon from "@/src/components/ui/acordeons/SubMenuAcordeon";
-import AddToCart from "@/src/components/menu/AddToCart";
-import BurgerSizeSelector from "../../menu/BurgerSizeSelector";
-
-const extras = [
-  { id: "extra-meat", label: "Extra medallon de carne", price: "$ 4.000" },
-  { id: "extra-cheese", label: "Extra cheddar al medallon", price: "$ 500" },
-  { id: "extra-bacon", label: "Doble bacon extra", price: "$ 2.500" },
+const dip = [
+  { id: "extra-mayonnaise-fries", label: "Dip de mayonesa", price: "$ 4.000" },
+  { id: "extra-cheese-fries", label: "Dip de cheddar", price: "$ 500" },
+  { id: "extra-chimi-fries", label: "Dip de chimichurri", price: "$ 2.500" },
   {
-    id: "extra-cheese-fries",
-    label: "Extra cheddar a tus papas",
+    id: "extra-bbq-fries",
+    label: "Dip barbacoa",
     price: "$ 2.000",
   },
   {
-    id: "extra-bacon-fries",
-    label: "Extra bacon a tus papas",
+    id: "extra-moztaza-fries",
+    label: "Dip moztaza",
     price: "$ 2.000",
   },
   {
-    id: "extra-cheese-bacon-fries",
-    label: "Extra cheddar y bacon a tus papas",
+    id: "extra-mayonnaise-bacon-frie",
+    label: "Extra mayonesa de bacon",
     price: "$ 2.500",
   },
 ];
 
-const ProductDetailCard = ({ product }: { product: HamburgerItem }) => {
+const StarterDetailCard = ({ product }: { product: StarterItem }) => {
   const [selectedExtras, setSelectedExtras] = useState<Extra[]>([]);
-  const [note, setNote] = useState("");
-  const [count, setCount] = useState(1);
   const [totalPrice, setTotalPrice] = useState(0);
   const [basePrice, setBasePrice] = useState(0);
-  const [burgerSize, setBurgerSize] = useState<"simple" | "doble" | "triple">(
-    "simple"
-  );
+  const [note, setNote] = useState("");
+  const [count, setCount] = useState(1);
 
   useEffect(() => {
     const extrasSum = selectedExtras.reduce(
@@ -45,11 +41,11 @@ const ProductDetailCard = ({ product }: { product: HamburgerItem }) => {
       0
     );
     setTotalPrice(basePrice + extrasSum);
-  }, [selectedExtras, basePrice, burgerSize]);
+  }, [selectedExtras, basePrice]);
 
   useEffect(() => {
-    setBasePrice(parsePriceStringToNumber(String(product.price[burgerSize])));
-  }, [burgerSize, product.price]);
+    setBasePrice(parsePriceStringToNumber(String(product.price)));
+  }, [product.price]);
 
   const handleExtraChange = (extra: Extra) => {
     setSelectedExtras((prev) => {
@@ -78,7 +74,7 @@ const ProductDetailCard = ({ product }: { product: HamburgerItem }) => {
           />
         </div>
 
-        <div className="sm:px-0 px-8">
+        <div className="sm:px-0 px-8 w-full">
           {/* Información del producto */}
           <div className="flex flex-col justify-center w-full mt-10 sm:mt-6">
             <h1 className="text-2xl sm:text-4xl font-bold text-orange-100 mb-4">
@@ -101,21 +97,15 @@ const ProductDetailCard = ({ product }: { product: HamburgerItem }) => {
               ))}
             </ul>
 
-            {/* Tamaños de hamburguesas */}
-            <BurgerSizeSelector
-              burgerSize={burgerSize}
-              setBurgerSize={setBurgerSize}
-            />
-
             {/* precio   */}
             <span className="text-3xl font-bold text-white mt-8">
-              ${basePrice.toLocaleString()}
+              ${product.price.toLocaleString()}
             </span>
           </div>
 
           {/* Acordeón de extras */}
           <SubMenuAcordeon
-            extras={extras}
+            extras={dip}
             selectedExtras={selectedExtras}
             onExtraChange={handleExtraChange}
           />
@@ -144,9 +134,7 @@ const ProductDetailCard = ({ product }: { product: HamburgerItem }) => {
       <AddToCart
         total={totalPrice * count}
         quantity={count}
-        selectedExtras={selectedExtras}
         productName={product.name}
-        productSize={burgerSize}
         note={note}
         productImage={product.image}
         setCount={setCount}
@@ -155,4 +143,4 @@ const ProductDetailCard = ({ product }: { product: HamburgerItem }) => {
   );
 };
 
-export default ProductDetailCard;
+export default StarterDetailCard;

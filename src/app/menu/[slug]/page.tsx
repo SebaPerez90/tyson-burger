@@ -1,14 +1,13 @@
 import { Metadata } from "next";
-import { notFound } from "next/navigation";
-
-import menuData from "@/src/mockup/menu.json";
 
 import ProductDetailCard from "@/src/components/ui/cards/ProductDetailCard";
 import ProductDetailHeader from "@/src/components/menu/ProductDetailHeader";
+import { allProducts } from "@/src/lib/menu";
+import StarterDetailCard from "@/src/components/ui/cards/StarterDetailCard";
 
 // Genera los parámetros estáticos
 export async function generateStaticParams() {
-  return menuData.map((item) => ({
+  return allProducts.map((item) => ({
     name: item.name.toLowerCase().replace(/\s+/g, "-"),
   }));
 }
@@ -22,7 +21,7 @@ export async function generateMetadata({
   const { slug } = await params;
 
   const decodedName = decodeURIComponent(slug);
-  const product = menuData.find(
+  const product = allProducts.find(
     (item) => item.name.toLowerCase().replace(/\s+/g, "-") === decodedName
   );
 
@@ -38,7 +37,7 @@ export async function generateMetadata({
       title: `${product.name} | Hamburguesería`,
       description: product.description,
       images: [product.image],
-      url: `https://tusitio.com/menu/${decodedName}`,
+      url: `https://tyson-burger.vercel.app/menu/${decodedName}`,
     },
   };
 }
@@ -51,21 +50,22 @@ export default async function ProductPage({
   const { slug } = await params;
   const decodedName = decodeURIComponent(slug);
 
-  const product = menuData.find(
+  const product = allProducts.find(
     (item) => item.name.toLocaleLowerCase().replace(/\s+/g, "-") === decodedName
   );
 
   if (!product) {
-    notFound();
+    return { title: "Producto no encontrado | Hamburguesería" };
   }
 
   return (
     <main className="min-h-screen relative max-w-[1200px] mx-auto mb-16">
-      {/* header product detail */}
       <ProductDetailHeader productName={product.name} />
-
-      {/* Detalles del producto */}
-      <ProductDetailCard product={product} />
+      {product.type === "burger" ? (
+        <ProductDetailCard product={product as HamburgerItem} />
+      ) : (
+        <StarterDetailCard product={product as StarterItem} />
+      )}
     </main>
   );
 }

@@ -47,7 +47,7 @@ const HamburgerCard = ({ item }: { item: HamburgerItem }) => {
 
         {/* Precio + Botones */}
         <div className="flex flex-col gap-0.5 mt-auto pt-4 border-t border-white/10 lg:h-auto lg:min-h-[82px]">
-          <div className="flex flex-row items-center lg:items-start lg:flex-col gap-0.5">
+          <div className="flex flex-row items-center gap-0.5">
             <span className="text-xl font-bold font-baloo text-white">
               ${item.price.simple.toLocaleString()}
             </span>

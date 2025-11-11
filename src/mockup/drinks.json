@@ -1,0 +1,23 @@
+[
+  {
+    "id": 1,
+    "type": "drink",
+    "name": "Lata Coca cola",
+    "price": 2000,
+    "image": "/menu/drinks/coca-cola.jpg"
+  },
+  {
+    "id": 2,
+    "type": "drink",
+    "name": "Lata Sprite",
+    "price": 2000,
+    "image": "/menu/drinks/sprite.jpg"
+  },
+  {
+    "id": 3,
+    "type": "drink",
+    "name": "Lata Fanta",
+    "price": 2000,
+    "image": "/menu/drinks/fanta.jpg"
+  }
+]

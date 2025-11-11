@@ -162,3 +162,20 @@
     @apply border border-blue-500;
   }
 }
+
+/* animacion para cuando se renderiza el carrito de compras */
+.cartContainer {
+  animation: appearInView 0.3s ease-in-out forwards;
+}
+
+@keyframes appearInView {
+  from {
+    transform: scale(0);
+    opacity: 0;
+  }
+  to {
+    transition: all 0.3s ease-in-out;
+    transform: scale(1);
+    opacity: 1;
+  }
+}

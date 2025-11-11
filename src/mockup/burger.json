@@ -16,7 +16,7 @@
       "triple": 13000
     },
 
-    "image": "/menu/cheese-burger.webp"
+    "image": "/menu/burgers/cheese-burger.webp"
   },
   {
     "id": 2,
@@ -36,7 +36,7 @@
       "triple": 13000
     },
 
-    "image": "/menu/oklahoma-burger.webp"
+    "image": "/menu/burgers/oklahoma-burger.webp"
   },
   {
     "id": 3,
@@ -55,7 +55,7 @@
       "triple": 13000
     },
 
-    "image": "/menu/cheese-bacon-burger.webp"
+    "image": "/menu/burgers/cheese-bacon-burger.webp"
   },
   {
     "id": 4,
@@ -75,6 +75,6 @@
       "triple": 13000
     },
 
-    "image": "/menu/american-burger.webp"
+    "image": "/menu/burgers/american-burger.webp"
   }
 ]

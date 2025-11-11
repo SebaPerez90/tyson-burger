@@ -2,7 +2,7 @@ import SectionTitle from "@/src/components/menu/SectionTitle";
 import HamburgerCard from "@/src/components/ui/cards/HamburgerCard";
 import StarterCard from "@/src/components/ui/cards/StarterCard";
 
-import mockMenuItems from "@/src/mockup/menu.json";
+import mockMenuItems from "@/src/mockup/burger.json";
 import mockStartersItems from "@/src/mockup/starters.json";
 import mockDrinksItems from "@/src/mockup/drinks.json";
 import DrinkCard from "@/src/components/ui/cards/DrinkCard";

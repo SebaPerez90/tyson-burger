@@ -43,33 +43,6 @@ export async function generateMetadata({
   };
 }
 
-// export default async function ProductPage({
-//   params,
-// }: {
-//   params: Promise<{ slug: string }>;
-// }) {
-//   const { slug } = await params;
-//   const decodedName = decodeURIComponent(slug);
-
-//   const product = allProducts.find(
-//     (item) => item.name.toLocaleLowerCase().replace(/\s+/g, "-") === decodedName
-//   );
-
-//   if (!product) {
-//     return { title: "Producto no encontrado | Hamburguesería" };
-//   }
-
-//   return (
-//     <main className="min-h-screen relative max-w-[1200px] mx-auto mb-16">
-//       <ProductDetailHeader productName={product.name} />
-//       {product.type === "burger" ? (
-//         <ProductDetailCard product={product as HamburgerItem} />
-//       ) : (
-//         <StarterDetailCard product={product as StarterItem} />
-//       )}
-//     </main>
-//   );
-// }
 export default async function ProductPage({
   params,
 }: {

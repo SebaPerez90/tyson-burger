@@ -1,6 +1,6 @@
 import Image from "next/image";
 import { Button } from "../ui/button";
-import heroImage from "../../../public/test.jpg";
+import heroImage from "../../../public/hero-image.jpg";
 import Link from "next/link";
 
 const afterLayerStyles =

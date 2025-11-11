@@ -8,8 +8,6 @@ import { useRouter } from "next/navigation";
 const StarterCard = ({ item }: { item: StarterItem }) => {
   const router = useRouter();
 
-  console.log("item", item.name);
-
   return (
     <div
       key={item.id}
@@ -23,7 +21,7 @@ const StarterCard = ({ item }: { item: StarterItem }) => {
         <div className="overflow-hidden rounded-2xl md:rounded-none lg:rounded-2xl w-full h-[300px]">
           <Image
             width={400}
-            height={208}
+            height={400}
             src={item.image}
             alt={item.name}
             loading="eager"

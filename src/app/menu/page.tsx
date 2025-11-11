@@ -4,6 +4,8 @@ import StarterCard from "@/src/components/ui/cards/StarterCard";
 
 import mockMenuItems from "@/src/mockup/menu.json";
 import mockStartersItems from "@/src/mockup/starters.json";
+import mockDrinksItems from "@/src/mockup/drinks.json";
+import DrinkCard from "@/src/components/ui/cards/DrinkCard";
 
 export default function MenuPage() {
   return (
@@ -27,6 +29,16 @@ export default function MenuPage() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 lg:gap-8">
           {mockStartersItems.map((item) => (
             <StarterCard key={item.id} item={item} />
+          ))}
+        </div>
+      </section>
+
+      {/* drinks container section */}
+      <section>
+        <SectionTitle title="Bebidas" subtitle="(sabores originales)" />
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 lg:gap-8">
+          {mockDrinksItems.map((item) => (
+            <DrinkCard key={item.id} item={item} />
           ))}
         </div>
       </section>

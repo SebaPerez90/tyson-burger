@@ -8,17 +8,19 @@ import { useRouter } from "next/navigation";
 const StarterCard = ({ item }: { item: StarterItem }) => {
   const router = useRouter();
 
+  console.log("item", item.name);
+
   return (
     <div
       key={item.id}
-      className="bg-linear-to-b from-[#1a0000] to-[#2b0000] rounded-2xl overflow-hidden border border-white/15 flex flex-row lg:flex-col justify-between cursor-pointer h-[200px] active:scale-[0.98] active:brightness-90 transition-all select-none active:from-[#310000] active:to-[#430000]"
+      className="bg-linear-to-b from-[#1a0000] to-[#2b0000] rounded-2xl overflow-hidden border border-white/15 flex flex-row lg:flex-col justify-between cursor-pointer h-[200px] lg:h-auto active:scale-[0.98] active:brightness-90 transition-all select-none active:from-[#310000] active:to-[#430000]"
       onClick={() =>
         router.push(`/menu/${item.name.toLowerCase().replace(/\s+/g, "-")}`)
       }
     >
       {/* IMAGE */}
       <div className="p-2 md:p-0 lg:p-4 w-1/2 md:w-[70%] lg:w-full">
-        <div className="overflow-hidden rounded-2xl md:rounded-none lg:rounded-2xl w-full h-full">
+        <div className="overflow-hidden rounded-2xl md:rounded-none lg:rounded-2xl w-full h-[300px]">
           <Image
             width={400}
             height={208}
@@ -31,14 +33,14 @@ const StarterCard = ({ item }: { item: StarterItem }) => {
       </div>
 
       {/* BODY */}
-      <div className="p-3 lg:p-6 lg:pt-0 flex flex-col justify-between grow">
+      <div className="p-3 lg:p-6 lg:pt-0 flex flex-col justify-between grow ">
         <div>
           <span className="text-lg md:text-xl lg:text-3xl text-orange-100 font-bold mb-3 block">
             {item.name}
           </span>
 
           {/* INGREDIENTES */}
-          <ul className="flex flex-col marker:text-green-500 text-[10px] text-white/60 lg:block list-disc list-inside lg:text-sm">
+          <ul className="flex flex-col marker:text-green-500 text-[10px] text-white/60 lg:block list-disc list-inside lg:text-sm pb-3">
             {item.ingredients.map((item, index) => (
               <li key={index}>{item}</li>
             ))}
@@ -47,7 +49,7 @@ const StarterCard = ({ item }: { item: StarterItem }) => {
 
         {/* Precio + Botones */}
         <div className="flex flex-col gap-0.5 mt-auto pt-4 border-t border-white/10 lg:h-auto lg:min-h-[82px]">
-          <div className="flex flex-row items-center lg:items-start lg:flex-col gap-0.5">
+          <div className="flex flex-row items-center gap-0.5">
             <span className="text-xl font-bold font-baloo text-white">
               ${item.price.toLocaleString()}
             </span>

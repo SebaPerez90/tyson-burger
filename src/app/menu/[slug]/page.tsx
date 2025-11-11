@@ -1,9 +1,10 @@
 import { Metadata } from "next";
 
-import ProductDetailCard from "@/src/components/ui/cards/ProductDetailCard";
-import ProductDetailHeader from "@/src/components/menu/ProductDetailHeader";
 import { allProducts } from "@/src/lib/menu";
+
+import ProductDetailHeader from "@/src/components/menu/ProductDetailHeader";
 import StarterDetailCard from "@/src/components/ui/cards/StarterDetailCard";
+import HamburgerDetailCard from "@/src/components/ui/cards/HamburgerDetailCard";
 
 // Genera los parámetros estáticos
 export async function generateStaticParams() {
@@ -89,7 +90,7 @@ export default async function ProductPage({
     <main className="min-h-screen relative max-w-[1200px] mx-auto mb-16">
       <ProductDetailHeader productName={product.name} />
       {product.type === "burger" ? (
-        <ProductDetailCard product={product as HamburgerItem} />
+        <HamburgerDetailCard product={product as HamburgerItem} />
       ) : (
         <StarterDetailCard product={product as StarterItem} />
       )}

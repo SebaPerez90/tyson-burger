@@ -29,7 +29,7 @@ const extras = [
   },
 ];
 
-const ProductDetailCard = ({ product }: { product: HamburgerItem }) => {
+const HamburgerDetailCard = ({ product }: { product: HamburgerItem }) => {
   const [selectedExtras, setSelectedExtras] = useState<Extra[]>([]);
   const [note, setNote] = useState("");
   const [count, setCount] = useState(1);
@@ -155,4 +155,4 @@ const ProductDetailCard = ({ product }: { product: HamburgerItem }) => {
   );
 };
 
-export default ProductDetailCard;
+export default HamburgerDetailCard;

@@ -43,3 +43,11 @@ type Extra = {
   label: string;
   price: string;
 };
+
+type DrinkItem = {
+  id: number;
+  type?: string;
+  name: string;
+  price: number;
+  image: string;
+};

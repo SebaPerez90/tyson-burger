@@ -9,7 +9,7 @@
       "Sal especiada de la casa",
       "Salsas a elección"
     ],
-    "price": 9000,
+    "price": 4000,
     "image": "/menu/starters/fries.webp"
   },
   {
@@ -72,7 +72,7 @@
       "Rebozado crocante",
       "Salsa de tomate o barbacoa"
     ],
-    "price": 9500,
+    "price": 9000,
     "image": "/menu/starters/mozzarella-sticks.webp"
   }
 ]

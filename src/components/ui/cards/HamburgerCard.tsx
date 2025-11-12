@@ -59,17 +59,17 @@ const HamburgerCard = ({ item }: { item: HamburgerItem }) => {
                 : item.price.simple.toLocaleString()}
             </span>
 
-            {item.discount && item.discount > 0 && (
+            {item.discount && item.discount > 0 ? (
               <span className="text-xs opacity-40 ml-1 text-white line-through">
                 ${item.price.simple.toLocaleString()}
               </span>
-            )}
+            ) : null}
 
-            {item.discount && item.discount > 0 && (
+            {item.discount && item.discount > 0 ? (
               <span className="text-[10px] ml-1 lg:ml-0 px-0.5 py-0.5 lg:px-2 lg:py-2 bg-green-600/40 text-green-400 rounded-full w-max">
                 {item.discount}% OFF
               </span>
-            )}
+            ) : null}
           </div>
 
           <Link

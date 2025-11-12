@@ -143,6 +143,7 @@ const StarterDetailCard = ({ product }: { product: StarterItem }) => {
 
       {/* Botones de compra y cantidad de productos */}
       <AddToCart
+        selectedExtras={selectedExtras}
         total={totalPrice * count}
         quantity={count}
         productName={product.name}

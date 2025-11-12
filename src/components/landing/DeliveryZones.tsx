@@ -20,7 +20,7 @@ export default function DeliveryAndPickup() {
   const whatsappLink = `https://wa.me/5491132830604?text=${whatsappMessage}`; // reemplazá con tu número
 
   return (
-    <section className="max-w-[1200px] mx-auto py-24 px-4 space-y-12">
+    <section className="max-w-[1200px] mx-auto py-16 px-4 space-y-12">
       {/* Título */}
       <h2 className="text-4xl font-extrabold text-center text-background">
         Zonas donde entregamos

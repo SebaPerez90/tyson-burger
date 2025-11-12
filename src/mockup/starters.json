@@ -54,7 +54,7 @@
       "Mar de quesos"
     ],
     "price": 8000,
-    "image": "/menu/starters/fries-sweet.jpg",
+    "image": "/menu/starters/fries-sweet.webp",
     "stock": 10
   },
   {
@@ -78,7 +78,7 @@
     "description": "Papas fritas doradas bañadas con una lluvia de queso cheddar fundido (200gr).",
     "ingredients": ["Papas fritas crocantes", "Queso cheddar fundido"],
     "price": 8000,
-    "image": "/menu/starters/fries-cheddar.jpg",
+    "image": "/menu/starters/fries-cheddar.webp",
     "stock": 10
   },
   {

@@ -5,8 +5,8 @@ const horariosTrabajo = [{ dia: "Jueves a Domingo", hora: "20:00 a 23:30" }];
 
 const Horarios = () => {
   return (
-    <section className="max-w-[1200px] mx-auto py-24 px-4 bg-inherit rounded-lg">
-      <h2 className="text-4xl font-extrabold text-center mb-24 text-white">
+    <section className="max-w-[1200px] mx-auto py-20 px-4 bg-inherit rounded-lg">
+      <h2 className="text-4xl font-extrabold text-center mb-16 text-white">
         Horarios de Atención 🕒
       </h2>
 
@@ -22,7 +22,7 @@ const Horarios = () => {
         </div>
 
         {/* CTA */}
-        <div className="flex flex-col items-center md:items-start justify-center gap-4 text-center md:text-left">
+        <div className="flex flex-col items-center md:items-start justify-center gap-1 text-center md:text-left">
           <p className="text-white/90 text-lg md:text-xl font-medium mb-4">
             ¡No te quedes con hambre! Pedí tu hamburguesa ahora.
           </p>

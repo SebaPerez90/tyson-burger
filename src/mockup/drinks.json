@@ -4,20 +4,23 @@
     "type": "drink",
     "name": "Lata Coca cola",
     "price": 2000,
-    "image": "/menu/drinks/coca-cola.jpg"
+    "image": "/menu/drinks/coca-cola.jpg",
+    "stock": 1
   },
   {
     "id": 2,
     "type": "drink",
     "name": "Lata Sprite",
     "price": 2000,
-    "image": "/menu/drinks/sprite.jpg"
+    "image": "/menu/drinks/sprite.jpg",
+    "stock": 1
   },
   {
     "id": 3,
     "type": "drink",
     "name": "Lata Fanta",
     "price": 2000,
-    "image": "/menu/drinks/fanta.jpg"
+    "image": "/menu/drinks/fanta.jpg",
+    "stock": 1
   }
 ]

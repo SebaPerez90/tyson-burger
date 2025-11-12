@@ -52,7 +52,7 @@ const DrinkCard = ({ item }: { item: DrinkItem }) => {
             src={item.image}
             alt={item.name}
             loading="eager"
-            className="object-cover w-full h-full saturate-[1.2] transition-all duration-300 ease-in-out hover:scale-110"
+            className="object-cover w-full h-full"
           />
         </div>
       </div>
@@ -75,7 +75,7 @@ const DrinkCard = ({ item }: { item: DrinkItem }) => {
             <div className="flex items-center bg-secondary justify-between px-6 rounded-md py-1">
               <button
                 onClick={handleDecrement}
-                className="text-xl  hover:bg-inherit hover:text-zinc-700 antialiased cursor-pointer"
+                className="text-xl  hover:bg-inherit hover:text-zinc-700 antialiased cursor-pointer font-black"
               >
                 –
               </button>
@@ -84,7 +84,7 @@ const DrinkCard = ({ item }: { item: DrinkItem }) => {
               </span>
               <button
                 onClick={handleIncrement}
-                className="text-xl hover:bg-inherit hover:text-zinc-700 antialiased cursor-pointer"
+                className="text-xl hover:bg-inherit hover:text-zinc-700 antialiased cursor-pointer font-black"
               >
                 +
               </button>

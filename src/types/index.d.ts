@@ -12,6 +12,7 @@ type HamburgerItem = {
     triple: number;
   };
   image: string;
+  stock?: number;
 };
 
 type Order = {
@@ -36,6 +37,7 @@ type StarterItem = {
   ingredients: string[];
   price: number;
   image: string;
+  stock?: number;
 };
 
 type Extra = {
@@ -50,4 +52,5 @@ type DrinkItem = {
   name: string;
   price: number;
   image: string;
+  stock?: number;
 };

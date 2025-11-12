@@ -2,32 +2,13 @@
 
 import Image from "next/image";
 import { useEffect, useState } from "react";
+
 import { parsePriceStringToNumber } from "@/src/utils/priceConverter";
+import { burgerExtras } from "@/src/constants/burgerExtras";
 
 import SubMenuAcordeon from "@/src/components/ui/acordeons/SubMenuAcordeon";
 import AddToCart from "@/src/components/menu/AddToCart";
 import BurgerSizeSelector from "../../menu/BurgerSizeSelector";
-
-const extras = [
-  { id: "extra-meat", label: "Extra medallon de carne", price: "$ 4.000" },
-  { id: "extra-cheese", label: "Extra cheddar al medallon", price: "$ 500" },
-  { id: "extra-bacon", label: "Doble bacon extra", price: "$ 2.500" },
-  {
-    id: "extra-cheese-fries",
-    label: "Extra cheddar a tus papas",
-    price: "$ 2.000",
-  },
-  {
-    id: "extra-bacon-fries",
-    label: "Extra bacon a tus papas",
-    price: "$ 2.000",
-  },
-  {
-    id: "extra-cheese-bacon-fries",
-    label: "Extra cheddar y bacon a tus papas",
-    price: "$ 2.500",
-  },
-];
 
 const HamburgerDetailCard = ({ product }: { product: HamburgerItem }) => {
   const [selectedExtras, setSelectedExtras] = useState<Extra[]>([]);
@@ -39,6 +20,11 @@ const HamburgerDetailCard = ({ product }: { product: HamburgerItem }) => {
     "simple"
   );
 
+  const activePrices =
+    product.discount && product.discount > 0
+      ? product.discountedPrices
+      : product.price;
+
   useEffect(() => {
     const extrasSum = selectedExtras.reduce(
       (sum, ex) => sum + parsePriceStringToNumber(ex.price),
@@ -48,8 +34,9 @@ const HamburgerDetailCard = ({ product }: { product: HamburgerItem }) => {
   }, [selectedExtras, basePrice, burgerSize]);
 
   useEffect(() => {
-    setBasePrice(parsePriceStringToNumber(String(product.price[burgerSize])));
-  }, [burgerSize, product.price]);
+    if (activePrices)
+      setBasePrice(parsePriceStringToNumber(String(activePrices[burgerSize])));
+  }, [burgerSize, activePrices]);
 
   const handleExtraChange = (extra: Extra) => {
     setSelectedExtras((prev) => {
@@ -108,14 +95,39 @@ const HamburgerDetailCard = ({ product }: { product: HamburgerItem }) => {
             />
 
             {/* precio   */}
-            <span className="text-3xl font-bold text-white mt-8">
-              ${basePrice.toLocaleString()}
-            </span>
+            {product.discount && product.discount > 0 && activePrices ? (
+              <div className="flex  flex-row items-center gap-0.5 mt-8">
+                <span className="text-3xl font-bold font-baloo text-white">
+                  $
+                  {product.discount && product.discount > 0
+                    ? product.discountedPrices?.[burgerSize]
+                    : product.price[burgerSize].toLocaleString()}
+                </span>
+
+                {product.discount && product.discount > 0 && (
+                  <span className="text-sm ml-2 text-white/40 line-through">
+                    ${product.price[burgerSize].toLocaleString()}
+                  </span>
+                )}
+
+                {product.discount && product.discount > 0 && (
+                  <span className="text-sm ml-1 lg:ml-0 py-0.5 px-2 lg:py-2 bg-green-600/40 text-green-400 rounded-full w-max">
+                    {product.discount}% OFF
+                  </span>
+                )}
+              </div>
+            ) : (
+              activePrices && (
+                <span className="text-3xl font-bold text-white mt-8">
+                  ${activePrices[burgerSize].toLocaleString()}
+                </span>
+              )
+            )}
           </div>
 
           {/* Acordeón de extras */}
           <SubMenuAcordeon
-            extras={extras}
+            extras={burgerExtras}
             selectedExtras={selectedExtras}
             onExtraChange={handleExtraChange}
           />

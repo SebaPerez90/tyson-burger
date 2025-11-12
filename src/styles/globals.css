@@ -119,6 +119,7 @@
 
 @layer base {
   * {
+    scroll-behavior: smooth;
     /* scrollbar solo en chrome/edge */
     ::-webkit-scrollbar {
       width: 6px;

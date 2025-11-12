@@ -3,46 +3,82 @@
     "id": 1,
     "type": "starter",
     "name": "Papas fritas",
-    "description": "Papas fritas artesanales con piel. Adobadas con sal especiada de la casa y salsas a elección.",
-    "ingredients": ["Papas caseras de la casa", "Salsa a elección"],
-    "price": 9000,
-    "image": "/menu/starters/fries.webp"
+    "description": "Papas fritas artesanales con piel, doradas al punto justo. Adobadas con sal especiada de la casa y acompañadas con salsas a elección.",
+    "ingredients": [
+      "Papas caseras con piel",
+      "Sal especiada de la casa",
+      "Salsas a elección"
+    ],
+    "price": 4000,
+    "image": "/menu/starters/fries.webp",
+    "stock": 10
   },
   {
     "id": 2,
     "type": "starter",
     "name": "Papas fritas con huevo",
-    "description": "Papas fritas artesanales con piel (600gr) y huevos(3 unidades). Adobadas con sal especiada de la casa y salsas a elección.",
+    "description": "Papas fritas artesanales con piel (600 g) cubiertas con 3 huevos a la plancha. Doradas y condimentadas con nuestra sal especiada, servidas con salsas a elección.",
     "ingredients": [
-      "Papas caseras de la casa",
-      "Huevo",
+      "Papas caseras con piel",
       "Huevos a la plancha",
-      "Salsa a elección"
+      "Sal especiada",
+      "Salsas a elección"
     ],
-    "price": 9000,
-    "image": "/menu/starters/fries-egg.webp"
+    "price": 6000,
+    "image": "/menu/starters/fries-egg.webp",
+    "stock": 10
   },
   {
     "id": 3,
     "type": "starter",
-    "name": "Papas fritas con bacon",
-    "description": "Papas fritas artesanales con piel (600gr), bacon crujiente (150gr), cheddar fundido (200gr) y cebolla de verdeo. Adobadas con sal especiada de la casa y salsas a elección.",
+    "name": "Papas Tyson",
+    "description": "Papas fritas doradas y crujientes bañadas con queso cheddar fundido (200 g), panceta ahumada crocante (150 g) y cebolla de verdeo. Adobadas con sal especiada de la casa.",
     "ingredients": [
-      "Papas caseras de la casa",
-      "Bacon crujiente",
-      "Queso cheddar premium",
-      "Cebolla de verdeo"
+      "Papas caseras con piel",
+      "Cebolla de verdeo dorada",
+      "Panceta ahumada crocante",
+      "Baño de queso cheddar"
     ],
-    "price": 9000,
-    "image": "/menu/starters/fries-bacon.webp"
+    "price": 10000,
+    "image": "/menu/starters/fries-bacon.webp",
+    "stock": 10
   },
   {
     "id": 4,
     "type": "starter",
     "name": "Nuggets de pollo",
-    "description": "Patitas doradas de pollo con salsas a elección.",
-    "ingredients": ["Patitas de pollo", "Salsa a elección"],
+    "description": "Patitas doradas de pollo con rebozado crujiente y dorado (200gr). Acompañadas con salsas a elección para disfrutar en cada bocado.",
+    "ingredients": [
+      "Patitas de pollo",
+      "Papas fritas de la casa",
+      "Salsas a elección"
+    ],
+    "price": 8000,
+    "image": "/menu/starters/nuggets.webp",
+    "stock": 1
+  },
+  {
+    "id": 6,
+    "type": "starter",
+    "name": "Papas con cheddar",
+    "description": "Papas fritas doradas bañadas con una lluvia de queso cheddar fundido (200gr).",
+    "ingredients": ["Papas fritas crocantes", "Queso cheddar fundido"],
+    "price": 8000,
+    "image": "/menu/starters/fries-cheddar.jpg",
+    "stock": 10
+  },
+  {
+    "id": 8,
+    "type": "starter",
+    "name": "Bastones de mozzarella",
+    "description": "Bastones de mozzarella derretida con rebozado crocante, fritos al instante. Servidos con salsa de tomate especiada o barbacoa.",
+    "ingredients": [
+      "Queso mozzarella fundido",
+      "Rebozado crocante",
+      "Salsa de tomate o barbacoa"
+    ],
     "price": 9000,
-    "image": "/menu/starters/nuggets.webp"
+    "image": "/menu/starters/mozzarella-sticks.webp",
+    "stock": 1
   }
 ]

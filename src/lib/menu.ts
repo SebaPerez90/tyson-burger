@@ -1,4 +1,4 @@
-import burgers from "@/src/mockup/menu.json";
+import burgers from "@/src/mockup/burger.json";
 import starters from "@/src/mockup/starters.json";
 
 export const allProducts = [

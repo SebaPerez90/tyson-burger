@@ -19,11 +19,17 @@ const links = [
 export const Navbar = () => {
   const pathname = usePathname();
 
+  const isMenu = pathname === "/menu";
+
   const isDetail = pathname.startsWith("/menu/") && pathname !== "/menu";
   if (isDetail) return null;
 
   return (
-    <header className="sticky bg-foreground/60 top-0 w-full z-50 px-0 sm:px-16 lg:px-24 sm:py-4 py-2 backdrop-blur-xl shadow-md">
+    <header
+      className={`sticky ${
+        isMenu ? "bg-transparent" : "bg-foreground/60"
+      }  top-0 w-full z-50 px-0 sm:px-16 lg:px-24 sm:py-4a py-2 backdrop-blur-xl shadow-md`}
+    >
       <div className="max-w-[1200px] mx-auto">
         <div className="flex justify-between items-center">
           {/* Logo */}

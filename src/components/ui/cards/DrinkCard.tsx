@@ -5,6 +5,7 @@ import { useState } from "react";
 
 import { generateShortId } from "@/src/utils/uuidGenerator";
 import { Button } from "../button";
+import { noStockStyle } from "@/src/constants/noStockStyle";
 
 const DrinkCard = ({ item }: { item: DrinkItem }) => {
   const [count, setCount] = useState(1);
@@ -38,10 +39,14 @@ const DrinkCard = ({ item }: { item: DrinkItem }) => {
     }
   };
 
+  const noStock = item.stock < 10;
+
   return (
     <div
       key={item.id}
-      className="bg-linear-to-b from-[#1a0000] to-[#2b0000] rounded-2xl overflow-hidden border border-white/15 flex flex-row lg:flex-col justify-between h-[200px] lg:h-auto transition-all select-none "
+      className={`${
+        noStock && noStockStyle
+      } bg-linear-to-b from-[#1a0000] to-[#2b0000] rounded-2xl overflow-hidden border border-white/15 flex flex-row lg:flex-col justify-between h-[200px] lg:h-auto transition-all select-none`}
     >
       {/* IMAGE */}
       <div className="p-2 md:p-0 lg:p-4 w-1/2 md:w-[70%] lg:w-full">
@@ -52,7 +57,7 @@ const DrinkCard = ({ item }: { item: DrinkItem }) => {
             src={item.image}
             alt={item.name}
             loading="eager"
-            className="object-cover w-full h-full saturate-[1.2] transition-all duration-300 ease-in-out hover:scale-110"
+            className="object-cover w-full h-full"
           />
         </div>
       </div>
@@ -75,7 +80,7 @@ const DrinkCard = ({ item }: { item: DrinkItem }) => {
             <div className="flex items-center bg-secondary justify-between px-6 rounded-md py-1">
               <button
                 onClick={handleDecrement}
-                className="text-xl  hover:bg-inherit hover:text-zinc-700 antialiased cursor-pointer"
+                className="text-xl  hover:bg-inherit hover:text-zinc-700 antialiased cursor-pointer font-black"
               >
                 –
               </button>
@@ -84,7 +89,7 @@ const DrinkCard = ({ item }: { item: DrinkItem }) => {
               </span>
               <button
                 onClick={handleIncrement}
-                className="text-xl hover:bg-inherit hover:text-zinc-700 antialiased cursor-pointer"
+                className="text-xl hover:bg-inherit hover:text-zinc-700 antialiased cursor-pointer font-black"
               >
                 +
               </button>

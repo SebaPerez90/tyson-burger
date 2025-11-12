@@ -76,7 +76,7 @@
     ],
     "price": { "simple": 10800, "doble": 12000, "triple": 13000 },
     "stock": 10,
-    "image": "/menu/burgers/cheese-burger.webp"
+    "image": "/menu/burgers/provo-burger.webp"
   },
   {
     "id": 6,
@@ -90,7 +90,7 @@
       "Pan de papa artesanal"
     ],
     "price": { "simple": 8000, "doble": 10000, "triple": 11000 },
-    "stock": 10,
+    "stock": 1,
     "image": "/menu/burgers/cheese-burger.webp"
   },
   {
@@ -107,6 +107,6 @@
     ],
     "price": { "simple": 10000, "doble": 12000, "triple": 13000 },
     "stock": 10,
-    "image": "/menu/burgers/cheese-burger.webp"
+    "image": "/menu/burgers/tyson-burger.webp"
   }
 ]

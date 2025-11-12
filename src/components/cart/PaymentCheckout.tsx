@@ -1,32 +1,38 @@
-import { FaMoneyBills, FaHandHoldingHeart } from "react-icons/fa6";
-import { BsCurrencyDollar, BsBank } from "react-icons/bs";
+import {
+  FaMoneyBills,
+  // , FaHandHoldingHeart
+} from "react-icons/fa6";
+import {
+  // BsCurrencyDollar,
+  BsBank,
+} from "react-icons/bs";
 import { IoWalletOutline } from "react-icons/io5";
 
-import FloatingInput from "../forms/FloatingInput";
+// import FloatingInput from "../forms/FloatingInput";
 
-import {
-  formatNumberWithDot,
-  parsePriceStringToNumber,
-} from "@/src/utils/priceConverter";
+// import {
+//   formatNumberWithDot,
+//   parsePriceStringToNumber,
+// } from "@/src/utils/priceConverter";
 
 interface CheckoutPaymentProps {
-  isDelivery: boolean;
-  tip: number | "otro";
-  setTip: (tip: number | "otro") => void;
-  customTip: string | number;
-  setCustomTip: (customTip: string | number) => void;
-  cashAmount: string | number;
-  setCashAmount: (cashAmount: string | number) => void;
+  // isDelivery: boolean;
+  // tip: number | "otro";
+  // setTip: (tip: number | "otro") => void;
+  // customTip: string | number;
+  // setCustomTip: (customTip: string | number) => void;
+  // cashAmount: string | number;
+  // setCashAmount: (cashAmount: string | number) => void;
   paymentMethod: "efectivo" | "mercado pago";
   setPaymentMethod: (paymentMethod: "efectivo" | "mercado pago") => void;
 }
 
 const PaymentCheckout = ({
-  isDelivery,
-  tip,
-  setTip,
-  customTip,
-  setCustomTip,
+  // isDelivery,
+  // tip,
+  // setTip,
+  // customTip,
+  // setCustomTip,
   // cashAmount,
   // setCashAmount,
   paymentMethod,
@@ -85,7 +91,7 @@ const PaymentCheckout = ({
       </div>
 
       {/* PROPINA */}
-      {isDelivery && (
+      {/* {isDelivery && (
         <div className="border border-white/20 rounded-xl p-5 text-stone-50 space-y-8">
           <h3 className="font-bold flex items-center gap-2 text-lg mb-4">
             <FaHandHoldingHeart size={24} /> Propina
@@ -126,7 +132,7 @@ const PaymentCheckout = ({
             />
           )}
         </div>
-      )}
+      )} */}
     </>
   );
 };

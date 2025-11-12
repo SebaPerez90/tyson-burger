@@ -35,7 +35,7 @@ const HamburgerCard = ({ item }: { item: HamburgerItem }) => {
       </div>
 
       {/* BODY */}
-      <div className="p-3 lg:p-6 lg:pt-0 flex flex-col justify-between grow">
+      <div className="p-3 lg:p-6 lg:pt-0 flex flex-col justify-between grow z-40">
         <div>
           <span className="text-lg md:text-xl lg:text-3xl text-orange-100 font-bold mb-3 block">
             {item.name}

@@ -22,7 +22,7 @@ const StarterCard = ({ item }: { item: StarterItem }) => {
       }
     >
       {/* IMAGE */}
-      <div className="p-2 md:p-0 lg:p-4 w-1/2 md:w-[70%] lg:w-full">
+      <div className="p-2 md:p-0 lg:p-4 w-1/2 md:w-[60%] lg:w-full">
         <div className="overflow-hidden rounded-2xl md:rounded-none lg:rounded-2xl w-full h-[300px]">
           <Image
             width={400}
@@ -36,7 +36,7 @@ const StarterCard = ({ item }: { item: StarterItem }) => {
       </div>
 
       {/* BODY */}
-      <div className="p-3 lg:p-6 lg:pt-0 flex flex-col justify-between grow ">
+      <div className="p-3 lg:p-6 lg:pt-0 flex flex-col justify-between grow z-40">
         <div>
           <span className="text-lg md:text-xl lg:text-3xl text-orange-100 font-bold mb-3 block">
             {item.name}

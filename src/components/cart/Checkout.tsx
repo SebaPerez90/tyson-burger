@@ -12,15 +12,18 @@ interface CheckoutProps {
   isDelivery: boolean;
 }
 
+//  chequear el flujo de compra en efectivo y propina en caso
+//  de querer agregarlo en un futuro, solo se debe descomentar y conectar
+//  al resumen de la orden
 const Checkout = ({ clientOrder, isDelivery }: CheckoutProps) => {
   const [address, setAddress] = useState("");
   const [betweenStreets, setBetweenStreets] = useState("");
   const [details, setDetails] = useState("");
   const [userName, setUserName] = useState("");
   const [userPhone, setUserPhone] = useState("");
-  const [tip, setTip] = useState<number | "otro">(0);
-  const [customTip, setCustomTip] = useState<string | number>("");
-  const [cashAmount, setCashAmount] = useState<string | number>("");
+  // const [tip, setTip] = useState<number | "otro">(0);
+  // const [customTip, setCustomTip] = useState<string | number>("");
+  // const [cashAmount, setCashAmount] = useState<string | number>("");
   const [paymentMethod, setPaymentMethod] = useState<
     "efectivo" | "mercado pago"
   >("mercado pago");
@@ -48,13 +51,13 @@ const Checkout = ({ clientOrder, isDelivery }: CheckoutProps) => {
 
       {/* METODO DE PAGO */}
       <PaymentCheckout
-        isDelivery={isDelivery}
-        tip={tip}
-        setTip={setTip}
-        customTip={customTip}
-        setCustomTip={setCustomTip}
-        cashAmount={cashAmount}
-        setCashAmount={setCashAmount}
+        // isDelivery={isDelivery}
+        // tip={tip}
+        // setTip={setTip}
+        // customTip={customTip}
+        // setCustomTip={setCustomTip}
+        // cashAmount={cashAmount}
+        // setCashAmount={setCashAmount}
         paymentMethod={paymentMethod}
         setPaymentMethod={setPaymentMethod}
       />
@@ -62,10 +65,10 @@ const Checkout = ({ clientOrder, isDelivery }: CheckoutProps) => {
       {/* SUMMARY CARD */}
       <SummaryCard
         clientOrder={clientOrder}
-        tip={tip}
-        customTip={customTip}
+        // tip={tip}
+        // customTip={customTip}
         paymentMethod={paymentMethod}
-        cashAmount={cashAmount}
+        // cashAmount={cashAmount}
         address={address}
         betweenStreets={betweenStreets}
         details={details}

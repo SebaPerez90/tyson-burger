@@ -10,6 +10,7 @@ import {
   TooltipTrigger,
 } from "@/src/components/ui/tooltip";
 import OpenStatusBadge from "./OpenStatusBadge";
+import { useEffect, useState } from "react";
 
 const links = [
   { href: "/menu", label: "Menú" },
@@ -17,12 +18,19 @@ const links = [
 ];
 
 export const Navbar = () => {
+  const [isNotFound, setIsNotFound] = useState(true);
   const pathname = usePathname();
 
   const isMenu = pathname === "/menu";
-
   const isDetail = pathname.startsWith("/menu/") && pathname !== "/menu";
-  if (isDetail) return null;
+
+  useEffect(() => {
+    // Buscamos si el 404 está montado en el DOM
+    const notFoundEl = document.querySelector("[data-not-found]");
+    setIsNotFound(!!notFoundEl);
+  }, [pathname]);
+
+  if (isDetail || isNotFound) return null;
 
   return (
     <header

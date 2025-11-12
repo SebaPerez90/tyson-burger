@@ -5,13 +5,13 @@ import { toast } from "sonner";
 
 type Props = {
   clientOrder: Order[];
-  tip: number | "otro";
-  customTip: string | number;
+  // tip: number | "otro";
+  // customTip: string | number;
   address: string;
   betweenStreets: string;
   details: string;
   paymentMethod: "efectivo" | "mercado pago";
-  cashAmount: string | number;
+  // cashAmount: string | number;
   userPhone: string;
   userName: string;
   isDelivery: boolean;
@@ -19,8 +19,8 @@ type Props = {
 
 const SummaryCard = ({
   clientOrder,
-  tip,
-  customTip,
+  // tip,
+  // customTip,
   address,
   betweenStreets,
   details,
@@ -30,15 +30,15 @@ const SummaryCard = ({
   isDelivery,
 }: Props) => {
   const subtotal = clientOrder.reduce((acc, i) => acc + i.total, 0);
-  const realTip = tip === "otro" ? Number(customTip) || 0 : tip;
+  // const realTip = tip === "otro" ? Number(customTip) || 0 : tip;
   const envio = isDelivery ? 1000 : 0;
-  const total = subtotal + envio + realTip;
+  const total = subtotal + envio;
 
   function buildWhatsAppMessage() {
     const subtotal = clientOrder.reduce((t, i) => t + i.total, 0);
     const envio = isDelivery ? 1000 : 0;
-    const realTip = tip === "otro" ? Number(customTip) : tip;
-    const total = subtotal + envio + realTip;
+    // const realTip = tip === "otro" ? Number(customTip) : tip;
+    const total = subtotal + envio;
 
     const capitalizeWords = (str: string) => {
       return str
@@ -105,7 +105,6 @@ ${details ? `• Detalles: ${details}.` : ""}`
     } 
     • Subtotal productos: $${subtotal.toLocaleString()}
     ${isDelivery ? `• Envio: $${envio.toLocaleString()}` : ""}
-    ${realTip !== 0 ? `• Propina: $${realTip.toLocaleString()}` : ""}
 
 • *TOTAL: $${total.toLocaleString()}* 
 
@@ -167,9 +166,9 @@ ${details ? `• Detalles: ${details}.` : ""}`
 
         <div className="flex justify-between items-center">
           <span>Propina</span>
-          <span className="font-bold">
+          {/* <span className="font-bold">
             $ {isDelivery ? realTip.toLocaleString("es-AR") : 0}
-          </span>
+          </span> */}
         </div>
 
         <div className="flex justify-between items-center">

@@ -46,6 +46,20 @@
   {
     "id": 4,
     "type": "starter",
+    "name": "Papas Sweet & Cheese",
+    "description": "Papas fritas doradas y crujientes bañadas con una mezcla de queso cheddar fundido (100 g) y queso crema (100 g), cebolla caramelizada y salsa mac especial.",
+    "ingredients": [
+      "Papas caseras con piel",
+      "Cebolla caramelizada",
+      "Mar de quesos"
+    ],
+    "price": 8000,
+    "image": "/menu/starters/fries-sweet.jpg",
+    "stock": 10
+  },
+  {
+    "id": 5,
+    "type": "starter",
     "name": "Nuggets de pollo",
     "description": "Patitas doradas de pollo con rebozado crujiente y dorado (200gr). Acompañadas con salsas a elección para disfrutar en cada bocado.",
     "ingredients": [
@@ -68,7 +82,7 @@
     "stock": 10
   },
   {
-    "id": 8,
+    "id": 7,
     "type": "starter",
     "name": "Bastones de mozzarella",
     "description": "Bastones de mozzarella derretida con rebozado crocante, fritos al instante. Servidos con salsa de tomate especiada o barbacoa.",

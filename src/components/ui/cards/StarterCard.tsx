@@ -54,16 +54,23 @@ const StarterCard = ({ item }: { item: StarterItem }) => {
         <div className="flex flex-col gap-0.5 mt-auto pt-4 border-t border-white/10 lg:h-auto lg:min-h-[82px]">
           <div className="flex flex-row items-center gap-0.5">
             <span className="text-xl font-bold font-baloo text-white">
-              ${item.price.toLocaleString()}
+              $
+              {item.discount && item.discount > 0
+                ? item.discountedPrice
+                : item.price.toLocaleString()}
             </span>
 
-            <span className="text-xs opacity-40 ml-1 text-white line-through">
-              $11.000
-            </span>
+            {item.discount && item.discount > 0 ? (
+              <span className="text-xs opacity-40 ml-1 text-white line-through">
+                ${item.price.toLocaleString()}
+              </span>
+            ) : null}
 
-            <span className="text-[10px] ml-1 lg:ml-0 px-0.5 py-0.5 lg:px-2 lg:py-2 bg-green-600/40 text-green-400 rounded-full w-max">
-              18% OFF
-            </span>
+            {item.discount && item.discount > 0 ? (
+              <span className="text-[10px] ml-1 lg:ml-0 px-0.5 py-0.5 lg:px-2 lg:py-2 bg-green-600/40 text-green-400 rounded-full w-max">
+                {item.discount}% OFF
+              </span>
+            ) : null}
           </div>
 
           <Link

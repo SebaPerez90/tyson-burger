@@ -3,7 +3,7 @@
     "id": 1,
     "type": "drink",
     "name": "Lata Coca cola",
-    "price": 2000,
+    "price": 1800,
     "image": "/menu/drinks/coca-cola.jpg",
     "stock": 1
   },
@@ -11,7 +11,7 @@
     "id": 2,
     "type": "drink",
     "name": "Lata Sprite",
-    "price": 2000,
+    "price": 1800,
     "image": "/menu/drinks/sprite.jpg",
     "stock": 1
   },

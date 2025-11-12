@@ -44,6 +44,8 @@ type StarterItem = {
   price: number;
   image: string;
   stock: number;
+  discount?: number;
+  discountedPrice?: number;
 };
 
 type Extra = {

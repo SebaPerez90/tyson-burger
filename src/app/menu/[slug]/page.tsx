@@ -1,11 +1,14 @@
 import { Metadata } from "next";
 
+import { notFound } from "next/navigation";
+
 import { allProducts } from "@/src/lib/menu";
+import { burgerDiscount } from "@/src/utils/burgerDiscount";
+import { starterDiscount } from "@/src/utils/starterDiscount";
 
 import ProductDetailHeader from "@/src/components/menu/ProductDetailHeader";
 import StarterDetailCard from "@/src/components/ui/cards/StarterDetailCard";
 import HamburgerDetailCard from "@/src/components/ui/cards/HamburgerDetailCard";
-import { burgerDiscount } from "@/src/utils/burgerDiscount";
 
 // Genera los parámetros estáticos
 export async function generateStaticParams() {
@@ -52,30 +55,55 @@ export default async function ProductPage({
   const { slug } = await params;
   const decodedName = decodeURIComponent(slug);
 
-  const burgers = allProducts.filter(
-    (p) => p.category === "burger"
-  ) as HamburgerItem[];
+  // 🔍 Buscamos el producto base (sin descuentos todavía)
+  const baseProduct = allProducts.find(
+    (item) => item.name.toLowerCase().replace(/\s+/g, "-") === decodedName
+  );
 
-  const burgersWithDiscount = burgerDiscount(burgers);
+  if (!baseProduct) notFound();
 
-  const product =
-    burgersWithDiscount.find(
-      (item) => item.name.toLowerCase().replace(/\s+/g, "-") === decodedName
-    ) ||
-    allProducts.find(
-      (item) => item.name.toLowerCase().replace(/\s+/g, "-") === decodedName
-    );
+  let product: HamburgerItem | StarterItem = baseProduct;
 
-  if (!product) {
-    return <div>Producto no encontrado</div>;
+  // 💡 Aplico descuentos según la categoría
+  switch (baseProduct.category) {
+    case "burger": {
+      const burgers = allProducts.filter(
+        (p) => p.category === "burger"
+      ) as HamburgerItem[];
+      const burgersWithDiscount = burgerDiscount(burgers);
+
+      product = (burgersWithDiscount.find(
+        (b) => b.name.toLowerCase().replace(/\s+/g, "-") === decodedName
+      ) || baseProduct) as HamburgerItem;
+      break;
+    }
+
+    case "starter": {
+      const starters = allProducts.filter(
+        (p) => p.category === "starter"
+      ) as StarterItem[];
+      const startersWithDiscount = starterDiscount(starters);
+      product = (startersWithDiscount.find(
+        (s) => s.name.toLowerCase().replace(/\s+/g, "-") === decodedName
+      ) || baseProduct) as HamburgerItem | StarterItem;
+      break;
+    }
+
+    // ✨ Si mañana agregás más categorías (bebidas, postres, etc.)
+    // simplemente agregás un nuevo "case"
+    default:
+      notFound();
   }
 
   return (
     <main className="min-h-screen relative max-w-[1200px] mx-auto mb-16">
       <ProductDetailHeader productName={product.name} />
-      {product.type === "burger" ? (
+
+      {product.type === "burger" && (
         <HamburgerDetailCard product={product as HamburgerItem} />
-      ) : (
+      )}
+
+      {product.type === "starter" && (
         <StarterDetailCard product={product as StarterItem} />
       )}
     </main>

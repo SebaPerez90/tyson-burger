@@ -19,7 +19,7 @@
     "id": 3,
     "type": "drink",
     "name": "Lata Fanta",
-    "price": 2000,
+    "price": 1800,
     "image": "/menu/drinks/fanta.jpg",
     "stock": 1
   }

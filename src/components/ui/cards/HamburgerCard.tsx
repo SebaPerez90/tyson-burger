@@ -4,14 +4,19 @@ import Image from "next/image";
 import { Button } from "../button";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
+import { noStockStyle } from "@/src/constants/noStockStyle";
 
 const HamburgerCard = ({ item }: { item: HamburgerItem }) => {
   const router = useRouter();
+  const noStock = item.stock < 10;
+  console.log(item);
 
   return (
     <div
       key={item.id}
-      className="bg-linear-to-b from-[#1a0000] to-[#2b0000] rounded-2xl overflow-hidden border border-white/5 flex flex-row lg:flex-col justify-between cursor-pointer h-[200px] md:h-auto active:scale-[0.98] active:brightness-90 transition-all select-none active:from-[#310000] active:to-[#430000]"
+      className={`${
+        noStock && noStockStyle
+      } bg-linear-to-b from-[#1a0000] to-[#2b0000] rounded-2xl overflow-hidden border border-white/15 flex flex-row lg:flex-col justify-between cursor-pointer h-[200px] md:h-auto active:scale-[0.98] active:brightness-90 transition-all select-none active:from-[#310000] active:to-[#430000]`}
       onClick={() =>
         router.push(`/menu/${item.name.toLowerCase().replace(/\s+/g, "-")}`)
       }
@@ -49,16 +54,23 @@ const HamburgerCard = ({ item }: { item: HamburgerItem }) => {
         <div className="flex flex-col gap-0.5 mt-auto pt-4 border-t border-white/10 lg:h-auto lg:min-h-[82px]">
           <div className="flex flex-row items-center gap-0.5">
             <span className="text-xl font-bold font-baloo text-white">
-              ${item.price.simple.toLocaleString()}
+              $
+              {item.discount && item.discount > 0
+                ? item.discountedPrices?.simple
+                : item.price.simple.toLocaleString()}
             </span>
 
-            <span className="text-xs opacity-40 ml-1 text-white line-through">
-              $11.000
-            </span>
+            {item.discount && item.discount > 0 && (
+              <span className="text-xs opacity-40 ml-1 text-white line-through">
+                ${item.price.simple.toLocaleString()}
+              </span>
+            )}
 
-            <span className="text-[10px] ml-1 lg:ml-0 px-0.5 py-0.5 lg:px-2 lg:py-2 bg-green-600/40 text-green-400 rounded-full w-max">
-              18% OFF
-            </span>
+            {item.discount && item.discount > 0 && (
+              <span className="text-[10px] ml-1 lg:ml-0 px-0.5 py-0.5 lg:px-2 lg:py-2 bg-green-600/40 text-green-400 rounded-full w-max">
+                {item.discount}% OFF
+              </span>
+            )}
           </div>
 
           <Link

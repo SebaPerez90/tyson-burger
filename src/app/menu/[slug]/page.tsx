@@ -5,6 +5,7 @@ import { allProducts } from "@/src/lib/menu";
 import ProductDetailHeader from "@/src/components/menu/ProductDetailHeader";
 import StarterDetailCard from "@/src/components/ui/cards/StarterDetailCard";
 import HamburgerDetailCard from "@/src/components/ui/cards/HamburgerDetailCard";
+import { burgerDiscount } from "@/src/utils/burgerDiscount";
 
 // Genera los parámetros estáticos
 export async function generateStaticParams() {
@@ -51,9 +52,19 @@ export default async function ProductPage({
   const { slug } = await params;
   const decodedName = decodeURIComponent(slug);
 
-  const product = allProducts.find(
-    (item) => item.name.toLowerCase().replace(/\s+/g, "-") === decodedName
-  );
+  const burgers = allProducts.filter(
+    (p) => p.category === "burger"
+  ) as HamburgerItem[];
+
+  const burgersWithDiscount = burgerDiscount(burgers);
+
+  const product =
+    burgersWithDiscount.find(
+      (item) => item.name.toLowerCase().replace(/\s+/g, "-") === decodedName
+    ) ||
+    allProducts.find(
+      (item) => item.name.toLowerCase().replace(/\s+/g, "-") === decodedName
+    );
 
   if (!product) {
     return <div>Producto no encontrado</div>;

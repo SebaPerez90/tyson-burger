@@ -9,7 +9,6 @@ import { noStockStyle } from "@/src/constants/noStockStyle";
 const HamburgerCard = ({ item }: { item: HamburgerItem }) => {
   const router = useRouter();
   const noStock = item.stock < 10;
-  console.log(item);
 
   return (
     <div

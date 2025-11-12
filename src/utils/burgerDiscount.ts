@@ -5,9 +5,27 @@ export const burgerDiscount = (mockBurgersItems: HamburgerItem[]) => {
     let discount = 0;
 
     // 💡 Lógica condicional de descuentos
-    if (burger.name.includes("Tyson")) discount = 15;
-    else if (burger.name.includes("Bacon")) discount = 10;
-    else if (burger.name.includes("Cheese")) discount = 5;
+    switch (true) {
+      case burger.name === "Cheese & Bacon Burger":
+        discount = 5;
+        break;
+
+      case burger.name.includes("American"):
+        discount = 10;
+        break;
+
+      case burger.name.includes("Provo"):
+        discount = 10;
+        break;
+
+      case burger.name.includes("Tyson"):
+        discount = 5;
+        break;
+
+      default:
+        discount = 0;
+        break;
+    }
 
     // 🧮 Aplicamos el descuento a cada tamaño (por si alguno no existe)
     const discountedPrices: Partial<typeof burger.price> = {};

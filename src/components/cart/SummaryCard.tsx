@@ -137,7 +137,7 @@ ${details ? `• Detalles: ${details}.` : ""}`
 
     const msg = buildWhatsAppMessage();
     const encoded = encodeURIComponent(msg);
-    const phone = `541132830604`;
+    const phone = `541127104627`;
 
     window.open(`https://wa.me/${phone}?text=${encoded}`, "_blank");
 

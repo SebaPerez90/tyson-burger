@@ -10,8 +10,16 @@ export const burgerDiscount = (mockBurgersItems: HamburgerItem[]) => {
         discount = 10;
         break;
 
-      case burger.name === "Cheese & Bacon Burger":
-        discount = 10;
+      // case burger.name === "Cheese & Bacon Burger":
+      //   discount = 10;
+      //   break;
+
+      case burger.name === "Sweet Burger":
+        discount = 5;
+        break;
+
+      case burger.name === "Mayo Bacon Burger":
+        discount = 5;
         break;
 
       case burger.name.includes("American"):
@@ -22,9 +30,9 @@ export const burgerDiscount = (mockBurgersItems: HamburgerItem[]) => {
         discount = 10;
         break;
 
-      case burger.name.includes("Tyson"):
-        discount = 5;
-        break;
+      // case burger.name.includes("Tyson"):
+      //   discount = 5;
+      //   break;
 
       default:
         discount = 0;

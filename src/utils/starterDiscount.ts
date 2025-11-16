@@ -9,9 +9,9 @@ export const starterDiscount = (mockStartersItems: StarterItem[]) => {
         discount = 10;
         break;
 
-      case starter.name === "Papas Tyson":
-        discount = 10;
-        break;
+      // case starter.name === "Papas Tyson":
+      //   discount = 10;
+      //   break;
 
       default:
         discount = 0;

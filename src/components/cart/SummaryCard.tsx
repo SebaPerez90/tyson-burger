@@ -164,12 +164,12 @@ ${details ? `• Detalles: ${details}.` : ""}`
           </span>
         </div>
 
-        <div className="flex justify-between items-center">
+        {/* <div className="flex justify-between items-center">
           <span>Propina</span>
-          {/* <span className="font-bold">
+          <span className="font-bold">
             $ {isDelivery ? realTip.toLocaleString("es-AR") : 0}
-          </span> */}
-        </div>
+          </span>
+        </div> */}
 
         <div className="flex justify-between items-center">
           <span>Envío</span>

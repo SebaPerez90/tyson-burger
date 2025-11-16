@@ -10,7 +10,7 @@
       "Salsa mac especial",
       "Pan de papa suave y dorado"
     ],
-    "price": { "simple": 8000, "doble": 9000, "triple": 10600 },
+    "price": { "simple": 8000, "doble": 1000, "triple": 11000 },
     "stock": 10,
     "image": "/menu/burgers/cheese-burger.webp"
   },
@@ -26,7 +26,7 @@
       "Salsa mac especial",
       "Pan de papa"
     ],
-    "price": { "simple": 9000, "doble": 10000, "triple": 11600 },
+    "price": { "simple": 9000, "doble": 11000, "triple": 12000 },
     "stock": 10,
     "image": "/menu/burgers/cheese-bacon-burger.webp"
   },
@@ -59,7 +59,7 @@
       "Pepino crujiente",
       "Pan de papa dorado"
     ],
-    "price": { "simple": 9000, "doble": 10000, "triple": 11600 },
+    "price": { "simple": 9000, "doble": 11000, "triple": 11600 },
     "stock": 10,
     "image": "/menu/burgers/american-burger.webp"
   },
@@ -74,7 +74,7 @@
       "Chimichurri criollo",
       "Pan de papa tostado"
     ],
-    "price": { "simple": 10800, "doble": 12000, "triple": 13000 },
+    "price": { "simple": 10800, "doble": 12500, "triple": 14000 },
     "stock": 10,
     "image": "/menu/burgers/provo-burger.webp"
   },
@@ -105,7 +105,7 @@
       "Salsa Tyson original",
       "Pan de papa"
     ],
-    "price": { "simple": 10000, "doble": 12000, "triple": 13000 },
+    "price": { "simple": 10000, "doble": 11000, "triple": 12000 },
     "stock": 10,
     "image": "/menu/burgers/tyson-burger.webp"
   }

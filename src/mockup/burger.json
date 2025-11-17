@@ -10,7 +10,7 @@
       "Salsa mac especial",
       "Pan de papa suave y dorado"
     ],
-    "price": { "simple": 8000, "doble": 1000, "triple": 11000 },
+    "price": { "simple": 8000, "doble": 10000, "triple": 11000 },
     "stock": 10,
     "image": "/menu/burgers/cheese-burger.webp"
   },

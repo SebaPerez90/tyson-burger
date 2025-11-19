@@ -40,15 +40,21 @@ export const burgerDiscount = (mockBurgersItems: HamburgerItem[]) => {
     }
 
     // 🧮 Aplicamos el descuento a cada tamaño (por si alguno no existe)
-    const discountedPrices: Partial<typeof burger.price> = {};
+    const discountedPricesWithoutParse: Partial<typeof burger.price> = {};
 
     for (const key in burger.price) {
       const priceValue = burger.price[key as keyof typeof burger.price];
-      discountedPrices[key as keyof typeof burger.price] = applyDiscount(
-        priceValue,
-        discount
-      ).finalPrice;
+
+      discountedPricesWithoutParse[key as keyof typeof burger.price] =
+        applyDiscount(priceValue, discount).finalPrice;
     }
+
+    const discountedPrices = Object.fromEntries(
+      Object.entries(discountedPricesWithoutParse).map(([key, value]) => [
+        key,
+        value.toLocaleString("es-AR"),
+      ])
+    );
 
     return {
       ...burger,

@@ -78,7 +78,7 @@ const AddToCart = ({
         className="flex items-center justify-center rounded-full p-[1.3rem_2rem!important]"
       >
         Agregar
-        <span className="font-semibold">${total.toLocaleString()}</span>
+        <span className="font-semibold">${total.toLocaleString("es-AR")}</span>
       </Button>
     </div>
   );

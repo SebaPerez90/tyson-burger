@@ -23,7 +23,7 @@ export const starterDiscount = (mockStartersItems: StarterItem[]) => {
 
     return {
       ...starter,
-      discountedPrice: finalPrice,
+      discountedPrice: finalPrice.toLocaleString("es-AR"),
       discount,
     };
   });

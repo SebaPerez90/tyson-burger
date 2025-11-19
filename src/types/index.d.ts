@@ -15,9 +15,9 @@ type HamburgerItem = {
   stock: number;
   discount?: number;
   discountedPrices?: {
-    simple: number;
-    doble: number;
-    triple: number;
+    simple: string;
+    doble: string;
+    triple: string;
   };
 };
 
@@ -45,7 +45,7 @@ type StarterItem = {
   image: string;
   stock: number;
   discount?: number;
-  discountedPrice?: number;
+  discountedPrice?: string;
 };
 
 type Extra = {

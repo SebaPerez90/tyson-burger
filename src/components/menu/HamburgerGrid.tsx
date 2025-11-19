@@ -9,9 +9,15 @@ const HamburgerGrid = () => {
   const normalizedBurgers = burgersWithDiscount.map((item) => ({
     ...item,
     discountedPrices: {
-      simple: item.discountedPrices?.simple ?? item.price.simple,
-      doble: item.discountedPrices?.doble ?? item.price.doble,
-      triple: item.discountedPrices?.triple ?? item.price.triple,
+      simple:
+        item.discountedPrices?.simple ??
+        item.price.simple.toLocaleString("es-AR"),
+      doble:
+        item.discountedPrices?.doble ??
+        item.price.doble.toLocaleString("es-AR"),
+      triple:
+        item.discountedPrices?.triple ??
+        item.price.triple.toLocaleString("es-AR"),
     },
   }));
 

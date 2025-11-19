@@ -21,7 +21,7 @@ const HamburgerCard = ({ item }: { item: HamburgerItem }) => {
       }
     >
       {/* IMAGE */}
-      <div className="p-2 md:p-0 lg:p-4 w-1/2 md:w-[70%] lg:w-full h-[400px]">
+      <div className="p-2 md:p-0 lg:p-4 w-1/2 md:w-[70%] lg:w-full h-auto lg:h-[400px]">
         <div className="overflow-hidden rounded-2xl md:rounded-none lg:rounded-2xl w-full h-full">
           <Image
             width={400}

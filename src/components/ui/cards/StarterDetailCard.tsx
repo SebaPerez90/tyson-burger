@@ -56,6 +56,7 @@ const StarterDetailCard = ({ product }: { product: StarterItem }) => {
             height={500}
             src={product.image}
             alt={product.name}
+            loading="eager"
             className="rounded-none sm:rounded-2xl object-cover saturate-[1.2] size-full"
           />
         </div>
@@ -90,12 +91,12 @@ const StarterDetailCard = ({ product }: { product: StarterItem }) => {
                   $
                   {product.discount && product.discount > 0
                     ? product.discountedPrice
-                    : product.price.toLocaleString()}
+                    : product.price.toLocaleString("es-AR")}
                 </span>
 
                 {product.discount && product.discount > 0 && (
                   <span className="text-sm ml-2 text-white/40 line-through">
-                    ${product.price.toLocaleString()}
+                    ${product.price.toLocaleString("es-AR")}
                   </span>
                 )}
 
@@ -108,7 +109,7 @@ const StarterDetailCard = ({ product }: { product: StarterItem }) => {
             ) : (
               activePrices && (
                 <span className="text-3xl font-bold text-white mt-8">
-                  ${activePrices.toLocaleString()}
+                  ${activePrices.toLocaleString("es-AR")}
                 </span>
               )
             )}

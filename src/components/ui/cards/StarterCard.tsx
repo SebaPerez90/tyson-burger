@@ -57,12 +57,12 @@ const StarterCard = ({ item }: { item: StarterItem }) => {
               $
               {item.discount && item.discount > 0
                 ? item.discountedPrice
-                : item.price.toLocaleString()}
+                : item.price.toLocaleString("es-AR")}
             </span>
 
             {item.discount && item.discount > 0 ? (
               <span className="text-xs opacity-40 ml-1 text-white line-through">
-                ${item.price.toLocaleString()}
+                ${item.price.toLocaleString("es-AR")}
               </span>
             ) : null}
 

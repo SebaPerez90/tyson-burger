@@ -44,7 +44,7 @@
     ],
     "price": { "simple": 8000, "doble": 10000, "triple": 11000 },
     "stock": 10,
-    "image": "/menu/burgers/oklahoma-burger.webp"
+    "image": "/menu/burgers/sweet-burger.webp"
   },
   {
     "id": 4,

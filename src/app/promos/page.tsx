@@ -3,7 +3,6 @@ import { ArrowLeft } from "lucide-react";
 import Link from "next/link";
 
 export default function PromosPage() {
-  console.log("promo view");
   return (
     <main className="max-w-7xl mx-auto px-4 py-10 h-[50vh] flex flex-col justify-center">
       <h1 className="text-4xl font-bold mb-4 text-center text-white">

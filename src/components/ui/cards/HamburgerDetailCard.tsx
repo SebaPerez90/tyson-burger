@@ -102,12 +102,12 @@ const HamburgerDetailCard = ({ product }: { product: HamburgerItem }) => {
                   $
                   {product.discount && product.discount > 0
                     ? product.discountedPrices?.[burgerSize]
-                    : product.price[burgerSize].toLocaleString()}
+                    : product.price[burgerSize].toLocaleString("es-AR")}
                 </span>
 
                 {product.discount && product.discount > 0 && (
                   <span className="text-sm ml-2 text-white/40 line-through">
-                    ${product.price[burgerSize].toLocaleString()}
+                    ${product.price[burgerSize].toLocaleString("es-AR")}
                   </span>
                 )}
 
@@ -120,7 +120,7 @@ const HamburgerDetailCard = ({ product }: { product: HamburgerItem }) => {
             ) : (
               activePrices && (
                 <span className="text-3xl font-bold text-white mt-8">
-                  ${activePrices[burgerSize].toLocaleString()}
+                  ${activePrices[burgerSize].toLocaleString("es-AR")}
                 </span>
               )
             )}

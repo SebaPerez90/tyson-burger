@@ -5,9 +5,9 @@
     "name": "Cheese Burger",
     "description": "Medallón de carne premium (120 g) con doble queso cheddar fundido, pan de papa artesanal y una combinación irresistible que celebra lo clásico. Simple, cremosa y llena de sabor.",
     "ingredients": [
-      "Carne 100% vacuna",
+      "Carne vacuna premium",
       "Doble queso cheddar",
-      "Salsa mac especial",
+      "Salsa Stacker",
       "Pan de papa suave y dorado"
     ],
     "price": { "simple": 8000, "doble": 10000, "triple": 11000 },
@@ -20,10 +20,10 @@
     "name": "Cheese & Bacon Burger",
     "description": "Medallón de carne premium (120 g) con panceta ahumada crocante, doble cheddar derretido y pan de papa suave, una combinación intensa y sabrosa que nunca falla.",
     "ingredients": [
-      "Carne vacuna",
+      "Carne vacuna premium",
       "Queso cheddar doble",
       "Panceta ahumada crujiente",
-      "Salsa mac especial",
+      "Salsa Stacker",
       "Pan de papa"
     ],
     "price": { "simple": 9000, "doble": 11000, "triple": 12000 },
@@ -50,13 +50,14 @@
     "id": 4,
     "type": "burger",
     "name": "American Burger",
-    "description": "Medallón de carne premium (120 g) con doble queso cheddar, lechuga fresca, tomate jugoso y pan de papa esponjoso. Inspirada en el clásico americano pero con un toque artesanal.",
+    "description": "Medallón de carne premium (120 g) con doble queso cheddar, lechuga fresca, pepinillo, tomate y pan de papa esponjoso, coranado con un hueevo a la plancha. Inspirada en el clásico americano pero con un toque artesanal.",
     "ingredients": [
-      "Carne vacuna seleccionada",
+      "Carne vacuna premium",
       "Doble queso cheddar",
       "Lechuga crujiente",
       "Tomate fresco",
-      "Pepino crujiente",
+      "Huevo a la plancha",
+      "Pepinillo crujiente",
       "Pan de papa dorado"
     ],
     "price": { "simple": 9000, "doble": 11000, "triple": 11600 },
@@ -67,9 +68,10 @@
     "id": 5,
     "type": "burger",
     "name": "Provo Chimi Burger",
-    "description": "Medallón de carne premium (120 g) coronado con provoleta fundida (150 g) y chimichurri casero, creando un equilibrio perfecto entre lo criollo y lo moderno.",
+    "description": "Medallón de carne premium (120 g)  con doble queso cheddar, coronado con provoleta fundida, chimichurri casero y mayonoesa de ajo asado, creando un equilibrio perfecto entre lo criollo y lo moderno.",
     "ingredients": [
       "Carne vacuna premium",
+      "Doble queso cheddar",
       "Provoleta fundida",
       "Chimichurri criollo",
       "Pan de papa tostado"
@@ -85,7 +87,7 @@
     "description": "Medallón de carne premium (120 g) con doble cheddar y salsa especial a base de mayonesa con bacon crujiente, ajo y cebolla salteado y más ingredientes que te van hacer fan de esta deliciosa combinación.",
     "ingredients": [
       "Carne vacuna premium",
-      "Queso cheddar doble",
+      "Doble queso cheddar",
       "Mayonesa de bacon",
       "Pan de papa artesanal"
     ],
@@ -97,12 +99,13 @@
     "id": 7,
     "type": "burger",
     "name": "Tyson Burger",
-    "description": "Medallón de carne premium (120 g), con triple cheddar fundido, 4 buenas fetas de panceta crocante y salsa Tyson original. Potente, jugosa y adictiva.",
+    "description": "Medallón de carne premium (120 g), con doble cheddar fundido, panceta crocante y salsa stacker, coronada con un huevo a la plancha. Potente, jugosa y adictiva.",
     "ingredients": [
-      "Doble carne vacuna blend",
-      "Triple queso cheddar",
+      "Carne vacuna premium",
+      "Doble queso cheddar",
+      "Huevo a la plancha",
       "Panceta ahumada crocante",
-      "Salsa Tyson original",
+      "Salsa Stacker",
       "Pan de papa"
     ],
     "price": { "simple": 10000, "doble": 11000, "triple": 12000 },

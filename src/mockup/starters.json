@@ -3,11 +3,11 @@
     "id": 1,
     "type": "starter",
     "name": "Papas fritas",
-    "description": "Papas fritas artesanales con piel, doradas al punto justo. Adobadas con sal especiada de la casa y acompañadas con salsas a elección.",
+    "description": "Papas fritas artesanales con piel, doradas al punto justo. Adobadas con sal especiada de la casa y acompañadas con salsa a elección.",
     "ingredients": [
       "Papas caseras con piel",
       "Sal especiada de la casa",
-      "Salsas a elección"
+      "Salsa a elección"
     ],
     "price": 5000,
     "image": "/menu/starters/fries.webp",
@@ -21,7 +21,7 @@
     "ingredients": [
       "Papas caseras con piel",
       "Huevos a la plancha",
-      "Sal especiada"
+      "Sal especiada de la casa"
     ],
     "price": 6000,
     "image": "/menu/starters/fries-egg.webp",
@@ -31,12 +31,13 @@
     "id": 3,
     "type": "starter",
     "name": "Papas Tyson",
-    "description": "Papas fritas doradas y crujientes bañadas con queso cheddar fundido (200 g), panceta ahumada crocante (150 g) y cebolla de verdeo. Adobadas con sal especiada de la casa.",
+    "description": "Papas fritas doradas y crujientes bañadas con queso cheddar fundido, panceta ahumada crocante y cebolla de verdeo. Adobadas con sal especiada de la casa.",
     "ingredients": [
       "Papas caseras con piel",
       "Cebolla de verdeo dorada",
       "Panceta ahumada crocante",
-      "Baño de queso cheddar"
+      "Baño de queso cheddar",
+      "Sal especiada de la casa"
     ],
     "price": 10000,
     "image": "/menu/starters/fries-bacon.webp",
@@ -46,11 +47,13 @@
     "id": 4,
     "type": "starter",
     "name": "Papas Sweet & Cheese",
-    "description": "Papas fritas doradas y crujientes bañadas con una mezcla de queso cheddar fundido (100 g) y queso crema (100 g), cebolla caramelizada y salsa mac especial.",
+    "description": "Papas fritas doradas y crujientes bañadas con una mezcla de queso cheddar fundido y mozzarella, cebolla caramelizada y salsa Stacker.",
     "ingredients": [
       "Papas caseras con piel",
       "Cebolla caramelizada",
-      "Mar de quesos"
+      "Mar de quesos",
+      "Sal especiada de la casa",
+      "Salsa Stacker"
     ],
     "price": 8000,
     "image": "/menu/starters/fries-sweet.webp",
@@ -60,11 +63,11 @@
     "id": 5,
     "type": "starter",
     "name": "Nuggets de pollo",
-    "description": "Patitas doradas de pollo con rebozado crujiente y dorado (200gr). Acompañadas con salsas a elección para disfrutar en cada bocado.",
+    "description": "Patitas doradas de pollo con rebozado crujiente y dorado (200gr). Acompañadas con salsa a elección para disfrutar en cada bocado.",
     "ingredients": [
       "Patitas de pollo",
       "Papas fritas de la casa",
-      "Salsas a elección"
+      "Salsa a elección"
     ],
     "price": 7000,
     "image": "/menu/starters/nuggets.webp",
@@ -74,8 +77,12 @@
     "id": 6,
     "type": "starter",
     "name": "Papas con cheddar",
-    "description": "Papas fritas doradas bañadas con una lluvia de queso cheddar fundido (200gr).",
-    "ingredients": ["Papas fritas crocantes", "Queso cheddar fundido"],
+    "description": "Papas fritas doradas bañadas con una lluvia de queso cheddar fundido.",
+    "ingredients": [
+      "Papas fritas crocantes",
+      "Queso cheddar fundido",
+      "Sal especiada de la casa"
+    ],
     "price": 8000,
     "image": "/menu/starters/fries-cheddar.webp",
     "stock": 10

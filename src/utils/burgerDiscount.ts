@@ -6,9 +6,9 @@ export const burgerDiscount = (mockBurgersItems: HamburgerItem[]) => {
 
     // 💡 Lógica condicional de descuentos
     switch (true) {
-      case burger.name === "Cheese Burger":
-        discount = 10;
-        break;
+      // case burger.name === "Cheese Burger":
+      //   discount = 10;
+      //   break;
 
       // case burger.name === "Cheese & Bacon Burger":
       //   discount = 10;

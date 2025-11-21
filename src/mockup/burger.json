@@ -3,7 +3,7 @@
     "id": 1,
     "type": "burger",
     "name": "Cheese Burger",
-    "description": "Medallón de carne premium (120 g) con doble queso cheddar fundido, pan de papa artesanal y una combinación irresistible que celebra lo clásico. Simple, cremosa y llena de sabor.",
+    "description": "Medallón de carne premium (110 g) con doble queso cheddar fundido, pan de papa artesanal y una combinación irresistible que celebra lo clásico. Simple, cremosa y llena de sabor.",
     "ingredients": [
       "Carne vacuna premium",
       "Doble queso cheddar",
@@ -18,7 +18,7 @@
     "id": 2,
     "type": "burger",
     "name": "Cheese & Bacon Burger",
-    "description": "Medallón de carne premium (120 g) con panceta ahumada crocante, doble cheddar derretido y pan de papa suave, una combinación intensa y sabrosa que nunca falla.",
+    "description": "Medallón de carne premium (110 g) con panceta ahumada crocante, doble cheddar derretido y pan de papa suave, una combinación intensa y sabrosa que nunca falla.",
     "ingredients": [
       "Carne vacuna premium",
       "Queso cheddar doble",
@@ -34,7 +34,7 @@
     "id": 3,
     "type": "burger",
     "name": "Sweet Burger",
-    "description": "Medallón de carne premium (120 g) con doble cheddar fundido y una capa de cebolla caramelizada que aporta dulzura y textura, todo en un pan de papa tierno y dorado.",
+    "description": "Medallón de carne premium (110 g) con doble cheddar fundido y una capa de cebolla caramelizada que aporta dulzura y textura, todo en un pan de papa tierno y dorado.",
     "ingredients": [
       "Carne vacuna premium",
       "Cebolla caramelizada",
@@ -50,7 +50,7 @@
     "id": 4,
     "type": "burger",
     "name": "American Burger",
-    "description": "Medallón de carne premium (120 g) con doble queso cheddar, lechuga fresca, pepinillo, tomate y pan de papa esponjoso, coranado con un hueevo a la plancha. Inspirada en el clásico americano pero con un toque artesanal.",
+    "description": "Medallón de carne premium (110 g) con doble queso cheddar, lechuga fresca, pepinillo, tomate y pan de papa esponjoso, coranado con un hueevo a la plancha. Inspirada en el clásico americano pero con un toque artesanal.",
     "ingredients": [
       "Carne vacuna premium",
       "Doble queso cheddar",
@@ -68,7 +68,7 @@
     "id": 5,
     "type": "burger",
     "name": "Provo Chimi Burger",
-    "description": "Medallón de carne premium (120 g)  con doble queso cheddar, coronado con provoleta fundida, chimichurri casero y mayonoesa de ajo asado, creando un equilibrio perfecto entre lo criollo y lo moderno.",
+    "description": "Medallón de carne premium (110 g)  con doble queso cheddar, coronado con provoleta fundida, chimichurri casero y mayonoesa de ajo asado, creando un equilibrio perfecto entre lo criollo y lo moderno.",
     "ingredients": [
       "Carne vacuna premium",
       "Doble queso cheddar",
@@ -83,8 +83,8 @@
   {
     "id": 6,
     "type": "burger",
-    "name": "Mayo Bacon Burger",
-    "description": "Medallón de carne premium (120 g) con doble cheddar y salsa especial a base de mayonesa con bacon crujiente, ajo y cebolla salteado y más ingredientes que te van hacer fan de esta deliciosa combinación.",
+    "name": "Cheesy Smoke Burger",
+    "description": "Medallón de carne premium (110 g) con doble cheddar y salsa especial a base de mayonesa con bacon crujiente, ajo y cebolla salteado y más ingredientes que te van hacer fan de esta deliciosa combinación.",
     "ingredients": [
       "Carne vacuna premium",
       "Doble queso cheddar",
@@ -93,13 +93,13 @@
     ],
     "price": { "simple": 8500, "doble": 10300, "triple": 12000 },
     "stock": 10,
-    "image": "/menu/burgers/cheese-burger.webp"
+    "image": "/menu/burgers/smoke-burger.webp"
   },
   {
     "id": 7,
     "type": "burger",
     "name": "Tyson Burger",
-    "description": "Medallón de carne premium (120 g), con doble cheddar fundido, panceta crocante y salsa stacker, coronada con un huevo a la plancha. Potente, jugosa y adictiva.",
+    "description": "Medallón de carne premium (110 g), con doble cheddar fundido, panceta crocante y salsa stacker, coronada con un huevo a la plancha. Potente, jugosa y adictiva.",
     "ingredients": [
       "Carne vacuna premium",
       "Doble queso cheddar",

@@ -84,11 +84,11 @@
     "id": 6,
     "type": "burger",
     "name": "Cheesy Smoke Burger",
-    "description": "Medallón de carne premium (110 g) con doble cheddar y salsa especial a base de mayonesa con bacon crujiente, ajo y cebolla salteado y más ingredientes que te van hacer fan de esta deliciosa combinación.",
+    "description": "Medallón de carne premium (110 g) con doble cheddar y una salsa especial a base de mayonesa, bacon crujiente, ajo y cebolla salteados, más un toque de humo líquido y miel que te va a encantar.",
     "ingredients": [
       "Carne vacuna premium",
       "Doble queso cheddar",
-      "Mayonesa de bacon",
+      "Mayonesa de bacon ahumada",
       "Pan de papa artesanal"
     ],
     "price": { "simple": 8500, "doble": 10300, "triple": 12000 },

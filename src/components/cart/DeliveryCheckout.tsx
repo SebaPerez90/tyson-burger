@@ -32,6 +32,12 @@ const DeliveryCheckout = ({
           {/* location */}
           <div className="space-y-5 mt-8">
             <FloatingInput
+              label="Localidad"
+              type="text"
+              value={details}
+              onChange={setDetails}
+            />
+            <FloatingInput
               name="address"
               label="Calle y número"
               type="text"
@@ -44,12 +50,6 @@ const DeliveryCheckout = ({
               type="text"
               value={betweenStreets}
               onChange={setBetweenStreets}
-            />
-            <FloatingInput
-              label="Observaciones"
-              type="text"
-              value={details}
-              onChange={setDetails}
             />
           </div>
         </div>

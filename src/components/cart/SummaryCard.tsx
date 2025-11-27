@@ -92,9 +92,9 @@ ${productsText}
 ${
   isDelivery
     ? `*DATOS DE ENTREGA*
+${details ? `• Localidad: ${details}.` : ""}
 • Domicilio: ${address}.
-${betweenStreets ? `• Entre calles: ${betweenStreets}.` : ""}
-${details ? `• Detalles: ${details}.` : ""}`
+${betweenStreets ? `• Entre calles: ${betweenStreets}.` : ""}`
     : ""
 }
 
@@ -190,7 +190,9 @@ ${details ? `• Detalles: ${details}.` : ""}`
 
       <Button
         className={`w-full mt-10 rounded-full text-lg py-6 ${
-          isDelivery && (!address || !betweenStreets) ? "opacity-50" : ""
+          isDelivery && (!address || !betweenStreets || !details)
+            ? "opacity-50"
+            : ""
         }`}
         variant="destructive"
         onClick={handleSendOrder}

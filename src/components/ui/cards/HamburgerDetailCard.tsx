@@ -90,10 +90,12 @@ const HamburgerDetailCard = ({ product }: { product: HamburgerItem }) => {
             </ul>
 
             {/* Tamaños de hamburguesas */}
-            <BurgerSizeSelector
-              burgerSize={burgerSize}
-              setBurgerSize={setBurgerSize}
-            />
+            {product.name === "Volcan de cheddar" && (
+              <BurgerSizeSelector
+                burgerSize={burgerSize}
+                setBurgerSize={setBurgerSize}
+              />
+            )}
 
             {/* precio   */}
             {product.discount && product.discount > 0 && activePrices ? (

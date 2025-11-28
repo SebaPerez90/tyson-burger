@@ -20,7 +20,8 @@ export const OpenStatusBadge = () => {
     const minute = localTime.getUTCMinutes();
 
     const workDays = [4, 5, 6, 0]; //en caso de agregar dias de servicio, el array debe actualizarse a [1,2,3,4,5,6,0] por ejemplo
-    const openHour = 20;
+    // const openHour = 20; // horario de apertura 20 hs
+    const openHour = 18;
     const closeHour = 23;
     const closeMinute = 30;
 
@@ -39,7 +40,7 @@ export const OpenStatusBadge = () => {
   const text = isOpen
     ? "Estamos trabajando"
     : isWorkDay
-    ? "Abre a las 20:00 hs"
+    ? "Abre a las 18:30 hs" //mostrar el horario de apertura si es dia laboral, se puede cambiar
     : "Cerrado";
 
   return (

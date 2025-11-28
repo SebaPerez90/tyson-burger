@@ -12,14 +12,14 @@ export default function PromosPage() {
         ¡Próximamente más detalles sobre nuestras promociones!
       </p>
       <div className="flex gap-2 items-center  w-max mx-auto mt-15">
-        <Link href="/menu">
+        <Link href="/">
           <Button variant={"link"} className="text-white">
             <ArrowLeft />
             Volver al inicio
           </Button>
         </Link>
 
-        <Link href="/">
+        <Link href="/menu">
           <Button size={"xl"} variant={"destructive"}>
             Ir al menú 🍔
           </Button>

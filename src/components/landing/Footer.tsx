@@ -61,7 +61,7 @@ const Footer = () => {
           <div className="flex flex-col space-y-2">
             <h3 className="font-semibold text-lg">Contacto</h3>
             <p className="text-sm text-gray-400">📍 Calle 1 626, Berazategui</p>
-            <p className="text-sm text-gray-400">📞 (011) 3283-0604</p>
+            <p className="text-sm text-gray-400">📞 11 2710-4627</p>
             <p className="text-sm text-gray-400">
               ✉️ tysonburguer.co@gmail.com
             </p>
@@ -77,7 +77,7 @@ const Footer = () => {
               Ver Menú
             </Link>
             <Link
-              href="/promociones"
+              href="/promos"
               className="text-sm text-gray-400 hover:text-red-500 transition"
             >
               Promociones

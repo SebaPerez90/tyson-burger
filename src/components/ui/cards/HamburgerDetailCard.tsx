@@ -90,7 +90,7 @@ const HamburgerDetailCard = ({ product }: { product: HamburgerItem }) => {
             </ul>
 
             {/* Tamaños de hamburguesas */}
-            {product.name === "Volcan de cheddar" && (
+            {product.name !== "Volcan de cheddar" && (
               <BurgerSizeSelector
                 burgerSize={burgerSize}
                 setBurgerSize={setBurgerSize}

@@ -108,7 +108,7 @@
       "Pan de papa artesanal"
     ],
     "price": { "simple": 9500, "doble": 11000, "triple": 12800 },
-    "stock": 1,
+    "stock": 10,
     "image": "/menu/burgers/smoke-burger.webp"
   },
   {

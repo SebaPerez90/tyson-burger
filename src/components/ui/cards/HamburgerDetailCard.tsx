@@ -1,6 +1,5 @@
 "use client";
 
-import Image from "next/image";
 import { useEffect, useState } from "react";
 
 import { parsePriceStringToNumber } from "@/src/utils/priceConverter";
@@ -9,6 +8,7 @@ import { burgerExtras } from "@/src/constants/burgerExtras";
 import SubMenuAcordeon from "@/src/components/ui/acordeons/SubMenuAcordeon";
 import AddToCart from "@/src/components/menu/AddToCart";
 import BurgerSizeSelector from "../../menu/BurgerSizeSelector";
+import Image from "next/image";
 
 const HamburgerDetailCard = ({ product }: { product: HamburgerItem }) => {
   const [selectedExtras, setSelectedExtras] = useState<Extra[]>([]);

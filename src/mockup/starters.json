@@ -9,7 +9,7 @@
       "Sal especiada de la casa",
       "Salsa a elección"
     ],
-    "price": 5000,
+    "price": 6000,
     "image": "/menu/starters/fries.webp",
     "stock": 10
   },
@@ -23,7 +23,7 @@
       "Huevos a la plancha",
       "Sal especiada de la casa"
     ],
-    "price": 6000,
+    "price": 7000,
     "image": "/menu/starters/fries-egg.webp",
     "stock": 10
   },
@@ -39,7 +39,7 @@
       "Baño de queso cheddar",
       "Sal especiada de la casa"
     ],
-    "price": 10000,
+    "price": 11000,
     "image": "/menu/starters/fries-bacon.webp",
     "stock": 10
   },
@@ -55,7 +55,7 @@
       "Sal especiada de la casa",
       "Salsa Stacker"
     ],
-    "price": 8000,
+    "price": 9000,
     "image": "/menu/starters/fries-sweet.webp",
     "stock": 10
   },
@@ -69,7 +69,7 @@
       "Papas fritas de la casa",
       "Salsa a elección"
     ],
-    "price": 7000,
+    "price": 8000,
     "image": "/menu/starters/nuggets.webp",
     "stock": 10
   },
@@ -83,7 +83,7 @@
       "Queso cheddar fundido",
       "Sal especiada de la casa"
     ],
-    "price": 8000,
+    "price": 9000,
     "image": "/menu/starters/fries-cheddar.webp",
     "stock": 10
   },

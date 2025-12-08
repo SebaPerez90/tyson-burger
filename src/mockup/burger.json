@@ -1,6 +1,6 @@
 [
   {
-    "id": 1,
+    "id": 2,
     "type": "burger",
     "name": "Volcan de cheddar",
     "description": "Doble Medallón de carne, queso cheddar X6, pan de papa artesanal, fuente de 200g de cheddar + 200g de bacon crujiente. Un derrame de sabor para los que no le tienen miedo a nada. Un ritual para los fanáticos del queso.",
@@ -16,14 +16,14 @@
     "image": "/menu/burgers/volcan-burger.webp"
   },
   {
-    "id": 2,
+    "id": 11,
     "type": "burger",
     "name": "Cheese Burger",
     "description": "Medallón de carne con doble queso cheddar fundido, pan de papa artesanal y una combinación irresistible que celebra lo clásico. Simple, cremosa y llena de sabor.",
     "ingredients": [
       "Carne vacuna",
       "Doble queso cheddar",
-      "Salsa Stacker",
+      "Salsa Tyson",
       "Pan de papa suave y dorado"
     ],
     "price": { "simple": 9000, "doble": 11000, "triple": 13000 },
@@ -39,7 +39,7 @@
       "Carne vacuna",
       "Queso cheddar doble",
       "Panceta ahumada crujiente",
-      "Salsa Stacker",
+      "Salsa Tyson",
       "Pan de papa"
     ],
     "price": { "simple": 10000, "doble": 12000, "triple": 14000 },
@@ -115,13 +115,13 @@
     "id": 8,
     "type": "burger",
     "name": "Tyson Burger",
-    "description": "Medallón de carne, con doble cheddar fundido, panceta crocante y salsa stacker, coronada con un huevo a la plancha. Potente, jugosa y adictiva.",
+    "description": "Medallón de carne, con doble cheddar fundido, panceta crocante y salsa Tyson, coronada con un huevo a la plancha. Potente, jugosa y adictiva.",
     "ingredients": [
       "Carne vacuna",
       "Doble queso cheddar",
       "Huevo a la plancha",
       "Panceta ahumada crocante",
-      "Salsa Stacker",
+      "Salsa Tyson",
       "Pan de papa"
     ],
     "price": { "simple": 10500, "doble": 12500, "triple": 14500 },
@@ -129,7 +129,7 @@
     "image": "/menu/burgers/tyson-burger.webp"
   },
   {
-    "id": 9,
+    "id": 1,
     "type": "burger",
     "name": "Orgasmo",
     "description": "Doble medallón de carne, base del pan con doble cheddar, cebolla caramelizada y queso azul, un medallón coronado con provolone y el otro con muzzarella, panceta crocante y un cierre de salsa barbacoa. Intensa, cargada y hecha para verdaderos golosos.",
@@ -145,6 +145,6 @@
     ],
     "price": { "simple": 14000, "doble": 14000, "triple": 14000 },
     "stock": 10,
-    "image": "/menu/burgers/tyson-burger.webp"
+    "image": "/menu/burgers/orgasmo-burger.webp"
   }
 ]

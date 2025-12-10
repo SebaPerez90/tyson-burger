@@ -34,8 +34,6 @@ const SummaryCard = ({
   const envio = isDelivery ? 1000 : 0;
   const total = subtotal + envio;
 
-  console.log(clientOrder);
-
   function buildWhatsAppMessage() {
     const subtotal = clientOrder.reduce((t, i) => t + i.total, 0);
     const envio = isDelivery ? 1000 : 0;

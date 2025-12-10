@@ -9,6 +9,7 @@ const MenuNavBar = () => {
     { id: "burgers-section", label: "Burgers" },
     { id: "starters-section", label: "Entradas" },
     { id: "drinks-section", label: "Bebidas" },
+    { id: "deserts-section", label: "Postres" },
   ];
 
   useEffect(() => {

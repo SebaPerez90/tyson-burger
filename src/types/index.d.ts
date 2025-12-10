@@ -62,3 +62,13 @@ type DrinkItem = {
   image: string;
   stock: number;
 };
+
+type DesertItem = {
+  id: number;
+  type?: string;
+  name: string;
+  description: string;
+  price: number;
+  image: string;
+  stock: number;
+};

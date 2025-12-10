@@ -1,0 +1,11 @@
+[
+  {
+    "id": 1,
+    "type": "desert",
+    "name": "Chocotorta",
+    "description": "Capas de crema chocotorta (queso crema, dulce de leche repostero, crema de leche), chocolinas embebidas en café, topping de chocolinas rayadas.",
+    "price": 3000,
+    "image": "/menu/deserts/chocotorta.webp",
+    "stock": 10
+  }
+]

@@ -68,9 +68,9 @@ const DesertCard = ({ item }: { item: DesertItem }) => {
         <span className="text-lg md:text-xl lg:text-3xl text-orange-100 font-bold mb-3 block">
           {item.name}
         </span>
-        <p className="text-sm lg:text-base text-white/70 min-h-[60px]">
+        {/* <p className="text-sm lg:text-base text-white/70 min-h-[60px]">
           {item.description}
-        </p>
+        </p> */}
 
         {/* Precio */}
         <div className="flex flex-col gap-0.5 mt-auto pt-4 lg:h-auto lg:min-h-[82px]">

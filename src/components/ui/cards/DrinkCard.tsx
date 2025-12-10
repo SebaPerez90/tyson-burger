@@ -20,6 +20,7 @@ const DrinkCard = ({ item }: { item: DrinkItem }) => {
       const cartData = {
         id: generateShortId(4),
         quantity: count,
+        productName: item.name,
         total: item.price * count,
         image: item.image,
       };

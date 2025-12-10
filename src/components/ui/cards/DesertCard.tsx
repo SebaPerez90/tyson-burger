@@ -47,7 +47,7 @@ const DesertCard = ({ item }: { item: DesertItem }) => {
       key={item.id}
       className={`${
         noStock && noStockStyle
-      } bg-linear-to-b from-[#1a0000] to-[#2b0000] rounded-2xl overflow-hidden border border-white/15 flex flex-row lg:flex-col justify-between h-[200px] lg:h-auto transition-all select-none`}
+      } bg-linear-to-b from-[#1a0000] to-[#2b0000] rounded-2xl overflow-hidden border border-white/15 flex flex-row lg:flex-col justify-between h-auto lg:h-auto transition-all select-none`}
     >
       {/* IMAGE */}
       <div className="p-2 md:p-0 lg:p-4 w-1/2 md:w-[70%] lg:w-full">
@@ -68,9 +68,9 @@ const DesertCard = ({ item }: { item: DesertItem }) => {
         <span className="text-lg md:text-xl lg:text-3xl text-orange-100 font-bold mb-3 block">
           {item.name}
         </span>
-        {/* <p className="text-sm lg:text-base text-white/70 min-h-[60px]">
+        <p className="text-sm lg:text-base text-white/70 min-h-[60px]">
           {item.description}
-        </p> */}
+        </p>
 
         {/* Precio */}
         <div className="flex flex-col gap-0.5 mt-auto pt-4 lg:h-auto lg:min-h-[82px]">

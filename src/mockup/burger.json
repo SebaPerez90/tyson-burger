@@ -11,7 +11,7 @@
       "Bacon crujiente (200 gramos)",
       "Pan de papa suave y dorado"
     ],
-    "price": { "simple": 17000, "doble": 17000, "triple": 17000 },
+    "price": { "simple": 18000, "doble": 18000, "triple": 18000 },
     "stock": 10,
     "image": "/menu/burgers/volcan-burger.webp"
   },

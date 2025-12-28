@@ -3,15 +3,15 @@
     "id": 1,
     "type": "burger",
     "name": "Volcan de cheddar",
-    "description": "Doble Medallón de carne, queso cheddar X6, pan de papa artesanal, fuente de 200g de cheddar + 200g de bacon crujiente. Un derrame de sabor para los que no le tienen miedo a nada. Un ritual para los fanáticos del queso.",
+    "description": "Doble Medallón de carne, queso cheddar X6, pan de papa artesanal, fuente de cheddar derretido con bacon crujiente. Un derrame de sabor para los que no le tienen miedo a nada. Un ritual para los fanáticos del queso.",
     "ingredients": [
       "Doble medallon",
       "6 fetas de queso cheddar",
-      "Fuente de cheddar (200 gramos)",
-      "Bacon crujiente (200 gramos)",
+      "Fuente de cheddar derretido",
+      "Bacon crujiente",
       "Pan de papa suave y dorado"
     ],
-    "price": { "simple": 18000, "doble": 18000, "triple": 18000 },
+    "price": { "simple": 19000, "doble": 19000, "triple": 19000 },
     "stock": 10,
     "image": "/menu/burgers/volcan-burger.webp"
   },

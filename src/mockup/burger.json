@@ -35,6 +35,23 @@
     "image": "/menu/burgers/orgasmo-burger.webp"
   },
   {
+    "id": 9,
+    "type": "burger",
+    "name": "Chicken Crispy",
+    "description": "Pollo crispy bien dorado con provolone asado, tomate fresco y lechuga cortada en juliana fina, mezclada con nuestra salsa Tasty al estilo coleslaw. Servido en pan de papa dorado en manteca.",
+    "ingredients": [
+      "Cuarto trasero de pollo deshuesado",
+      "Provolone asado",
+      "Lechuga fresca",
+      "Tomate fresco",
+      "Pan de papa",
+      "Salsa Tasty"
+    ],
+    "price": { "simple": 13000, "doble": 13000, "triple": 13000 },
+    "stock": 10,
+    "image": "/menu/burgers/chicken-crispy.png"
+  },
+  {
     "id": 2,
     "type": "burger",
     "name": "Cheese Burger",

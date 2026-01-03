@@ -101,14 +101,15 @@ const HamburgerDetailCard = ({ product }: { product: HamburgerItem }) => {
               <li className="sm:text-base text-sm">Incluye papas fritas</li>
             </ul>
 
-            {/* Tamaños de hamburguesas */}
-            {product.name !== "Volcan de cheddar" &&
-              product.name !== "Orgasmo" && (
-                <BurgerSizeSelector
-                  burgerSize={burgerSize}
-                  setBurgerSize={setBurgerSize}
-                />
-              )}
+            {/* Tamaños de hamburguesas (solo productos normales) */}
+            {!specialProducts.some(
+              (p) => p.toLowerCase() === product.name.toLowerCase()
+            ) && (
+              <BurgerSizeSelector
+                burgerSize={burgerSize}
+                setBurgerSize={setBurgerSize}
+              />
+            )}
 
             {/* precio   */}
             {product.discount && product.discount > 0 && activePrices ? (

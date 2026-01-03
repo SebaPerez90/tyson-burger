@@ -1,6 +1,7 @@
 import { generateShortId } from "@/src/utils/uuidGenerator";
 import { Button } from "../ui/button";
 import { toast } from "sonner";
+import { specialProducts } from "@/src/constants/specialProducts";
 // import ConfirmOrderModal from "../ui/modals/ConfirmOrderModal";
 
 type Props = {
@@ -52,7 +53,14 @@ const SummaryCard = ({
 
     const productsText = clientOrder
       .map((i) => {
-        const size = i.productSize ? ` (${i.productSize.toUpperCase()})` : "";
+        const isSpecialProduct = specialProducts.some(
+          (p) => p.toLowerCase() === i.productName?.toLowerCase()
+        );
+
+        const size =
+          i.productSize && !isSpecialProduct
+            ? ` (${i.productSize.toUpperCase()})`
+            : "";
 
         const extras =
           Array.isArray(i.extras) && i.extras.length > 0

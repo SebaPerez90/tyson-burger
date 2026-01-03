@@ -26,7 +26,7 @@ const SubMenuAcordeon = ({
     >
       <AccordionItem value="item-1" className="bg-[#1a1a1a] ">
         <AccordionTrigger className="text-base sm:text-xl text-white px-4 py-6 hover:no-underline cursor-pointer">
-          Agrega ingredientes para más placer 😋
+          Extras para tu pedido
         </AccordionTrigger>
 
         <AccordionContent className="px-4 py-3">

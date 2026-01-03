@@ -9,6 +9,8 @@ import SubMenuAcordeon from "@/src/components/ui/acordeons/SubMenuAcordeon";
 import AddToCart from "@/src/components/menu/AddToCart";
 import BurgerSizeSelector from "../../menu/BurgerSizeSelector";
 import Image from "next/image";
+import { usePathname } from "next/navigation";
+import { specialProducts } from "@/src/constants/specialProducts";
 
 const HamburgerDetailCard = ({ product }: { product: HamburgerItem }) => {
   const [selectedExtras, setSelectedExtras] = useState<Extra[]>([]);
@@ -19,6 +21,16 @@ const HamburgerDetailCard = ({ product }: { product: HamburgerItem }) => {
   const [burgerSize, setBurgerSize] = useState<"simple" | "doble" | "triple">(
     "simple"
   );
+
+  // este bloque lo utilizamos para que los productos especiales no muestren el acordeón de extras
+  // ademas de que no se les pueda cambiar el tamaño de la hamburguesa
+  // y ademas hacermos una operacion para normalizar los slugs y evitar errores
+  const pathname = usePathname();
+  const isSpecialProductRoute = specialProducts.some((product) => {
+    const slugNormalized = product.toLowerCase().trim().replace(/\s+/g, "-");
+
+    return pathname.includes(`/menu/${slugNormalized}`);
+  });
 
   const activePrices =
     product.discount && product.discount > 0
@@ -129,12 +141,14 @@ const HamburgerDetailCard = ({ product }: { product: HamburgerItem }) => {
             )}
           </div>
 
-          {/* Acordeón de extras */}
-          <SubMenuAcordeon
-            extras={burgerExtras}
-            selectedExtras={selectedExtras}
-            onExtraChange={handleExtraChange}
-          />
+          {/* Acordeón de extras (no mostrar en productos especiales) */}
+          {!isSpecialProductRoute && (
+            <SubMenuAcordeon
+              extras={burgerExtras}
+              selectedExtras={selectedExtras}
+              onExtraChange={handleExtraChange}
+            />
+          )}
 
           {/* Nota al producto */}
           <div className="mt-10 w-full border border-white/10 rounded-2xl p-4 bg-[#1a1a1a]">

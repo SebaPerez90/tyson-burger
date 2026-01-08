@@ -11,7 +11,7 @@
     ],
     "price": 6000,
     "image": "/menu/starters/fries.webp",
-    "stock": 10
+    "stock": 1
   },
   {
     "id": 2,
@@ -25,7 +25,7 @@
     ],
     "price": 7000,
     "image": "/menu/starters/fries-egg.webp",
-    "stock": 10
+    "stock": 1
   },
   {
     "id": 3,
@@ -57,7 +57,7 @@
     ],
     "price": 9000,
     "image": "/menu/starters/fries-sweet.webp",
-    "stock": 10
+    "stock": 1
   },
   {
     "id": 5,
@@ -85,7 +85,7 @@
     ],
     "price": 9000,
     "image": "/menu/starters/fries-cheddar.webp",
-    "stock": 10
+    "stock": 1
   },
   {
     "id": 7,

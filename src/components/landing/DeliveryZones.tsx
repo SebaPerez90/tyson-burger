@@ -7,9 +7,9 @@ import { FaWhatsapp } from "react-icons/fa";
 const deliveryZones = [
   "Quilmes",
   "Berazategui",
-  "Varela",
+  "Florencio Varela",
   "Ezpeleta",
-  "Solano",
+  "San Francisco Solano",
 ];
 
 export default function DeliveryAndPickup() {
@@ -67,7 +67,7 @@ export default function DeliveryAndPickup() {
       {/* Tarjeta de Retiro en local */}
       <div className="max-w-sm mx-auto border border-white/20 rounded-xl p-6 text-stone-50 space-y-4 flex flex-col md:items-start items-center ">
         <h3 className="font-bold flex items-center gap-2 text-xl w-60 md:w-auto">
-          <GrLocation /> Retiro en el local
+          <GrLocation /> Pasar a retirar.
         </h3>
         <div className="space-y-1 text-sm text-stone-300 w-60 md:w-auto ">
           <p className="text-base font-medium text-stone-50">

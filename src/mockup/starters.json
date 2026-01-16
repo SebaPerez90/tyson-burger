@@ -25,7 +25,7 @@
     ],
     "price": 7000,
     "image": "/menu/starters/fries-egg.webp",
-    "stock": 10
+    "stock": 1
   },
   {
     "id": 3,
@@ -57,7 +57,7 @@
     ],
     "price": 9000,
     "image": "/menu/starters/fries-sweet.webp",
-    "stock": 10
+    "stock": 1
   },
   {
     "id": 5,

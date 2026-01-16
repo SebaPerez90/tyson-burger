@@ -113,7 +113,7 @@
       "Pan de papa dorado"
     ],
     "price": { "simple": 10000, "doble": 12000, "triple": 14000 },
-    "stock": 1,
+    "stock": 10,
     "image": "/menu/burgers/american-burger.webp"
   },
   {

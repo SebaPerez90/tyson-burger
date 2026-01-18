@@ -34,9 +34,9 @@ export const burgerDiscount = (mockBurgersItems: HamburgerItem[]) => {
       //   discount = 5;
       //   break;
 
-      // case burger.name.includes("Provo"):
-      //   discount = 10;
-      //   break;
+      case burger.name.includes("Provo"):
+        discount = 10;
+        break;
 
       // case burger.name.includes("Tyson"):
       //   discount = 5;
@@ -61,7 +61,7 @@ export const burgerDiscount = (mockBurgersItems: HamburgerItem[]) => {
       Object.entries(discountedPricesWithoutParse).map(([key, value]) => [
         key,
         value.toLocaleString("es-AR"),
-      ])
+      ]),
     );
 
     return {

@@ -1,6 +1,6 @@
 import MenuNavBar from "@/src/components/header/MenuNavBar";
-import DesertGrid from "@/src/components/menu/DesertGrid";
-import DrinksGrid from "@/src/components/menu/DrinksGrid";
+// import DesertGrid from "@/src/components/menu/DesertGrid";
+// import DrinksGrid from "@/src/components/menu/DrinksGrid";
 import HamburgerGrid from "@/src/components/menu/HamburgerGrid";
 import StarterGrid from "@/src/components/menu/StarterGrid";
 
@@ -16,10 +16,10 @@ export default function MenuPage() {
         <StarterGrid />
 
         {/* drinks container section */}
-        <DrinksGrid />
+        {/* <DrinksGrid /> */}
 
         {/* deserts container section */}
-        <DesertGrid />
+        {/* <DesertGrid /> */}
       </main>
     </>
   );

@@ -14,7 +14,7 @@ export const starterExtras = [
   { id: "extra-chimi-fries", label: "Dip de chimichurri", price: "$ 500" },
   {
     id: "extra-mayonnaise-bacon-frie",
-    label: "Extra mayonesa de bacon",
-    price: "$ 1.000",
+    label: "Extra salsa Tasty",
+    price: "$ 1.500",
   },
 ];

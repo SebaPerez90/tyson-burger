@@ -1,6 +1,6 @@
 "use client";
 
-import Link from "next/link";
+// import Link from "next/link";
 
 import { FaTiktok, FaInstagram } from "react-icons/fa";
 import { HiOutlineExternalLink } from "react-icons/hi";
@@ -68,7 +68,7 @@ const Footer = () => {
           </div>
 
           {/* Enlaces rápidos */}
-          <div className="flex flex-col space-y-2">
+          {/* <div className="flex flex-col space-y-2">
             <h3 className="font-semibold text-lg">Explorar</h3>
             <Link
               href="/menu"
@@ -88,7 +88,7 @@ const Footer = () => {
             >
               Preguntas Frecuentes
             </Link>
-          </div>
+          </div> */}
         </div>
       </div>
 

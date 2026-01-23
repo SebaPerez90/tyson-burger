@@ -1,26 +1,26 @@
 type Props = {
-  burgerSize: "simple" | "doble" | "triple";
-  setBurgerSize: (v: "simple" | "doble" | "triple") => void;
+  sauce: "mayonesa" | "barbacoa" | "moztaza";
+  setSauce: (v: "mayonesa" | "barbacoa" | "moztaza") => void;
 };
 
-const BurgerSizeSelector = ({ burgerSize, setBurgerSize }: Props) => {
+const SauceSelector = ({ sauce, setSauce }: Props) => {
   return (
     <div className="flex items-center gap-2 my-8 w-full">
-      {(["simple", "doble", "triple"] as const).map((size) => (
+      {(["mayonesa", "barbacoa", "moztaza"] as const).map((t) => (
         <button
-          key={size}
-          onClick={() => setBurgerSize(size)}
+          key={t}
+          onClick={() => setSauce(t)}
           className={`px-4 py-3 rounded-lg border cursor-pointer grow capitalize text-stone-50 hover:opacity-85 transition-all duration-200 ${
-            burgerSize === size
+            sauce === t
               ? "bg-red-500 border-transparent font-semibold"
               : "border-white/70"
           }`}
         >
-          {size}
+          {t}
         </button>
       ))}
     </div>
   );
 };
 
-export default BurgerSizeSelector;
+export default SauceSelector;

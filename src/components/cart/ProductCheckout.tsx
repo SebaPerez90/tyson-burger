@@ -30,7 +30,7 @@ const ProductCheckout = ({ clientOrder }: { clientOrder: Order[] }) => {
       <ul className="min-[500px]:px-4">
         {clientOrder.map((item, index) => {
           const isSpecialProduct = specialProducts.some(
-            (p) => p.toLowerCase() === item.productName?.toLowerCase()
+            (p) => p.toLowerCase() === item.productName?.toLowerCase(),
           );
 
           return (
@@ -68,6 +68,13 @@ const ProductCheckout = ({ clientOrder }: { clientOrder: Order[] }) => {
                           <li key={i}>• {ex}</li>
                         ))}
                       </ul>
+                    )}
+
+                    {/* salsas incluida por default en starters */}
+                    {item.sauce !== undefined && item.sauce.length > 0 && (
+                      <span className="mt-1 flex flex-col gap-0.5 text-xs text-white/50">
+                        • {item.sauce}
+                      </span>
                     )}
 
                     {/* note */}

@@ -75,7 +75,7 @@
     "name": "Nuggets de pollo",
     "description": "Patitas doradas de pollo con rebozado crujiente y dorado. Acompañadas con salsa a elección.",
     "ingredients": ["Patitas de pollo", "Salsa a elección"],
-    "price": 8000,
+    "price": 7000,
     "image": "/menu/starters/nuggets.webp",
     "stock": 10
   },
@@ -97,13 +97,9 @@
     "id": 7,
     "type": "starter",
     "name": "Bastones de mozzarella",
-    "description": "Bastones de mozzarella derretida con rebozado crocante, fritos al instante. Servidos con salsa de tomate especiada o barbacoa.",
-    "ingredients": [
-      "Queso mozzarella fundido",
-      "Rebozado crocante",
-      "Salsa de tomate o barbacoa"
-    ],
-    "price": 9000,
+    "description": "6 Bastones de mozzarella derretida con rebozado crocante, fritos al instante. Servidos con salsa de tomate especiada.",
+    "ingredients": ["Queso mozzarella rebozado", "Salsa a elección"],
+    "price": 8000,
     "image": "/menu/starters/mozzarella-sticks.webp",
     "stock": 10
   }

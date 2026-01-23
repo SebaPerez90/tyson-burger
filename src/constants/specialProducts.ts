@@ -6,3 +6,9 @@ export const specialProducts = [
   "Chicken Crispy",
   "Orgasmo",
 ];
+
+export const specialStarters = [
+  "Papas Sweet & Cheese",
+  "Sobre Papas fritas",
+  "Papas Tyson",
+];

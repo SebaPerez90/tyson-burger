@@ -12,6 +12,7 @@ const AddToCart = ({
   productSize,
   selectedExtras,
   productImage,
+  sauce,
 }: Order) => {
   const router = useRouter();
 
@@ -31,6 +32,7 @@ const AddToCart = ({
         productSize,
         extras: formattedExtras,
         image: productImage,
+        sauce,
       };
 
       const storedCart = localStorage.getItem("clientOrder");

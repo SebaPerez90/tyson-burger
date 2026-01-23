@@ -7,6 +7,9 @@ import AddToCart from "@/src/components/menu/AddToCart";
 import SubMenuAcordeon from "../acordeons/SubMenuAcordeon";
 import { parsePriceStringToNumber } from "@/src/utils/priceConverter";
 import { starterExtras } from "@/src/constants/starterExtras";
+import SauceSelector from "../../menu/SauceSelector";
+import { usePathname } from "next/navigation";
+import { specialStarters } from "@/src/constants/specialProducts";
 
 const StarterDetailCard = ({ product }: { product: StarterItem }) => {
   const [selectedExtras, setSelectedExtras] = useState<Extra[]>([]);
@@ -14,6 +17,16 @@ const StarterDetailCard = ({ product }: { product: StarterItem }) => {
   const [basePrice, setBasePrice] = useState(0);
   const [note, setNote] = useState("");
   const [count, setCount] = useState(1);
+  const [sauce, setSauce] = useState<"mayonesa" | "barbacoa" | "moztaza">(
+    "mayonesa",
+  );
+
+  const pathname = usePathname();
+  const isSpecialProductRoute = specialStarters.some((product) => {
+    const slugNormalized = product.toLowerCase().trim().replace(/\s+/g, "-");
+
+    return pathname.includes(`/menu/${slugNormalized}`);
+  });
 
   const activePrices =
     product.discount && product.discount > 0
@@ -23,7 +36,7 @@ const StarterDetailCard = ({ product }: { product: StarterItem }) => {
   useEffect(() => {
     const extrasSum = selectedExtras.reduce(
       (sum, ex) => sum + parsePriceStringToNumber(ex.price),
-      0
+      0,
     );
     setTotalPrice(basePrice + extrasSum);
   }, [selectedExtras, basePrice]);
@@ -83,6 +96,11 @@ const StarterDetailCard = ({ product }: { product: StarterItem }) => {
                 </li>
               ))}
             </ul>
+
+            {/* Acordeón de extras (no mostrar en productos especiales) */}
+            {!isSpecialProductRoute && (
+              <SauceSelector sauce={sauce} setSauce={setSauce} />
+            )}
 
             {/* precio   */}
             {product.discount && product.discount > 0 && activePrices ? (
@@ -144,6 +162,7 @@ const StarterDetailCard = ({ product }: { product: StarterItem }) => {
 
       {/* Botones de compra y cantidad de productos */}
       <AddToCart
+        sauce={sauce}
         selectedExtras={selectedExtras}
         total={totalPrice * count}
         quantity={count}

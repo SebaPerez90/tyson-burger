@@ -33,6 +33,7 @@ type Order = {
   selectedExtras?: { id: string; label: string; price: string }[];
   image?: string;
   quantity: number;
+  sauce?: "mayonesa" | "barbacoa" | "moztaza";
 };
 
 type StarterItem = {

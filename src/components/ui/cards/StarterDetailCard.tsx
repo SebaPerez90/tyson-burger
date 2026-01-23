@@ -17,9 +17,9 @@ const StarterDetailCard = ({ product }: { product: StarterItem }) => {
   const [basePrice, setBasePrice] = useState(0);
   const [note, setNote] = useState("");
   const [count, setCount] = useState(1);
-  const [sauce, setSauce] = useState<"mayonesa" | "barbacoa" | "moztaza">(
-    "mayonesa",
-  );
+  const [sauce, setSauce] = useState<
+    "Mayonesa" | "Barbacoa" | "Moztaza" | "Salsa pomodoro"
+  >();
 
   const pathname = usePathname();
   const isSpecialProductRoute = specialStarters.some((product) => {
@@ -34,12 +34,15 @@ const StarterDetailCard = ({ product }: { product: StarterItem }) => {
       : product.price;
 
   useEffect(() => {
+    // eslint-disable-next-line @typescript-eslint/no-unused-expressions
+    isSpecialProductRoute ? setSauce("Salsa pomodoro") : setSauce("Mayonesa");
+
     const extrasSum = selectedExtras.reduce(
       (sum, ex) => sum + parsePriceStringToNumber(ex.price),
       0,
     );
     setTotalPrice(basePrice + extrasSum);
-  }, [selectedExtras, basePrice]);
+  }, [selectedExtras, basePrice, isSpecialProductRoute]);
 
   useEffect(() => {
     if (activePrices)
@@ -98,9 +101,11 @@ const StarterDetailCard = ({ product }: { product: StarterItem }) => {
             </ul>
 
             {/* Acordeón de extras (no mostrar en productos especiales) */}
-            {!isSpecialProductRoute && (
-              <SauceSelector sauce={sauce} setSauce={setSauce} />
-            )}
+            <SauceSelector
+              sauce={sauce ?? "Mayonesa"}
+              setSauce={setSauce}
+              specialRoute={isSpecialProductRoute}
+            />
 
             {/* precio   */}
             {product.discount && product.discount > 0 && activePrices ? (

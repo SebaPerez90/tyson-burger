@@ -11,4 +11,5 @@ export const specialStarters = [
   "Papas Sweet & Cheese",
   "Sobre Papas fritas",
   "Papas Tyson",
+  "Bastones de mozzarella",
 ];

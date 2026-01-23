@@ -4,11 +4,7 @@
     "type": "starter",
     "name": "Porcion Papas fritas",
     "description": "Papas fritas artesanales con piel, doradas al punto justo. Adobadas con sal especiada de la casa y acompañadas con salsa a elección.",
-    "ingredients": [
-      "Papas caseras con piel",
-      "Sal especiada de la casa",
-      "Salsa a elección"
-    ],
+    "ingredients": ["Papas caseras", "Sal especiada", "Salsa a elección"],
     "price": 6000,
     "image": "/menu/starters/fries.webp",
     "stock": 10
@@ -18,7 +14,7 @@
     "type": "starter",
     "name": "Sobre Papas fritas",
     "description": "Papas fritas artesanales con piel, doradas al punto justo. Adobadas con sal especiada de la casa. Porcion pequeña",
-    "ingredients": ["Papas caseras con piel", "Sal especiada de la casa"],
+    "ingredients": ["Papas caseras", "Sal especiada"],
     "price": 4000,
     "image": "/menu/starters/fries-small.webp",
     "stock": 10
@@ -28,11 +24,7 @@
     "type": "starter",
     "name": "Papas fritas con huevo",
     "description": "Papas fritas artesanales con piel, con 2 huevos a la plancha. Doradas y condimentadas con nuestra sal especiada.",
-    "ingredients": [
-      "Papas caseras con piel",
-      "Huevos a la plancha",
-      "Sal especiada de la casa"
-    ],
+    "ingredients": ["Papas caseras", "Huevos a la plancha", "Sal especiada"],
     "price": 7000,
     "image": "/menu/starters/fries-egg.webp",
     "stock": 10
@@ -43,11 +35,11 @@
     "name": "Papas Tyson",
     "description": "Papas fritas doradas y crujientes bañadas con queso cheddar fundido, panceta ahumada crocante y cebolla de verdeo. Adobadas con sal especiada de la casa.",
     "ingredients": [
-      "Papas caseras con piel",
-      "Cebolla de verdeo dorada",
-      "Panceta ahumada crocante",
-      "Baño de queso cheddar",
-      "Sal especiada de la casa"
+      "Papas caseras",
+      "Cebolla de verdeo",
+      "Panceta crocante",
+      "Baño de cheddar",
+      "Sal especiada"
     ],
     "price": 11000,
     "image": "/menu/starters/fries-bacon.webp",
@@ -59,11 +51,12 @@
     "name": "Papas Sweet & Cheese",
     "description": "Papas fritas doradas y crujientes bañadas con una mezcla de queso cheddar fundido y mozzarella, cebolla caramelizada y salsa Stacker.",
     "ingredients": [
-      "Papas caseras con piel",
+      "Papas caseras",
       "Cebolla caramelizada",
-      "Mar de quesos",
-      "Sal especiada de la casa",
-      "Salsa Stacker"
+      "Chedar fundido",
+      "Mozzarella fundido",
+      "Sal especiada",
+      "Salsa Tyson"
     ],
     "price": 9000,
     "image": "/menu/starters/fries-sweet.webp",
@@ -84,11 +77,7 @@
     "type": "starter",
     "name": "Papas con cheddar",
     "description": "Papas fritas doradas bañadas con una lluvia de queso cheddar fundido.",
-    "ingredients": [
-      "Papas fritas crocantes",
-      "Queso cheddar fundido",
-      "Sal especiada de la casa"
-    ],
+    "ingredients": ["Papas caseras", "Cheddar fundido", "Sal especiada"],
     "price": 9000,
     "image": "/menu/starters/fries-cheddar.webp",
     "stock": 10
@@ -101,6 +90,16 @@
     "ingredients": ["Queso mozzarella rebozado", "Salsa a pomodoro especiada"],
     "price": 8000,
     "image": "/menu/starters/mozzarella-sticks.webp",
+    "stock": 10
+  },
+  {
+    "id": 7,
+    "type": "starter",
+    "name": "Bocaditos deProvoleta",
+    "description": "6 trinagunlos de  provolone rebozada crocante, fritos al instante. Servidos con chimichurri casero.",
+    "ingredients": ["Queso provolone rebozado", "Chimichurri casero"],
+    "price": 8000,
+    "image": "/menu/starters/provolone-bites.webp",
     "stock": 10
   }
 ]

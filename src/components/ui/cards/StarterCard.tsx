@@ -43,7 +43,7 @@ const StarterCard = ({ item }: { item: StarterItem }) => {
           </span>
 
           {/* INGREDIENTES */}
-          <ul className="flex flex-col marker:text-green-500 text-[10px] text-white/60 lg:block list-disc list-inside lg:text-sm pb-3">
+          <ul className="flex w-max flex-col marker:text-green-500 text-[10px] text-white/60 lg:block list-disc list-inside lg:text-sm pb-3">
             {item.ingredients.map((item, index) => (
               <li key={index}>{item}</li>
             ))}

@@ -46,7 +46,7 @@ const SummaryCard = ({
         .split(" ")
         .map(
           (word: string) =>
-            word.charAt(0).toUpperCase() + word.slice(1).toLowerCase()
+            word.charAt(0).toUpperCase() + word.slice(1).toLowerCase(),
         )
         .join(" ");
     };
@@ -54,7 +54,7 @@ const SummaryCard = ({
     const productsText = clientOrder
       .map((i) => {
         const isSpecialProduct = specialProducts.some(
-          (p) => p.toLowerCase() === i.productName?.toLowerCase()
+          (p) => p.toLowerCase() === i.productName?.toLowerCase(),
         );
 
         const size =
@@ -67,11 +67,13 @@ const SummaryCard = ({
             ? i.extras.map((e) => `    - ${e}`).join("\n")
             : "";
 
+        const sauce = i.sauce ? `    - ${i.sauce}` : "";
+
         const note = i.note ? `    *NOTA:* _${i.note}_` : "";
 
         const details =
           extras || note
-            ? `\n${[extras, note].filter(Boolean).join("\n")}`
+            ? `\n${[extras, sauce, note].filter(Boolean).join("\n")}`
             : "";
 
         return `• *${i.productName?.toUpperCase()}*${size} x${
@@ -82,7 +84,7 @@ const SummaryCard = ({
 
     return `
 Número de pedido: *${generateShortId(
-      4
+      4,
     )}*  |  Hora ingreso: *${new Date().toLocaleTimeString([], {
       hour: "2-digit",
       minute: "2-digit",
@@ -133,7 +135,7 @@ ${betweenStreets ? `• Entre calles: ${betweenStreets}.` : ""}`
 
         setTimeout(() => {
           const firstInput = document.querySelector(
-            !address ? 'input[name="address"]' : 'input[name="betweenStreets"]'
+            !address ? 'input[name="address"]' : 'input[name="betweenStreets"]',
           ) as HTMLInputElement | null;
 
           firstInput?.focus();

@@ -8,8 +8,8 @@ const MenuNavBar = () => {
   const menuSections = [
     { id: "burgers-section", label: "Burgers" },
     { id: "starters-section", label: "Entradas" },
-    { id: "drinks-section", label: "Bebidas" },
-    { id: "deserts-section", label: "Postres" },
+    // { id: "drinks-section", label: "Bebidas" },
+    // { id: "deserts-section", label: "Postres" },
   ];
 
   useEffect(() => {
@@ -20,7 +20,7 @@ const MenuNavBar = () => {
           if (entry.isIntersecting) setActiveSection(entry.target.id);
         });
       },
-      { threshold: 0.4 } // 40% visible = sección activa
+      { threshold: 0.4 }, // 40% visible = sección activa
     );
 
     sections.forEach((sec) => observer.observe(sec));

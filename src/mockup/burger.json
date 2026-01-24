@@ -23,13 +23,9 @@
     "ingredients": [
       "Doble medallon",
       "Doble queso cheddar",
-      "Cebolla caramelizada",
-      "Queso azul",
-      "Panceta crocante",
-      "Provolone",
-      "Muzzarella",
-      "Salsa barbacoa",
-      "Pan de papa"
+      "Provolone y Muzzarella",
+      "Cebolla caramelizada con queso azul",
+      "Panceta crocante y BBQ"
     ],
     "price": { "simple": 14000, "doble": 14000, "triple": 14000 },
     "stock": 10,

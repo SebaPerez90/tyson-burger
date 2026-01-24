@@ -1,12 +1,12 @@
 type Props = {
-  sauce: "Mayonesa" | "Barbacoa" | "Moztaza" | "Salsa pomodoro";
-  setSauce: (v: "Mayonesa" | "Barbacoa" | "Moztaza" | "Salsa pomodoro") => void;
+  sauce: "Mayonesa" | "Barbacoa" | "Moztaza" | "Salsa Pomodoro";
+  setSauce: (v: "Mayonesa" | "Barbacoa" | "Moztaza" | "Salsa Pomodoro") => void;
   specialRoute: boolean;
 };
 
 const SauceSelector = ({ sauce, setSauce, specialRoute }: Props) => {
   const sauces = specialRoute
-    ? ["Barbacoa", "Salsa pomodoro"]
+    ? ["Barbacoa", "Salsa Pomodoro"]
     : ["Mayonesa", "Barbacoa", "Moztaza"];
   return (
     <div className="flex items-center gap-2 my-8 w-full">

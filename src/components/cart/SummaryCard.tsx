@@ -72,7 +72,7 @@ const SummaryCard = ({
         const note = i.note ? `    *NOTA:* _${i.note}_` : "";
 
         const details =
-          extras || note
+          extras || sauce || note
             ? `\n${[extras, sauce, note].filter(Boolean).join("\n")}`
             : "";
 

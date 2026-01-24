@@ -18,7 +18,7 @@ const StarterDetailCard = ({ product }: { product: StarterItem }) => {
   const [note, setNote] = useState("");
   const [count, setCount] = useState(1);
   const [sauce, setSauce] = useState<
-    "Mayonesa" | "Barbacoa" | "Moztaza" | "Salsa pomodoro"
+    "Mayonesa" | "Barbacoa" | "Moztaza" | "Salsa Pomodoro"
   >();
 
   const pathname = usePathname();
@@ -35,7 +35,7 @@ const StarterDetailCard = ({ product }: { product: StarterItem }) => {
 
   useEffect(() => {
     // eslint-disable-next-line @typescript-eslint/no-unused-expressions
-    isSpecialProductRoute ? setSauce("Salsa pomodoro") : setSauce("Mayonesa");
+    isSpecialProductRoute ? setSauce("Salsa Pomodoro") : setSauce("Mayonesa");
 
     const extrasSum = selectedExtras.reduce(
       (sum, ex) => sum + parsePriceStringToNumber(ex.price),

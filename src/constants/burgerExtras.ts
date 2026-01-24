@@ -13,6 +13,11 @@ export const burgerExtras = [
     price: "$ 4.000",
   },
   {
+    id: "extra-cheddar",
+    label: "Fuente de cheddar",
+    price: "$ 5.000",
+  },
+  {
     id: "extra-egg",
     label: "Huevo frito a tu hamburguesa",
     price: "$ 1.000",

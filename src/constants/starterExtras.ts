@@ -3,7 +3,22 @@ export const starterExtras = [
   {
     id: "extra-mayonnaise-bacon-frie",
     label: "Dip salsa Tasty",
-    price: "$ 1.500",
+    price: "$ 1.000",
+  },
+  {
+    id: "extra-mayonnaise-bacon-frie",
+    label: "Dip salsa Tyson",
+    price: "$ 1.000",
+  },
+  {
+    id: "extra-cheddar-fuente",
+    label: "Fuente de cheddar",
+    price: "$ 5.000",
+  },
+  {
+    id: "extra-meat",
+    label: "Medallon de carne trozado",
+    price: "$ 4.000",
   },
 ];
 

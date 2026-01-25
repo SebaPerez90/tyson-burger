@@ -63,7 +63,7 @@
     ],
     "price": { "simple": 11000, "doble": 11000, "triple": 11000 },
     "stock": 10,
-    "image": "/menu/burgers/test.jpeg"
+    "image": "/menu/burgers/melt-chicken.webp"
   },
   {
     "id": 5,

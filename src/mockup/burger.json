@@ -16,7 +16,7 @@
     "image": "/menu/burgers/volcan-burger.webp"
   },
   {
-    "id": 9,
+    "id": 2,
     "type": "burger",
     "name": "Orgasmo",
     "description": "Doble queso chedar en la base del pan con colchon de cebolla caramelizada con queso azul fundido. Doble medallon de carne (un medallón coronado con provolone y el otro con muzzarella), coronado con doble panceta crocante y un cierre de salsa barbacoa.",
@@ -32,7 +32,7 @@
     "image": "/menu/burgers/orgasmo-burger.webp"
   },
   {
-    "id": 9,
+    "id": 3,
     "type": "burger",
     "name": "Chicken Crispy",
     "description": "Pollo crispy bien dorado con provolone asado, tomate fresco y lechuga cortada en juliana fina, mezclada con nuestra salsa Tasty al estilo coleslaw. Servido en pan de papa dorado en manteca.",
@@ -49,7 +49,24 @@
     "image": "/menu/burgers/chicken-crispy.png"
   },
   {
-    "id": 2,
+    "id": 4,
+    "type": "burger",
+    "name": "Melt Chicken",
+    "description": "Pollo crispy bien dorado con provolone asado, tomate fresco y lechuga cortada en juliana fina, mezclada con nuestra salsa Tasty al estilo coleslaw. Servido en pan de papa dorado en manteca.",
+    "ingredients": [
+      "Pollo crispy",
+      "Base de muzzarella y roquefort fundido",
+      "Provoleta empanada frita",
+      "Huevo a la plancha",
+      "Pan de papa",
+      "Salsa Tasty"
+    ],
+    "price": { "simple": 11000, "doble": 11000, "triple": 11000 },
+    "stock": 10,
+    "image": "/menu/burgers/test.jpeg"
+  },
+  {
+    "id": 5,
     "type": "burger",
     "name": "Cheese Burger",
     "description": "Medallón de carne con doble queso cheddar fundido, pan de papa artesanal y una combinación irresistible que celebra lo clásico. Simple, cremosa y llena de sabor.",
@@ -64,7 +81,7 @@
     "image": "/menu/burgers/cheese-burger.webp"
   },
   {
-    "id": 3,
+    "id": 6,
     "type": "burger",
     "name": "Cheese Bacon",
     "description": "Medallón de carne con panceta ahumada crocante, doble cheddar derretido y pan de papa suave, una combinación intensa y sabrosa que nunca falla.",
@@ -80,7 +97,7 @@
     "image": "/menu/burgers/cheese-bacon.webp"
   },
   {
-    "id": 4,
+    "id": 7,
     "type": "burger",
     "name": "Sweet Burger",
     "description": "Medallón de carne con doble cheddar fundido y una capa de cebolla caramelizada que aporta dulzura y textura, todo en un pan de papa tierno y dorado.",
@@ -96,7 +113,7 @@
     "image": "/menu/burgers/sweet-burger.webp"
   },
   {
-    "id": 5,
+    "id": 8,
     "type": "burger",
     "name": "American Burger",
     "description": "Medallón de carne con doble queso cheddar, lechuga fresca, pepinillo, tomate y pan de papa esponjoso, coranado con un hueevo a la plancha. Inspirada en el clásico americano pero con un toque artesanal.",
@@ -114,7 +131,7 @@
     "image": "/menu/burgers/american-burger.webp"
   },
   {
-    "id": 6,
+    "id": 9,
     "type": "burger",
     "name": "Provolone Burger",
     "description": "Medallón de carne  con doble queso cheddar, coronado con provoleta fundida, chimichurri casero y mayonoesa de ajo asado, creando un equilibrio perfecto entre lo criollo y lo moderno.",
@@ -131,7 +148,7 @@
     "image": "/menu/burgers/provo-burger.webp"
   },
   {
-    "id": 8,
+    "id": 10,
     "type": "burger",
     "name": "Tyson Burger",
     "description": "Medallón de carne, con doble cheddar fundido, panceta crocante y salsa Tyson, coronada con un huevo a la plancha. Potente, jugosa y adictiva.",

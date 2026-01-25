@@ -5,6 +5,7 @@ export const specialProducts = [
   "Volcan de cheddar",
   "Chicken Crispy",
   "Orgasmo",
+  "Melt Chicken",
 ];
 
 export const specialStarters = [

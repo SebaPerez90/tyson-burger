@@ -42,7 +42,7 @@ const HamburgerCard = ({ item }: { item: HamburgerItem }) => {
           </span>
 
           {/* INGREDIENTES */}
-          <ul className="flex flex-col w-max marker:text-green-500 text-[10px] text-white/60 lg:block list-disc list-inside lg:text-sm ">
+          <ul className="flex flex-col w-max pb-2 marker:text-green-500 text-[10px] text-white/60 lg:block list-disc list-inside lg:text-sm ">
             {item.ingredients.map((item, index) => (
               <li key={index}>{item}</li>
             ))}

@@ -134,13 +134,12 @@
     "id": 9,
     "type": "burger",
     "name": "Provolone Burger",
-    "description": "Medallón de carne  con doble queso cheddar, coronado con provoleta fundida, chimichurri casero y mayonoesa de ajo asado, creando un equilibrio perfecto entre lo criollo y lo moderno.",
+    "description": "Medallón de carne  con doble queso cheddar, coronado con provoleta fundida, mayonesa de chimichurri y pan de papa.",
     "ingredients": [
       "Medallon de carne",
       "Doble queso cheddar",
       "Provoleta fundida",
-      "Chimichurri",
-      "Mayonesa de ajo",
+      "Mayonesa de chimichurri",
       "Pan de papa"
     ],
     "price": { "simple": 11500, "doble": 13500, "triple": 15500 },

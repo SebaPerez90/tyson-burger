@@ -9,8 +9,11 @@ import SubMenuAcordeon from "@/src/components/ui/acordeons/SubMenuAcordeon";
 import AddToCart from "@/src/components/menu/AddToCart";
 import BurgerSizeSelector from "../../menu/BurgerSizeSelector";
 import Image from "next/image";
-import { usePathname } from "next/navigation";
+// import { usePathname } from "next/navigation";
 import { specialProducts } from "@/src/constants/specialProducts";
+
+import { specialProductExtras } from "@/src/constants/specialProductExtras";
+import { slugify } from "@/src/utils/slugify";
 
 const HamburgerDetailCard = ({ product }: { product: HamburgerItem }) => {
   const [selectedExtras, setSelectedExtras] = useState<Extra[]>([]);
@@ -19,18 +22,22 @@ const HamburgerDetailCard = ({ product }: { product: HamburgerItem }) => {
   const [totalPrice, setTotalPrice] = useState(0);
   const [basePrice, setBasePrice] = useState(0);
   const [burgerSize, setBurgerSize] = useState<"simple" | "doble" | "triple">(
-    "simple"
+    "simple",
   );
+
+  const productSlug = slugify(product.name);
+  const productSpecialExtras = specialProductExtras[productSlug];
+  const extrasToShow = productSpecialExtras ?? burgerExtras;
 
   // este bloque lo utilizamos para que los productos especiales no muestren el acordeón de extras
   // ademas de que no se les pueda cambiar el tamaño de la hamburguesa
   // y ademas hacermos una operacion para normalizar los slugs y evitar errores
-  const pathname = usePathname();
-  const isSpecialProductRoute = specialProducts.some((product) => {
-    const slugNormalized = product.toLowerCase().trim().replace(/\s+/g, "-");
+  // const pathname = usePathname();
+  // const isSpecialProductRoute = specialProducts.some((product) => {
+  //   const slugNormalized = product.toLowerCase().trim().replace(/\s+/g, "-");
 
-    return pathname.includes(`/menu/${slugNormalized}`);
-  });
+  //   return pathname.includes(`/menu/${slugNormalized}`);
+  // });
 
   const activePrices =
     product.discount && product.discount > 0
@@ -40,7 +47,7 @@ const HamburgerDetailCard = ({ product }: { product: HamburgerItem }) => {
   useEffect(() => {
     const extrasSum = selectedExtras.reduce(
       (sum, ex) => sum + parsePriceStringToNumber(ex.price),
-      0
+      0,
     );
     setTotalPrice(basePrice + extrasSum);
   }, [selectedExtras, basePrice, burgerSize]);
@@ -103,7 +110,7 @@ const HamburgerDetailCard = ({ product }: { product: HamburgerItem }) => {
 
             {/* Tamaños de hamburguesas (solo productos normales) */}
             {!specialProducts.some(
-              (p) => p.toLowerCase() === product.name.toLowerCase()
+              (p) => p.toLowerCase() === product.name.toLowerCase(),
             ) && (
               <BurgerSizeSelector
                 burgerSize={burgerSize}
@@ -143,9 +150,9 @@ const HamburgerDetailCard = ({ product }: { product: HamburgerItem }) => {
           </div>
 
           {/* Acordeón de extras (no mostrar en productos especiales) */}
-          {!isSpecialProductRoute && (
+          {extrasToShow && extrasToShow.length > 0 && (
             <SubMenuAcordeon
-              extras={burgerExtras}
+              extras={extrasToShow}
               selectedExtras={selectedExtras}
               onExtraChange={handleExtraChange}
             />

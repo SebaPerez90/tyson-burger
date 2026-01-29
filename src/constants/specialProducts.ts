@@ -14,4 +14,5 @@ export const specialStarters = [
   "Sobre Papas fritas",
   "Papas Tyson",
   "Bastones de mozzarella",
+  "Provoleta bites",
 ];

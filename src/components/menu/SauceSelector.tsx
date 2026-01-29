@@ -6,7 +6,7 @@ type Props = {
 
 const SauceSelector = ({ sauce, setSauce, specialRoute }: Props) => {
   const sauces = specialRoute
-    ? ["Barbacoa", "Salsa Pomodoro"]
+    ? ["Barbacoa", "Salsa Pomodoro", "Mayonesa de chimichurri"]
     : ["Mayonesa", "Barbacoa", "Moztaza"];
   return (
     <div className="flex items-center gap-2 my-8 w-full">

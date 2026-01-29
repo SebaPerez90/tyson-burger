@@ -32,6 +32,22 @@
     "image": "/menu/burgers/orgasmo-burger.webp"
   },
   {
+    "id": 11,
+    "type": "burger",
+    "name": "Golosa",
+    "description": "Doble medallon de carne, queso cheddar x4, panceta ahumada crocante x4, coronado con bastones de mozzarella y salsa tyson. Una combinación explosiva.",
+    "ingredients": [
+      "Doble medallon",
+      "Queso cheddar x4",
+      "Panceta crocante x4",
+      "Base de muzzarella",
+      "Salsa Tyson"
+    ],
+    "price": { "simple": 15000, "doble": 15000, "triple": 15000 },
+    "stock": 10,
+    "image": "/menu/burgers/golosa.webp"
+  },
+  {
     "id": 3,
     "type": "burger",
     "name": "Chicken Crispy",

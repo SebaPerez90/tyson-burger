@@ -22,12 +22,12 @@ export const burgerDiscount = (mockBurgersItems: HamburgerItem[]) => {
       //   discount = 5;
       //   break;
 
-      case burger.name === "Orgasmo":
-        discount = 10;
-        break;
-      case burger.name === "Volcan de cheddar":
-        discount = 10;
-        break;
+      // case burger.name === "Orgasmo":
+      //   discount = 10;
+      //   break;
+      // case burger.name === "Volcan de cheddar":
+      //   discount = 10;
+      //   break;
 
       // case burger.name === "Chicken Crispy":
       //   discount = 10;

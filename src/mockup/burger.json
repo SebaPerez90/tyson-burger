@@ -62,7 +62,7 @@
     ],
     "price": { "simple": 11000, "doble": 11000, "triple": 11000 },
     "stock": 10,
-    "image": "/menu/burgers/chicken-crispy.png"
+    "image": "/menu/burgers/chicken-crispy.webp"
   },
   {
     "id": 4,

@@ -9,10 +9,4 @@ export const specialProducts = [
   "Melt Chicken",
 ];
 
-export const specialStarters = [
-  "Papas Sweet & Cheese",
-  "Sobre Papas fritas",
-  "Papas Tyson",
-  "Bastones de mozzarella",
-  "Provoleta bites",
-];
+export const specialStarters = ["Bastones de mozzarella", "Provoleta bites"];

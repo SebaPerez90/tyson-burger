@@ -18,7 +18,7 @@ const StarterDetailCard = ({ product }: { product: StarterItem }) => {
   const [note, setNote] = useState("");
   const [count, setCount] = useState(1);
   const [sauce, setSauce] = useState<
-    "Mayonesa" | "Barbacoa" | "Moztaza" | "Salsa Pomodoro"
+    "Mayonesa" | "Barbacoa" | "Moztaza" | "Pomodoro"
   >();
 
   const pathname = usePathname();
@@ -28,14 +28,9 @@ const StarterDetailCard = ({ product }: { product: StarterItem }) => {
     return pathname.includes(`/menu/${slugNormalized}`);
   });
 
-  const activePrices =
-    product.discount && product.discount > 0
-      ? product.discountedPrice
-      : product.price;
-
   useEffect(() => {
     // eslint-disable-next-line @typescript-eslint/no-unused-expressions
-    isSpecialProductRoute ? setSauce("Salsa Pomodoro") : setSauce("Mayonesa");
+    isSpecialProductRoute ? setSauce("Pomodoro") : setSauce("Mayonesa");
 
     const extrasSum = selectedExtras.reduce(
       (sum, ex) => sum + parsePriceStringToNumber(ex.price),
@@ -43,6 +38,11 @@ const StarterDetailCard = ({ product }: { product: StarterItem }) => {
     );
     setTotalPrice(basePrice + extrasSum);
   }, [selectedExtras, basePrice, isSpecialProductRoute]);
+
+  const activePrices =
+    product.discount && product.discount > 0
+      ? product.discountedPrice
+      : product.price;
 
   useEffect(() => {
     if (activePrices)
@@ -63,7 +63,7 @@ const StarterDetailCard = ({ product }: { product: StarterItem }) => {
   };
 
   return (
-    <div className="">
+    <div>
       <div className="flex flex-col justify-center items-center grow w-full sm:max-w-[500px] mx-auto">
         {/* Imagen */}
         <div className="w-full">

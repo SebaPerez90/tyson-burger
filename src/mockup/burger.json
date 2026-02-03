@@ -92,7 +92,13 @@
       "Salsa Tyson",
       "Pan de papa"
     ],
-    "price": { "simple": 9000, "doble": 11000, "triple": 13000 },
+    "price": {
+      "simple": 9000,
+      "doble": 11000,
+      "triple": 13000,
+      "cuadruple": 15500,
+      "quintuple": 17500
+    },
     "stock": 10,
     "image": "/menu/burgers/cheese-burger.webp"
   },
@@ -124,9 +130,33 @@
       "Salsa BBQ ahumada",
       "Pan de papa"
     ],
-    "price": { "simple": 9500, "doble": 11500, "triple": 13500 },
+    "price": {
+      "simple": 9500,
+      "doble": 11500,
+      "triple": 13500,
+      "cuadruple": 16000,
+      "quintuple": 18000
+    },
     "stock": 10,
     "image": "/menu/burgers/sweet-burger.webp"
+  },
+  {
+    "id": 12,
+    "type": "burger",
+    "name": "Smoke Burger",
+    "description": "Generosa cantidad de mermelada de bacon en la base del pan (ajo y  cebolla reogado, mayonesa de bacon, panceta crocante, sal, pimienta negra molida, miel y humo liquido). Medallón de carne con doble cheddar fundido y una capa de cebolla caramelizada coronada con doble bacon crujiente y cerramos con salsa barbacoa.",
+    "ingredients": [
+      "Medallon de carne",
+      "Mermelada de bacon",
+      "Cebolla caramelizada",
+      "Doble queso cheddar",
+      "Salsa barbacoa",
+      "Bacon crujiente",
+      "Pan de papa"
+    ],
+    "price": { "simple": 12500, "doble": 14500, "triple": 16500 },
+    "stock": 10,
+    "image": "/menu/burgers/smoke-burger.webp"
   },
   {
     "id": 8,

@@ -177,6 +177,6 @@
     ],
     "price": { "simple": 10500, "doble": 12500, "triple": 14500 },
     "stock": 10,
-    "image": "/menu/burgers/tyson-burger.png"
+    "image": "/menu/burgers/tyson-burger.webp"
   }
 ]

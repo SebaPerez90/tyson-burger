@@ -10,6 +10,8 @@ type HamburgerItem = {
     simple: number;
     doble: number;
     triple: number;
+    cuadruple: number;
+    quintuple: number;
   };
   image: string;
   stock: number;
@@ -18,6 +20,8 @@ type HamburgerItem = {
     simple: string;
     doble: string;
     triple: string;
+    cuadruple: number;
+    quintuple: number;
   };
 };
 

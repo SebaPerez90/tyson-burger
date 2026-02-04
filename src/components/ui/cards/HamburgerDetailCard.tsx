@@ -9,7 +9,6 @@ import SubMenuAcordeon from "@/src/components/ui/acordeons/SubMenuAcordeon";
 import AddToCart from "@/src/components/menu/AddToCart";
 import BurgerSizeSelector from "../../menu/BurgerSizeSelector";
 import Image from "next/image";
-// import { usePathname } from "next/navigation";
 import { specialProducts } from "@/src/constants/specialProducts";
 
 import { specialProductExtras } from "@/src/constants/specialProductExtras";
@@ -21,9 +20,9 @@ const HamburgerDetailCard = ({ product }: { product: HamburgerItem }) => {
   const [count, setCount] = useState(1);
   const [totalPrice, setTotalPrice] = useState(0);
   const [basePrice, setBasePrice] = useState(0);
-  const [burgerSize, setBurgerSize] = useState<"simple" | "doble" | "triple">(
-    "simple",
-  );
+  const [burgerSize, setBurgerSize] = useState<
+    "simple" | "doble" | "triple" | "cuadruple" | "quintuple"
+  >("simple");
 
   const productSlug = slugify(product.name);
   const productSpecialExtras = specialProductExtras[productSlug];

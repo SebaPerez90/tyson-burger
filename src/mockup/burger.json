@@ -32,7 +32,7 @@
     "image": "/menu/burgers/orgasmo-burger.webp"
   },
   {
-    "id": 11,
+    "id": 3,
     "type": "burger",
     "name": "Golosa",
     "description": "Doble medallon de carne, queso cheddar x4, panceta ahumada crocante x4, coronado con bastones de mozzarella y salsa tyson. Una combinación explosiva.",
@@ -48,7 +48,7 @@
     "image": "/menu/burgers/golosa.webp"
   },
   {
-    "id": 3,
+    "id": 4,
     "type": "burger",
     "name": "Chicken Crispy",
     "description": "Pollo crispy bien dorado con provolone asado, tomate fresco y lechuga cortada en juliana fina, mezclada con nuestra salsa Tasty al estilo coleslaw. Servido en pan de papa dorado en manteca.",
@@ -65,7 +65,7 @@
     "image": "/menu/burgers/chicken-crispy.webp"
   },
   {
-    "id": 4,
+    "id": 5,
     "type": "burger",
     "name": "Melt Chicken",
     "description": "Pollo crispy bien dorado con provolone asado, tomate fresco y lechuga cortada en juliana fina, mezclada con nuestra salsa Tasty al estilo coleslaw. Servido en pan de papa dorado en manteca.",
@@ -82,7 +82,7 @@
     "image": "/menu/burgers/melt-chicken.webp"
   },
   {
-    "id": 5,
+    "id": 6,
     "type": "burger",
     "name": "Cheese Burger",
     "description": "Medallón de carne con doble queso cheddar fundido, pan de papa artesanal y una combinación irresistible que celebra lo clásico. Simple, cremosa y llena de sabor.",
@@ -103,10 +103,10 @@
     "image": "/menu/burgers/cheese-burger.webp"
   },
   {
-    "id": 6,
+    "id": 7,
     "type": "burger",
     "name": "Cheese Bacon",
-    "description": "Medallón de carne con panceta ahumada crocante, doble cheddar derretido y pan de papa suave, una combinación intensa y sabrosa que nunca falla.",
+    "description": "Medallón de carne con panceta ahumada crocante, doble cheddar derretido y pan de papa suave, una combinación intensa y sabrosa que nunca falla. A partir de  cuatro medallones, se agrega doble bacon crocante.",
     "ingredients": [
       "Medallon de carne",
       "Queso cheddar doble",
@@ -114,12 +114,18 @@
       "Salsa Tyson",
       "Pan de papa"
     ],
-    "price": { "simple": 10000, "doble": 12000, "triple": 14000 },
+    "price": {
+      "simple": 10000,
+      "doble": 12000,
+      "triple": 14000,
+      "cuadruple": 17000,
+      "quintuple": 20000
+    },
     "stock": 10,
     "image": "/menu/burgers/cheese-bacon.webp"
   },
   {
-    "id": 7,
+    "id": 8,
     "type": "burger",
     "name": "Sweet Burger",
     "description": "Medallón de carne con doble cheddar fundido y una capa de cebolla caramelizada que aporta dulzura y textura, todo en un pan de papa tierno y dorado.",
@@ -141,7 +147,7 @@
     "image": "/menu/burgers/sweet-burger.webp"
   },
   {
-    "id": 12,
+    "id": 9,
     "type": "burger",
     "name": "Smoke Burger",
     "description": "Generosa cantidad de mermelada de bacon en la base del pan (ajo y  cebolla reogado, mayonesa de bacon, panceta crocante, sal, pimienta negra molida, miel y humo liquido). Medallón de carne con doble cheddar fundido y una capa de cebolla caramelizada coronada con doble bacon crujiente y cerramos con salsa barbacoa.",
@@ -159,7 +165,7 @@
     "image": "/menu/burgers/smoke-burger.webp"
   },
   {
-    "id": 8,
+    "id": 10,
     "type": "burger",
     "name": "American Burger",
     "description": "Medallón de carne con doble queso cheddar, lechuga fresca, pepinillo, tomate y pan de papa esponjoso, coranado con un hueevo a la plancha. Inspirada en el clásico americano pero con un toque artesanal.",
@@ -172,12 +178,18 @@
       "Pepinillo crujiente",
       "Pan de papa"
     ],
-    "price": { "simple": 10000, "doble": 12000, "triple": 14000 },
+    "price": {
+      "simple": 10000,
+      "doble": 12000,
+      "triple": 14000,
+      "cuadruple": 16000,
+      "quintuple": 18000
+    },
     "stock": 10,
     "image": "/menu/burgers/american-burger.webp"
   },
   {
-    "id": 9,
+    "id": 11,
     "type": "burger",
     "name": "Provolone Burger",
     "description": "Medallón de carne  con doble queso cheddar, coronado con provoleta fundida, mayonesa de chimichurri y pan de papa.",
@@ -188,12 +200,18 @@
       "Mayonesa de chimichurri",
       "Pan de papa"
     ],
-    "price": { "simple": 11500, "doble": 13500, "triple": 15500 },
+    "price": {
+      "simple": 11500,
+      "doble": 13500,
+      "triple": 15500,
+      "cuadruple": 17500,
+      "quintuple": 19500
+    },
     "stock": 10,
     "image": "/menu/burgers/provo-burger.webp"
   },
   {
-    "id": 10,
+    "id": 12,
     "type": "burger",
     "name": "Tyson Burger",
     "description": "Medallón de carne, con doble cheddar fundido, panceta crocante y salsa Tyson, coronada con un huevo a la plancha. Potente, jugosa y adictiva.",
@@ -205,7 +223,13 @@
       "Salsa Tyson",
       "Pan de papa"
     ],
-    "price": { "simple": 10500, "doble": 12500, "triple": 14500 },
+    "price": {
+      "simple": 10500,
+      "doble": 12500,
+      "triple": 14500,
+      "cuadruple": 16500,
+      "quintuple": 18500
+    },
     "stock": 10,
     "image": "/menu/burgers/tyson-burger.webp"
   }

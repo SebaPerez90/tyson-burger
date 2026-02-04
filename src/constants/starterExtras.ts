@@ -1,19 +1,9 @@
 export const starterExtras = [
-  { id: "extra-cheese-fries", label: "Dip de cheddar", price: "$ 2.000" },
-  {
-    id: "extra-mayonnaise-bacon-frie",
-    label: "Dip salsa Tasty",
-    price: "$ 1.000",
-  },
-  {
-    id: "extra-mayonnaise-bacon-frie",
-    label: "Dip salsa Tyson",
-    price: "$ 1.000",
-  },
+  { id: "extra-cheese-fries", label: "Dip de cheddar", price: "$ 2.500" },
   {
     id: "extra-cheddar-fuente",
-    label: "Fuente de cheddar",
-    price: "$ 5.000",
+    label: "Fuente de cheddar y bacon",
+    price: "$ 6.000",
   },
   {
     id: "extra-meat",

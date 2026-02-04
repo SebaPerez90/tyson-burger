@@ -1,12 +1,11 @@
 export const burgerExtras = [
-  { id: "extra-meat", label: "Extra medallon de carne", price: "$ 4.000" },
-  { id: "extra-bacon", label: "Doble bacon extra", price: "$ 2.800" },
-  { id: "extra-cheese", label: "Doble cheddar al medallon", price: "$ 700" },
+  { id: "extra-bacon", label: "Doble bacon extra", price: "$ 2.500" },
   {
     id: "extra-cheese-fries",
-    label: "Extra cheddar a tus papas",
-    price: "$ 2.800",
+    label: "Dip de cheddar",
+    price: "$ 2.500",
   },
+  { id: "extra-cheese", label: "Doble cheddar al medallon", price: "$ 800" },
   {
     id: "extra-cheese-bacon-fries",
     label: "Extra cheddar y bacon a tus papas",
@@ -14,8 +13,8 @@ export const burgerExtras = [
   },
   {
     id: "extra-cheddar",
-    label: "Fuente de cheddar",
-    price: "$ 5.000",
+    label: "Fuente de cheddar bacon",
+    price: "$ 6.000",
   },
   {
     id: "extra-egg",

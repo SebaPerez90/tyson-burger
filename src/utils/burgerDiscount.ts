@@ -57,7 +57,7 @@ export const burgerDiscount = (mockBurgersItems: HamburgerItem[]) => {
       const priceValue = burger.price[key as keyof typeof burger.price];
 
       discountedPricesWithoutParse[key as keyof typeof burger.price] =
-        applyDiscount(priceValue, discount).finalPrice;
+        applyDiscount(priceValue ?? 0, discount).finalPrice;
     }
 
     const discountedPrices = Object.fromEntries(

@@ -18,6 +18,16 @@ const HamburgerGrid = () => {
       triple:
         item.discountedPrices?.triple ??
         item.price.triple.toLocaleString("es-AR"),
+      cuadruple:
+        item.discountedPrices?.cuadruple ??
+        (item.price.cuadruple !== undefined
+          ? item.price.cuadruple.toLocaleString("es-AR")
+          : ""),
+      quintuple:
+        item.discountedPrices?.quintuple ??
+        (item.price.quintuple !== undefined
+          ? item.price.quintuple.toLocaleString("es-AR")
+          : ""),
     },
   }));
 

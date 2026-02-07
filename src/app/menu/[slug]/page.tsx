@@ -27,7 +27,7 @@ export async function generateMetadata({
 
   const decodedName = decodeURIComponent(slug);
   const product = allProducts.find(
-    (item) => item.name.toLowerCase().replace(/\s+/g, "-") === decodedName
+    (item) => item.name.toLowerCase().replace(/\s+/g, "-") === decodedName,
   );
 
   if (!product) {
@@ -57,34 +57,36 @@ export default async function ProductPage({
 
   // 🔍 Buscamos el producto base (sin descuentos todavía)
   const baseProduct = allProducts.find(
-    (item) => item.name.toLowerCase().replace(/\s+/g, "-") === decodedName
+    (item) => item.name.toLowerCase().replace(/\s+/g, "-") === decodedName,
   );
 
   if (!baseProduct) notFound();
 
-  let product: HamburgerItem | StarterItem = baseProduct;
+  let product: HamburgerItem | StarterItem = baseProduct as
+    | HamburgerItem
+    | StarterItem;
 
   // 💡 Aplico descuentos según la categoría
   switch (baseProduct.category) {
     case "burger": {
       const burgers = allProducts.filter(
-        (p) => p.category === "burger"
+        (p) => p.category === "burger",
       ) as HamburgerItem[];
       const burgersWithDiscount = burgerDiscount(burgers);
 
       product = (burgersWithDiscount.find(
-        (b) => b.name.toLowerCase().replace(/\s+/g, "-") === decodedName
+        (b) => b.name.toLowerCase().replace(/\s+/g, "-") === decodedName,
       ) || baseProduct) as HamburgerItem;
       break;
     }
 
     case "starter": {
       const starters = allProducts.filter(
-        (p) => p.category === "starter"
+        (p) => p.category === "starter",
       ) as StarterItem[];
       const startersWithDiscount = starterDiscount(starters);
       product = (startersWithDiscount.find(
-        (s) => s.name.toLowerCase().replace(/\s+/g, "-") === decodedName
+        (s) => s.name.toLowerCase().replace(/\s+/g, "-") === decodedName,
       ) || baseProduct) as HamburgerItem | StarterItem;
       break;
     }

@@ -9,6 +9,7 @@ import { noStockStyle } from "@/src/constants/noStockStyle";
 
 const DrinkCard = ({ item }: { item: DrinkItem }) => {
   const [count, setCount] = useState(1);
+  console.log(count);
 
   const total = item.price * count;
 

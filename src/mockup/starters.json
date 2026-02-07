@@ -68,7 +68,7 @@
     "name": "Nuggets de pollo",
     "description": "Patitas doradas de pollo con rebozado crujiente y dorado. Acompañadas con salsa a elección.",
     "ingredients": ["Patitas de pollo", "Salsa a elección"],
-    "price": 7000,
+    "price": 6000,
     "image": "/menu/starters/nuggets.webp",
     "stock": 10
   },

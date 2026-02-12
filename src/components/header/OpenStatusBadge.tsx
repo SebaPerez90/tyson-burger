@@ -19,11 +19,11 @@ export const OpenStatusBadge = () => {
     const hour = localTime.getUTCHours();
     const minute = localTime.getUTCMinutes();
 
-    const workDays = [4, 5, 6, 0,]; //en caso de agregar dias de servicio, el array debe actualizarse a [1,2,3,4,5,6,0] por ejemplo
+    const workDays = [4, 5, 6, 0]; //en caso de agregar dias de servicio, el array debe actualizarse a [1,2,3,4,5,6,0] por ejemplo
     // const openHour = 20; // horario de apertura 20 hs
     const openHour = 20;
     const closeHour = 23;
-    const closeMinute = 30;
+    const closeMinute = 59;
 
     const workingToday = workDays.includes(day);
     const isOpenNow =

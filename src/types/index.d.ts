@@ -77,3 +77,13 @@ type DesertItem = {
   image: string;
   stock: number;
 };
+
+type PromoItem = {
+  id: number;
+  type?: string;
+  name: string;
+  ingredients: string[];
+  price: number;
+  image: string;
+  stock: number;
+};

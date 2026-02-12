@@ -160,7 +160,13 @@
       "Bacon crujiente",
       "Pan de papa"
     ],
-    "price": { "simple": 12500, "doble": 14500, "triple": 16500 },
+    "price": {
+      "simple": 12500,
+      "doble": 14500,
+      "triple": 16500,
+      "cuadruple": 18500,
+      "quintuple": 20000
+    },
     "stock": 10,
     "image": "/menu/burgers/smoke-burger.webp"
   },

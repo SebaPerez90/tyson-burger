@@ -32,7 +32,7 @@ const Hero = () => {
               Ordenar ahora
             </Button>
           </Link>
-          {/* <Link href="/promos">
+          <Link href="/promos">
             <Button
               size={"xl"}
               variant={"outline"}
@@ -40,7 +40,7 @@ const Hero = () => {
             >
               Ver promociones
             </Button>
-          </Link> */}
+          </Link>
         </div>
       </div>
 

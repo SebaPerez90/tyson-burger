@@ -115,11 +115,11 @@
       "Pan de papa"
     ],
     "price": {
-      "simple": 10000,
-      "doble": 12000,
-      "triple": 14000,
-      "cuadruple": 17000,
-      "quintuple": 20000
+      "simple": 10500,
+      "doble": 12500,
+      "triple": 14500,
+      "cuadruple": 17500,
+      "quintuple": 20500
     },
     "stock": 10,
     "image": "/menu/burgers/cheese-bacon.webp"

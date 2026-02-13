@@ -46,18 +46,18 @@ const PromoCard = ({ item }: { item: PromoItem }) => {
       key={item.id}
       className={`${
         noStock && noStockStyle
-      } bg-linear-to-b from-[#1a0000] to-[#2b0000] rounded-2xl overflow-hidden border border-white/15 flex flex-col justify-between cursor-pointer h-auto active:scale-[0.98] active:brightness-90 transition-all select-none active:from-[#310000] active:to-[#430000]`}
+      } bg-linear-to-b from-[#1a0000] to-[#2b0000] rounded-2xl overflow-hidden border border-white/15 flex flex-col justify-between h-auto `}
     >
       {/* IMAGE */}
-      <div className="p-2 md:p-0 lg:p-4 w-full h-[200px]">
-        <div className="overflow-hidden rounded-2xl md:rounded-none lg:rounded-2xl w-full h-full">
+      <div className="p-2 md:p-0 lg:p-4 w-full h-auto">
+        <div className="overflow-hidden rounded-2xl md:rounded-none lg:rounded-2xl size-full">
           <Image
-            width={400}
-            height={208}
+            width={500}
+            height={500}
             src={item.image}
             alt={item.name}
             loading="eager"
-            className="object-cover w-full h-full saturate-[1.2] transition-all duration-300 ease-in-out hover:scale-110"
+            className="object-cover size-full saturate-[1.2]"
           />
         </div>
       </div>
@@ -66,7 +66,10 @@ const PromoCard = ({ item }: { item: PromoItem }) => {
       <div className="p-3 lg:p-6 lg:pt-0 flex flex-col justify-between grow z-40">
         <div>
           <span className="text-lg md:text-xl lg:text-3xl text-orange-100 font-bold mb-3 block">
-            {item.name}
+            {item.name} -
+            <span className="text-xs text-white font-light ml-2">
+              (no se puede modificar)
+            </span>
           </span>
 
           {/* INGREDIENTES */}

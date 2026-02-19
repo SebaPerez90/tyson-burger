@@ -1,9 +1,7 @@
-// SubMenuAcordeon.tsx
 import {
   Accordion,
   AccordionContent,
   AccordionItem,
-  AccordionTrigger,
 } from "@/src/components/ui/accordion";
 import { Checkbox } from "@/src/components/ui/checkbox";
 
@@ -21,43 +19,36 @@ const SubMenuAcordeon = ({
   return (
     <Accordion
       type="single"
-      collapsible
+      defaultValue="item-1"
       className="w-full mt-8 border border-white/20 rounded-xl overflow-hidden"
     >
       <AccordionItem value="item-1" className="bg-[#1a1a1a] ">
-        <AccordionTrigger className="text-base sm:text-xl text-white px-4 py-6 hover:no-underline cursor-pointer">
-          Extras para tu pedido
-        </AccordionTrigger>
-
-        <AccordionContent className="px-4 py-3">
+        <AccordionContent className="p-5">
           <ul className="flex flex-col gap-4 space-y-3">
             {extras.map((item, index) => {
               const isSelected = selectedExtras.some((e) => e.id === item.id);
               return (
                 <li
                   key={item.id}
-                  className={`flex justify-between items-center pb-2 ${
+                  className={`flex justify-between items-center gap-4 pb-2 ${
                     index !== extras.length - 1
                       ? "border-b border-white/10"
                       : ""
                   }`}
                 >
-                  <div className="flex items-center gap-1 sm:gap-3">
+                  <div className="flex items-center gap-2 sm:gap-3">
                     <Checkbox
                       id={item.id}
                       checked={isSelected}
                       onCheckedChange={() => onExtraChange(item)}
-                      className="h-4 w-4 sm:w-6 sm:h-6 rounded-none sm:rounded-sm bg-zinc-800 border-white/30 cursor-pointer data-[state=checked]:bg-red-500 data-[state=checked]:border-red-400 data-[state=checked]:text-white"
+                      className="h-5 w-5 sm:w-6 sm:h-6 rounded-none sm:rounded-sm bg-zinc-800 border-white/30 cursor-pointer data-[state=checked]:bg-red-500 data-[state=checked]:border-red-400 data-[state=checked]:text-white"
                     />
 
-                    <label
-                      htmlFor={item.id}
-                      className="text-white text-xs sm:text-base"
-                    >
+                    <label htmlFor={item.id} className="text-white">
                       {item.label}
                     </label>
                   </div>
-                  <span className="text-white font-medium text-xs w-max sm:text-lg">
+                  <span className=" text-white font-medium w-[70px]">
                     {item.price}
                   </span>
                 </li>

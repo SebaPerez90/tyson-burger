@@ -1,29 +1,31 @@
+import { burgerExtras } from "./burgerExtras";
+
 export const specialProductExtras: Record<string, Extra[]> = {
   "volcan-de-cheddar": [
     {
       id: "extra-meat",
       label: "Medallon de carne + cheddar x2",
-      price: "4000",
+      price: "$ 4.000",
     },
     {
       id: "extra-meatx2",
       label: "Medallon de carne x2 + cheddar x4",
-      price: "7000",
+      price: "$ 7.000",
     },
   ],
 
-  "chicken-crispy": [],
-  "melt-chicken": [],
+  "chicken-crispy": burgerExtras,
+  "melt-chicken": burgerExtras,
   golosa: [
     {
       id: "extra-combo",
-      label: "Medallon de carne + cheddar x2 + bacon x2",
-      price: "6000",
+      label: "TRIPLE - (carne + cheddar x2 + bacon x2)",
+      price: "$ 4.000",
     },
     {
       id: "extra-combo2",
-      label: "Medallon de carne x2 + cheddar x4 + bacon x4",
-      price: "10000",
+      label: "CUADRUPLE - (carne x2 + cheddar x4 + bacon x4)",
+      price: "$ 7.000",
     },
   ],
 };

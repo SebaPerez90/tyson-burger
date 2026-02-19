@@ -1,24 +1,23 @@
 export const burgerExtras = [
-  { id: "extra-bacon", label: "Doble bacon extra", price: "$ 2.500" },
+  { id: "extra-bacon", label: "Bacon dorado extra", price: "$ 2.500" },
   {
     id: "extra-cheese-fries",
-    label: "Dip de cheddar",
+    label: "Dip grande de cheddar",
     price: "$ 2.500",
   },
-  { id: "extra-cheese", label: "Doble cheddar al medallon", price: "$ 800" },
   {
     id: "extra-cheese-bacon-fries",
-    label: "Extra cheddar y bacon a tus papas",
+    label: "Cheddar + Bacon a tus papas",
     price: "$ 4.000",
   },
   {
-    id: "extra-cheddar",
-    label: "Fuente de cheddar bacon",
-    price: "$ 6.000",
+    id: "extra-xl-fries",
+    label: "Papas fritas XL",
+    price: "$ 3.000",
   },
   {
-    id: "extra-egg",
-    label: "Huevo frito a tu hamburguesa",
-    price: "$ 1.000",
+    id: "extra-sticks",
+    label: "Agregá 4 bastones de mozzarella",
+    price: "$ 6.000",
   },
 ];

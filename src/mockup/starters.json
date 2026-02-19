@@ -15,7 +15,7 @@
     "name": "Sobre Papas fritas",
     "description": "Papas fritas artesanales con piel, doradas al punto justo. Adobadas con sal especiada de la casa. Porcion pequeña",
     "ingredients": ["Papas caseras", "Sal especiada"],
-    "price": 4000,
+    "price": 3000,
     "image": "/menu/starters/fries-small.webp",
     "stock": 10
   },
@@ -88,7 +88,7 @@
     "name": "Bastones de mozzarella",
     "description": "6 Bastones de mozzarella derretida con rebozado crocante, fritos al instante. Servidos con salsa de tomate especiada.",
     "ingredients": ["Queso mozzarella rebozado", "Salsa a pomodoro especiada"],
-    "price": 8000,
+    "price": 9000,
     "image": "/menu/starters/mozzarella-sticks.webp",
     "stock": 10
   },
@@ -98,7 +98,7 @@
     "name": "Provoleta bites",
     "description": "6 trinagunlos de  provolone rebozada crocante, fritos al instante. Servidos con chimichurri casero.",
     "ingredients": ["Queso provolone rebozado", "Chimichurri casero"],
-    "price": 8000,
+    "price": 7000,
     "image": "/menu/starters/provolone-bites.webp",
     "stock": 10
   }

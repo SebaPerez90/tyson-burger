@@ -20,7 +20,7 @@ const SauceSelector = ({ sauce, setSauce, specialRoute }: Props) => {
   if (noSauceRoutes.includes(pathname)) return null;
 
   const sauces: Sauce[] = specialRoute
-    ? ["Barbacoa", "Pomodoro", "Mayonesa"]
+    ? ["Barbacoa", "Pomodoro"]
     : ["Mayonesa", "Barbacoa", "Moztaza"];
 
   return (

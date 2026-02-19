@@ -5,11 +5,6 @@ export const starterExtras = [
     label: "Fuente de cheddar y bacon",
     price: "$ 6.000",
   },
-  {
-    id: "extra-meat",
-    label: "Medallon de carne trozado",
-    price: "$ 4.000",
-  },
 ];
 
 export const saucesExtras = [

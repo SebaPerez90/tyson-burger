@@ -65,13 +65,13 @@ const PromoCard = ({ item }: { item: PromoItem }) => {
       {/* BODY */}
       <div className="p-3 lg:p-6 lg:pt-0 flex flex-col justify-between grow z-40">
         <div>
-          <span className="text-lg md:text-xl lg:text-3xl text-orange-100 font-bold mb-3 block">
-            {item.name} -
-            <span className="text-xs text-white font-light ml-2">
+          <span className="text-lg md:text-xl lg:text-3xl text-orange-100 font-bold block mb-5 leading-5">
+            {item.name}
+            <br />
+            <span className="text-xs text-white font-light ml-0.5">
               (no se puede modificar)
             </span>
           </span>
-
           {/* INGREDIENTES */}
           <ul className="flex flex-col w-max pb-2 marker:text-green-500 text-[10px] text-white/60 lg:block list-disc list-inside lg:text-sm ">
             {item.ingredients.map((item, index) => (

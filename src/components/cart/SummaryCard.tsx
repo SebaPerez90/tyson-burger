@@ -147,7 +147,7 @@ ${betweenStreets ? `• Entre calles: ${betweenStreets}.` : ""}`
 
     const msg = buildWhatsAppMessage();
     const encoded = encodeURIComponent(msg);
-    const phone = `541127104627`;
+    const phone = `541132830604`;
 
     window.open(`https://wa.me/${phone}?text=${encoded}`, "_blank");
 

@@ -38,7 +38,7 @@ const Hero = () => {
               variant={"outline"}
               className="text-foreground cursor-pointer"
             >
-              Ver promociones
+              Promociones
             </Button>
           </Link>
         </div>

@@ -104,7 +104,7 @@ const HamburgerDetailCard = ({ product }: { product: HamburgerItem }) => {
                   {ingredient}
                 </li>
               ))}
-              <li className="sm:text-base text-sm">Incluye papas fritas</li>
+              <li className="sm:text-base text-sm">INCLUYE PAPAS FRITAS</li>
             </ul>
 
             {/* Tamaños de hamburguesas (solo productos normales) */}

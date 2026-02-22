@@ -15,9 +15,9 @@ const deliveryZones = [
 export default function DeliveryAndPickup() {
   // Mensaje pre-armado para WhatsApp
   const whatsappMessage = encodeURIComponent(
-    "¡Hola! Quisiera consultar si llegan a mi zona."
+    "¡Hola! Quisiera consultar si llegan a mi zona.",
   );
-  const whatsappLink = `https://wa.me/5491127104627?text=${whatsappMessage}`; // reemplazá con tu número
+  const whatsappLink = `https://wa.me/5491132830604?text=${whatsappMessage}`; // reemplazá con tu número
 
   return (
     <section className="max-w-[1200px] mx-auto py-16 px-4 space-y-12">

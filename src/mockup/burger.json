@@ -11,7 +11,7 @@
       "Bacon crujiente",
       "Pan de papa"
     ],
-    "price": { "simple": 17500, "doble": 17500, "triple": 17500 },
+    "price": { "simple": 16500, "doble": 16500, "triple": 16500 },
     "stock": 10,
     "image": "/menu/burgers/volcan-burger.webp"
   },
@@ -27,7 +27,7 @@
       "Cebolla caramelizada con queso azul",
       "Panceta crocante y BBQ"
     ],
-    "price": { "simple": 14000, "doble": 14000, "triple": 14000 },
+    "price": { "simple": 15000, "doble": 15000, "triple": 15000 },
     "stock": 10,
     "image": "/menu/burgers/orgasmo-burger.webp"
   },
@@ -93,7 +93,7 @@
       "Pan de papa"
     ],
     "price": {
-      "simple": 9000,
+      "simple": 9500,
       "doble": 11000,
       "triple": 13000,
       "cuadruple": 15500,

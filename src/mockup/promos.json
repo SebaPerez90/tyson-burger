@@ -2,7 +2,7 @@
   {
     "id": 1,
     "type": "promo",
-    "name": "Promo provo + papas con cheddar",
+    "name": "Promo Provo + papas con cheddar",
     "ingredients": [
       "2 Provolone Burger dobles",
       "Porción de papas grande",
@@ -13,9 +13,22 @@
     "image": "/promos/promo3.webp"
   },
   {
+    "id": 1,
+    "type": "promo",
+    "name": "Promo Orgasmo + papas con cheddar",
+    "ingredients": [
+      "2 Orgamo dobles",
+      "Porción de papas grande",
+      "Baño de queso cheddar"
+    ],
+    "price": 28000,
+    "stock": 10,
+    "image": "/promos/promo4.webp"
+  },
+  {
     "id": 2,
     "type": "promo",
-    "name": "Promo golosa + papas con cheddar",
+    "name": "Promo Golosa + papas con cheddar",
     "ingredients": [
       "2 Golosa Burger dobles",
       "Porción de papas grande",
@@ -28,7 +41,7 @@
   {
     "id": 3,
     "type": "promo",
-    "name": "Promo cheese bacon + bastones",
+    "name": "Promo Cheese Bacon + bastones",
     "ingredients": [
       "2 Cheese Bacon dobles",
       "Porción bastones de mozzarella",

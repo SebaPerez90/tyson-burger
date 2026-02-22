@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { Button } from "../ui/button";
 
-const horariosTrabajo = [{ dia: "Jueves a Domingo", hora: "20:00 a 23:30" }];
+const horariosTrabajo = [{ dia: "Jueves a Domingo", hora: "20:00 a 00hs" }];
 
 const Horarios = () => {
   return (

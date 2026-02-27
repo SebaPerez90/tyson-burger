@@ -68,7 +68,7 @@ const HamburgerCard = ({ item }: { item: HamburgerItem }) => {
                 const basePrice = item.price.simple;
 
                 // 👉 Lunes (1), Martes (2), Miércoles (3) → +10%
-                if (day === 4 || day === 2 || day === 3) {
+                if (day === 1 || day === 2 || day === 3) {
                   const increasedPrice = basePrice * 1.1;
                   return Math.round(increasedPrice).toLocaleString("es-AR");
                 }

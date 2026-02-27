@@ -1,6 +1,18 @@
 import { applyDiscount } from "./applyDiscount";
 
 export const starterDiscount = (mockStartersItems: StarterItem[]) => {
+  // 👉 Detectar día actual (Argentina)
+  const argentinaTime = new Date(
+    new Date().toLocaleString("en-US", {
+      timeZone: "America/Argentina/Buenos_Aires",
+    }),
+  );
+
+  const day = argentinaTime.getDay();
+
+  // 👉 Jueves (4) o Viernes (5)
+  const isDiscountDay = day === 4 || day === 5;
+
   return mockStartersItems.map((starter) => {
     let discount = 0;
 
@@ -9,9 +21,9 @@ export const starterDiscount = (mockStartersItems: StarterItem[]) => {
       //   discount = 10;
       //   break;
 
-      // case starter.name === "Papas Tyson":
-      //   discount = 10;
-      //   break;
+      case starter.type?.includes("starter") && isDiscountDay:
+        discount = 10;
+        break;
 
       default:
         discount = 0;

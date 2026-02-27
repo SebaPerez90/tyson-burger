@@ -1,6 +1,18 @@
 import { applyDiscount } from "./applyDiscount";
 
 export const burgerDiscount = (mockBurgersItems: HamburgerItem[]) => {
+  // 👉 Detectar día actual (Argentina)
+  const argentinaTime = new Date(
+    new Date().toLocaleString("en-US", {
+      timeZone: "America/Argentina/Buenos_Aires",
+    }),
+  );
+
+  const day = argentinaTime.getDay();
+
+  // 👉 Jueves (4) o Viernes (5)
+  const isDiscountDay = day === 4 || day === 5;
+
   return mockBurgersItems.map((burger) => {
     let discount = 0;
 
@@ -10,39 +22,12 @@ export const burgerDiscount = (mockBurgersItems: HamburgerItem[]) => {
       //   discount = 10;
       //   break;
 
-      // case burger.name === "Cheese Bacon":
-      //   discount = 5;
-      //   break;
-
-      // case burger.name === "Sweet Burger":
-      //   discount = 5;
-      //   break;
-
-      // case burger.name === "Mayo Bacon Burger":
-      //   discount = 5;
-      //   break;
-
-      // case burger.name === "Orgasmo":
-      //   discount = 10;
-      //   break;
-      // case burger.name === "Volcan de cheddar":
-      //   discount = 10;
-      //   break;
-
-      // case burger.name === "Chicken Crispy":
-      //   discount = 10;
-      //   break;
-
-      // case burger.name.includes("American"):
-      //   discount = 5;
-      //   break;
+      case burger.type?.includes("burger") && isDiscountDay:
+        discount = 10;
+        break;
 
       // case burger.name.includes("Provo"):
       //   discount = 10;
-      //   break;
-
-      // case burger.name.includes("Tyson"):
-      //   discount = 5;
       //   break;
 
       default:

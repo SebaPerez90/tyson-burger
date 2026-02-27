@@ -38,6 +38,15 @@ const HamburgerDetailCard = ({ product }: { product: HamburgerItem }) => {
   //   return pathname.includes(`/menu/${slugNormalized}`);
   // });
 
+  // 👉 Detectar día actual (Argentina)
+  const argentinaTime = new Date(
+    new Date().toLocaleString("en-US", {
+      timeZone: "America/Argentina/Buenos_Aires",
+    }),
+  );
+
+  const day = argentinaTime.getDay();
+
   const activePrices =
     product.discount && product.discount > 0
       ? product.discountedPrices
@@ -122,9 +131,22 @@ const HamburgerDetailCard = ({ product }: { product: HamburgerItem }) => {
               <div className="flex  flex-row items-center gap-0.5 mt-8">
                 <span className="text-3xl font-bold font-baloo text-white">
                   $
-                  {product.discount && product.discount > 0
-                    ? product.discountedPrices?.[burgerSize]
-                    : product.price?.[burgerSize]?.toLocaleString("es-AR")}
+                  {(() => {
+                    const basePrice = product.price?.[burgerSize];
+
+                    // 👉 Lunes, Martes, Miércoles → +10%
+                    if (day === 1 || day === 2 || day === 3) {
+                      const increased = (basePrice ?? 0) * 1.1;
+                      return Math.round(increased).toLocaleString("es-AR");
+                    }
+
+                    // 👉 Si tiene descuento (jueves / viernes)
+                    if (product.discount && product.discount > 0) {
+                      return product.discountedPrices?.[burgerSize];
+                    }
+
+                    return basePrice?.toLocaleString("es-AR");
+                  })()}
                 </span>
 
                 {product.discount && product.discount > 0 && (
@@ -142,7 +164,18 @@ const HamburgerDetailCard = ({ product }: { product: HamburgerItem }) => {
             ) : (
               activePrices && (
                 <span className="text-3xl font-bold text-white mt-8">
-                  ${activePrices[burgerSize]?.toLocaleString("es-AR")}
+                  $
+                  {(() => {
+                    const basePrice = activePrices[burgerSize];
+
+                    // 👉 Lunes, Martes, Miércoles → +10%
+                    if (day === 4 || day === 2 || day === 3) {
+                      const increased = ((basePrice as number) ?? 0) * 1.1;
+                      return Math.round(increased).toLocaleString("es-AR");
+                    }
+
+                    return basePrice?.toLocaleString("es-AR");
+                  })()}
                 </span>
               )
             )}

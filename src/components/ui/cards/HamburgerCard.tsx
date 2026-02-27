@@ -10,6 +10,15 @@ const HamburgerCard = ({ item }: { item: HamburgerItem }) => {
   const router = useRouter();
   const noStock = item.stock < 10;
 
+  // 👉 Detectar día actual (Argentina)
+  const argentinaTime = new Date(
+    new Date().toLocaleString("en-US", {
+      timeZone: "America/Argentina/Buenos_Aires",
+    }),
+  );
+
+  const day = argentinaTime.getDay();
+
   return (
     <div
       key={item.id}
@@ -49,14 +58,29 @@ const HamburgerCard = ({ item }: { item: HamburgerItem }) => {
           </ul>
         </div>
 
+        {/* ACA TRABAJAMOS LOS DESCUENTOS, REVISAR ESTO DESPUES */}
         {/* Precio + Botones */}
         <div className="flex flex-col gap-0.5 mt-auto pt-4 border-t border-white/10 lg:h-auto lg:min-h-[62px]">
           <div className="flex flex-row items-center gap-0.5">
             <span className="text-xl font-bold font-baloo text-white">
               $
-              {item.discount && item.discount > 0
-                ? item.discountedPrices?.simple
-                : item.price.simple.toLocaleString("es-AR")}
+              {(() => {
+                const basePrice = item.price.simple;
+
+                // 👉 Lunes (1), Martes (2), Miércoles (3) → +10%
+                if (day === 4 || day === 2 || day === 3) {
+                  const increasedPrice = basePrice * 1.1;
+                  return Math.round(increasedPrice).toLocaleString("es-AR");
+                }
+
+                // 👉 Si tiene descuento (jueves y viernes ya lo manejás arriba)
+                if (item.discount && item.discount > 0) {
+                  return item.discountedPrices?.simple;
+                }
+
+                // 👉 Normal
+                return basePrice.toLocaleString("es-AR");
+              })()}
             </span>
 
             {item.discount && item.discount > 0 ? (
@@ -76,7 +100,6 @@ const HamburgerCard = ({ item }: { item: HamburgerItem }) => {
             className="hidden lg:block"
             href={`/menu/${item.name.toLowerCase().replace(/\s+/g, "-")}`}
           >
-            {/* <Link href={`/menu/${item.slug}`}> */}
             <Button
               variant="destructive"
               size="lg"

@@ -13,6 +13,10 @@ export const burgerDiscount = (mockBurgersItems: HamburgerItem[]) => {
   // 👉 Jueves (4) o Viernes (5)
   const isDiscountDay = day === 4 || day === 5;
 
+  console.log(
+    `Hoy es ${isDiscountDay ? "día de descuento" : "un día normal"}.`,
+  );
+
   return mockBurgersItems.map((burger) => {
     let discount = 0;
 
@@ -22,7 +26,7 @@ export const burgerDiscount = (mockBurgersItems: HamburgerItem[]) => {
       //   discount = 10;
       //   break;
 
-      case burger.type?.includes("burger") && isDiscountDay:
+      case burger.type?.includes("burger"):
         discount = 10;
         break;
 

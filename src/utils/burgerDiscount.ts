@@ -26,9 +26,9 @@ export const burgerDiscount = (mockBurgersItems: HamburgerItem[]) => {
       //   discount = 10;
       //   break;
 
-      case burger.type?.includes("burger"):
-        discount = 10;
-        break;
+      // case burger.type?.includes("burger"):
+      //   discount = 10;
+      //   break;
 
       // case burger.name.includes("Provo"):
       //   discount = 10;

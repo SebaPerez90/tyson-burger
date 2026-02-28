@@ -26,11 +26,7 @@ const HamburgerDetailCard = ({ product }: { product: HamburgerItem }) => {
   const extrasToShow = productSpecialExtras ?? burgerExtras;
 
   // 🇦🇷 Día actual Argentina
-  const argentinaTime = new Date(
-    new Date().toLocaleString("en-US", {
-      timeZone: "America/Argentina/Buenos_Aires",
-    }),
-  );
+  const argentinaTime = new Date(new Date().toLocaleString("es-AR"));
 
   const day = argentinaTime.getDay();
 

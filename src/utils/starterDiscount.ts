@@ -2,11 +2,7 @@ import { applyDiscount } from "./applyDiscount";
 
 export const starterDiscount = (mockStartersItems: StarterItem[]) => {
   // 👉 Detectar día actual (Argentina)
-  const argentinaTime = new Date(
-    new Date().toLocaleString("en-US", {
-      timeZone: "America/Argentina/Buenos_Aires",
-    }),
-  );
+  const argentinaTime = new Date(new Date().toLocaleString("es-AR"));
 
   const day = argentinaTime.getDay();
 

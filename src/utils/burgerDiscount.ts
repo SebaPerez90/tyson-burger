@@ -2,20 +2,12 @@ import { applyDiscount } from "./applyDiscount";
 
 export const burgerDiscount = (mockBurgersItems: HamburgerItem[]) => {
   // 👉 Detectar día actual (Argentina)
-  const argentinaTime = new Date(
-    new Date().toLocaleString("en-US", {
-      timeZone: "America/Argentina/Buenos_Aires",
-    }),
-  );
+  const argentinaTime = new Date(new Date().toLocaleString("es-AR"));
 
   const day = argentinaTime.getDay();
 
   // 👉 Jueves (4) o Viernes (5)
   const isDiscountDay = day === 4 || day === 5;
-
-  console.log(
-    `Hoy es ${isDiscountDay ? "día de descuento" : "un día normal"}.`,
-  );
 
   return mockBurgersItems.map((burger) => {
     let discount = 0;
@@ -26,9 +18,9 @@ export const burgerDiscount = (mockBurgersItems: HamburgerItem[]) => {
       //   discount = 10;
       //   break;
 
-      // case burger.type?.includes("burger"):
-      //   discount = 10;
-      //   break;
+      case burger.type?.includes("burger") && isDiscountDay:
+        discount = 10;
+        break;
 
       // case burger.name.includes("Provo"):
       //   discount = 10;

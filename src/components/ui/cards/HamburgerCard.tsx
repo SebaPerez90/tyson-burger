@@ -11,11 +11,7 @@ const HamburgerCard = ({ item }: { item: HamburgerItem }) => {
   const noStock = item.stock < 10;
 
   // 👉 Detectar día actual (Argentina)
-  const argentinaTime = new Date(
-    new Date().toLocaleString("en-US", {
-      timeZone: "America/Argentina/Buenos_Aires",
-    }),
-  );
+  const argentinaTime = new Date(new Date().toLocaleString("es-AR"));
 
   const day = argentinaTime.getDay();
 

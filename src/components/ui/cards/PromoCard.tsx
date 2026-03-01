@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import { Button } from "../button";
-import { noStockStyle } from "@/src/constants/noStockStyle";
+import { promosNoStockStyle } from "@/src/constants/noStockStyle";
 import { generateShortId } from "@/src/utils/uuidGenerator";
 import { useState } from "react";
 
@@ -41,11 +41,13 @@ const PromoCard = ({ item }: { item: PromoItem }) => {
 
   const noStock = item.stock < 10;
 
+  console.log(item.stock);
+
   return (
     <div
       key={item.id}
       className={`${
-        noStock && noStockStyle
+        noStock && promosNoStockStyle
       } bg-linear-to-b from-[#1a0000] to-[#2b0000] rounded-2xl overflow-hidden border border-white/15 flex flex-col justify-between h-auto `}
     >
       {/* IMAGE */}

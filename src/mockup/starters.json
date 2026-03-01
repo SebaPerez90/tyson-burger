@@ -90,7 +90,7 @@
     "ingredients": ["Queso mozzarella rebozado", "Salsa a pomodoro especiada"],
     "price": 8000,
     "image": "/menu/starters/mozzarella-sticks.webp",
-    "stock": 10
+    "stock": 1
   },
   {
     "id": 7,

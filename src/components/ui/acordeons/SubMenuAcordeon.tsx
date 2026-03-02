@@ -48,7 +48,7 @@ const SubMenuAcordeon = ({
                       {item.label}
                     </label>
                   </div>
-                  <span className=" text-white font-medium w-[70px]">
+                  <span className=" text-white font-medium min-w-max max-w-[90px]">
                     {item.price}
                   </span>
                 </li>

@@ -7,22 +7,27 @@ export const burgerExtras = [
   {
     id: "extra-cheese-bacon-fries",
     label: "Papas XL con cheddar y bacon",
-    price: "$ 6.000",
+    price: "$ 5.000",
   },
   {
     id: "extra-sweet-fries",
-    label: `"Papas XL Sweet" (cebolla caramelizada, mozzarella y queso cheddar)`,
-    price: "$ 7.000",
+    label: `Papas XL Sweet - caramelizada, mozzarella y cheddar`,
+    price: "$ 6.000",
   },
   {
     id: "extra-tyson-fries",
-    label: `"Papas XL Tyson" (bacon, cheddar y verdeo)`,
-    price: "$ 7.000",
+    label: `Papas XL Tyson - bacon, cheddar y verdeo`,
+    price: "$ 6.000",
   },
   {
     id: "extra-cheese-fries",
-    label: "Dip grande de cheddar",
+    label: "Dip XL de cheddar",
     price: "$ 2.500",
+  },
+  {
+    id: "extra-bacon",
+    label: "Agregá bacon a tu hamburguesa",
+    price: "$ 2.000",
   },
   {
     id: "extra-sticks",

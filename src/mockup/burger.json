@@ -95,9 +95,7 @@
     "price": {
       "simple": 9500,
       "doble": 11000,
-      "triple": 13000,
-      "cuadruple": 15500,
-      "quintuple": 17500
+      "triple": 13000
     },
     "stock": 10,
     "image": "/menu/burgers/cheese-burger.webp"
@@ -117,9 +115,7 @@
     "price": {
       "simple": 11000,
       "doble": 12500,
-      "triple": 14500,
-      "cuadruple": 17500,
-      "quintuple": 20500
+      "triple": 14500
     },
     "stock": 10,
     "image": "/menu/burgers/cheese-bacon.webp"
@@ -139,9 +135,7 @@
     "price": {
       "simple": 10000,
       "doble": 11500,
-      "triple": 13500,
-      "cuadruple": 16000,
-      "quintuple": 18000
+      "triple": 13500
     },
     "stock": 10,
     "image": "/menu/burgers/sweet-burger.webp"
@@ -163,11 +157,9 @@
     "price": {
       "simple": 12500,
       "doble": 14500,
-      "triple": 16500,
-      "cuadruple": 18500,
-      "quintuple": 20000
+      "triple": 16500
     },
-    "stock": 10,
+    "stock": 1,
     "image": "/menu/burgers/smoke-burger.webp"
   },
   {
@@ -187,9 +179,7 @@
     "price": {
       "simple": 10500,
       "doble": 12000,
-      "triple": 14000,
-      "cuadruple": 16000,
-      "quintuple": 18000
+      "triple": 14000
     },
     "stock": 10,
     "image": "/menu/burgers/american-burger.webp"
@@ -209,9 +199,7 @@
     "price": {
       "simple": 11500,
       "doble": 13500,
-      "triple": 15500,
-      "cuadruple": 17500,
-      "quintuple": 19500
+      "triple": 15500
     },
     "stock": 10,
     "image": "/menu/burgers/provo-burger.webp"
@@ -232,9 +220,7 @@
     "price": {
       "simple": 11000,
       "doble": 12500,
-      "triple": 14500,
-      "cuadruple": 16500,
-      "quintuple": 18500
+      "triple": 14500
     },
     "stock": 10,
     "image": "/menu/burgers/tyson-burger.webp"

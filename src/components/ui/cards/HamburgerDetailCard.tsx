@@ -17,9 +17,9 @@ const HamburgerDetailCard = ({ product }: { product: HamburgerItem }) => {
   const [selectedExtras, setSelectedExtras] = useState<Extra[]>([]);
   const [note, setNote] = useState("");
   const [count, setCount] = useState(1);
-  const [burgerSize, setBurgerSize] = useState<
-    "simple" | "doble" | "triple" | "cuadruple" | "quintuple"
-  >("simple");
+  const [burgerSize, setBurgerSize] = useState<"simple" | "doble" | "triple">(
+    "simple",
+  );
 
   const productSlug = slugify(product.name);
   const productSpecialExtras = specialProductExtras[productSlug];

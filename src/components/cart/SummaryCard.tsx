@@ -174,9 +174,12 @@ ${betweenStreets ? `• Entre calles: ${betweenStreets}.` : ""}`
           </span>
         </div>
         {isDelivery && (
-          <p className="text-[11px] text-white/60 mt-8 leading-snug w-full">
+          <p className="text-[11px] text-white/60 mt-8 w-full">
             Envíos hasta 3 km. Distancias mayores pueden variar y se{" "}
-            <strong>abonan por transferencia</strong>.
+            <strong className="text-white/90 uppercase">
+              abonan por transferencia
+            </strong>
+            .
           </p>
         )}
       </div>

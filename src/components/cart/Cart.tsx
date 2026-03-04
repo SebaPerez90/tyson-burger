@@ -40,7 +40,7 @@ const Cart = ({ clientOrder }: { clientOrder: Order[] }) => {
 
       <SheetContent
         aria-describedby={undefined}
-        className="w-full lg:w-[800px] z-50 bg-zinc-900 border-0 py-10 md:px-16 px-5"
+        className="w-full lg:w-[800px] z-50 bg-zinc-900 border-0 py-1 md:px-16 px-5"
       >
         {clientOrder.length === 0 || !clientOrder ? (
           <EmptyCart setOpen={setOpen} />
@@ -51,17 +51,13 @@ const Cart = ({ clientOrder }: { clientOrder: Order[] }) => {
             )}
             <div className=" flex flex-col gap-5 overflow-y-scroll  md:px-10 sm:px-4 px-2 pb-10 z-50">
               <SheetHeader>
-                {/* close sheet modal */}
-                <CloseSheetModal setOpen={setOpen} />
-
-                <SheetTitle className="text-white flex justify-between items-center w-full">
-                  <span>
-                    Pedido {isDelivery ? "de Delivery" : "para Retirar"}
-                  </span>
-
-                  {/* work status badge */}
-                  <OpenStatusBadge />
+                <SheetTitle>
+                  {/* close sheet modal */}
+                  <CloseSheetModal setOpen={setOpen} />
                 </SheetTitle>
+
+                {/* work status badge */}
+                <OpenStatusBadge />
               </SheetHeader>
 
               {/* delivery toggle button */}

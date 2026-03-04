@@ -44,7 +44,7 @@ export const OpenStatusBadge = () => {
       : "Cerrado";
 
   return (
-    <div className="select-none flex items-center space-x-2 bg-background/20 backdrop-blur-md sm:px-4 px-2 py-1 sm:py-1.5 rounded-full border border-background/10 shadow-sm w-max">
+    <div className="select-none flex items-center space-x-2 bg-background/20 backdrop-blur-md sm:px-4 px-3 py-1 sm:py-1.5 rounded-full border border-background/10 shadow-sm w-max">
       {/* md:scale-100 scale-80 */}
       <span
         className={`size-2 sm:size-3 ${color} rounded-full animate-pulse shadow-[0_0_6px_rgba(0,0,0,0.3)]`}

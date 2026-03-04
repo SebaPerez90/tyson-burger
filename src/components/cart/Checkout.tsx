@@ -44,7 +44,6 @@ const Checkout = ({ clientOrder, isDelivery }: CheckoutProps) => {
         details={details}
         setDetails={setDetails}
       />
-
       {/* METODO DE PAGO */}
       <PaymentCheckout
         paymentMethod={paymentMethod}

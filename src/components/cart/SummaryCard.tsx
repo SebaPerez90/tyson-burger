@@ -2,7 +2,6 @@ import { generateShortId } from "@/src/utils/uuidGenerator";
 import { Button } from "../ui/button";
 import { toast } from "sonner";
 import { specialProducts } from "@/src/constants/specialProducts";
-// import ConfirmOrderModal from "../ui/modals/ConfirmOrderModal";
 
 type Props = {
   clientOrder: Order[];
@@ -10,7 +9,6 @@ type Props = {
   betweenStreets: string;
   details: string;
   paymentMethod: "efectivo" | "mercado pago";
-  // userPhone: string;
   userName: string;
   isDelivery: boolean;
 };
@@ -21,7 +19,6 @@ const SummaryCard = ({
   betweenStreets,
   details,
   paymentMethod,
-  // userPhone,
   userName,
   isDelivery,
 }: Props) => {
@@ -170,19 +167,18 @@ ${betweenStreets ? `• Entre calles: ${betweenStreets}.` : ""}`
           </span>
         </div>
 
-        {/* <div className="flex justify-between items-center">
-          <span>Propina</span>
-          <span className="font-bold">
-            $ {isDelivery ? realTip.toLocaleString("es-AR") : 0}
-          </span>
-        </div> */}
-
         <div className="flex justify-between items-center">
           <span>Envío</span>
           <span className="font-bold">
             $ {isDelivery ? envio.toLocaleString("es-AR") : 0}
           </span>
         </div>
+        {isDelivery && (
+          <p className="text-[11px] text-white/60 mt-8 leading-snug w-full">
+            Envíos hasta 3 km. Distancias mayores pueden variar y se{" "}
+            <strong>abonan por transferencia</strong>.
+          </p>
+        )}
       </div>
 
       <div className="h-px bg-white/15 my-4" />

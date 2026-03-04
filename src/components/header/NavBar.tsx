@@ -39,7 +39,7 @@ export const Navbar = () => {
       }  top-0 w-full z-50 px-0 sm:px-16 lg:px-24 sm:py-4a py-2 backdrop-blur-xl shadow-md`}
     >
       <div className="max-w-[1200px] mx-auto">
-        <div className="flex justify-between items-center">
+        <div className="flex justify-between items-center px-2">
           {/* Logo */}
           <Tooltip>
             <TooltipTrigger asChild>

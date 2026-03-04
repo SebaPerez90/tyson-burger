@@ -5,19 +5,21 @@ import { Button } from "../button";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { noStockStyle } from "@/src/constants/noStockStyle";
+import { useArgentinaBusinessRules } from "@/src/hooks/UseArgentinaBusinessRules";
 
 const HamburgerCard = ({ item }: { item: HamburgerItem }) => {
+  const { hasSurcharge } = useArgentinaBusinessRules();
   const router = useRouter();
   const noStock = item.stock < 10;
-
-  // 👉 Detectar día actual (Argentina)
-  const argentinaTime = new Date(new Date().toLocaleString("es-AR"));
-
-  const day = argentinaTime.getDay();
 
   return (
     <div
       key={item.id}
+      //⚠️​⚠️​⚠️​⚠️​
+      // SI TENEMOS MUCHOS FALTANTES EN EL MENU
+      // LO OCULTAMOS PARA EVITAR MOSTRAR UN MONTÓN DE PRODUCTOS SIN STOCK
+      //⚠️​⚠️​⚠️​
+      style={item.stock < 10 ? { display: "none" } : {}}
       className={`${
         noStock && noStockStyle
       } bg-linear-to-b from-[#1a0000] to-[#2b0000] rounded-2xl overflow-hidden border border-white/15 flex flex-row lg:flex-col justify-between cursor-pointer h-[250px] md:h-auto active:scale-[0.98] active:brightness-90 transition-all select-none active:from-[#310000] active:to-[#430000]`}
@@ -64,7 +66,7 @@ const HamburgerCard = ({ item }: { item: HamburgerItem }) => {
                 const basePrice = item.price.simple;
 
                 // 👉 Lunes (1), Martes (2), Miércoles (3) → +10%
-                if (day === 1 || day === 2 || day === 3) {
+                if (hasSurcharge) {
                   const increasedPrice = basePrice * 1.1;
                   return Math.round(increasedPrice).toLocaleString("es-AR");
                 }

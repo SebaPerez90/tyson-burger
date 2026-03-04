@@ -1,13 +1,8 @@
 import { applyDiscount } from "./applyDiscount";
+import { getArgentinaDayInfo } from "./argentinaDateHelper";
 
 export const starterDiscount = (mockStartersItems: StarterItem[]) => {
-  // 👉 Detectar día actual (Argentina)
-  const argentinaTime = new Date(new Date().toLocaleString("es-AR"));
-
-  const day = argentinaTime.getDay();
-
-  // 👉 Jueves (4) o Viernes (5)
-  const isDiscountDay = day === 4 || day === 5;
+  const { isDiscountDay } = getArgentinaDayInfo();
 
   return mockStartersItems.map((starter) => {
     let discount = 0;

@@ -1,30 +1,17 @@
 import { applyDiscount } from "./applyDiscount";
+import { getArgentinaDayInfo } from "./argentinaDateHelper";
 
 export const burgerDiscount = (mockBurgersItems: HamburgerItem[]) => {
-  // 👉 Detectar día actual (Argentina)
-  const argentinaTime = new Date(new Date().toLocaleString("es-AR"));
-
-  const day = argentinaTime.getDay();
-
-  // 👉 Jueves (4) o Viernes (5)
-  const isDiscountDay = day === 4 || day === 5;
+  const { isDiscountDay } = getArgentinaDayInfo();
 
   return mockBurgersItems.map((burger) => {
     let discount = 0;
 
     // 💡 Lógica condicional de descuentos
     switch (true) {
-      // case burger.name === "Cheese Burger":
-      //   discount = 10;
-      //   break;
-
       case burger.type?.includes("burger") && isDiscountDay:
         discount = 10;
         break;
-
-      // case burger.name.includes("Provo"):
-      //   discount = 10;
-      //   break;
 
       default:
         discount = 0;

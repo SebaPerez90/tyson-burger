@@ -10,7 +10,7 @@
     "stock": 10
   },
   {
-    "id": 1,
+    "id": 2,
     "type": "starter",
     "name": "Sobre Papas fritas",
     "description": "Papas fritas artesanales con piel, doradas al punto justo. Adobadas con sal especiada de la casa. Porcion pequeña",
@@ -20,7 +20,7 @@
     "stock": 10
   },
   {
-    "id": 2,
+    "id": 3,
     "type": "starter",
     "name": "Papas fritas con huevo",
     "description": "Papas fritas artesanales con piel, con 2 huevos a la plancha. Doradas y condimentadas con nuestra sal especiada.",
@@ -30,7 +30,7 @@
     "stock": 10
   },
   {
-    "id": 3,
+    "id": 4,
     "type": "starter",
     "name": "Papas Tyson",
     "description": "Papas fritas doradas y crujientes bañadas con queso cheddar fundido, panceta ahumada crocante y cebolla de verdeo. Adobadas con sal especiada de la casa.",
@@ -46,7 +46,7 @@
     "stock": 10
   },
   {
-    "id": 4,
+    "id": 5,
     "type": "starter",
     "name": "Papass Sweet",
     "description": "Papas fritas doradas y crujientes bañadas con una mezcla de queso cheddar fundido y mozzarella, cebolla caramelizada y salsa Stacker.",
@@ -63,7 +63,7 @@
     "stock": 10
   },
   {
-    "id": 5,
+    "id": 6,
     "type": "starter",
     "name": "Nuggets de pollo",
     "description": "Patitas doradas de pollo con rebozado crujiente y dorado. Acompañadas con salsa a elección.",
@@ -73,7 +73,7 @@
     "stock": 10
   },
   {
-    "id": 6,
+    "id": 7,
     "type": "starter",
     "name": "Papas con cheddar",
     "description": "Papas fritas doradas bañadas con una lluvia de queso cheddar fundido.",
@@ -83,7 +83,7 @@
     "stock": 10
   },
   {
-    "id": 7,
+    "id": 8,
     "type": "starter",
     "name": "Bastones de mozzarella",
     "description": "6 Bastones de mozzarella derretida con rebozado crocante, fritos al instante. Servidos con salsa de tomate especiada.",
@@ -93,7 +93,7 @@
     "stock": 1
   },
   {
-    "id": 7,
+    "id": 9,
     "type": "starter",
     "name": "Provoleta bites",
     "description": "6 trinagunlos de  provolone rebozada crocante, fritos al instante. Servidos con chimichurri casero.",

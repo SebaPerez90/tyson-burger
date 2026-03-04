@@ -84,11 +84,14 @@ Número de pedido: *${generateShortId(
       minute: "2-digit",
     })}*
 
-Pedido para: *${capitalizeWords(userName)}* ${
-      isDelivery === false ? `| *RETIRA EN LOCAL*` : ""
-    }
+${
+  userName
+    ? `*Pedido para:*${capitalizeWords(userName)}* ${
+        isDelivery === false ? `| *RETIRA EN LOCAL*` : ""
+      }`
+    : ""
+}
     
------------------------------------------------
 *PRODUCTOS*
 ${productsText}
 
@@ -106,8 +109,15 @@ ${betweenStreets ? `• Entre calles: ${betweenStreets}.` : ""}`
         ? `(Pago con efectivo)`
         : `(Pago con mercado pago)`
     } 
-    • Subtotal productos: $${subtotal.toLocaleString()}
+  • Subtotal productos: $${subtotal.toLocaleString()}
     ${isDelivery ? `• Envio: $${envio.toLocaleString()}` : ""}
+
+    
+    
+    Valor del envio fijo hasta *3 km*.
+    Más de *5 km* varia un poco y se abonan por transferencia.
+
+    -----------------------------------------------
 
 • *TOTAL: $${total.toLocaleString()}* 
 

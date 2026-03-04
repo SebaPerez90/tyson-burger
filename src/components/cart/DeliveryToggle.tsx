@@ -14,7 +14,7 @@ const DeliveryToggle = ({ isDelivery, setIsDelivery }: DeliveryToggleProps) => {
             : "border-white/70"
         }`}
       >
-        Pedido para Delivery
+        Pedido para delivery
       </button>
 
       <button
@@ -25,7 +25,7 @@ const DeliveryToggle = ({ isDelivery, setIsDelivery }: DeliveryToggleProps) => {
             : "border-white/70"
         }`}
       >
-        Pasar a Retirar
+        Pasar a retirar
       </button>
     </div>
   );

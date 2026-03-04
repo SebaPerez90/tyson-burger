@@ -38,6 +38,7 @@ type Order = {
   image?: string;
   quantity: number;
   sauce?: string;
+  friesType?: string;
 };
 
 type StarterItem = {

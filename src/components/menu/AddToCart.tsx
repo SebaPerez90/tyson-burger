@@ -13,6 +13,7 @@ const AddToCart = ({
   selectedExtras,
   productImage,
   sauce,
+  friesType,
 }: Order) => {
   const router = useRouter();
 
@@ -33,6 +34,7 @@ const AddToCart = ({
         extras: formattedExtras,
         image: productImage,
         sauce,
+        friesType,
       };
 
       const storedCart = localStorage.getItem("clientOrder");

@@ -13,6 +13,7 @@ import { specialProducts } from "@/src/constants/specialProducts";
 import { specialProductExtras } from "@/src/constants/specialProductExtras";
 import { slugify } from "@/src/utils/slugify";
 import { useArgentinaBusinessRules } from "@/src/hooks/UseArgentinaBusinessRules";
+import FriesTypeSelector from "../../menu/FriesTypeSelector";
 
 const HamburgerDetailCard = ({ product }: { product: HamburgerItem }) => {
   const { hasSurcharge } = useArgentinaBusinessRules();
@@ -21,6 +22,9 @@ const HamburgerDetailCard = ({ product }: { product: HamburgerItem }) => {
   const [count, setCount] = useState(1);
   const [burgerSize, setBurgerSize] = useState<"simple" | "doble" | "triple">(
     "simple",
+  );
+  const [friesType, setFriesType] = useState<"sazonadas" | "tradicionales">(
+    "sazonadas",
   );
 
   const productSlug = slugify(product.name);
@@ -95,15 +99,12 @@ const HamburgerDetailCard = ({ product }: { product: HamburgerItem }) => {
             <h1 className="text-2xl sm:text-4xl font-bold text-orange-100 mb-4">
               {product.name}
             </h1>
-
             <p className="text-white/80 text-base sm:text-lg mb-6 leading-relaxed">
               {product.description}
             </p>
-
             <h3 className="textlg sm:text-xl font-semibold text-white my-3">
               Ingredientes:
             </h3>
-
             <ul className="list-disc list-inside marker:text-green-500 text-white/70 space-y-1">
               {product.ingredients.map((ingredient, index) => (
                 <li key={index} className="sm:text-base text-sm">
@@ -112,15 +113,19 @@ const HamburgerDetailCard = ({ product }: { product: HamburgerItem }) => {
               ))}
               <li className="sm:text-base text-sm">INCLUYE PAPAS FRITAS</li>
             </ul>
-
+            {/* 🍔 Selector de tamanos */}
             {!isSpecialProduct && (
               <BurgerSizeSelector
                 burgerSize={burgerSize}
                 setBurgerSize={setBurgerSize}
               />
             )}
-
-            {/* 💰 Precio (UNA sola fuente de verdad) */}
+            {/* 🍟 Selector de tipo de papas */}
+            <FriesTypeSelector
+              friesType={friesType}
+              setFriesType={setFriesType}
+            />
+            ;{/* 💰 Precio (UNA sola fuente de verdad) */}
             <div className="flex flex-row items-center gap-2 mt-8">
               <span className="text-3xl font-bold font-baloo text-white">
                 ${totalPrice.toLocaleString("es-AR")}
@@ -183,6 +188,7 @@ const HamburgerDetailCard = ({ product }: { product: HamburgerItem }) => {
         note={note}
         productImage={product.image}
         setCount={setCount}
+        friesType={friesType}
       />
     </div>
   );

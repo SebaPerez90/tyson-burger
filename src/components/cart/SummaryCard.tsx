@@ -6,13 +6,10 @@ import { specialProducts } from "@/src/constants/specialProducts";
 
 type Props = {
   clientOrder: Order[];
-  // tip: number | "otro";
-  // customTip: string | number;
   address: string;
   betweenStreets: string;
   details: string;
   paymentMethod: "efectivo" | "mercado pago";
-  // cashAmount: string | number;
   userPhone: string;
   userName: string;
   isDelivery: boolean;
@@ -20,8 +17,6 @@ type Props = {
 
 const SummaryCard = ({
   clientOrder,
-  // tip,
-  // customTip,
   address,
   betweenStreets,
   details,
@@ -31,14 +26,12 @@ const SummaryCard = ({
   isDelivery,
 }: Props) => {
   const subtotal = clientOrder.reduce((acc, i) => acc + i.total, 0);
-  // const realTip = tip === "otro" ? Number(customTip) || 0 : tip;
   const envio = isDelivery ? 1000 : 0;
   const total = subtotal + envio;
 
   function buildWhatsAppMessage() {
     const subtotal = clientOrder.reduce((t, i) => t + i.total, 0);
     const envio = isDelivery ? 1000 : 0;
-    // const realTip = tip === "otro" ? Number(customTip) : tip;
     const total = subtotal + envio;
 
     const capitalizeWords = (str: string) => {
@@ -62,6 +55,10 @@ const SummaryCard = ({
             ? ` (${i.productSize.toUpperCase()})`
             : "";
 
+        const friesType = i.friesType
+          ? `    - Papas ${capitalizeWords(i.friesType)}`
+          : "";
+
         const extras =
           Array.isArray(i.extras) && i.extras.length > 0
             ? i.extras.map((e) => `    - ${e}`).join("\n")
@@ -72,8 +69,8 @@ const SummaryCard = ({
         const note = i.note ? `    *NOTA:* _${i.note}_` : "";
 
         const details =
-          extras || sauce || note
-            ? `\n${[extras, sauce, note].filter(Boolean).join("\n")}`
+          friesType || extras || sauce || note
+            ? `\n${[friesType, extras, sauce, note].filter(Boolean).join("\n")}`
             : "";
 
         return `• *${i.productName?.toUpperCase()}*${size} x${

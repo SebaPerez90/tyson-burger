@@ -56,7 +56,7 @@ export default function FloatingInput({
           peer block cursor-pointer w-full border border-white/25 rounded-lg 
           bg-transparent text-white text-base 
            py-3 outline-none transition-all
-          focus:border-white ${className}
+          focus:border-white relative  ${className}
         `}
       />
 
@@ -80,13 +80,21 @@ export default function FloatingInput({
           px-2 pointer-events-none bg-zinc-900 font-semibold
           peer-placeholder-shown:top-1/2 peer-placeholder-shown:-translate-y-[20%]
           peer-placeholder-shown:text-base
-          peer-focus:top-0 peer-focus:-translate-y-[5%] peer-focus:text-sm peer-focus:text-white -mt-[0.6rem]
+          peer-focus:top-0 peer-focus:-translate-y-[5%] peer-focus:text-sm peer-focus:text-white -mt-[0.6rem] 
+
+
+          ${
+            label === "Nombre"
+              ? "after:content-['(opcional)'] after:text-white after:text-xs after:font-semibold after:w-max after:h-fit after:absolute after:bottom-[3px] after:-right-13 after:z-20 z-10 after:bg-black"
+              : "after:content-['*'] after:text-red-500 after:text-sm after:font-semibold after:w-max after:h-fit after:absolute after:-bottom-[3px] after:-right-3 after:z-20 z-10 after:bg-zinc-900 after:px-1"
+          }
+
           ${
             value && icon
               ? "top-0 -translate-y-[3%] -translate-x-6 text-sm text-white"
               : value || icon === null || undefined
-              ? "top-0 -translate-y-[3%] -translate-x-1 text-sm text-white"
-              : ""
+                ? "top-0 -translate-y-[3%] -translate-x-1 text-sm text-white"
+                : ""
           }
         `}
       >

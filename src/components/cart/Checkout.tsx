@@ -3,7 +3,7 @@
 import { useState } from "react";
 
 import SummaryCard from "./SummaryCard";
-import UserDataCheckout from "./UserDataCheckout";
+// import UserDataCheckout from "./UserDataCheckout";
 import PaymentCheckout from "./PaymentCheckout";
 import DeliveryCheckout from "./DeliveryCheckout";
 
@@ -17,7 +17,7 @@ const Checkout = ({ clientOrder, isDelivery }: CheckoutProps) => {
   const [betweenStreets, setBetweenStreets] = useState("");
   const [details, setDetails] = useState("");
   const [userName, setUserName] = useState("");
-  const [userPhone, setUserPhone] = useState("");
+  // const [userPhone, setUserPhone] = useState("");
   const [paymentMethod, setPaymentMethod] = useState<
     "efectivo" | "mercado pago"
   >("mercado pago");
@@ -25,15 +25,17 @@ const Checkout = ({ clientOrder, isDelivery }: CheckoutProps) => {
   return (
     <div className="flex flex-col gap-8">
       {/* DATOS DEL USUARIO */}
-      <UserDataCheckout
+      {/* <UserDataCheckout
         userName={userName}
         setUserName={setUserName}
         userPhone={userPhone}
         setUserPhone={setUserPhone}
-      />
+      /> */}
 
       {/* DIRECCION */}
       <DeliveryCheckout
+        setUserName={setUserName}
+        userName={userName}
         isDelivery={isDelivery}
         address={address}
         setAddress={setAddress}
@@ -56,7 +58,6 @@ const Checkout = ({ clientOrder, isDelivery }: CheckoutProps) => {
         address={address}
         betweenStreets={betweenStreets}
         details={details}
-        userPhone={userPhone}
         userName={userName}
         isDelivery={isDelivery}
       />

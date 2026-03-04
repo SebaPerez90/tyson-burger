@@ -3,6 +3,8 @@ import { ImLocation } from "react-icons/im";
 
 import FloatingInput from "../forms/FloatingInput";
 interface DeliveryCheckoutProps {
+  userName: string;
+  setUserName: (userName: string) => void;
   isDelivery: boolean;
   address: string;
   setAddress: (address: string) => void;
@@ -13,6 +15,8 @@ interface DeliveryCheckoutProps {
 }
 
 const DeliveryCheckout = ({
+  userName,
+  setUserName,
   isDelivery,
   address,
   setAddress,
@@ -26,11 +30,19 @@ const DeliveryCheckout = ({
       {isDelivery ? (
         <div className="border border-white/20 rounded-xl p-5 text-stone-50">
           <h3 className="font-bold flex items-center gap-2 text-lg mb-3">
-            <GrLocation /> Dirección de entrega
+            <GrLocation /> Datos de entrega
           </h3>
 
           {/* location */}
           <div className="space-y-5 mt-8">
+            <FloatingInput
+              label="Nombre"
+              type="text"
+              value={userName}
+              onChange={setUserName}
+              className="capitalize"
+            />
+
             <FloatingInput
               label="Localidad"
               type="text"

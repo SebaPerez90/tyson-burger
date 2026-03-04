@@ -10,7 +10,7 @@ type Props = {
   betweenStreets: string;
   details: string;
   paymentMethod: "efectivo" | "mercado pago";
-  userPhone: string;
+  // userPhone: string;
   userName: string;
   isDelivery: boolean;
 };
@@ -21,7 +21,7 @@ const SummaryCard = ({
   betweenStreets,
   details,
   paymentMethod,
-  userPhone,
+  // userPhone,
   userName,
   isDelivery,
 }: Props) => {
@@ -91,7 +91,6 @@ Pedido para: *${capitalizeWords(userName)}* ${
       isDelivery === false ? `| *RETIRA EN LOCAL*` : ""
     }
     
-${userPhone}
 -----------------------------------------------
 *PRODUCTOS*
 ${productsText}

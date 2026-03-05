@@ -12,7 +12,7 @@
       "Pan de papa"
     ],
     "price": { "simple": 16500, "doble": 16500, "triple": 16500 },
-    "stock": 1,
+    "stock": 10,
     "image": "/menu/burgers/volcan-burger.webp"
   },
   {
@@ -28,7 +28,7 @@
       "Panceta crocante y BBQ"
     ],
     "price": { "simple": 15000, "doble": 15000, "triple": 15000 },
-    "stock": 1,
+    "stock": 10,
     "image": "/menu/burgers/orgasmo-burger.webp"
   },
   {
@@ -44,7 +44,7 @@
       "Salsa Tyson"
     ],
     "price": { "simple": 15000, "doble": 15000, "triple": 15000 },
-    "stock": 1,
+    "stock": 10,
     "image": "/menu/burgers/golosa.webp"
   },
   {
@@ -117,7 +117,7 @@
       "doble": 12500,
       "triple": 14500
     },
-    "stock": 1,
+    "stock": 10,
     "image": "/menu/burgers/cheese-bacon.webp"
   },
   {
@@ -159,7 +159,7 @@
       "doble": 14500,
       "triple": 16500
     },
-    "stock": 1,
+    "stock": 10,
     "image": "/menu/burgers/smoke-burger.webp"
   },
   {
@@ -181,7 +181,7 @@
       "doble": 12000,
       "triple": 14000
     },
-    "stock": 1,
+    "stock": 10,
     "image": "/menu/burgers/american-burger.webp"
   },
   {
@@ -222,7 +222,7 @@
       "doble": 12500,
       "triple": 14500
     },
-    "stock": 1,
+    "stock": 10,
     "image": "/menu/burgers/tyson-burger.webp"
   }
 ]

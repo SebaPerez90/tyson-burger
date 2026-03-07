@@ -74,6 +74,22 @@
     "stock": 10,
     "image": "/menu/burgers/orgasmo-burger.webp"
   },
+  {
+    "id": 13,
+    "type": "burger",
+    "name": "Cuatro Quesos",
+    "description": "Doble medallon de carne, queso cheddar x4, queso mozzarella, queso roquefort y provoleta empanada frita. Una combinación explosiva para los amantes del queso.",
+    "ingredients": [
+      "Doble medallon",
+      "Queso cheddar x4",
+      "Queso Mozzarella",
+      "Queso Roquefort",
+      "Provoleta empanada frita"
+    ],
+    "price": { "simple": 14000, "doble": 14000, "triple": 14000 },
+    "stock": 10,
+    "image": "/menu/burgers/four-cheese.webp"
+  },
 
   {
     "id": 7,

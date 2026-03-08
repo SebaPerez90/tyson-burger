@@ -22,6 +22,19 @@
     "image": "/promos/promo3.webp"
   },
   {
+    "id": 7,
+    "type": "promo",
+    "name": "Promo Tyson + papas con cheddar",
+    "ingredients": [
+      "2 Tyson Burger dobles",
+      "Porción de papas grande",
+      "Baño de queso cheddar"
+    ],
+    "price": 25000,
+    "stock": 10,
+    "image": "/promos/promo7.webp"
+  },
+  {
     "id": 3,
     "type": "promo",
     "name": "Promo Orgasmo + papas con cheddar",

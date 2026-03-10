@@ -92,7 +92,7 @@ const PromoCard = ({ item }: { item: PromoItem }) => {
             <div className="flex items-center bg-secondary justify-between px-6 rounded-md py-1">
               <button
                 onClick={handleDecrement}
-                className="text-xl  hover:bg-inherit hover:text-zinc-700 antialiased cursor-pointer font-black"
+                className="text-xl  hover:bg-inherit hover:text-zinc-400 antialiased cursor-pointer font-black"
               >
                 –
               </button>
@@ -101,7 +101,7 @@ const PromoCard = ({ item }: { item: PromoItem }) => {
               </span>
               <button
                 onClick={handleIncrement}
-                className="text-xl hover:bg-inherit hover:text-zinc-700 antialiased cursor-pointer font-black"
+                className="text-xl hover:bg-inherit hover:text-zinc-400 antialiased cursor-pointer font-black"
               >
                 +
               </button>

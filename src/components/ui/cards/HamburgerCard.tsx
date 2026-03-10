@@ -67,7 +67,8 @@ const HamburgerCard = ({ item }: { item: HamburgerItem }) => {
 
                 // 👉 Lunes (1), Martes (2), Miércoles (3) → +10%
                 if (hasSurcharge) {
-                  const increasedPrice = basePrice * 1.1;
+                  // const increasedPrice = basePrice * 1.1;
+                  const increasedPrice = basePrice * 1;
                   return Math.round(increasedPrice).toLocaleString("es-AR");
                 }
 

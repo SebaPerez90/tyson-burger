@@ -41,21 +41,19 @@ const PromoCard = ({ item }: { item: PromoItem }) => {
 
   const noStock = item.stock < 10;
 
-  console.log(item.stock);
-
   return (
     <div
       key={item.id}
       className={`${
         noStock && promosNoStockStyle
-      } bg-linear-to-b from-[#1a0000] to-[#2b0000] rounded-2xl overflow-hidden border border-white/15 flex flex-col justify-between h-auto `}
+      } bg-linear-to-b from-[#1a0000] grow max-w-[500px] to-[#2b0000] rounded-2xl overflow-hidden border border-white/15 flex flex-col justify-between h-auto `}
     >
       {/* IMAGE */}
       <div className="p-2 md:p-0 lg:p-4 w-full h-auto">
         <div className="overflow-hidden rounded-2xl md:rounded-none lg:rounded-2xl size-full">
           <Image
-            width={500}
-            height={500}
+            width={400}
+            height={400}
             src={item.image}
             alt={item.name}
             loading="eager"
@@ -67,7 +65,7 @@ const PromoCard = ({ item }: { item: PromoItem }) => {
       {/* BODY */}
       <div className="p-3 lg:p-6 lg:pt-0 flex flex-col justify-between grow z-40">
         <div>
-          <span className="text-lg md:text-xl lg:text-3xl text-orange-100 font-bold block mb-5 leading-5">
+          <span className="text-lg lg:text-xl text-orange-100 font-bold block mb-5 leading-5">
             {item.name}
             <br />
             <span className="text-xs text-white font-light ml-0.5">
@@ -75,7 +73,7 @@ const PromoCard = ({ item }: { item: PromoItem }) => {
             </span>
           </span>
           {/* INGREDIENTES */}
-          <ul className="flex flex-col w-max pb-2 marker:text-green-500 text-[10px] text-white/60 lg:block list-disc list-inside lg:text-sm ">
+          <ul className="flex flex-col w-max pb-2 marker:text-green-500 text-[10px] text-white/80 lg:block list-disc list-inside lg:text-sm ">
             {item.ingredients.map((item, index) => (
               <li key={index}>{item}</li>
             ))}

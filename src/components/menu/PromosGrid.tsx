@@ -4,7 +4,7 @@ import PromoCard from "../ui/cards/PromoCard";
 const PromosGrid = () => {
   return (
     <section id="promos-section">
-      <div className="grid grid-cols-1 gap-10">
+      <div className="flex items-center justify-start flex-wrap gap-10">
         {promos.map((item) => (
           <PromoCard key={item.id} item={item} />
         ))}

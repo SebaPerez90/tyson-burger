@@ -9,8 +9,8 @@ const MenuNavBar = () => {
   const [isAtTop, setIsAtTop] = useState(true);
 
   const menuSections = [
-    { id: "burgers-section", label: "Burgers" },
-    { id: "starters-section", label: "Entradas" },
+    { id: "burgers-section", label: "BURGERS" },
+    { id: "starters-section", label: "SNACKS" },
     // { id: "drinks-section", label: "Bebidas" },
     // { id: "deserts-section", label: "Postres" },
   ];
@@ -69,14 +69,14 @@ ${isAtTop ? "-translate-y-full" : "translate-y-0"}`}
 transition-transform duration-300 ease-in-out will-change-transform
 ${isAtTop ? "-translate-y-full" : "translate-y-0"}`}
     >
-      <ul className="flex justify-between items-center px-10 py-5 text-sm font-medium text-white">
+      <ul className="flex justify-between items-center px-5 py-3 text-sm font-medium text-white">
         {/* Secciones - Izquierda */}
-        <div className="flex gap-10">
+        <div className="flex gap-3">
           {menuSections.map(({ id, label }) => (
             <li key={id}>
               <a
                 href={`#${id}`}
-                className={`transition-colors duration-200 ${
+                className={`transition-colors duration-200 text-[10px] ${
                   activeSection === id ? "text-red-500" : "hover:text-red-500"
                 }`}
               >
@@ -87,12 +87,12 @@ ${isAtTop ? "-translate-y-full" : "translate-y-0"}`}
         </div>
 
         {/* Promos - Derecha */}
-        <li className="px-4 py-1.5 rounded-md bg-red-500">
+        <li className="px-4 py-1 rounded-sm bg-red-500 text-[10px]">
           <a
             href="https://tyson-burger.vercel.app/promos"
             className="transition-colors duration-200 text-white"
           >
-            Promos
+            PROMOCIONES
           </a>
         </li>
       </ul>

@@ -33,7 +33,10 @@ const HamburgerGrid = () => {
 
   return (
     <section id="burgers-section">
-      <SectionTitle title="Hamburguesas" />
+      <SectionTitle
+        title="BURGERS"
+        subtitle="TODAS LAS BURGER INCLUYEN PAPAS!"
+      />
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 lg:gap-8">
         {normalizedBurgers.map((item) => (
           <HamburgerCard key={item.id} item={item} />

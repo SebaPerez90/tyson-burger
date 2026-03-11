@@ -6,10 +6,12 @@ const SectionTitle = ({
   subtitle?: string;
 }) => {
   return (
-    <h2 className="border-b border-b-white /60 pb-2  text-xl sm:text-2xl font-bold mb-4 text-white">
-      {title}{" "}
-      <span className="text-sm text-neutral-100 font-normal">{subtitle}</span>
-    </h2>
+    <header className="flex flex-col items-center justify-center gap-1 pb-5 ">
+      <h2 className="text-md sm:text-lg font-bold text-white">{title} </h2>
+      <span className="text-neutral-200 text-[8px] font-normal">
+        {subtitle}
+      </span>
+    </header>
   );
 };
 

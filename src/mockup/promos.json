@@ -17,7 +17,7 @@
       "Porción de papas grande",
       "Baño de queso cheddar"
     ],
-    "price": 25000,
+    "price": 24000,
     "stock": 10,
     "image": "/promos/promo3.webp"
   },
@@ -69,7 +69,7 @@
       "Porción bastones de mozzarella",
       "Salsa barbacoa"
     ],
-    "price": 28000,
+    "price": 26000,
     "stock": 10,
     "image": "/promos/promo1.webp"
   },
@@ -82,7 +82,7 @@
       "Porción de papas grande",
       "Baño de queso cheddar"
     ],
-    "price": 28000,
+    "price": 26000,
     "stock": 10,
     "image": "/promos/promo5.webp"
   }

@@ -49,8 +49,8 @@ const PromoCard = ({ item }: { item: PromoItem }) => {
       } bg-linear-to-b from-[#1a0000] grow max-w-[500px] to-[#2b0000] rounded-2xl overflow-hidden border border-white/15 flex flex-col justify-between h-auto `}
     >
       {/* IMAGE */}
-      <div className="p-2 md:p-0 lg:p-4 w-full h-auto">
-        <div className="overflow-hidden rounded-2xl md:rounded-none lg:rounded-2xl size-full">
+      <div className="p-3 md:p-0 lg:p-4 w-full h-auto">
+        <div className="overflow-hidden rounded-md md:rounded-none lg:rounded-2xl size-full">
           <Image
             width={400}
             height={400}

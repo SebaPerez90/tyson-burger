@@ -124,7 +124,7 @@
       "Pan de papa"
     ],
     "price": { "simple": 16500, "doble": 16500, "triple": 16500 },
-    "stock": 10,
+    "stock": 1,
     "image": "/menu/burgers/volcan-burger.webp"
   },
   {
@@ -164,7 +164,7 @@
       "doble": 11500,
       "triple": 13500
     },
-    "stock": 10,
+    "stock": 1,
     "image": "/menu/burgers/sweet-burger.webp"
   },
   {

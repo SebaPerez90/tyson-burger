@@ -22,21 +22,21 @@ const HamburgerCard = ({ item }: { item: HamburgerItem }) => {
       style={item.stock < 10 ? { display: "none" } : {}}
       className={`${
         noStock && noStockStyle
-      } bg-linear-to-b from-[#1a0000] to-[#2b0000] rounded-2xl overflow-hidden border border-white/15 flex flex-row lg:flex-col justify-between cursor-pointer h-[250px] md:h-auto active:scale-[0.98] active:brightness-90 transition-all select-none active:from-[#310000] active:to-[#430000]`}
+      } bg-linear-to-b from-[#1a0000] to-[#2b0000] rounded-2xl overflow-hidden border border-white/15 flex flex-row md:flex-col justify-between cursor-pointer h-[170px] sm:h-[300px] md:h-auto active:scale-[0.98] active:brightness-90 transition-all select-none active:from-[#310000] active:to-[#430000]`}
       onClick={() =>
         router.push(`/menu/${item.name.toLowerCase().replace(/\s+/g, "-")}`)
       }
     >
       {/* IMAGE */}
-      <div className="p-2 md:p-0 lg:p-4 w-1/2 md:w-[70%] lg:w-full h-auto lg:h-[400px]">
-        <div className="overflow-hidden rounded-2xl md:rounded-none lg:rounded-2xl w-full h-full">
+      <div className="p-2 md:p-4 w-1/2 md:w-auto h-auto md:h-[400px]">
+        <div className="overflow-hidden rounded-2xl md:rounded-none lg:rounded-2xl size-full">
           <Image
-            width={400}
-            height={208}
+            width={800}
+            height={800}
             src={item.image}
             alt={item.name}
             loading="eager"
-            className="object-cover w-full h-full saturate-[1.2] transition-all duration-300 ease-in-out hover:scale-110"
+            className="object-cover size-full scale-95 sm:scale-100 saturate-[1.2] transition-all duration-300 ease-in-out hover:scale-110 rounded-xl"
           />
         </div>
       </div>
@@ -44,21 +44,25 @@ const HamburgerCard = ({ item }: { item: HamburgerItem }) => {
       {/* BODY */}
       <div className="p-3 lg:p-6 lg:pt-0 flex flex-col justify-between grow z-40">
         <div>
-          <span className="text-lg md:text-xl lg:text-3xl text-orange-100 font-bold mb-3 block">
+          <span className="text-lg md:text-xl lg:text-3xl text-orange-200 font-bold mb-3 block">
             {item.name}
           </span>
 
           {/* INGREDIENTES */}
-          <ul className="flex flex-col w-max pb-2 marker:text-green-500 text-[10px] text-white/60 lg:block list-disc list-inside lg:text-sm ">
+          <ul className="relative flex flex-col w-max pb-1.5  marker:text-green-500 text-[10px] text-white/60 lg:block list-disc list-inside lg:text-sm overflow-hidden max-[640px]:max-h-[70px]">
             {item.ingredients.map((item, index) => (
               <li key={index}>{item}</li>
             ))}
+
+            <span className="sm:hidden block w-[110%] absolute bottom-0 -left-2 bg-[#210202] pl-6 py-1">
+              ...
+            </span>
           </ul>
         </div>
 
         {/* ACA TRABAJAMOS LOS DESCUENTOS, REVISAR ESTO DESPUES */}
         {/* Precio + Botones */}
-        <div className="flex flex-col gap-0.5 mt-auto pt-4 border-t border-white/10 lg:h-auto lg:min-h-[62px]">
+        <div className="flex flex-col gap-0.5 mt-auto pt-2 border-t border-white/10 lg:h-auto lg:min-h-[62px]">
           <div className="flex flex-row items-center gap-0.5">
             <span className="text-xl font-bold font-baloo text-white">
               $

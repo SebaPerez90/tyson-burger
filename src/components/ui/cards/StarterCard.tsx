@@ -14,23 +14,28 @@ const StarterCard = ({ item }: { item: StarterItem }) => {
   return (
     <div
       key={item.id}
+      //⚠️​⚠️​⚠️​⚠️​
+      // SI TENEMOS MUCHOS FALTANTES EN EL MENU
+      // LO OCULTAMOS PARA EVITAR MOSTRAR UN MONTÓN DE PRODUCTOS SIN STOCK
+      //⚠️​⚠️​⚠️​
+      style={item.stock < 10 ? { display: "none" } : {}}
       className={`${
         noStock && noStockStyle
-      } bg-linear-to-b from-[#1a0000] to-[#2b0000] rounded-2xl overflow-hidden border border-white/15 flex flex-row lg:flex-col justify-between cursor-pointer h-[250px] lg:h-auto active:scale-[0.98] active:brightness-90 transition-all select-none active:from-[#310000] active:to-[#430000]`}
+      } bg-linear-to-b from-[#1a0000] to-[#2b0000] rounded-2xl overflow-hidden border border-white/15 flex flex-row md:flex-col justify-between cursor-pointer h-[170px] sm:h-[300px] lg:h-auto active:scale-[0.98] active:brightness-90 transition-all select-none active:from-[#310000] active:to-[#430000]`}
       onClick={() =>
         router.push(`/menu/${item.name.toLowerCase().replace(/\s+/g, "-")}`)
       }
     >
       {/* IMAGE */}
-      <div className="p-2 md:p-0 lg:p-4 w-1/2 md:w-[60%] lg:w-full">
-        <div className="overflow-hidden rounded-2xl md:rounded-none lg:rounded-2xl w-full h-[300px]">
+      <div className="p-2 md:p-4 w-1/2 md:w-auto h-auto md:h-[400px]">
+        <div className="overflow-hidden rounded-2xl md:rounded-none lg:rounded-2xl size-full">
           <Image
-            width={400}
-            height={400}
+            width={800}
+            height={800}
             src={item.image}
             alt={item.name}
             loading="eager"
-            className="object-cover w-full h-full saturate-[1.2] transition-all duration-300 ease-in-out hover:scale-110"
+            className="object-cover size-full scale-95 sm:scale-100 saturate-[1.2] transition-all duration-300 ease-in-out hover:scale-110 rounded-xl"
           />
         </div>
       </div>
@@ -43,15 +48,19 @@ const StarterCard = ({ item }: { item: StarterItem }) => {
           </span>
 
           {/* INGREDIENTES */}
-          <ul className="flex w-max flex-col marker:text-green-500 text-[10px] text-white/60 lg:block list-disc list-inside lg:text-sm pb-3">
+          <ul className="relative flex flex-col w-max pb-1.5  marker:text-green-500 text-[10px] text-white/60 lg:block list-disc list-inside lg:text-sm  overflow-hidden max-[640px]:max-h-[70px]">
             {item.ingredients.map((item, index) => (
               <li key={index}>{item}</li>
             ))}
+
+            <span className="sm:hidden block w-[110%] absolute bottom-0 -left-2 bg-[#210202] pl-6 py-1">
+              ...
+            </span>
           </ul>
         </div>
 
         {/* Precio + Botones */}
-        <div className="flex flex-col gap-0.5 mt-auto pt-4 border-t border-white/10 lg:h-auto lg:min-h-[82px]">
+        <div className="flex flex-col gap-0.5 mt-auto pt-1 border-t border-white/10 lg:h-auto lg:min-h-[62px]">
           <div className="flex flex-row items-center gap-0.5">
             <span className="text-xl font-bold font-baloo text-white">
               $
@@ -77,7 +86,6 @@ const StarterCard = ({ item }: { item: StarterItem }) => {
             className="hidden lg:block"
             href={`/menu/${item.name.toLowerCase().replace(/\s+/g, "-")}`}
           >
-            {/* <Link href={`/menu/${item.slug}`}> */}
             <Button
               variant="destructive"
               size="lg"

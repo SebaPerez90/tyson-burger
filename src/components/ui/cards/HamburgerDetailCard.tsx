@@ -47,8 +47,7 @@ const HamburgerDetailCard = ({ product }: { product: HamburgerItem }) => {
 
     // Lunes (1), Martes (2), Miércoles (3) → +10%
     if (hasSurcharge) {
-      price = Math.round(price * 1);
-      // price = Math.round(price * 1.1);
+      price = Math.round(price * 1.1);
     }
 
     return price;

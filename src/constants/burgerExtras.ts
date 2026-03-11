@@ -10,7 +10,7 @@ export const burgerExtras = [
     price: "$ 7.000",
   },
   {
-    id: "extra-sticks",
+    id: "extra-nuggets",
     label: "Agregá patitas de pollo",
     price: "$ 5.000",
   },

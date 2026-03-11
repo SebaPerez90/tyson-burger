@@ -36,7 +36,7 @@ const HamburgerCard = ({ item }: { item: HamburgerItem }) => {
             src={item.image}
             alt={item.name}
             loading="eager"
-            className="object-cover size-full scale-95 sm:scale-100 saturate-[1.2] transition-all duration-300 ease-in-out hover:scale-110 rounded-xl"
+            className="object-cover size-full scale-9aaa5 sm:scale-100 saturate-[1.2] transition-all duration-300 ease-in-out hover:scale-110 rounded-xl"
           />
         </div>
       </div>

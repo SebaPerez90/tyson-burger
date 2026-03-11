@@ -67,7 +67,7 @@
       "Doble medallon",
       "Doble queso cheddar",
       "Provolone y Muzzarella",
-      "Cebolla caramelizada con queso azul",
+      "Cebolla caramelizada + queso azul",
       "Panceta crocante y BBQ"
     ],
     "price": { "simple": 15000, "doble": 15000, "triple": 15000 },
@@ -95,7 +95,7 @@
     "id": 7,
     "type": "burger",
     "name": "Cheese Bacon",
-    "description": "Medallón de carne con panceta ahumada crocante, doble cheddar derretido y pan de papa suave, una combinación intensa y sabrosa que nunca falla. A partir de  cuatro medallones, se agrega doble bacon crocante.",
+    "description": "Medallón de carne con panceta ahumada crocante, doble cheddar derretido y pan de papa suave, una combinación intensa y sabrosa que nunca falla.",
     "ingredients": [
       "Medallon de carne",
       "Queso cheddar doble",
@@ -235,7 +235,7 @@
     "description": "Pollo crispy bien dorado con base de muzzarella y roquefort fundido, provoleta empanada frita, huevo a la plancha y nuestra salsa Tasty. Servido en pan de papa dorado en manteca.",
     "ingredients": [
       "Pollo crispy",
-      "Base de muzzarella y roquefort fundido",
+      "Base de muzzarella + roquefort",
       "Provoleta empanada frita",
       "Huevo a la plancha",
       "Pan de papa",

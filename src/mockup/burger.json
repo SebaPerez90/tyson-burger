@@ -61,7 +61,7 @@
   {
     "id": 2,
     "type": "burger",
-    "name": "Orgasmo",
+    "name": "Deluxe Burger",
     "description": "Doble queso chedar en la base del pan con colchon de cebolla caramelizada con queso azul fundido. Doble medallon de carne (un medallón coronado con provolone y el otro con muzzarella), coronado con doble panceta crocante y un cierre de salsa barbacoa.",
     "ingredients": [
       "Doble medallon",
@@ -72,7 +72,7 @@
     ],
     "price": { "simple": 15000, "doble": 15000, "triple": 15000 },
     "stock": 10,
-    "image": "/menu/burgers/orgasmo-burger.webp"
+    "image": "/menu/burgers/deluxe-burger.webp"
   },
   {
     "id": 13,

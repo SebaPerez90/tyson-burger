@@ -2,88 +2,64 @@
   {
     "id": 1,
     "type": "promo",
-    "name": "Promo Cheese",
-    "ingredients": ["2 Cheese Burger dobles", "Porción de papas grande"],
+    "name": "Cheese x2",
+    "ingredients": ["2 Burger dobles", "Papas grandes"],
     "price": 18000,
     "stock": 10,
-    "image": "/promos/promo6.webp"
+    "image": "/promos/promo-cheese.webp"
   },
   {
     "id": 2,
     "type": "promo",
-    "name": "Promo Provo",
-    "ingredients": [
-      "2 Provolone Burger dobles",
-      "Porción de papas grande",
-      "Baño de queso cheddar"
-    ],
+    "name": "Provo x2",
+    "ingredients": ["2 Burger dobles", "Papas grandes", "Baño de cheddar"],
     "price": 24000,
     "stock": 10,
-    "image": "/promos/promo3.webp"
+    "image": "/promos/promo-provo.webp"
   },
   {
     "id": 7,
     "type": "promo",
-    "name": "Promo Tyson",
-    "ingredients": [
-      "2 Tyson Burger dobles",
-      "Porción de papas grande",
-      "Baño de queso cheddar"
-    ],
+    "name": "Tyson x2",
+    "ingredients": ["2 Burger dobles", "Papas grandes", "Baño de cheddar"],
     "price": 25000,
     "stock": 10,
-    "image": "/promos/promo7.webp"
+    "image": "/promos/promo-tyson.webp"
   },
   {
     "id": 3,
     "type": "promo",
-    "name": "Promo Orgasmo",
-    "ingredients": [
-      "2 Orgamo dobles",
-      "Porción de papas grande",
-      "Baño de queso cheddar"
-    ],
+    "name": "Deluxe x2",
+    "ingredients": ["2 Burger dobles", "Papas grandes", "Baño de cheddar"],
     "price": 28000,
     "stock": 10,
-    "image": "/promos/promo4.webp"
+    "image": "/promos/promo-deluxe.webp"
   },
   {
     "id": 4,
     "type": "promo",
-    "name": "Promo Golosa",
-    "ingredients": [
-      "2 Golosa Burger dobles",
-      "Porción de papas grande",
-      "Baño de queso cheddar"
-    ],
+    "name": "Golosa x2",
+    "ingredients": ["2 Burger dobles", "Papas grandes", "Baño de cheddar"],
     "price": 28000,
     "stock": 10,
-    "image": "/promos/promo2.webp"
+    "image": "/promos/promo-golosa.webp"
   },
   {
     "id": 5,
     "type": "promo",
-    "name": "Promo Cheese Bacon",
-    "ingredients": [
-      "2 Cheese Bacon dobles",
-      "Porción bastones de mozzarella",
-      "Salsa barbacoa"
-    ],
+    "name": "Bacon x2",
+    "ingredients": ["2 Bacon dobles", "Bastones", "Salsa barbacoa"],
     "price": 26000,
     "stock": 10,
-    "image": "/promos/promo1.webp"
+    "image": "/promos/promo-bacon.webp"
   },
   {
     "id": 6,
     "type": "promo",
-    "name": "Promo Smoke",
-    "ingredients": [
-      "2 Smoke burger dobles",
-      "Porción de papas grande",
-      "Baño de queso cheddar"
-    ],
+    "name": "Smoke x2",
+    "ingredients": ["2 Burger dobles", "Papas grandes", "Baño de cheddar"],
     "price": 26000,
     "stock": 10,
-    "image": "/promos/promo5.webp"
+    "image": "/promos/promo-smoke.webp"
   }
 ]

@@ -13,7 +13,7 @@ import { specialProducts } from '@/src/constants/specialProducts';
 import { specialProductExtras } from '@/src/constants/specialProductExtras';
 import { slugify } from '@/src/utils/slugify';
 import { useArgentinaBusinessRules } from '@/src/hooks/UseArgentinaBusinessRules';
-import FriesTypeSelector from './FriesTypeSelector';
+// import FriesTypeSelector from './FriesTypeSelector';
 
 const HamburgerDetailCard = ({ product }: { product: HamburgerItem }) => {
   const { hasSurcharge } = useArgentinaBusinessRules();
@@ -23,9 +23,9 @@ const HamburgerDetailCard = ({ product }: { product: HamburgerItem }) => {
   const [burgerSize, setBurgerSize] = useState<'simple' | 'doble' | 'triple'>(
     'simple',
   );
-  const [friesType, setFriesType] = useState<'sazonadas' | 'tradicionales'>(
-    'sazonadas',
-  );
+  // const [friesType, setFriesType] = useState<'sazonadas' | 'tradicionales'>(
+  //   'sazonadas',
+  // );
 
   const productSlug = slugify(product.name);
   const productSpecialExtras = specialProductExtras[productSlug];
@@ -96,7 +96,7 @@ const HamburgerDetailCard = ({ product }: { product: HamburgerItem }) => {
         {/* Información */}
         <div className='sm:px-0 px-8'>
           <div className='flex flex-col justify-center w-full mt-10 sm:mt-6'>
-            <h1 className='text-2xl sm:text-4xl font-bold text-orange-100 mb-4'>
+            <h1 className='text-2xl sm:text-4xl font-bold text-orange-200 mb-4'>
               {product.name}
             </h1>
             <p className='text-white/80 text-base sm:text-lg mb-6 leading-relaxed'>
@@ -105,7 +105,7 @@ const HamburgerDetailCard = ({ product }: { product: HamburgerItem }) => {
             <h3 className='textlg sm:text-xl font-semibold text-white my-3'>
               Ingredientes:
             </h3>
-            <ul className='list-disc list-inside marker:text-green-500 text-white/70 space-y-1'>
+            <ul className='list-disc list-inside marker:text-green-500 text-white/80 space-y-1'>
               {product.ingredients.map((ingredient, index) => (
                 <li
                   key={index}
@@ -123,10 +123,10 @@ const HamburgerDetailCard = ({ product }: { product: HamburgerItem }) => {
               />
             )}
             {/* 🍟 Selector de tipo de papas */}
-            <FriesTypeSelector
+            {/* <FriesTypeSelector
               friesType={friesType}
               setFriesType={setFriesType}
-            />
+            /> */}
             ;{/* 💰 Precio (UNA sola fuente de verdad) */}
             <div className='flex flex-row items-center gap-2 mt-8'>
               <span className='text-3xl font-bold font-baloo text-white'>
@@ -189,7 +189,7 @@ const HamburgerDetailCard = ({ product }: { product: HamburgerItem }) => {
         note={note}
         productImage={product.image}
         setCount={setCount}
-        friesType={friesType}
+        // friesType={friesType}
       />
     </div>
   );

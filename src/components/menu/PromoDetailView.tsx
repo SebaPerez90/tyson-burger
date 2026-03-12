@@ -39,7 +39,7 @@ const PromoDetailView = ({ product }: { product: PromoItem }) => {
             <h3 className='textlg sm:text-xl font-semibold text-white'>
               Contenido del combo:
             </h3>
-            <ul className='list-disc list-inside marker:text-green-500 text-white/70 space-y-1'>
+            <ul className='list-disc list-inside marker:text-green-500 text-white/80 space-y-1'>
               {product.contain.map((ingredient, index) => (
                 <li
                   key={index}

@@ -1,14 +1,14 @@
-import { generateShortId } from "@/src/utils/uuidGenerator";
-import { Button } from "../ui/button";
-import { toast } from "sonner";
-import { specialProducts } from "@/src/constants/specialProducts";
+import { generateShortId } from '@/src/utils/uuidGenerator';
+import { Button } from '../ui/button';
+import { toast } from 'sonner';
+import { specialProducts } from '@/src/constants/specialProducts';
 
 type Props = {
   clientOrder: Order[];
   address: string;
   betweenStreets: string;
   details: string;
-  paymentMethod: "efectivo" | "mercado pago";
+  paymentMethod: 'efectivo' | 'mercado pago';
   userName: string;
   isDelivery: boolean;
 };
@@ -33,12 +33,12 @@ const SummaryCard = ({
 
     const capitalizeWords = (str: string) => {
       return str
-        .split(" ")
+        .split(' ')
         .map(
           (word: string) =>
             word.charAt(0).toUpperCase() + word.slice(1).toLowerCase(),
         )
-        .join(" ");
+        .join(' ');
     };
 
     const productsText = clientOrder
@@ -50,41 +50,41 @@ const SummaryCard = ({
         const size =
           i.productSize && !isSpecialProduct
             ? ` (${i.productSize.toUpperCase()})`
-            : "";
+            : '';
 
         const friesType = i.friesType
           ? `    - Papas ${capitalizeWords(i.friesType)}`
-          : "";
+          : '';
 
         const extras =
           Array.isArray(i.extras) && i.extras.length > 0
-            ? i.extras.map((e) => `    - ${e}`).join("\n")
-            : "";
+            ? i.extras.map((e) => `    - ${e}`).join('\n')
+            : '';
 
-        const sauce = i.sauce ? `    - ${i.sauce}` : "";
+        const sauce = i.sauce ? `    - ${i.sauce}` : '';
 
-        const note = i.note ? `    *NOTA:* _${i.note}_` : "";
+        const note = i.note ? `    *NOTA:* _${i.note}_` : '';
 
         const details =
           friesType || extras || sauce || note
-            ? `\n${[friesType, extras, sauce, note].filter(Boolean).join("\n")}`
-            : "";
+            ? `\n${[friesType, extras, sauce, note].filter(Boolean).join('\n')}`
+            : '';
 
         return `• *${i.productName?.toUpperCase()}*${size} x${
           i.quantity
         }  $${i.total.toLocaleString()}${details}`;
       })
-      .join("\n");
+      .join('\n');
 
     return `
 Número de pedido: *${generateShortId(
       4,
     )}*  |  Hora ingreso: *${new Date().toLocaleTimeString([], {
-      hour: "2-digit",
-      minute: "2-digit",
+      hour: '2-digit',
+      minute: '2-digit',
     })}*
 
-${userName ? `Pedido para: *${capitalizeWords(userName)}* ` : ""}
+${userName ? `Pedido para: *${capitalizeWords(userName)}* ` : ''}
     
 *PRODUCTOS*
 ${productsText}
@@ -92,28 +92,24 @@ ${productsText}
 ${
   isDelivery
     ? `*DATOS DE ENTREGA*
-${details ? `• Localidad: ${details}.` : ""}
+${details ? `• Localidad: ${details}.` : ''}
 • Domicilio: ${address}.
-${betweenStreets ? `• Entre calles: ${betweenStreets}.` : ""}`
-    : ""
+${betweenStreets ? `• Entre calles: ${betweenStreets}.` : ''}`
+    : ''
 }
 
 *RESUMEN* ${
-      paymentMethod === "efectivo"
+      paymentMethod === 'efectivo'
         ? `(Pago con efectivo)`
         : `(Pago con mercado pago)`
     } 
    • Subtotal productos: $${subtotal.toLocaleString()}
-    ${isDelivery ? `• Envio: $${envio.toLocaleString()}` : ""}
+    ${isDelivery ? `• Envio: $${envio.toLocaleString()}` : ''}
 
-    
-    
     Valor del envio fijo hasta *3 km*.
     Más de *3 km* varia un poco y se abonan por transferencia.
 
-    -----------------------------------------------
-
-• *TOTAL: $${total.toLocaleString()}* 
+  *TOTAL: $${total.toLocaleString()}* 
 
   `.trim();
   }
@@ -121,13 +117,13 @@ ${betweenStreets ? `• Entre calles: ${betweenStreets}.` : ""}`
   const handleSendOrder = () => {
     if (isDelivery) {
       if (!address || !betweenStreets) {
-        toast.error("Necesitamos la dirección exacta para enviar el pedido.", {
-          style: { width: "fit-content" },
+        toast.error('Necesitamos la dirección exacta para enviar el pedido.', {
+          style: { width: 'fit-content' },
         });
 
-        const el = document.getElementById("delivery-checkout");
+        const el = document.getElementById('delivery-checkout');
         if (el) {
-          el.scrollIntoView({ behavior: "smooth", block: "start" });
+          el.scrollIntoView({ behavior: 'smooth', block: 'start' });
         }
 
         setTimeout(() => {
@@ -146,41 +142,41 @@ ${betweenStreets ? `• Entre calles: ${betweenStreets}.` : ""}`
     const encoded = encodeURIComponent(msg);
     const phone = `541132830604`;
 
-    window.open(`https://wa.me/${phone}?text=${encoded}`, "_blank");
+    window.open(`https://wa.me/${phone}?text=${encoded}`, '_blank');
 
-    localStorage.removeItem("clientOrder");
-    localStorage.removeItem("clientOrder_ts");
+    localStorage.removeItem('clientOrder');
+    localStorage.removeItem('clientOrder_ts');
 
     setTimeout(() => {
-      window.location.href = "/";
+      window.location.href = '/';
     }, 300);
   };
 
   return (
-    <div className="border border-white/20 text-white rounded-xl mt-5a1 p-5 bg-inherit">
-      <div className="flex items-center gap-2 mb-6">
-        <span className="text-xl">🧾</span>
-        <h2 className="font-bold text-lg">Resumen</h2>
+    <div className='border border-white/20 text-white rounded-xl mt-5a1 p-5 bg-inherit'>
+      <div className='flex items-center gap-2 mb-6'>
+        <span className='text-xl'>🧾</span>
+        <h2 className='font-bold text-lg'>Resumen</h2>
       </div>
 
-      <div className="space-y-3 text-sm">
-        <div className="flex justify-between items-center">
+      <div className='space-y-3 text-sm'>
+        <div className='flex justify-between items-center'>
           <span>Productos</span>
-          <span className="font-bold">
-            $ {subtotal.toLocaleString("es-AR")}
+          <span className='font-bold'>
+            $ {subtotal.toLocaleString('es-AR')}
           </span>
         </div>
 
-        <div className="flex justify-between items-center">
+        <div className='flex justify-between items-center'>
           <span>Envío</span>
-          <span className="font-bold">
-            $ {isDelivery ? envio.toLocaleString("es-AR") : 0}
+          <span className='font-bold'>
+            $ {isDelivery ? envio.toLocaleString('es-AR') : 0}
           </span>
         </div>
         {isDelivery && (
-          <p className="text-[11px] text-white/60 mt-8 w-full">
-            Envíos hasta 3 km. Distancias mayores pueden variar y se{" "}
-            <strong className="text-white/90 uppercase">
+          <p className='text-[11px] text-white/60 mt-8 w-full'>
+            Envíos hasta 3 km. Distancias mayores pueden variar y se{' '}
+            <strong className='text-white/90 uppercase'>
               abonan por transferencia
             </strong>
             .
@@ -188,24 +184,23 @@ ${betweenStreets ? `• Entre calles: ${betweenStreets}.` : ""}`
         )}
       </div>
 
-      <div className="h-px bg-white/15 my-4" />
+      <div className='h-px bg-white/15 my-4' />
 
-      <div className="flex justify-between items-center mt-8">
-        <span className="font-bold text-base">Total a pagar</span>
-        <span className="font-bold text-base">
-          $ {total.toLocaleString("es-AR")}
+      <div className='flex justify-between items-center mt-8'>
+        <span className='font-bold text-base'>Total a pagar</span>
+        <span className='font-bold text-base'>
+          $ {total.toLocaleString('es-AR')}
         </span>
       </div>
 
       <Button
         className={`w-full mt-10 rounded-full text-lg py-6 ${
           isDelivery && (!address || !betweenStreets || !details)
-            ? "opacity-50"
-            : ""
+            ? 'opacity-50'
+            : ''
         }`}
-        variant="destructive"
-        onClick={handleSendOrder}
-      >
+        variant='destructive'
+        onClick={handleSendOrder}>
         Realizar Pedido
       </Button>
     </div>

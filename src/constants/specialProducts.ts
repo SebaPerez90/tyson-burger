@@ -7,6 +7,7 @@ export const specialProducts = [
   'Golosa',
   'Deluxe Burger',
   'Melt Chicken',
+  'Cuatro Quesos',
 ];
 
 export const specialStarters = ['Bastones de mozzarella', 'Provoleta bites'];

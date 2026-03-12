@@ -22,6 +22,7 @@ export const Navbar = () => {
   const pathname = usePathname();
 
   const isMenu = pathname === "/menu";
+  const isPromos = pathname === "/promos";
   const isDetail = pathname.startsWith("/menu/") && pathname !== "/menu";
 
   useEffect(() => {
@@ -39,11 +40,16 @@ export const Navbar = () => {
       }  top-0 w-full z-50 px-0 sm:px-16 lg:px-24 sm:py-4a py-2 backdrop-blur-xl shadow-md`}
     >
       <div className="max-w-[1200px] mx-auto">
-        <div className="flex justify-between items-center px-2">
+        <div
+          className={`${isMenu || isPromos ? "justify-end" : "justify-between"} flex items-center px-2`}
+        >
           {/* Logo */}
           <Tooltip>
             <TooltipTrigger asChild>
-              <Link href="/" className="flex items-center cursor-pointer">
+              <Link
+                href="/"
+                className={`${isMenu || isPromos ? "sr-only" : "flex"}  items-center cursor-pointer`}
+              >
                 <div className=" size-10 rounded-full">
                   <Image
                     priority

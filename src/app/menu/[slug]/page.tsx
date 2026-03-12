@@ -1,5 +1,7 @@
 import { Metadata } from "next";
 
+export const revalidate = secondsUntilMidnightArgentina();
+
 import { notFound } from "next/navigation";
 
 import { allProducts } from "@/src/lib/menu";
@@ -9,6 +11,7 @@ import { starterDiscount } from "@/src/utils/starterDiscount";
 import ProductDetailHeader from "@/src/components/menu/ProductDetailHeader";
 import StarterDetailCard from "@/src/components/ui/cards/StarterDetailCard";
 import HamburgerDetailCard from "@/src/components/ui/cards/HamburgerDetailCard";
+import { secondsUntilMidnightArgentina } from "@/src/utils/secondsUntilMidnightArgentina";
 
 // Genera los parámetros estáticos
 export async function generateStaticParams() {

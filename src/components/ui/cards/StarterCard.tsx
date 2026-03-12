@@ -21,7 +21,7 @@ const StarterCard = ({ item }: { item: StarterItem }) => {
       style={item.stock < 10 ? { display: "none" } : {}}
       className={`${
         noStock && noStockStyle
-      } bg-linear-to-b from-[#1a0000] to-[#2b0000] rounded-2xl overflow-hidden border border-white/15 flex flex-row md:flex-col justify-between cursor-pointer h-[170px] sm:h-[300px] lg:h-auto active:scale-[0.98] active:brightness-90 transition-all select-none active:from-[#310000] active:to-[#430000]`}
+      } bg-linear-to-b from-[#1a0000] to-[#2b0000] rounded-2xl overflow-hidden border border-white/15 flex flex-row md:flex-col justify-between cursor-pointer h-[170px] sm:h-[570px] lg:h-auto active:scale-[0.98] active:brightness-90 transition-all select-none active:from-[#310000] active:to-[#430000]`}
       onClick={() =>
         router.push(`/menu/${item.name.toLowerCase().replace(/\s+/g, "-")}`)
       }

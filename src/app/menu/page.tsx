@@ -8,7 +8,7 @@ export default function MenuPage() {
   return (
     <>
       <MenuNavBar />
-      <main className="max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8 py-10 space-y-24">
+      <main className="max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8 pt-0 pb-5 space-y-12">
         {/* burgers container section */}
         <HamburgerGrid />
 

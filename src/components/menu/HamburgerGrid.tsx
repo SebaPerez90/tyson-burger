@@ -1,9 +1,22 @@
+"use client";
+
 import SectionTitle from "./SectionTitle";
 import mockBurgersItems from "@/src/mockup/burger.json";
 import HamburgerCard from "../ui/cards/HamburgerCard";
 import { burgerDiscount } from "@/src/utils/burgerDiscount";
+import { useEffect, useState } from "react";
 
 const HamburgerGrid = () => {
+  const [, forceUpdate] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      forceUpdate((v) => v + 1);
+    }, 3600000); //re render cada hora
+
+    return () => clearInterval(interval);
+  }, []);
+
   const burgersWithDiscount = burgerDiscount(mockBurgersItems);
 
   const normalizedBurgers = burgersWithDiscount.map((item) => ({

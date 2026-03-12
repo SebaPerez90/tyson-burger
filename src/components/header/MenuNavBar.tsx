@@ -53,7 +53,7 @@ ${isAtTop ? "-translate-y-full" : "translate-y-0"}`}
           <li>
             <a
               href="https://tyson-burger.vercel.app/menu"
-              className="transition-colors duration-200 hover:text-red-500"
+              className="px-4 py-1 rounded-sm bg-red-500 text-[10px]"
             >
               ← Volver al Menú
             </a>

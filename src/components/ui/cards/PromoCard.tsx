@@ -52,8 +52,8 @@ const PromoCard = ({ item }: { item: PromoItem }) => {
       <div className="p-3 md:p-0 lg:p-4 w-full h-auto">
         <div className="overflow-hidden rounded-md md:rounded-none lg:rounded-2xl size-full">
           <Image
-            width={400}
-            height={400}
+            width={1000}
+            height={1000}
             src={item.image}
             alt={item.name}
             loading="eager"
@@ -65,12 +65,8 @@ const PromoCard = ({ item }: { item: PromoItem }) => {
       {/* BODY */}
       <div className="p-3 lg:p-6 lg:pt-0 flex flex-col justify-between grow z-40">
         <div>
-          <span className="text-lg lg:text-xl text-orange-100 font-bold block mb-5 leading-5">
+          <span className="text-lg lg:text-xl text-orange-200 font-bold block mb-2 leading-5">
             {item.name}
-            <br />
-            <span className="text-xs text-white font-light ml-0.5">
-              (no se puede modificar)
-            </span>
           </span>
           {/* INGREDIENTES */}
           <ul className="flex flex-col w-max pb-2 marker:text-green-500 text-[10px] text-white/80 lg:block list-disc list-inside lg:text-sm ">
@@ -80,42 +76,35 @@ const PromoCard = ({ item }: { item: PromoItem }) => {
           </ul>
         </div>
 
-        {/* Precio + Botones */}
-        <div className="flex flex-col gap-0.5 mt-auto pt-4 lg:h-auto lg:min-h-[82px]">
-          <span className="text-xl font-bold font-baloo text-white">
-            ${item.price.toLocaleString()}
-          </span>
-
-          {/* Botones */}
-          <div className="flex flex-col gap-2 pt-3 border-t border-white/10 ">
-            {/* CONTADOR */}
-            <div className="flex items-center bg-secondary justify-between px-6 rounded-md py-1">
-              <button
-                onClick={handleDecrement}
-                className="text-xl  hover:bg-inherit hover:text-zinc-400 antialiased cursor-pointer font-black"
-              >
-                –
-              </button>
-              <span className="font-medium pointer-events-none cursor-default text-sm">
-                {count} combo
-              </span>
-              <button
-                onClick={handleIncrement}
-                className="text-xl hover:bg-inherit hover:text-zinc-400 antialiased cursor-pointer font-black"
-              >
-                +
-              </button>
-            </div>
-            {/* BOTÓN AGREGAR */}
-            <Button
-              onClick={handleAddToCart}
-              variant={"destructive"}
-              className="flex items-center justify-center"
+        {/* Botones */}
+        <div className="flex flex-col gap-2 pt-3 border-t border-white/10 ">
+          {/* CONTADOR */}
+          <div className="flex items-center bg-secondary justify-between px-6 rounded-md py-1">
+            <button
+              onClick={handleDecrement}
+              className="text-xl  hover:bg-inherit hover:text-zinc-400 antialiased cursor-pointer font-black"
             >
-              Agregar
-              <span className="font-semibold">${total.toLocaleString()}</span>
-            </Button>
+              –
+            </button>
+            <span className="font-medium pointer-events-none cursor-default text-sm">
+              {count} combo
+            </span>
+            <button
+              onClick={handleIncrement}
+              className="text-xl hover:bg-inherit hover:text-zinc-400 antialiased cursor-pointer font-black"
+            >
+              +
+            </button>
           </div>
+          {/* BOTÓN AGREGAR */}
+          <Button
+            onClick={handleAddToCart}
+            variant={"destructive"}
+            className="flex items-center justify-center"
+          >
+            Agregar
+            <span className="font-semibold">${total.toLocaleString()}</span>
+          </Button>
         </div>
       </div>
     </div>

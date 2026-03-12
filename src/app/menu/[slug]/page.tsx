@@ -1,11 +1,10 @@
 import { Metadata } from 'next';
-import { secondsUntilMidnightArgentina } from '@/src/utils/secondsUntilMidnightArgentina';
 
 import { allProducts } from '@/src/lib/menu';
 import { burgerDiscount } from '@/src/utils/burgerDiscount';
 import { starterDiscount } from '@/src/utils/starterDiscount';
 
-export const revalidate = secondsUntilMidnightArgentina();
+export const revalidate = 3600;
 
 import { notFound } from 'next/navigation';
 

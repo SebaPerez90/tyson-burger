@@ -20,13 +20,13 @@ export const burgerExtras = [
     price: "$ 3.000",
   },
   {
+    id: "extra-cheese-fries",
+    label: "Papas grandes + baño de cheddar",
+    price: "$ 4.000",
+  },
+  {
     id: "extra-cheese-bacon-fries",
     label: "Papas grandes + cheddar y bacon",
     price: "$ 5.000",
-  },
-  {
-    id: "extra-sweet-fries",
-    label: `Papas grandes + cebolla caramelizada y cheddar`,
-    price: "$ 6.000",
   },
 ];

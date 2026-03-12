@@ -2,11 +2,11 @@
 // Siempre que se agregue un nuevo producto de este tipo, agregarlo aca
 
 export const specialProducts = [
-  "Volcan de cheddar",
-  "Chicken Crispy",
-  "Golosa",
-  "Orgasmo",
-  "Melt Chicken",
+  'Volcan de cheddar',
+  'Chicken Crispy',
+  'Golosa',
+  'Deluxe Burger',
+  'Melt Chicken',
 ];
 
-export const specialStarters = ["Bastones de mozzarella", "Provoleta bites"];
+export const specialStarters = ['Bastones de mozzarella', 'Provoleta bites'];

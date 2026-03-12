@@ -1,17 +1,17 @@
 import { Metadata } from 'next';
-
-export const revalidate = secondsUntilMidnightArgentina();
-
-import { notFound } from 'next/navigation';
+import { secondsUntilMidnightArgentina } from '@/src/utils/secondsUntilMidnightArgentina';
 
 import { allProducts } from '@/src/lib/menu';
 import { burgerDiscount } from '@/src/utils/burgerDiscount';
 import { starterDiscount } from '@/src/utils/starterDiscount';
 
+export const revalidate = secondsUntilMidnightArgentina();
+
+import { notFound } from 'next/navigation';
+
 import ProductDetailHeader from '@/src/components/menu/ProductDetailHeader';
 import StarterDetailCard from '@/src/components/menu/StarterDetailCard';
 import HamburgerDetailCard from '@/src/components/menu/HamburgerDetailCard';
-import { secondsUntilMidnightArgentina } from '@/src/utils/secondsUntilMidnightArgentina';
 
 // Genera los parámetros estáticos
 export async function generateStaticParams() {

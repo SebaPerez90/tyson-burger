@@ -1,117 +1,3 @@
-// "use client";
-
-// import Image from "next/image";
-// import { Button } from "../button";
-// import { promosNoStockStyle } from "@/src/constants/noStockStyle";
-// import { generateShortId } from "@/src/utils/uuidGenerator";
-// import { useState } from "react";
-
-// const PromoCard = ({ item }: { item: PromoItem }) => {
-//   const [count, setCount] = useState(1);
-
-//   const total = item.price * count;
-
-//   const handleIncrement = () => setCount((prev) => prev + 1);
-//   const handleDecrement = () => setCount((prev) => (prev > 0 ? prev - 1 : 0));
-
-//   const handleAddToCart = () => {
-//     if (count > 0) {
-//       const cartData = {
-//         id: generateShortId(4),
-//         quantity: count,
-//         productName: item.name,
-//         total: item.price * count,
-//         image: item.image,
-//       };
-
-//       const storedCart = localStorage.getItem("clientOrder");
-//       const currentCart = storedCart ? JSON.parse(storedCart) : [];
-
-//       // push nueva orden
-//       const updatedCart = [...currentCart, cartData];
-
-//       // guarda array actualizado
-//       localStorage.setItem("clientOrder", JSON.stringify(updatedCart));
-//       localStorage.setItem("clientOrder_ts", Date.now().toString());
-
-//       // notifica a listeners (Cart)
-//       window.dispatchEvent(new Event("client-order-updated"));
-//     }
-//   };
-
-//   const noStock = item.stock < 10;
-
-//   return (
-//     <div
-//       key={item.id}
-//       className={`${
-//         noStock && promosNoStockStyle
-//       } bg-linear-to-b from-[#1a0000] grow max-w-[500px] to-[#2b0000] rounded-2xl overflow-hidden border border-white/15 flex flex-col justify-between h-auto `}
-//     >
-//       {/* IMAGE */}
-//       <div className="p-3 md:p-0 lg:p-4 w-full h-auto">
-//         <div className="overflow-hidden rounded-md md:rounded-none lg:rounded-2xl size-full">
-//           <Image
-//             width={1000}
-//             height={1000}
-//             src={item.image}
-//             alt={item.name}
-//             loading="eager"
-//             className="object-cover size-full saturate-[1.2]"
-//           />
-//         </div>
-//       </div>
-
-//       {/* BODY */}
-//       <div className="p-3 lg:p-6 lg:pt-0 flex flex-col justify-between grow z-40">
-//         <div>
-//           <span className="text-lg lg:text-xl text-orange-200 font-bold block mb-2 leading-5">
-//             {item.name}
-//           </span>
-//           {/* INGREDIENTES */}
-//           <ul className="flex flex-col w-max pb-2 marker:text-green-500 text-[10px] text-white/80 lg:block list-disc list-inside lg:text-sm ">
-//             {item.ingredients.map((item, index) => (
-//               <li key={index}>{item}</li>
-//             ))}
-//           </ul>
-//         </div>
-
-//         {/* Botones */}
-//         <div className="flex flex-col gap-2 pt-3 border-t border-white/10 ">
-//           {/* CONTADOR */}
-//           <div className="flex items-center bg-secondary justify-between px-6 rounded-md py-1">
-//             <button
-//               onClick={handleDecrement}
-//               className="text-xl  hover:bg-inherit hover:text-zinc-400 antialiased cursor-pointer font-black"
-//             >
-//               –
-//             </button>
-//             <span className="font-medium pointer-events-none cursor-default text-sm">
-//               {count} combo
-//             </span>
-//             <button
-//               onClick={handleIncrement}
-//               className="text-xl hover:bg-inherit hover:text-zinc-400 antialiased cursor-pointer font-black"
-//             >
-//               +
-//             </button>
-//           </div>
-//           {/* BOTÓN AGREGAR */}
-//           <Button
-//             onClick={handleAddToCart}
-//             variant={"destructive"}
-//             className="flex items-center justify-center"
-//           >
-//             Agregar
-//             <span className="font-semibold">${total.toLocaleString()}</span>
-//           </Button>
-//         </div>
-//       </div>
-//     </div>
-//   );
-// };
-
-// export default PromoCard;
 'use client';
 
 import Image from 'next/image';
@@ -130,14 +16,14 @@ const PromoCard = ({ item }: { item: PromoItem }) => {
       style={item.stock < 10 ? { display: 'none' } : {}}
       className='bg-linear-to-b from-[#1a0000] to-[#2b0000] rounded-2xl overflow-hidden border border-white/15 flex flex-row md:flex-col justify-between cursor-pointer h-[170px] sm:h-[300px] md:h-auto active:scale-[0.98] active:brightness-90 transition-all select-none active:from-[#310000] active:to-[#430000] w-full'
       onClick={() =>
-        router.push(`/menu/${item.name.toLowerCase().replace(/\s+/g, '-')}`)
+        router.push(`/promos/${item.name.toLowerCase().replace(/\s+/g, '-')}`)
       }>
       {/* IMAGE */}
       <div className='p-2 md:p-4 w-[60%] md:w-auto h-auto md:h-[400px]'>
         <div className='overflow-hidden rounded-2xl md:rounded-none lg:rounded-2xl size-full'>
           <Image
-            width={800}
-            height={800}
+            width={1000}
+            height={1000}
             src={item.image}
             alt={item.name}
             loading='eager'

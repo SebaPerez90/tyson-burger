@@ -84,6 +84,8 @@ type PromoItem = {
   type?: string;
   name: string;
   ingredients: string[];
+  contain:string[]
+  description: string;
   price: number;
   image: string;
   stock: number;

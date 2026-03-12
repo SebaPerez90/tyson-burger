@@ -1,22 +1,22 @@
-import { Metadata } from "next";
+import { Metadata } from 'next';
 
 export const revalidate = secondsUntilMidnightArgentina();
 
-import { notFound } from "next/navigation";
+import { notFound } from 'next/navigation';
 
-import { allProducts } from "@/src/lib/menu";
-import { burgerDiscount } from "@/src/utils/burgerDiscount";
-import { starterDiscount } from "@/src/utils/starterDiscount";
+import { allProducts } from '@/src/lib/menu';
+import { burgerDiscount } from '@/src/utils/burgerDiscount';
+import { starterDiscount } from '@/src/utils/starterDiscount';
 
-import ProductDetailHeader from "@/src/components/menu/ProductDetailHeader";
-import StarterDetailCard from "@/src/components/ui/cards/StarterDetailCard";
-import HamburgerDetailCard from "@/src/components/ui/cards/HamburgerDetailCard";
-import { secondsUntilMidnightArgentina } from "@/src/utils/secondsUntilMidnightArgentina";
+import ProductDetailHeader from '@/src/components/menu/ProductDetailHeader';
+import StarterDetailCard from '@/src/components/menu/StarterDetailCard';
+import HamburgerDetailCard from '@/src/components/menu/HamburgerDetailCard';
+import { secondsUntilMidnightArgentina } from '@/src/utils/secondsUntilMidnightArgentina';
 
 // Genera los parámetros estáticos
 export async function generateStaticParams() {
   return allProducts.map((item) => ({
-    name: item.name.toLowerCase().replace(/\s+/g, "-"),
+    name: item.name.toLowerCase().replace(/\s+/g, '-'),
   }));
 }
 
@@ -30,16 +30,16 @@ export async function generateMetadata({
 
   const decodedName = decodeURIComponent(slug);
   const product = allProducts.find(
-    (item) => item.name.toLowerCase().replace(/\s+/g, "-") === decodedName,
+    (item) => item.name.toLowerCase().replace(/\s+/g, '-') === decodedName,
   );
 
   if (!product) {
-    return { title: "Producto no encontrado | Hamburguesería" };
+    return { title: 'Producto no encontrado | Hamburguesería' };
   }
 
   return {
     title: `${product.name} | Hamburguesería`,
-    icons: [{ rel: "icon", url: product.image }],
+    icons: [{ rel: 'icon', url: product.image }],
     description: product.description,
     openGraph: {
       title: `${product.name} | Hamburguesería`,
@@ -60,7 +60,7 @@ export default async function ProductPage({
 
   // 🔍 Buscamos el producto base (sin descuentos todavía)
   const baseProduct = allProducts.find(
-    (item) => item.name.toLowerCase().replace(/\s+/g, "-") === decodedName,
+    (item) => item.name.toLowerCase().replace(/\s+/g, '-') === decodedName,
   );
 
   if (!baseProduct) notFound();
@@ -71,25 +71,25 @@ export default async function ProductPage({
 
   // 💡 Aplico descuentos según la categoría
   switch (baseProduct.category) {
-    case "burger": {
+    case 'burger': {
       const burgers = allProducts.filter(
-        (p) => p.category === "burger",
+        (p) => p.category === 'burger',
       ) as HamburgerItem[];
       const burgersWithDiscount = burgerDiscount(burgers);
 
       product = (burgersWithDiscount.find(
-        (b) => b.name.toLowerCase().replace(/\s+/g, "-") === decodedName,
+        (b) => b.name.toLowerCase().replace(/\s+/g, '-') === decodedName,
       ) || baseProduct) as HamburgerItem;
       break;
     }
 
-    case "starter": {
+    case 'starter': {
       const starters = allProducts.filter(
-        (p) => p.category === "starter",
+        (p) => p.category === 'starter',
       ) as StarterItem[];
       const startersWithDiscount = starterDiscount(starters);
       product = (startersWithDiscount.find(
-        (s) => s.name.toLowerCase().replace(/\s+/g, "-") === decodedName,
+        (s) => s.name.toLowerCase().replace(/\s+/g, '-') === decodedName,
       ) || baseProduct) as HamburgerItem | StarterItem;
       break;
     }
@@ -101,14 +101,14 @@ export default async function ProductPage({
   }
 
   return (
-    <main className="min-h-screen relative max-w-[1200px] mx-auto mb-16">
+    <main className='min-h-screen relative max-w-[1200px] mx-auto mb-16'>
       <ProductDetailHeader productName={product.name} />
 
-      {product.type === "burger" && (
+      {product.type === 'burger' && (
         <HamburgerDetailCard product={product as HamburgerItem} />
       )}
 
-      {product.type === "starter" && (
+      {product.type === 'starter' && (
         <StarterDetailCard product={product as StarterItem} />
       )}
     </main>

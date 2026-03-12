@@ -1,30 +1,30 @@
-"use client";
+'use client';
 
-import { useMemo, useState } from "react";
+import { useMemo, useState } from 'react';
 
-import { parsePriceStringToNumber } from "@/src/utils/priceConverter";
-import { burgerExtras } from "@/src/constants/burgerExtras";
+import { parsePriceStringToNumber } from '@/src/utils/priceConverter';
+import { burgerExtras } from '@/src/constants/burgerExtras';
 
-import SubMenuAcordeon from "@/src/components/ui/acordeons/SubMenuAcordeon";
-import AddToCart from "@/src/components/menu/AddToCart";
-import BurgerSizeSelector from "../../menu/BurgerSizeSelector";
-import Image from "next/image";
-import { specialProducts } from "@/src/constants/specialProducts";
-import { specialProductExtras } from "@/src/constants/specialProductExtras";
-import { slugify } from "@/src/utils/slugify";
-import { useArgentinaBusinessRules } from "@/src/hooks/UseArgentinaBusinessRules";
-import FriesTypeSelector from "../../menu/FriesTypeSelector";
+import SubMenuAcordeon from '@/src/components/ui/acordeons/SubMenuAcordeon';
+import AddToCart from '@/src/components/menu/AddToCart';
+import BurgerSizeSelector from './BurgerSizeSelector';
+import Image from 'next/image';
+import { specialProducts } from '@/src/constants/specialProducts';
+import { specialProductExtras } from '@/src/constants/specialProductExtras';
+import { slugify } from '@/src/utils/slugify';
+import { useArgentinaBusinessRules } from '@/src/hooks/UseArgentinaBusinessRules';
+import FriesTypeSelector from './FriesTypeSelector';
 
 const HamburgerDetailCard = ({ product }: { product: HamburgerItem }) => {
   const { hasSurcharge } = useArgentinaBusinessRules();
   const [selectedExtras, setSelectedExtras] = useState<Extra[]>([]);
-  const [note, setNote] = useState("");
+  const [note, setNote] = useState('');
   const [count, setCount] = useState(1);
-  const [burgerSize, setBurgerSize] = useState<"simple" | "doble" | "triple">(
-    "simple",
+  const [burgerSize, setBurgerSize] = useState<'simple' | 'doble' | 'triple'>(
+    'simple',
   );
-  const [friesType, setFriesType] = useState<"sazonadas" | "tradicionales">(
-    "sazonadas",
+  const [friesType, setFriesType] = useState<'sazonadas' | 'tradicionales'>(
+    'sazonadas',
   );
 
   const productSlug = slugify(product.name);
@@ -81,37 +81,39 @@ const HamburgerDetailCard = ({ product }: { product: HamburgerItem }) => {
 
   return (
     <div>
-      <div className="flex flex-col justify-center items-center grow w-full sm:max-w-[500px] mx-auto">
+      <div className='flex flex-col justify-center items-center grow w-full sm:max-w-[500px] mx-auto'>
         {/* Imagen */}
-        <div className="w-full">
+        <div className='w-full'>
           <Image
             width={500}
             height={500}
             src={product.image}
             alt={product.name}
-            className="rounded-none sm:rounded-2xl object-cover saturate-[1.2] size-full"
+            className='rounded-none sm:rounded-2xl object-cover saturate-[1.2] size-full'
           />
         </div>
 
         {/* Información */}
-        <div className="sm:px-0 px-8">
-          <div className="flex flex-col justify-center w-full mt-10 sm:mt-6">
-            <h1 className="text-2xl sm:text-4xl font-bold text-orange-100 mb-4">
+        <div className='sm:px-0 px-8'>
+          <div className='flex flex-col justify-center w-full mt-10 sm:mt-6'>
+            <h1 className='text-2xl sm:text-4xl font-bold text-orange-100 mb-4'>
               {product.name}
             </h1>
-            <p className="text-white/80 text-base sm:text-lg mb-6 leading-relaxed">
+            <p className='text-white/80 text-base sm:text-lg mb-6 leading-relaxed'>
               {product.description}
             </p>
-            <h3 className="textlg sm:text-xl font-semibold text-white my-3">
+            <h3 className='textlg sm:text-xl font-semibold text-white my-3'>
               Ingredientes:
             </h3>
-            <ul className="list-disc list-inside marker:text-green-500 text-white/70 space-y-1">
+            <ul className='list-disc list-inside marker:text-green-500 text-white/70 space-y-1'>
               {product.ingredients.map((ingredient, index) => (
-                <li key={index} className="sm:text-base text-sm">
+                <li
+                  key={index}
+                  className='sm:text-base text-sm'>
                   {ingredient}
                 </li>
               ))}
-              <li className="sm:text-base text-sm">INCLUYE PAPAS FRITAS</li>
+              <li className='sm:text-base text-sm'>INCLUYE PAPAS FRITAS</li>
             </ul>
             {/* 🍔 Selector de tamanos */}
             {!isSpecialProduct && (
@@ -126,21 +128,21 @@ const HamburgerDetailCard = ({ product }: { product: HamburgerItem }) => {
               setFriesType={setFriesType}
             />
             ;{/* 💰 Precio (UNA sola fuente de verdad) */}
-            <div className="flex flex-row items-center gap-2 mt-8">
-              <span className="text-3xl font-bold font-baloo text-white">
-                ${totalPrice.toLocaleString("es-AR")}
+            <div className='flex flex-row items-center gap-2 mt-8'>
+              <span className='text-3xl font-bold font-baloo text-white'>
+                ${totalPrice.toLocaleString('es-AR')}
               </span>
 
               {hasDiscount && (
                 <>
-                  <span className="text-sm text-white/40 line-through">
+                  <span className='text-sm text-white/40 line-through'>
                     $
                     {parsePriceStringToNumber(
                       String(product.price[burgerSize]),
-                    ).toLocaleString("es-AR")}
+                    ).toLocaleString('es-AR')}
                   </span>
 
-                  <span className="text-sm py-1 px-2 bg-green-600/40 text-green-400 rounded-full">
+                  <span className='text-sm py-1 px-2 bg-green-600/40 text-green-400 rounded-full'>
                     {product.discount}% OFF
                   </span>
                 </>
@@ -158,20 +160,19 @@ const HamburgerDetailCard = ({ product }: { product: HamburgerItem }) => {
           )}
 
           {/* Nota */}
-          <div className="mt-10 w-full border border-white/10 rounded-2xl p-4 bg-[#1a1a1a]">
+          <div className='mt-10 w-full border border-white/10 rounded-2xl p-4 bg-[#1a1a1a]'>
             <label
-              htmlFor="note"
-              className="block text-lg sm:text-xl text-white font-medium mb-2"
-            >
+              htmlFor='note'
+              className='block text-lg sm:text-xl text-white font-medium mb-2'>
               Nota al producto
             </label>
 
             <textarea
-              id="note"
+              id='note'
               value={note}
               onChange={(e) => setNote(e.target.value)}
-              placeholder="Aclar&aacute; lo que necesites para tu hamburguesa"
-              className="w-full rounded-lg bg-transparent mt-5 border border-white/20 text-white placeholder:text-white/50 p-3 outline-none resize-none focus:border-white transition placeholder:text-xs sm:placeholder:text-base"
+              placeholder='Aclar&aacute; lo que necesites para tu hamburguesa'
+              className='w-full rounded-lg bg-transparent mt-5 border border-white/20 text-white placeholder:text-white/50 p-3 outline-none resize-none focus:border-white transition placeholder:text-xs sm:placeholder:text-base'
               rows={3}
             />
           </div>

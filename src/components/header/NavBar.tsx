@@ -23,7 +23,8 @@ export const Navbar = () => {
 
   const isMenu = pathname === "/menu";
   const isPromos = pathname === "/promos";
-  const isDetail = pathname.startsWith("/menu/") && pathname !== "/menu";
+  const isBurgerDetail = pathname.startsWith("/menu/") && pathname !== "/menu";
+  const isPromoDetail = pathname.startsWith("/promos/") && pathname !== "/promos";
 
   useEffect(() => {
     // Buscamos si el 404 está montado en el DOM
@@ -31,7 +32,7 @@ export const Navbar = () => {
     setIsNotFound(!!notFoundEl);
   }, [pathname]);
 
-  if (isDetail || isNotFound) return null;
+  if (isBurgerDetail || isPromoDetail || isNotFound) return null;
 
   return (
     <header

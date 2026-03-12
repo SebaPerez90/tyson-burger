@@ -2,8 +2,16 @@
   {
     "id": 1,
     "type": "promo",
-    "name": "Cheese x2",
+    "name": "Promo Cheese",
     "ingredients": ["2 Burger dobles", "Papas grandes"],
+    "description": "Dos Cheese Burger dobles + porción grandes de papas fritas sazonadas",
+    "contain": [
+      "Doble medallon de carne",
+      "Queso cheddar x4",
+      "Pan de papa",
+      "Salsa Tyson",
+      "Porción de Papas grandes"
+    ],
     "price": 18000,
     "stock": 10,
     "image": "/promos/promo-cheese.webp"
@@ -11,8 +19,18 @@
   {
     "id": 2,
     "type": "promo",
-    "name": "Provo x2",
+    "name": "Promo Provo",
     "ingredients": ["2 Burger dobles", "Papas grandes", "Baño de cheddar"],
+    "description": "Dos Provolone Burger dobles + porción grandes de papas fritas sazonadas bañadas en queso cheddar",
+    "contain": [
+      "Doble medallon de carne",
+      "Queso cheddar x4",
+      "Provoleta fundida",
+      "Mayonesa de chimichurri",
+      "Pan de papa",
+      "Porción de Papas grandes",
+      "Baño de queso cheddar"
+    ],
     "price": 24000,
     "stock": 10,
     "image": "/promos/promo-provo.webp"
@@ -20,8 +38,19 @@
   {
     "id": 7,
     "type": "promo",
-    "name": "Tyson x2",
+    "name": "Promo Tyson",
     "ingredients": ["2 Burger dobles", "Papas grandes", "Baño de cheddar"],
+    "description": "Dos Tyson Burger dobles + porción grandes de papas fritas sazonadas bañadas en queso cheddar",
+    "contain": [
+      "Carne vacuna",
+      "Doble queso cheddar",
+      "Huevo a la plancha",
+      "Panceta crocante",
+      "Salsa Tyson",
+      "Pan de papa",
+      "Porción de Papas grandes",
+      "Baño de queso cheddar"
+    ],
     "price": 25000,
     "stock": 10,
     "image": "/promos/promo-tyson.webp"
@@ -29,8 +58,18 @@
   {
     "id": 3,
     "type": "promo",
-    "name": "Deluxe x2",
+    "name": "Promo Deluxe",
     "ingredients": ["2 Burger dobles", "Papas grandes", "Baño de cheddar"],
+    "description": "Dos Deluxe Burger dobles + porción grandes de papas fritas sazonadas bañadas en queso cheddar",
+    "contain": [
+      "Doble medallon",
+      "Doble queso cheddar",
+      "Provolone y Muzzarella",
+      "Cebolla caramelizada + queso azul",
+      "Panceta crocante y BBQ",
+      "Porción de Papas grandes",
+      "Baño de queso cheddar"
+    ],
     "price": 28000,
     "stock": 10,
     "image": "/promos/promo-deluxe.webp"
@@ -38,8 +77,18 @@
   {
     "id": 4,
     "type": "promo",
-    "name": "Golosa x2",
+    "name": "Promo Golosa",
     "ingredients": ["2 Burger dobles", "Papas grandes", "Baño de cheddar"],
+    "description": "Dos Golosa Burger dobles + porción grandes de papas fritas sazonadas bañadas en queso cheddar",
+    "contain": [
+      "Doble medallon",
+      "Queso cheddar x4",
+      "Panceta crocante x4",
+      "Base de muzzarella",
+      "Salsa Tyson",
+      "Porción de Papas grandes",
+      "Baño de queso cheddar"
+    ],
     "price": 28000,
     "stock": 10,
     "image": "/promos/promo-golosa.webp"
@@ -47,8 +96,18 @@
   {
     "id": 5,
     "type": "promo",
-    "name": "Bacon x2",
+    "name": "Promo Bacon",
     "ingredients": ["2 Bacon dobles", "Bastones", "Salsa barbacoa"],
+    "description": "Dos Cheese Bacon Burger dobles + porción de bastones de mozzarella acompañados con salsa barbacoa",
+    "contain": [
+      "Doble medallon de carne",
+      "Queso cheddar x4",
+      "Panceta crocante",
+      "Salsa Tyson",
+      "Pan de papa",
+      "Porción de bastones de mozzarella",
+      "Salsa barbacoa"
+    ],
     "price": 26000,
     "stock": 10,
     "image": "/promos/promo-bacon.webp"
@@ -56,8 +115,20 @@
   {
     "id": 6,
     "type": "promo",
-    "name": "Smoke x2",
+    "name": "Promo Smoke",
     "ingredients": ["2 Burger dobles", "Papas grandes", "Baño de cheddar"],
+    "description": "Dos Smoke Burger dobles + porción grandes de papas fritas sazonadas bañadas en queso cheddar",
+    "contain": [
+      "Doble medallon de carne",
+      "Mermelada de bacon",
+      "Cebolla caramelizada",
+      "Queso cheddar x4",
+      "Salsa barbacoa",
+      "Bacon crujiente",
+      "Pan de papa",
+      "Porción de Papas grandes",
+      "Baño de queso cheddar"
+    ],
     "price": 26000,
     "stock": 10,
     "image": "/promos/promo-smoke.webp"

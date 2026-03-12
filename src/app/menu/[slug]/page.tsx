@@ -1,12 +1,11 @@
 import { Metadata } from 'next';
+import { notFound } from 'next/navigation';
 
 import { allProducts } from '@/src/lib/menu';
 import { burgerDiscount } from '@/src/utils/burgerDiscount';
 import { starterDiscount } from '@/src/utils/starterDiscount';
 
 export const revalidate = 3600;
-
-import { notFound } from 'next/navigation';
 
 import ProductDetailHeader from '@/src/components/menu/ProductDetailHeader';
 import StarterDetailCard from '@/src/components/menu/StarterDetailCard';

@@ -84,8 +84,8 @@ Número de pedido: *${generateShortId(
       minute: '2-digit',
     })}*
 
-${userName ? `Pedido para: *${capitalizeWords(userName)}* ` : ''}
-    
+${userName && isDelivery ? `Pedido para: *${userName.toUpperCase()}* ` : '*PASA A RETIRAR SU PEDIDO*'}
+
 *PRODUCTOS*
 ${productsText}
 
@@ -106,8 +106,7 @@ ${betweenStreets ? `• Entre calles: ${betweenStreets}.` : ''}`
    • Subtotal productos: $${subtotal.toLocaleString()}
     ${isDelivery ? `• Envio: $${envio.toLocaleString()}` : ''}
 
-    Valor del envio fijo hasta *3 km*.
-    Más de *3 km* varia un poco y se abonan por transferencia.
+*Más de 3 km el valor del envio varia un poco y se abonan por transferencia.*
 
   *TOTAL: $${total.toLocaleString()}* 
 

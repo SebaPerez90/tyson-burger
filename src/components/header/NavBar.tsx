@@ -1,34 +1,35 @@
-"use client";
+'use client';
 
-import Link from "next/link";
-import Image from "next/image";
-import { usePathname } from "next/navigation";
+import Link from 'next/link';
+import Image from 'next/image';
+import { usePathname } from 'next/navigation';
 
 import {
   Tooltip,
   TooltipContent,
   TooltipTrigger,
-} from "@/src/components/ui/tooltip";
-import OpenStatusBadge from "./OpenStatusBadge";
-import { useEffect, useState } from "react";
+} from '@/src/components/ui/tooltip';
+import OpenStatusBadge from './OpenStatusBadge';
+import { useEffect, useState } from 'react';
 
 const links = [
-  { href: "/menu", label: "Menú" },
-  { href: "/promos", label: "Promos" },
+  { href: '/menu', label: 'Menú' },
+  { href: '/promos', label: 'Promos' },
 ];
 
 export const Navbar = () => {
   const [isNotFound, setIsNotFound] = useState(true);
   const pathname = usePathname();
 
-  const isMenu = pathname === "/menu";
-  const isPromos = pathname === "/promos";
-  const isBurgerDetail = pathname.startsWith("/menu/") && pathname !== "/menu";
-  const isPromoDetail = pathname.startsWith("/promos/") && pathname !== "/promos";
+  const isMenu = pathname === '/menu';
+  const isPromos = pathname === '/promos';
+  const isBurgerDetail = pathname.startsWith('/menu/') && pathname !== '/menu';
+  const isPromoDetail =
+    pathname.startsWith('/promos/') && pathname !== '/promos';
 
   useEffect(() => {
     // Buscamos si el 404 está montado en el DOM
-    const notFoundEl = document.querySelector("[data-not-found]");
+    const notFoundEl = document.querySelector('[data-not-found]');
     setIsNotFound(!!notFoundEl);
   }, [pathname]);
 
@@ -37,31 +38,28 @@ export const Navbar = () => {
   return (
     <header
       className={`sticky ${
-        isMenu ? "bg-transparent" : "bg-foreground/60"
-      }  top-0 w-full z-50 px-0 sm:px-16 lg:px-24 sm:py-4a py-2 backdrop-blur-xl shadow-md`}
-    >
-      <div className="max-w-[1200px] mx-auto">
+        isMenu ? 'bg-transparent' : 'bg-foreground/60'
+      }  top-0 w-full z-50 px-0 sm:px-16 lg:px-24 sm:py-4a py-2 backdrop-blur-xl shadow-md`}>
+      <div className='max-w-[1200px] mx-auto'>
         <div
-          className={`${isMenu || isPromos ? "justify-end" : "justify-between"} flex items-center px-2`}
-        >
+          className={`${isMenu || isPromos ? 'justify-end lg:justify-between' : 'justify-between'} flex items-center px-2`}>
           {/* Logo */}
           <Tooltip>
             <TooltipTrigger asChild>
               <Link
-                href="/"
-                className={`${isMenu || isPromos ? "sr-only" : "flex"}  items-center cursor-pointer`}
-              >
-                <div className=" size-10 rounded-full">
+                href='/'
+                className={`${isMenu || isPromos ? 'sr-only' : 'flex'}  items-center cursor-pointer`}>
+                <div className=' size-10 rounded-full'>
                   <Image
                     priority
-                    className="size-full object-cover saturate-150"
-                    src="/logo-transparent.webp"
-                    alt="Tyson Burger Logo"
+                    className='size-full object-cover saturate-150'
+                    src='/logo-transparent.webp'
+                    alt='Tyson Burger Logo'
                     width={50}
                     height={50}
                   />
                 </div>
-                <span className="font-baloo sm:text-base text-xs font-bold text-white">
+                <span className='font-baloo sm:text-base text-xs font-bold text-white'>
                   Tyson Burger
                 </span>
               </Link>
@@ -72,7 +70,7 @@ export const Navbar = () => {
           </Tooltip>
 
           {/* Navegación */}
-          <nav className="hidden md:flex space-x-8">
+          <nav className='hidden lg:flex space-x-8'>
             {links.map(({ href, label }) => {
               const isActive = pathname === href;
               return (
@@ -81,10 +79,9 @@ export const Navbar = () => {
                   href={href}
                   className={`font-medium transition-colors duration-200 ${
                     isActive
-                      ? "text-red-500 border-b-2 border-red-500 pb-1"
-                      : "text-background hover:text-background/70"
-                  }`}
-                >
+                      ? 'text-red-500 border-b-2 border-red-500 pb-1'
+                      : 'text-background hover:text-background/70'
+                  }`}>
                   {label}
                 </Link>
               );

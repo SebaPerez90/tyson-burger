@@ -7,7 +7,7 @@ import AddToCart from '@/src/components/menu/AddToCart';
 import SubMenuAcordeon from '../ui/acordeons/SubMenuAcordeon';
 import { parsePriceStringToNumber } from '@/src/utils/priceConverter';
 import { starterExtras } from '@/src/constants/starterExtras';
-import SauceSelector from './SauceSelector';
+// import SauceSelector from './SauceSelector';
 import { usePathname } from 'next/navigation';
 import { specialStarters } from '@/src/constants/specialProducts';
 
@@ -17,9 +17,9 @@ const StarterDetailCard = ({ product }: { product: StarterItem }) => {
   const [basePrice, setBasePrice] = useState(0);
   const [note, setNote] = useState('');
   const [count, setCount] = useState(1);
-  const [sauce, setSauce] = useState<
-    'Mayonesa' | 'Barbacoa' | 'Moztaza' | 'Pomodoro'
-  >();
+  // const [sauce, setSauce] = useState<
+  //   'Mayonesa' | 'Barbacoa' | 'Moztaza' | 'Pomodoro'
+  // >();
 
   const pathname = usePathname();
   const isSpecialProductRoute = specialStarters.some((product) => {
@@ -29,8 +29,7 @@ const StarterDetailCard = ({ product }: { product: StarterItem }) => {
   });
 
   useEffect(() => {
-    // eslint-disable-next-line @typescript-eslint/no-unused-expressions
-    isSpecialProductRoute ? setSauce('Pomodoro') : setSauce('Mayonesa');
+    // isSpecialProductRoute ? setSauce('Pomodoro') : setSauce('Mayonesa');
 
     const extrasSum = selectedExtras.reduce(
       (sum, ex) => sum + parsePriceStringToNumber(ex.price),
@@ -103,11 +102,11 @@ const StarterDetailCard = ({ product }: { product: StarterItem }) => {
             </ul>
 
             {/* Acordeón de extras (no mostrar en productos especiales) */}
-            <SauceSelector
+            {/* <SauceSelector
               sauce={sauce ?? 'Mayonesa'}
               setSauce={setSauce}
               specialRoute={isSpecialProductRoute}
-            />
+            /> */}
 
             {/* precio   */}
             {product.discount && product.discount > 0 && activePrices ? (
@@ -168,7 +167,7 @@ const StarterDetailCard = ({ product }: { product: StarterItem }) => {
 
       {/* Botones de compra y cantidad de productos */}
       <AddToCart
-        sauce={sauce}
+        // sauce={sauce}
         selectedExtras={selectedExtras}
         total={totalPrice * count}
         quantity={count}

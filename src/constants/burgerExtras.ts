@@ -1,7 +1,7 @@
 export const burgerExtras = [
   {
     id: 'extra-bacon',
-    label: 'Agregá bacon a tu hamburguesa',
+    label: 'Agregá bacon a tu burger',
     price: '$ 2.000',
   },
   // {

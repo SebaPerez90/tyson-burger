@@ -4,10 +4,8 @@ import Image from 'next/image';
 import { Button } from '../button';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
-import { useArgentinaBusinessRules } from '@/src/hooks/UseArgentinaBusinessRules';
 
 const PromoCard = ({ item }: { item: PromoItem }) => {
-  const { hasSurcharge } = useArgentinaBusinessRules();
   const router = useRouter();
 
   return (
@@ -51,10 +49,7 @@ const PromoCard = ({ item }: { item: PromoItem }) => {
         <div className='flex flex-col gap-0.5 mt-auto pt-2 border-t border-white/10 lg:h-auto lg:min-h-[62px]'>
           <div className='flex flex-row items-center gap-0.5'>
             <span className='text-xl font-bold font-baloo text-white'>
-              ${}
-              {hasSurcharge
-                ? (item.price * 1.1).toLocaleString()
-                : item.price.toLocaleString()}
+              ${item.price.toLocaleString()}
             </span>
           </div>
 

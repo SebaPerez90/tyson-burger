@@ -9,6 +9,11 @@ export const burgerExtras = [
     label: 'Agregá bastones de mozzarella',
     price: '$ 8.000',
   },
+  {
+    id: 'extra-cheddar-fuente',
+    label: 'Fuente Cheddar y Bacon',
+    price: '$ 6.000',
+  },
   // {
   //   id: 'extra-sticks',
   //   label: 'Triangulitos de provoleta frita',
@@ -26,12 +31,12 @@ export const burgerExtras = [
   },
   {
     id: 'extra-cheese-fries',
-    label: 'Papas grandes + baño de cheddar',
+    label: 'Papas grandes + Cheddar',
     price: '$ 4.000',
   },
   {
     id: 'extra-cheese-bacon-fries',
-    label: 'Papas grandes + cheddar y bacon',
+    label: 'Papas grandes + Cheddar + Bacon',
     price: '$ 5.000',
   },
 ];

@@ -59,7 +59,7 @@ export default async function ProductPage({
   if (!promo) notFound();
 
   return (
-    <main className='h-auto max-h-screen relative max-w-[1200px] mx-auto mb-16'>
+    <main className='h-auto max-h-screen relative max-w-[1200px] mx-auto mb-16 '>
       <ProductDetailHeader productName={promo.name} />
 
       <PromoDetailView product={promo} />

@@ -4,9 +4,11 @@ import Image from 'next/image';
 import { Button } from '../button';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
+import { useArgentinaBusinessRules } from '@/src/hooks/UseArgentinaBusinessRules';
 
 const StarterCard = ({ item }: { item: StarterItem }) => {
   const router = useRouter();
+  const { hasSurcharge } = useArgentinaBusinessRules();
 
   return (
     <div
@@ -54,9 +56,23 @@ const StarterCard = ({ item }: { item: StarterItem }) => {
           <div className='flex flex-row items-center gap-0.5'>
             <span className='text-xl font-bold font-baloo text-white'>
               $
-              {item.discount && item.discount > 0
-                ? item.discountedPrice
-                : item.price.toLocaleString('es-AR')}
+              {(() => {
+                const basePrice = item.price;
+
+                // 👉 Lunes (1), Martes (2), Miércoles (3) → +10%
+                if (hasSurcharge) {
+                  const increasedPrice = basePrice * 1.1;
+                  return Math.round(increasedPrice).toLocaleString('es-AR');
+                }
+
+                // 👉 Si tiene descuento (jueves y viernes ya lo manejás arriba)
+                if (item.discount && item.discount > 0) {
+                  return item.discountedPrice;
+                }
+
+                // 👉 Normal
+                return basePrice.toLocaleString('es-AR');
+              })()}
             </span>
 
             {item.discount && item.discount > 0 ? (

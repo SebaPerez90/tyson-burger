@@ -20,8 +20,7 @@ export function useArgentinaBusinessRules() {
   const day = argentinaDate.getDay();
 
   // 👉 Recargo lunes a miércoles
-  // const hasSurcharge = day === 1 || day === 2 || day === 3;
-  const hasSurcharge = day === 4;
+  const hasSurcharge = day === 1 || day === 2 || day === 3;
 
   return {
     day,

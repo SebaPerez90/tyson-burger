@@ -242,7 +242,7 @@
       "Salsa Tasty"
     ],
     "price": { "simple": 11000, "doble": 11000, "triple": 11000 },
-    "stock": 10,
+    "stock": 1,
     "image": "/menu/burgers/melt-chicken.webp"
   }
 ]

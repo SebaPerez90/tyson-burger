@@ -315,13 +315,13 @@ const StarterDetailCard = ({ product }: { product: StarterItem }) => {
           </div>
 
           {/* Extras */}
-          {/* {!isSpecialProductRoute && (
+          {!isSpecialProductRoute && (
             <SubMenuAcordeon
               extras={starterExtras}
               selectedExtras={selectedExtras}
               onExtraChange={handleExtraChange}
             />
-          )} */}
+          )}
 
           {/* Nota */}
           <div className='mt-10 w-full border border-white/10 rounded-2xl p-4 bg-[#1a1a1a]'>

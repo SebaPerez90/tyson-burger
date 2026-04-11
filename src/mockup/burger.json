@@ -14,9 +14,9 @@
       "Pan de papa"
     ],
     "price": {
-      "simple": 12500,
-      "doble": 14500,
-      "triple": 16500
+      "simple": 13000,
+      "doble": 15000,
+      "triple": 17000
     },
     "stock": 10,
     "image": "/menu/burgers/smoke-burger.webp"
@@ -34,9 +34,9 @@
       "Pan de papa"
     ],
     "price": {
-      "simple": 11500,
-      "doble": 13500,
-      "triple": 15500
+      "simple": 12000,
+      "doble": 14000,
+      "triple": 16000
     },
     "stock": 10,
     "image": "/menu/burgers/provo-burger.webp"
@@ -53,7 +53,7 @@
       "Base de muzzarella",
       "Salsa Tyson"
     ],
-    "price": { "simple": 15000, "doble": 15000, "triple": 15000 },
+    "price": { "simple": 16000, "doble": 16000, "triple": 16000 },
     "stock": 10,
     "image": "/menu/burgers/golosa.webp"
   },
@@ -70,7 +70,7 @@
       "Cebolla caramelizada + queso azul",
       "Panceta crocante y BBQ"
     ],
-    "price": { "simple": 15000, "doble": 15000, "triple": 15000 },
+    "price": { "simple": 16000, "doble": 16000, "triple": 16000 },
     "stock": 10,
     "image": "/menu/burgers/deluxe-burger.webp"
   },
@@ -86,7 +86,7 @@
       "Queso Roquefort",
       "Provoleta empanada frita"
     ],
-    "price": { "simple": 14000, "doble": 14000, "triple": 14000 },
+    "price": { "simple": 15000, "doble": 15000, "triple": 15000 },
     "stock": 10,
     "image": "/menu/burgers/four-cheese.webp"
   },
@@ -104,9 +104,9 @@
       "Pan de papa"
     ],
     "price": {
-      "simple": 11000,
-      "doble": 12500,
-      "triple": 14500
+      "simple": 12000,
+      "doble": 13500,
+      "triple": 15000
     },
     "stock": 10,
     "image": "/menu/burgers/cheese-bacon.webp"
@@ -114,7 +114,7 @@
   {
     "id": 1,
     "type": "burger",
-    "name": "Volcan de cheddar",
+    "name": "Mar de Cheddar",
     "description": "Doble Medallón de carne, queso cheddar X6, pan de papa artesanal, fuente de cheddar derretido con bacon crujiente. Un derrame de sabor para los que no le tienen miedo a nada. Un ritual para los fanáticos del queso.",
     "ingredients": [
       "Doble medallon",
@@ -123,8 +123,8 @@
       "Bacon crujiente",
       "Pan de papa"
     ],
-    "price": { "simple": 16500, "doble": 16500, "triple": 16500 },
-    "stock": 1,
+    "price": { "simple": 19000, "doble": 19000, "triple": 19000 },
+    "stock": 10,
     "image": "/menu/burgers/volcan-burger.webp"
   },
   {
@@ -139,9 +139,9 @@
       "Pan de papa"
     ],
     "price": {
-      "simple": 9500,
-      "doble": 11000,
-      "triple": 13000
+      "simple": 10000,
+      "doble": 11500,
+      "triple": 13500
     },
     "stock": 10,
     "image": "/menu/burgers/cheese-burger.webp"
@@ -182,9 +182,9 @@
       "Pan de papa"
     ],
     "price": {
-      "simple": 10500,
-      "doble": 12000,
-      "triple": 14000
+      "simple": 11500,
+      "doble": 12500,
+      "triple": 14500
     },
     "stock": 1,
     "image": "/menu/burgers/american-burger.webp"
@@ -204,9 +204,9 @@
       "Pan de papa"
     ],
     "price": {
-      "simple": 11000,
-      "doble": 12500,
-      "triple": 14500
+      "simple": 12500,
+      "doble": 14000,
+      "triple": 15500
     },
     "stock": 10,
     "image": "/menu/burgers/tyson-burger.webp"

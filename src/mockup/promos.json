@@ -12,7 +12,7 @@
       "Salsa Tyson",
       "Porción de Papas grandes"
     ],
-    "price": 18000,
+    "price": 19000,
     "stock": 10,
     "image": "/promos/promo-cheese.webp"
   },
@@ -31,7 +31,7 @@
       "Porción de Papas grandes",
       "Baño de queso cheddar"
     ],
-    "price": 24000,
+    "price": 25000,
     "stock": 10,
     "image": "/promos/promo-provo.webp"
   },
@@ -51,7 +51,7 @@
       "Porción de Papas grandes",
       "Baño de queso cheddar"
     ],
-    "price": 25000,
+    "price": 26000,
     "stock": 10,
     "image": "/promos/promo-tyson.webp"
   },
@@ -70,7 +70,7 @@
       "Porción de Papas grandes",
       "Baño de queso cheddar"
     ],
-    "price": 28000,
+    "price": 29000,
     "stock": 10,
     "image": "/promos/promo-deluxe.webp"
   },
@@ -89,7 +89,7 @@
       "Porción de Papas grandes",
       "Baño de queso cheddar"
     ],
-    "price": 28000,
+    "price": 29000,
     "stock": 1,
     "image": "/promos/promo-golosa.webp"
   },
@@ -108,7 +108,7 @@
       "Porción de bastones de mozzarella",
       "Salsa barbacoa"
     ],
-    "price": 26000,
+    "price": 27000,
     "stock": 10,
     "image": "/promos/promo-bacon.webp"
   },
@@ -129,7 +129,7 @@
       "Porción de Papas grandes",
       "Baño de queso cheddar"
     ],
-    "price": 26000,
+    "price": 28000,
     "stock": 10,
     "image": "/promos/promo-smoke.webp"
   }

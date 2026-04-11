@@ -1,9 +1,9 @@
 export const starterExtras = [
-  { id: 'extra-cheese-fries', label: 'Dip de cheddar', price: '$ 2.500' },
+  { id: 'extra-cheese-fries', label: 'Dip cheddar XL', price: '$ 4.000' },
   {
     id: 'extra-cheddar-fuente',
     label: 'Fuente de cheddar y bacon',
-    price: '$ 6.000',
+    price: '$ 7.000',
   },
 ];
 

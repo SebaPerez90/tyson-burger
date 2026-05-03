@@ -54,7 +54,7 @@
       "Salsa Tyson"
     ],
     "price": { "simple": 16000, "doble": 16000, "triple": 16000 },
-    "stock": 10,
+    "stock": 1,
     "image": "/menu/burgers/golosa.webp"
   },
 

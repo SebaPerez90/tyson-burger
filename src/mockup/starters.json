@@ -75,9 +75,9 @@
     "name": "Papas con cheddar",
     "description": "Papas fritas doradas bañadas con una lluvia de queso cheddar fundido.",
     "ingredients": ["Papas caseras", "Cheddar fundido", "Sal especiada"],
-    "price": 7000,
+    "price": 9000,
     "image": "/menu/starters/fries-cheddar.webp",
-    "stock": 1
+    "stock": 10
   },
   {
     "id": 8,

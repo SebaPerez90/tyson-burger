@@ -1,5 +1,5 @@
-import { applyDiscount } from "./applyDiscount";
-import { getArgentinaDayInfo } from "./argentinaDateHelper";
+import { applyDiscount } from './applyDiscount';
+import { getArgentinaDayInfo } from './argentinaDateHelper';
 
 export const starterDiscount = (mockStartersItems: StarterItem[]) => {
   const { isDiscountDay } = getArgentinaDayInfo();
@@ -12,7 +12,7 @@ export const starterDiscount = (mockStartersItems: StarterItem[]) => {
       //   discount = 10;
       //   break;
 
-      case starter.type?.includes("starter") && isDiscountDay:
+      case starter.type?.includes('starterrr') && isDiscountDay:
         discount = 10;
         break;
 
@@ -26,7 +26,7 @@ export const starterDiscount = (mockStartersItems: StarterItem[]) => {
 
     return {
       ...starter,
-      discountedPrice: finalPrice.toLocaleString("es-AR"),
+      discountedPrice: finalPrice.toLocaleString('es-AR'),
       discount,
     };
   });

@@ -1,5 +1,5 @@
-import { applyDiscount } from "./applyDiscount";
-import { getArgentinaDayInfo } from "./argentinaDateHelper";
+import { applyDiscount } from './applyDiscount';
+import { getArgentinaDayInfo } from './argentinaDateHelper';
 
 export const burgerDiscount = (mockBurgersItems: HamburgerItem[]) => {
   const { isDiscountDay } = getArgentinaDayInfo();
@@ -9,7 +9,7 @@ export const burgerDiscount = (mockBurgersItems: HamburgerItem[]) => {
 
     // 💡 Lógica condicional de descuentos
     switch (true) {
-      case burger.type?.includes("burger") && isDiscountDay:
+      case burger.type?.includes('burgerrr') && isDiscountDay:
         discount = 10;
         break;
 
@@ -31,7 +31,7 @@ export const burgerDiscount = (mockBurgersItems: HamburgerItem[]) => {
     const discountedPrices = Object.fromEntries(
       Object.entries(discountedPricesWithoutParse).map(([key, value]) => [
         key,
-        value.toLocaleString("es-AR"),
+        value.toLocaleString('es-AR'),
       ]),
     );
 

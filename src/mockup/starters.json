@@ -85,9 +85,9 @@
     "name": "Bastones de mozzarella",
     "description": "6 Bastones de mozzarella derretida con rebozado crocante, fritos al instante. Servidos con salsa barbacoa.",
     "ingredients": ["Queso mozzarella rebozado", "Salsa barbacoa"],
-    "price": 9000,
+    "price": 10000,
     "image": "/menu/starters/mozzarella-sticks.webp",
-    "stock": 1
+    "stock": 10
   },
   {
     "id": 9,

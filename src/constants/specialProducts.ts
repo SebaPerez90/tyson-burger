@@ -10,4 +10,8 @@ export const specialProducts = [
   'Cuatro Quesos',
 ];
 
-export const specialStarters = ['Bastones de mozzarella', 'Provoleta bites'];
+export const specialStarters = [
+  'Bastones de mozzarella',
+  'Provoleta bites',
+  'Fuente de cheddar y bacon',
+];

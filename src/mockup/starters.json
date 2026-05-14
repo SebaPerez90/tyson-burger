@@ -1,37 +1,22 @@
 [
   {
-    "id": 5,
-    "type": "starter",
-    "name": "Papass Sweet",
-    "description": "Papas fritas doradas y crujientes bañadas con una mezcla de queso cheddar fundido y mozzarella, cebolla caramelizada y salsa Stacker.",
-    "ingredients": [
-      "Papas caseras",
-      "Cebolla caramelizada",
-      "Chedar fundido",
-      "Mozzarella fundido"
-    ],
-    "price": 9000,
-    "image": "/menu/starters/fries-sweet.webp",
-    "stock": 1
-  },
-  {
-    "id": 7,
-    "type": "starter",
-    "name": "Papas con cheddar",
-    "description": "Papas fritas doradas bañadas con una lluvia de queso cheddar fundido.",
-    "ingredients": ["Papas caseras", "Cheddar fundido", "Sal especiada"],
-    "price": 9000,
-    "image": "/menu/starters/fries-cheddar.webp",
-    "stock": 10
-  },
-  {
-    "id": 8,
+    "id": 1,
     "type": "starter",
     "name": "Bastones de mozzarella",
     "description": "6 Bastones de mozzarella derretida con rebozado crocante, fritos al instante. Servidos con salsa barbacoa.",
     "ingredients": ["Queso mozzarella rebozado", "Salsa barbacoa"],
     "price": 10000,
     "image": "/menu/starters/mozzarella-sticks.webp",
+    "stock": 10
+  },
+  {
+    "id": 2,
+    "type": "starter",
+    "name": "Fuente de cheddar y bacon",
+    "description": "Una irresistible fuente de queso cheddar derretido y bacon crujiente, perfecta para sumergir tus papas fritas o acompañar tus burgers con un toque extra de sabor.",
+    "ingredients": ["Queso cheddar derretido", "Bacon crujiente"],
+    "price": 7000,
+    "image": "/menu/starters/cheddar-bacon.webp",
     "stock": 10
   }
 ]

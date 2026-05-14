@@ -1,7 +1,7 @@
 export const burgerExtras = [
   {
     id: 'extra-sticks',
-    label: 'Agregá bastones de mozzarella',
+    label: 'Bastones de mozzarella',
     price: '$ 9.000',
     img: '/menu/starters/mozzarella-sticks.webp',
   },
@@ -13,20 +13,20 @@ export const burgerExtras = [
   },
   {
     id: 'extra-cheese-fries',
-    label: 'Papas grandes + Cheddar',
+    label: 'Papas + cheddar',
     price: '$ 5.000',
     img: '/menu/starters/fries-cheddar.webp',
   },
   {
     id: 'extra-cheese-bacon-fries',
-    label: 'Papas grandes + Cheddar + Bacon',
+    label: 'Papas + cheddar + bacon',
     price: '$ 6.000',
-    img: '/menu/starters/fries-sweet.webp',
+    img: '/menu/starters/fries-bacon.webp',
   },
   {
     id: 'extra-cheddar-fuente',
-    label: 'Fuente Cheddar y Bacon',
+    label: 'Fuente cheddar + bacon',
     price: '$ 7.000',
-    img: '/menu/starters/cheddar-bacon.webp',
+    img: '/menu/starters/fountain.webp',
   },
 ];

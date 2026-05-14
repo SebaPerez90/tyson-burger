@@ -45,7 +45,7 @@ const SubMenuAcordeon = ({
                       className='h-5 w-5 sm:w-6 sm:h-6 rounded-none sm:rounded-sm bg-zinc-800 border-white/30 cursor-pointer data-[state=checked]:bg-red-500 data-[state=checked]:border-red-400 data-[state=checked]:text-white'
                     />
 
-                    <div className='flex flex-col gap-2 items-center'>
+                    <div className='ml-2 flex flex-col gap-2 items-start min-w-[170px]'>
                       <label
                         htmlFor={item.id}
                         className='text-white'>

@@ -56,25 +56,6 @@
     "image": "/promos/promo-tyson.webp"
   },
   {
-    "id": 3,
-    "type": "promo",
-    "name": "Promo Deluxe",
-    "ingredients": ["2 Burger dobles", "Papas grandes", "Baño de cheddar"],
-    "description": "Dos Deluxe Burger dobles + porción grandes de papas fritas sazonadas bañadas en queso cheddar",
-    "contain": [
-      "Doble medallon",
-      "Doble queso cheddar",
-      "Provolone y Muzzarella",
-      "Cebolla caramelizada + queso azul",
-      "Panceta crocante y BBQ",
-      "Porción de Papas grandes",
-      "Baño de queso cheddar"
-    ],
-    "price": 29000,
-    "stock": 10,
-    "image": "/promos/promo-deluxe.webp"
-  },
-  {
     "id": 4,
     "type": "promo",
     "name": "Promo Golosa",

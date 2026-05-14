@@ -1,20 +1,17 @@
 import { applyDiscount } from './applyDiscount';
-import { getArgentinaDayInfo } from './argentinaDateHelper';
+// import { getArgentinaDayInfo } from './argentinaDateHelper';
 
 export const starterDiscount = (mockStartersItems: StarterItem[]) => {
-  const { isDiscountDay } = getArgentinaDayInfo();
+  // const { isDiscountDay } = getArgentinaDayInfo();
 
   return mockStartersItems.map((starter) => {
     let discount = 0;
 
     switch (true) {
-      // case starter.name === "Papas Sweet & Cheese":
+      //aca se pueden agregar más casos para otros tipos de productos o condiciones, por ejemplo:
+      // case starter.type?.includes('starter') && isDiscountDay:
       //   discount = 10;
       //   break;
-
-      case starter.type?.includes('starterrr') && isDiscountDay:
-        discount = 10;
-        break;
 
       default:
         discount = 0;

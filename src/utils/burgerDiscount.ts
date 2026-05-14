@@ -1,17 +1,18 @@
 import { applyDiscount } from './applyDiscount';
-import { getArgentinaDayInfo } from './argentinaDateHelper';
+// import { getArgentinaDayInfo } from './argentinaDateHelper';
 
 export const burgerDiscount = (mockBurgersItems: HamburgerItem[]) => {
-  const { isDiscountDay } = getArgentinaDayInfo();
+  // const { isDiscountDay } = getArgentinaDayInfo();
 
   return mockBurgersItems.map((burger) => {
     let discount = 0;
 
     // 💡 Lógica condicional de descuentos
     switch (true) {
-      case burger.type?.includes('burgerrr') && isDiscountDay:
-        discount = 10;
-        break;
+      //aca se pueden agregar más casos para otros tipos de productos o condiciones, por ejemplo:
+      // case burger.type?.includes('burger') && isDiscountDay:
+      //   discount = 10;
+      //   break;
 
       default:
         discount = 0;

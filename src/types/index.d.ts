@@ -58,6 +58,7 @@ type Extra = {
   id: string;
   label: string;
   price: string;
+  img: string;
 };
 
 type DrinkItem = {
@@ -84,7 +85,7 @@ type PromoItem = {
   type?: string;
   name: string;
   ingredients: string[];
-  contain:string[]
+  contain: string[];
   description: string;
   price: number;
   image: string;

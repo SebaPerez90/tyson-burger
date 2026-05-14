@@ -16,7 +16,7 @@
     "description": "Una irresistible fuente de queso cheddar derretido y bacon crujiente, perfecta para sumergir tus papas fritas o acompañar tus burgers con un toque extra de sabor.",
     "ingredients": ["Queso cheddar derretido", "Bacon crujiente"],
     "price": 7000,
-    "image": "/menu/starters/cheddar-bacon.webp",
+    "image": "/menu/starters/fountain.webp",
     "stock": 10
   }
 ]

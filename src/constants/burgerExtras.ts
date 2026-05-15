@@ -17,12 +17,12 @@ export const burgerExtras = [
     price: '$ 5.000',
     img: '/menu/starters/fries-cheddar.webp',
   },
-  {
-    id: 'extra-cheese-bacon-fries',
-    label: 'Papas + cheddar + bacon',
-    price: '$ 6.000',
-    img: '/menu/starters/fries-bacon.webp',
-  },
+  // {
+  //   id: 'extra-cheese-bacon-fries',
+  //   label: 'Papas + cheddar + bacon',
+  //   price: '$ 6.000',
+  //   img: '/menu/starters/fries-sweet.webp',
+  // },
   {
     id: 'extra-cheddar-fuente',
     label: 'Fuente cheddar + bacon',

@@ -18,7 +18,7 @@
       "doble": 15000,
       "triple": 17000
     },
-    "stock": 10,
+    "stock": 1,
     "image": "/menu/burgers/smoke-burger.webp"
   },
   {
@@ -54,7 +54,7 @@
       "Salsa Tyson"
     ],
     "price": { "simple": 16000, "doble": 16000, "triple": 16000 },
-    "stock": 10,
+    "stock": 1,
     "image": "/menu/burgers/golosa.webp"
   },
   {
@@ -74,7 +74,7 @@
       "doble": 13500,
       "triple": 15000
     },
-    "stock": 10,
+    "stock": 1,
     "image": "/menu/burgers/cheese-bacon.webp"
   },
   {
@@ -115,7 +115,7 @@
       "doble": 14000,
       "triple": 15500
     },
-    "stock": 10,
+    "stock": 1,
     "image": "/menu/burgers/tyson-burger.webp"
   }
 ]

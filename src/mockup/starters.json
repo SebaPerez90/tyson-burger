@@ -7,7 +7,7 @@
     "ingredients": ["Queso mozzarella rebozado", "Salsa barbacoa"],
     "price": 10000,
     "image": "/menu/starters/mozzarella-sticks.webp",
-    "stock": 10
+    "stock": 1
   },
   {
     "id": 2,

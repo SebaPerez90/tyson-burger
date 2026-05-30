@@ -1,10 +1,10 @@
 export const burgerExtras = [
-  {
-    id: 'extra-sticks',
-    label: 'Bastones de mozzarella',
-    price: '$ 9.000',
-    img: '/menu/starters/mozzarella-sticks.webp',
-  },
+  // {
+  //   id: 'extra-sticks',
+  //   label: 'Bastones de mozzarella',
+  //   price: '$ 9.000',
+  //   img: '/menu/starters/mozzarella-sticks.webp',
+  // },
   {
     id: 'extra-xl-fries',
     label: 'Papas grandes',

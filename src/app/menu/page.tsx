@@ -1,6 +1,6 @@
-import MenuNavBar from "@/src/components/header/MenuNavBar";
-import HamburgerGrid from "@/src/components/menu/HamburgerGrid";
-import StarterGrid from "@/src/components/menu/StarterGrid";
+import MenuNavBar from '@/src/components/header/MenuNavBar';
+import HamburgerGrid from '@/src/components/menu/HamburgerGrid';
+import StarterGrid from '@/src/components/menu/StarterGrid';
 // import DesertGrid from "@/src/components/menu/DesertGrid";
 // import DrinksGrid from "@/src/components/menu/DrinksGrid";
 
@@ -8,12 +8,12 @@ export default function MenuPage() {
   return (
     <>
       <MenuNavBar />
-      <main className="max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8 pt-0 pb-5 space-y-12">
+      <main className='max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8 pt-0 pb-5 space-y-12'>
         {/* burgers container section */}
         <HamburgerGrid />
 
         {/* starters container section */}
-        <StarterGrid />
+        {/* <StarterGrid /> */}
 
         {/* drinks container section */}
         {/* <DrinksGrid /> */}

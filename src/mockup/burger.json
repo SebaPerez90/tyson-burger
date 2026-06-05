@@ -34,9 +34,9 @@
       "Pan de papa"
     ],
     "price": {
-      "simple": 12000,
-      "doble": 14000,
-      "triple": 16000
+      "simple": 12500,
+      "doble": 14500,
+      "triple": 16500
     },
     "stock": 10,
     "image": "/menu/burgers/provo-burger.webp"

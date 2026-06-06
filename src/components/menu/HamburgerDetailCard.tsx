@@ -151,13 +151,13 @@ const HamburgerDetailCard = ({ product }: { product: HamburgerItem }) => {
           </div>
 
           {/* Extras */}
-          {extrasToShow && extrasToShow.length > 0 && (
+          {/* {extrasToShow && extrasToShow.length > 0 && (
             <SubMenuAcordeon
               extras={extrasToShow}
               selectedExtras={selectedExtras}
               onExtraChange={handleExtraChange}
             />
-          )}
+          )} */}
 
           {/* Nota */}
           <div className='mt-10 w-full border border-white/10 rounded-2xl p-4 bg-[#1a1a1a]'>

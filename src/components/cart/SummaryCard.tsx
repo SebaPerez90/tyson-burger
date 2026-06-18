@@ -98,15 +98,17 @@ ${betweenStreets ? `• Entre calles: ${betweenStreets}.` : ''}`
     : ''
 }
 
-*RESUMEN* ${
-      paymentMethod === 'efectivo'
-        ? `(Pago con efectivo)`
-        : `(Pago con mercado pago)`
-    } 
+*RESUMEN*
+  • CBU: seba.principal
+  • Titular: Fabiana Moreyra
+  • CUIT: 27-39844492-8
+
+  *INSTRUCCIONES* Una vez realizada la transferencia, favor de enviar comprobante por Whatsapp.
+
    • Subtotal productos: $${subtotal.toLocaleString()}
     ${isDelivery ? `• Envio: $${envio.toLocaleString()}` : ''}
 
-*Más de 3 km el valor del envio varia un poco y se abonan por transferencia.*
+*Más de 3 km el valor del envio puede variar un poco.*
 
   *TOTAL: $${total.toLocaleString()}* 
 

@@ -99,7 +99,7 @@ ${betweenStreets ? `• Entre calles: ${betweenStreets}.` : ''}`
 }
 
 *RESUMEN*
-  • CBU: seba.principal
+  • CBU: Faby.95.mp
   • Titular: Fabiana Moreyra
   • CUIT: 27-39844492-8
 
